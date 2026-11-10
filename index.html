@@ -945,7 +945,7 @@
     <header class="content-header">
       <div>
         <h1 class="content-title">Unit Database</h1>
-        <div class="content-subtitle" id="unitCount">76 units loaded</div>
+        <div class="content-subtitle" id="unitCount"></div>
       </div>
       <button class="btn-filter" id="openFilter">
         <span class="filter-icon"></span>
@@ -1606,6 +1606,9 @@
     // ===== FORMATTAZIONE =====
     function fmt(n) { return (n === null || n === undefined) ? '—' : n.toLocaleString('it-IT'); }
     function yen(n) { return (n === null || n === undefined) ? '—' : '¥' + fmt(n); }
+
+    // Populate unit count directly from actual data (no hardcoded number)
+    document.getElementById('unitCount').textContent = unitsData.length + ' units loaded';
 
     // ===== RENDER CARD =====
     function renderUnits(list) {
