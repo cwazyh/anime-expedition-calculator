@@ -8,16 +8,9 @@
  "update": 5,
  "obtainable": true,
  "desc": "Cleanse allies +20% damage, self +25%.",
- "traits": [
-  "Unbound",
-  "Forsaken"
- ],
- "equipment": [
-  "Enhanced Katana",
-  "Emperor's Attire",
-  "Technique Amplifier"
- ],
- "tdps": 14547,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1800,
  "cost": 69160,
  "placeholder": false,

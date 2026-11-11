@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Legendary unit from the wiki.",
- "traits": [
-  "Investor",
-  "Unbound"
- ],
- "equipment": [
-  "Economist's Coin",
-  "Promise Ring",
-  "Memory Pendant"
- ],
- "tdps": 14000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 900,
  "cost": 18000,
  "placeholder": false,

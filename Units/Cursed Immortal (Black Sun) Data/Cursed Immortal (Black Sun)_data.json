@@ -8,16 +8,9 @@
  "update": 0.5,
  "obtainable": false,
  "desc": "Secret unit with Black Sun mechanics.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Hexed Blade",
-  "Sacrificial Mark",
-  "Memory Pendant"
- ],
- "tdps": 19500,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2100,
  "cost": 85000,
  "placeholder": false,

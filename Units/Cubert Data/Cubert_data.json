@@ -8,16 +8,9 @@
  "update": 1,
  "obtainable": false,
  "desc": "Support with cube link +5% ally damage.",
- "traits": [
-  "Primordial",
-  "Enlightenment"
- ],
- "equipment": [
-  "Technique Amplifier",
-  "Memory Pendant",
-  "Mentor's Cape"
- ],
- "tdps": 3651,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 950,
  "cost": 43250,
  "placeholder": false,

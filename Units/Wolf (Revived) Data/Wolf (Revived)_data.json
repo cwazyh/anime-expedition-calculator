@@ -8,16 +8,9 @@
  "update": 4,
  "obtainable": true,
  "desc": "Lowest SPA in the game, Line AoE 5 hits, 3 passives. Best raw DPS.",
- "traits": [
-  "Unbound",
-  "Primordial"
- ],
- "equipment": [
-  "Shinigami Sword",
-  "Sacrificial Mark",
-  "Technique Amplifier"
- ],
- "tdps": 75789,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2000,
  "cost": 72750,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 5,
  "obtainable": true,
  "desc": "Very strong Seafarer buff, limited, CC with Deep Freeze.",
- "traits": [
-  "Primordial",
-  "Range"
- ],
- "equipment": [
-  "Magic Book",
-  "Memory Pendant",
-  "Evening Umbrella"
- ],
- "tdps": 8397,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1000,
  "cost": 49750,
  "placeholder": false,

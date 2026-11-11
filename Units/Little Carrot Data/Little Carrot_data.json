@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Line AoE 4 hits, very low damage.",
- "traits": [
-  "Unbound",
-  "Strength"
- ],
- "equipment": [
-  "Carrot's Gi",
-  "Royal Gi",
-  "Technique Amplifier"
- ],
- "tdps": 5330,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 950,
  "cost": 43250,
  "placeholder": false,

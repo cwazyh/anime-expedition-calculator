@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Legendary unit from the wiki.",
- "traits": [
-  "Primordial",
-  "Enlightenment"
- ],
- "equipment": [
-  "Magic Book",
-  "Mentor's Cape",
-  "Memory Pendant"
- ],
- "tdps": 15000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1000,
  "cost": 20000,
  "placeholder": false,

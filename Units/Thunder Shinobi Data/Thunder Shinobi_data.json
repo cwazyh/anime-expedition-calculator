@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Common unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Bolt"
- ],
- "equipment": [
-  "Lightning Dagger",
-  "Kunai",
-  "Technique Amplifier"
- ],
- "tdps": 4600,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 350,
  "cost": 4000,
  "placeholder": false,

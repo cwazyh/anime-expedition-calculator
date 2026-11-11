@@ -8,16 +8,9 @@
  "update": 5,
  "obtainable": true,
  "desc": "Dual attack modes, bleed consume.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Lanza de Luz",
-  "Sacrificial Mark",
-  "Emperor's Attire"
- ],
- "tdps": 14100,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2000,
  "cost": 59250,
  "placeholder": false,

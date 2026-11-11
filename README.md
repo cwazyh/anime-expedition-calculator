@@ -38,10 +38,12 @@ new unit/equipment/trait only requires creating its folder and updating the mani
   If a non-placeholder unit has `deploy`/`cost` set to `null`, they are derived at
   runtime: `deploy = upgrades[0].cost`, `cost = sum(upgrades[1:])`. Placeholder
   cards keep showing "—".
-- **Traits / equipment on cards**: taken from the unit JSON (`traits`,
-  `equipment`). Units flagged `"calculated": true` (currently only
-  *Traitor (Illusion)*) instead show **live** results: best trait, best equipment
-  combo and DPS computed in the browser.
+- **Traits / equipment / TDPS on cards**: only units flagged `"calculated": true`
+  (currently only *Traitor (Illusion)*) show them, computed **live** in the
+  browser — DPS is reviewed unit by unit. Every other unit ships without these
+  suggestions (`traits: []`, `equipment: []`, `tdps: null`) and renders
+  "TBD"/"—". Descriptions, deploy and upgrade costs stay: they are directly
+  verifiable game data, not calculator output.
 - **`placeholder": true`** marks cards whose data is not final; they show a
   "placeholder" pill, sort last, and don't derive costs.
 

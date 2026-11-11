@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Legendary unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Staff of Chaos",
-  "Magic Orb",
-  "Memory Pendant"
- ],
- "tdps": 13500,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1100,
  "cost": 19000,
  "placeholder": false,

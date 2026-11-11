@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Secret unit with powerful flame passives.",
- "traits": [
-  "Unbound",
-  "Forsaken"
- ],
- "equipment": [
-  "Fiery Staff",
-  "Burning Critter",
-  "Emperor's Attire"
- ],
- "tdps": 21000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2200,
  "cost": 88000,
  "placeholder": false,

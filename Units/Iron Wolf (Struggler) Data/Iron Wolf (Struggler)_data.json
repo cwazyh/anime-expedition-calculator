@@ -8,16 +8,9 @@
  "update": 2.5,
  "obtainable": true,
  "desc": "Full AoE 6 hits, bleed that becomes true damage.",
- "traits": [
-  "Unbound",
-  "Forsaken"
- ],
- "equipment": [
-  "Warrior's Axe",
-  "Sacrificial Mark",
-  "Royal Gi"
- ],
- "tdps": 18000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1500,
  "cost": 49650,
  "placeholder": false,

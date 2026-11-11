@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Line AoE 4 hits, very low damage.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Pirate's Slingshot",
-  "Elf Suitcase",
-  "Memory Pendant"
- ],
- "tdps": 5280,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 275,
  "cost": 4700,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 4,
  "obtainable": true,
  "desc": "Low cost, Oppression +10% damage taken by enemies.",
- "traits": [
-  "Unbound",
-  "Investor"
- ],
- "equipment": [
-  "Sacrificial Mark",
-  "Economist's Coin",
-  "Memory Pendant"
- ],
- "tdps": 12776,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 700,
  "cost": 44700,
  "placeholder": false,

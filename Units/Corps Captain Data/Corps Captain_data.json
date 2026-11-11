@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Epic unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Blossom Blade",
-  "Raid Cape",
-  "Technique Amplifier"
- ],
- "tdps": 17000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 450,
  "cost": 9000,
  "placeholder": false,

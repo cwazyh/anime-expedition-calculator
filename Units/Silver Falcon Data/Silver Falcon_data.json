@@ -8,16 +8,9 @@
  "update": 2.5,
  "obtainable": true,
  "desc": "Universal +20% damage buff for all units.",
- "traits": [
-  "Primordial",
-  "Enlightenment"
- ],
- "equipment": [
-  "Beacon Of Pride",
-  "Memory Pendant",
-  "Raid Cape"
- ],
- "tdps": 4533,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2000,
  "cost": 69160,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 2.5,
  "obtainable": true,
  "desc": "Full AoE Calamity, good crowd control.",
- "traits": [
-  "Unbound",
-  "Strength"
- ],
- "equipment": [
-  "Soul Splitter",
-  "Predator's Skull",
-  "Technique Amplifier"
- ],
- "tdps": 15000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1350,
  "cost": 55250,
  "placeholder": false,

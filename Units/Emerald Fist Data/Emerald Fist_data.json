@@ -8,16 +8,9 @@
  "update": 4,
  "obtainable": true,
  "desc": "4 gates, +150% damage, stun on every hit.",
- "traits": [
-  "Unbound",
-  "Strength"
- ],
- "equipment": [
-  "Dragon Hilt",
-  "Warrior's Axe",
-  "Royal Gi"
- ],
- "tdps": 22056,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1200,
  "cost": 51200,
  "placeholder": false,

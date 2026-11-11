@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Common unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Speed"
- ],
- "equipment": [
-  "Katana",
-  "Bamboo Bottle",
-  "Technique Amplifier"
- ],
- "tdps": 4900,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 300,
  "cost": 3800,
  "placeholder": false,

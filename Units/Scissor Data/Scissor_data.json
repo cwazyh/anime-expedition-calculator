@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Line AoE 4 hits, low damage without Unbound.",
- "traits": [
-  "Unbound",
-  "Speed"
- ],
- "equipment": [
-  "Hypnotic Edge",
-  "Kunai",
-  "Evening Umbrella"
- ],
- "tdps": 23210,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 650,
  "cost": 17750,
  "placeholder": false,

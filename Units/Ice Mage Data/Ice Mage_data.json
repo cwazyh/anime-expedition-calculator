@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Epic unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Staff of Chaos",
-  "Magic Orb",
-  "Memory Pendant"
- ],
- "tdps": 16000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 480,
  "cost": 8500,
  "placeholder": false,

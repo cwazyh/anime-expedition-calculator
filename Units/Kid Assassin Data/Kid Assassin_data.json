@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Common unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Speed"
- ],
- "equipment": [
-  "Kunai",
-  "Enhanced Katana",
-  "Technique Amplifier"
- ],
- "tdps": 4800,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 250,
  "cost": 3500,
  "placeholder": false,

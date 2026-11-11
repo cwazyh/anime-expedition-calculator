@@ -8,16 +8,9 @@
  "update": 5,
  "obtainable": true,
  "desc": "3 nuclear passives, map-wide ability. Low deploy cost.",
- "traits": [
-  "Unbound",
-  "Precision"
- ],
- "equipment": [
-  "Technique Amplifier",
-  "Memory Pendant",
-  "Magic Orb"
- ],
- "tdps": 24937,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1250,
  "cost": 59250,
  "placeholder": false,

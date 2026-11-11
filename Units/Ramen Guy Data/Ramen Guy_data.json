@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Legendary unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Speed"
- ],
- "equipment": [
-  "Pointy Straw",
-  "Bamboo Bottle",
-  "Royal Gi"
- ],
- "tdps": 12000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 750,
  "cost": 16000,
  "placeholder": false,

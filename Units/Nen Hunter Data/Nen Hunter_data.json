@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Circle AoE 4 hits, low damage without Unbound.",
- "traits": [
-  "Unbound",
-  "Precision"
- ],
- "equipment": [
-  "Enhanced Katana",
-  "Kunai",
-  "Technique Amplifier"
- ],
- "tdps": 23000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 325,
  "cost": 11000,
  "placeholder": false,

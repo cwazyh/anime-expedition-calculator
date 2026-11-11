@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Mythic unit with string mechanics.",
- "traits": [
-  "Unbound",
-  "Precision"
- ],
- "equipment": [
-  "Webbed Fruit",
-  "Hypnotic Edge",
-  "Technique Amplifier"
- ],
- "tdps": 16200,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1600,
  "cost": 71000,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 3,
  "obtainable": true,
  "desc": "Secret unit, holy damage passives.",
- "traits": [
-  "Unbound",
-  "Enlightenment"
- ],
- "equipment": [
-  "Angel Blade",
-  "Beacon Of Pride",
-  "Memory Pendant"
- ],
- "tdps": 17800,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1900,
  "cost": 79000,
  "placeholder": false,

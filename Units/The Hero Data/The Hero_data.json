@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Legendary unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Strength"
- ],
- "equipment": [
-  "Chosen Sabre",
-  "Beacon Of Pride",
-  "Royal Gi"
- ],
- "tdps": 10500,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 950,
  "cost": 14000,
  "placeholder": false,

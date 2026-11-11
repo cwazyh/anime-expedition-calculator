@@ -8,16 +8,9 @@
  "update": 3.5,
  "obtainable": false,
  "desc": "Stack-based, Control Meter, Colossal Roar.",
- "traits": [
-  "Unbound",
-  "Strength"
- ],
- "equipment": [
-  "Predator's Skull",
-  "Sacrificial Mark",
-  "Royal Gi"
- ],
- "tdps": 11212,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2000,
  "cost": 47500,
  "placeholder": false,

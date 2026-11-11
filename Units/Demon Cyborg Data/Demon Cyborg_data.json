@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Epic unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Bolt"
- ],
- "equipment": [
-  "Mechanical Wings",
-  "Technique Amplifier",
-  "Memory Pendant"
- ],
- "tdps": 16500,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 500,
  "cost": 9500,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Circle AoE, low damage, support shield.",
- "traits": [
-  "Primordial",
-  "Range"
- ],
- "equipment": [
-  "Tideblade",
-  "Magic Orb",
-  "Memory Pendant"
- ],
- "tdps": 31290,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 800,
  "cost": 6500,
  "placeholder": false,

@@ -8,16 +8,9 @@
  "update": 4,
  "obtainable": true,
  "desc": "3 passives, boss grab 200%, cleanse and stun.",
- "traits": [
-  "Unbound",
-  "Forsaken"
- ],
- "equipment": [
-  "Reaper's Glove",
-  "Soul Splitter",
-  "Hell's Flower"
- ],
- "tdps": 24625,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 2000,
  "cost": 94450,
  "placeholder": false,

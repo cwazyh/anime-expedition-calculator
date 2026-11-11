@@ -8,16 +8,9 @@
  "update": 3,
  "obtainable": true,
  "desc": "Circle AoE 2 hits, stacking burn.",
- "traits": [
-  "Unbound",
-  "Precision"
- ],
- "equipment": [
-  "Fiery Staff",
-  "Burning Critter",
-  "Magic Orb"
- ],
- "tdps": 5300,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1000,
  "cost": 51150,
  "placeholder": false,

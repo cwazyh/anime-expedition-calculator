@@ -8,16 +8,9 @@
  "update": 0,
  "obtainable": true,
  "desc": "Epic unit from the wiki.",
- "traits": [
-  "Unbound",
-  "Precision"
- ],
- "equipment": [
-  "Demonic Pistols",
-  "Kunai",
-  "Technique Amplifier"
- ],
- "tdps": 18000,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 400,
  "cost": 8000,
  "placeholder": false,

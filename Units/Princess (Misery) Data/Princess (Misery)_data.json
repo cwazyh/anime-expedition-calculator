@@ -8,16 +8,9 @@
  "update": 5,
  "obtainable": true,
  "desc": "Full AoE, exploding ghosts, Gloom and Possession.",
- "traits": [
-  "Unbound",
-  "Range"
- ],
- "equipment": [
-  "Hexed Blade",
-  "Memory Pendant",
-  "Mentor's Cape"
- ],
- "tdps": 14903,
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
  "deploy": 1450,
  "cost": 69160,
  "placeholder": false,
