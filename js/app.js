@@ -233,6 +233,8 @@
   function renderUnits(list) {
     var grid = $("unitsGrid");
     var empty = $("emptyState");
+    // never leave an equipment tooltip pointing at a destroyed slot
+    if (tipSlot && grid.contains(tipSlot)) hideTip();
     grid.innerHTML = "";
     cardEls = {};
 
@@ -418,6 +420,9 @@
       ]).then(function () {
         computeCalculated();
         buildTraitOptions();   // refresh filter list with computed traits
+        // re-sort the grid now that live TDPS is known (Traitor (Illusion)
+        // first renders with no TDPS, then must take its place by DPS)
+        applyAndRender();
         return true;
       });
     }
