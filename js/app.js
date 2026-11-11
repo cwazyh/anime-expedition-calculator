@@ -104,7 +104,11 @@
   function prettyStat(k) { return STAT_LABELS[k] || k; }
   function buffRange(b) {
     var min = Number(b.min), max = Number(b.max);
-    return (min === max) ? fmt(max) + "%" : fmt(min) + "–" + fmt(max) + "%";
+    if (min === max) return fmt(max) + "%";
+    var lo = fmt(min), hi = fmt(max);
+    // "-1--5%" reads badly: with two negative ends drop the extra minus -> "-1-5%"
+    if (lo.charAt(0) === "-" && hi.charAt(0) === "-") hi = hi.slice(1);
+    return lo + "-" + hi + "%";
   }
 
   async function fetchJSON(url) {

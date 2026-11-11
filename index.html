@@ -788,16 +788,22 @@
       background: rgba(0,0,0,0.85);
       z-index: 400;
       display: none;
-      align-items: center;
+      /* flex-start + margin:auto on the modal: centered while it fits,
+         top-aligned (so the whole page stays scrollable) when it is
+         taller than the viewport - classic flex centering would push
+         the top out of reach */
+      align-items: flex-start;
       justify-content: center;
       padding: 30px 16px;
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .detail-overlay.open { display: flex; }
 
     .detail-modal {
       width: 720px;
       max-width: 96vw;
+      margin: auto;
       background: #12121a;
       border: 2px solid #2e2e3e;
       border-radius: 18px;
