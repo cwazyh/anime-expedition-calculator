@@ -113,13 +113,6 @@
     return lo + "-" + hi + "%";
   }
 
-  // trait buffs are stored as fractions (0.35 = +35%); PlacementLimit is a count
-  function traitBuffValue(k, v) {
-    if (k === "PlacementLimit") return fmt(v);
-    var pct = fmt(Number(v) * 100) + "%";
-    return Number(v) > 0 ? "+" + pct : pct;
-  }
-
   async function fetchJSON(url) {
     var lastErr = null;
     for (var attempt = 0; attempt < 2; attempt++) {
@@ -346,23 +339,16 @@
       esc(name) + '</div></div></div><div class="ep-loading">Loading details...</div>';
   }
 
-  // same tooltip style as equipment, but showing the trait's own buffs
-  // and full effect description
+  // same tooltip style as equipment, showing only the trait's full
+  // description (it already lists every buff in text form)
   function traitTipHTML(name, t) {
     var html = '<div class="ep-head"><img src="' + traitImg(traitFile(name)) +
       '" alt="" onerror="this.style.display=\'none\'"><div><div class="ep-name">' +
       esc(name) + '</div><div class="ep-tags"><span class="ep-tag">Trait</span>' +
       '</div></div></div>';
 
-    var bkeys = Object.keys(t).filter(function (k) { return k !== "description"; });
-    if (bkeys.length) {
-      html += '<div class="ep-buffs">' + bkeys.map(function (k) {
-        return '<div class="ep-buff"><span>' + esc(prettyStat(k)) + "</span><b>" +
-          traitBuffValue(k, t[k]) + "</b></div>";
-      }).join("") + "</div>";
-    }
     if (t.description) {
-      html += '<div class="ep-sec"><div class="ep-sec-title">Effect</div>' +
+      html += '<div class="ep-sec"><div class="ep-sec-title">Description</div>' +
         '<div class="ep-pdesc">' + esc(cleanText(t.description)) + "</div></div>";
     }
     return html;
