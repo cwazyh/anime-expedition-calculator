@@ -503,6 +503,7 @@
       justify-content: center;
       position: relative;
       flex-shrink: 0;
+      transition: border-color 0.15s ease;
     }
     .trait-icon img {
       width: 30px;
@@ -537,6 +538,10 @@
     .trait-wrap {
       position: relative;
       display: inline-flex;
+      cursor: pointer;
+    }
+    .trait-wrap:hover .trait-icon {
+      border-color: var(--ochre);
     }
 
     /* ===== EQUIPMENT DETAIL TOOLTIP (hover) =====

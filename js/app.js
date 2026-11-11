@@ -99,7 +99,9 @@
 
   var STAT_LABELS = {
     CritChance: "Crit Chance", CritDamage: "Crit Damage",
-    Damage: "Damage", SPA: "SPA", Range: "Range"
+    Damage: "Damage", SPA: "SPA", Range: "Range",
+    DoTDamage: "DoT Damage", ExpIncrease: "Exp Increase",
+    Farm: "Farm Income", Cost: "Cost", PlacementLimit: "Placement Limit"
   };
   function prettyStat(k) { return STAT_LABELS[k] || k; }
   function buffRange(b) {
@@ -109,6 +111,13 @@
     // "-1--5%" reads badly: with two negative ends drop the extra minus -> "-1-5%"
     if (lo.charAt(0) === "-" && hi.charAt(0) === "-") hi = hi.slice(1);
     return lo + "-" + hi + "%";
+  }
+
+  // trait buffs are stored as fractions (0.35 = +35%); PlacementLimit is a count
+  function traitBuffValue(k, v) {
+    if (k === "PlacementLimit") return fmt(v);
+    var pct = fmt(Number(v) * 100) + "%";
+    return Number(v) > 0 ? "+" + pct : pct;
   }
 
   async function fetchJSON(url) {
@@ -201,7 +210,7 @@
 
   function traitsHTML(cd) {
     return cd.traits.map(function (t, i) {
-      return '<span class="trait-wrap"><div class="trait-icon">' +
+      return '<span class="trait-wrap" data-trait="' + esc(t) + '"><div class="trait-icon">' +
         '<img src="' + traitImg(traitFile(t)) + '" alt="' + esc(t) +
         '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
         '</div><span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>';
@@ -337,6 +346,34 @@
       esc(name) + '</div></div></div><div class="ep-loading">Loading details...</div>';
   }
 
+  // same tooltip style as equipment, but showing the trait's own buffs
+  // and full effect description
+  function traitTipHTML(name, t) {
+    var html = '<div class="ep-head"><img src="' + traitImg(traitFile(name)) +
+      '" alt="" onerror="this.style.display=\'none\'"><div><div class="ep-name">' +
+      esc(name) + '</div><div class="ep-tags"><span class="ep-tag">Trait</span>' +
+      '</div></div></div>';
+
+    var bkeys = Object.keys(t).filter(function (k) { return k !== "description"; });
+    if (bkeys.length) {
+      html += '<div class="ep-buffs">' + bkeys.map(function (k) {
+        return '<div class="ep-buff"><span>' + esc(prettyStat(k)) + "</span><b>" +
+          traitBuffValue(k, t[k]) + "</b></div>";
+      }).join("") + "</div>";
+    }
+    if (t.description) {
+      html += '<div class="ep-sec"><div class="ep-sec-title">Effect</div>' +
+        '<div class="ep-pdesc">' + esc(cleanText(t.description)) + "</div></div>";
+    }
+    return html;
+  }
+
+  function traitTipLoadingHTML(name) {
+    return '<div class="ep-head"><img src="' + traitImg(traitFile(name)) +
+      '" alt="" onerror="this.style.display=\'none\'"><div><div class="ep-name">' +
+      esc(name) + '</div></div></div><div class="ep-loading">Loading details...</div>';
+  }
+
   function placeTip(slot, tip) {
     var r = slot.getBoundingClientRect();
     if (r.bottom < -4 || r.top > window.innerHeight + 4) { hideTip(); return; }
@@ -357,26 +394,41 @@
   }
 
   function showTip(slot) {
-    var name = slot.getAttribute("data-equip");
+    var eqName = slot.getAttribute("data-equip");
+    var trName = slot.getAttribute("data-trait");
+    var name = eqName || trName;
     if (!name) return;
     var tip = tipEl();
     tipSlot = slot;
     var token = ++tipToken;
 
-    var eq = equipData[name];
-    tip.innerHTML = eq ? tipHTML(name, eq) : tipLoadingHTML(name);
+    function ready() {
+      if (eqName) return equipData[name] ? tipHTML(name, equipData[name]) : null;
+      var key = traitFile(name);
+      return traitData[key] ? traitTipHTML(name, traitData[key]) : null;
+    }
+    function loading() {
+      return eqName ? tipLoadingHTML(name) : traitTipLoadingHTML(name);
+    }
+    function load() {
+      return eqName ? loadEquip(name) : loadTrait(traitFile(name));
+    }
+
+    var html = ready();
+    tip.innerHTML = html || loading();
     tip.classList.add("show");
     placeTip(slot, tip);
 
-    if (!eq) {
-      loadEquip(name).then(function (loaded) {
+    if (!html) {
+      load().then(function () {
         if (token !== tipToken || tipSlot !== slot) return;
-        tip.innerHTML = tipHTML(name, loaded);
+        tip.innerHTML = ready() || loading();
         placeTip(slot, tip);
       }).catch(function (e) {
-        console.error("equipment load failed:", name, e);
+        console.error("tooltip load failed:", name, e);
         if (token !== tipToken || tipSlot !== slot) return;
-        tip.querySelector(".ep-loading").textContent = "Details unavailable.";
+        var l = tip.querySelector(".ep-loading");
+        if (l) l.textContent = "Details unavailable.";
       });
     }
   }
@@ -393,14 +445,18 @@
     placeTip(tipSlot, tipEl());
   }
 
+  function tipTrigger(el) {
+    return el.closest && (el.closest(".equip-slot") || el.closest(".trait-wrap"));
+  }
+
   function bindTooltip() {
     document.addEventListener("mouseover", function (ev) {
-      var slot = ev.target.closest && ev.target.closest(".equip-slot");
+      var slot = tipTrigger(ev.target);
       if (!slot || slot === tipSlot) return;
       showTip(slot);
     });
     document.addEventListener("mouseout", function (ev) {
-      var slot = ev.target.closest && ev.target.closest(".equip-slot");
+      var slot = tipTrigger(ev.target);
       if (!slot) return;
       if (ev.relatedTarget && slot.contains(ev.relatedTarget)) return;
       hideTip();
@@ -415,6 +471,14 @@
     if (equipData[name]) return Promise.resolve(equipData[name]);
     return fetchJSON(equipJson(name)).then(function (j) {
       equipData[name] = j;
+      return j;
+    });
+  }
+
+  function loadTrait(name) {
+    if (traitData[name]) return Promise.resolve(traitData[name]);
+    return fetchJSON(traitJson(name)).then(function (j) {
+      traitData[name] = j;
       return j;
     });
   }
@@ -471,7 +535,7 @@
     $("detailTraits").innerHTML = cd.traits.length === 0
       ? '<div class="ph-note">Traits TBD</div>'
       : cd.traits.map(function (t, i) {
-          return '<div class="detail-trait"><span class="trait-wrap">' +
+          return '<div class="detail-trait"><span class="trait-wrap" data-trait="' + esc(t) + '">' +
             '<div class="trait-icon"><img src="' + traitImg(traitFile(t)) + '" alt="' + esc(t) +
             '" onerror="this.style.display=\'none\'"></div>' +
             '<span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>' +
