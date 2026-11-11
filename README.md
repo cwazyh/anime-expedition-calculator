@@ -6,24 +6,26 @@ L'applicazione è strutturata con le seguenti cartelle principali:
 
 ```
 /Anime Expedition Calculator/
-  ├── index.html          (interfaccia principale - apribile su qualsiasi browser)
-  ├── units/              (icone e dati unità - 680 unità totali)
-  │   ├── wolf-revived.png     (esempio)
-  │   ├── atom-totality.png    (esempio)
-  │   └── [tutte le unità .png]
-  ├── equipments/         (icone equipaggiamenti)
-  │   ├── restriction-glove.png
-  │   ├── warrior-axe.png
-  │   └── [tutti gli equip .png]
-  ├── elements/           (loghi elementi)
+  ├── index.html          
+  ├── Units/              
+  │   ├── <unit_name>\ Data     
+  │   │   ├── <unit_name>_data.json         --- Including summons, passives, DoT etc...
+  │   │   └── <unit_name>_image.jpg
+  │   └── [all the units' folders]
+  ├── Equipments/
+  │   ├── <equipment_name>\ Data     
+  │   │   ├── <equipment_name>_data.json         --- Including their passives, unit bounds etc...
+  │   │   └── <equipment_name>_image.jpg
+  │   └── [all the equipments' folders]
+  ├── Logos/           
   │   ├── hydro.png
   │   ├── pyro.png
   │   └── [tutti gli elementi .png]
-  └── cresttypes/         (loghi tratti)
-      ├── unbound.png
-      ├── primordial.png
-      ├── limit-breaker.png
-      └── [tutti i tratti .png]
+  └── Traits/ 
+      ├── <trait_name>\ Data     
+      │   ├── <trait_name>_data.json         
+      │   └── <trait_name>_image.jpg
+      └── [all the traits' folders]
 ```
 
 ## Come Funziona l'Applicazione
