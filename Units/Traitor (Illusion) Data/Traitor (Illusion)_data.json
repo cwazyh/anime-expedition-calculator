@@ -1,0 +1,279 @@
+{
+ "unit_name": "Traitor (Illusion)",
+ "rarity": "Mythic",
+ "archetype": "Psychic",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 4,
+ "obtainable": true,
+ "desc": "Light Mythic Psychic. Replaces your next placed unit for free (pairing with the closest IchigoVasto), reflects debuffs back with Hypnosis on the 5 strongest enemies every 15s, and cancels enemy Modifiers inside its range.",
+ "traits": [
+  "Unbound",
+  "Primordial"
+ ],
+ "equipment": [
+  "Hypnotic Edge",
+  "Red Finger",
+  "Shinigami Sword"
+ ],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": false,
+ "calculated": true,
+ "status_effects": {
+  "Hypnosis": {
+   "apply_cap": 2,
+   "cooldown": 15,
+   "description": "Mark applied by $AizenPassive2.",
+   "display_name": "Hypnosis",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 4
+  },
+  "Illusion": {
+   "cooldown": 10,
+   "description": "Mark applied by $ItachiPassive1.",
+   "display_name": "Illusion",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0.5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Divine Rupture",
+   "cost": 3000,
+   "damage": 2650,
+   "range": 15,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Divine Rupture",
+   "cost": 2750,
+   "damage": 2850,
+   "range": 15.5,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Divine Rupture",
+   "cost": 3000,
+   "damage": 2985,
+   "range": 16,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Divine Rupture",
+   "cost": 3150,
+   "damage": 3100,
+   "range": 17,
+   "spa": 4.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Void Vortex",
+   "cost": 3550,
+   "damage": 3500,
+   "range": 18.5,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 150,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Void Vortex",
+   "cost": 3850,
+   "damage": 3650,
+   "range": 19.5,
+   "spa": 4.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 150,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Void Vortex",
+   "cost": 4400,
+   "damage": 3750,
+   "range": 20.5,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 150,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Void Vortex",
+   "cost": 4800,
+   "damage": 4000,
+   "range": 21,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 150,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Coffin of Despair",
+   "cost": 6750,
+   "damage": 8000,
+   "range": 22,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 15,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Coffin of Despair",
+   "cost": 9250,
+   "damage": 8650,
+   "range": 22,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 15,
+   "passives": [
+    "AizenPassive1",
+    "AizenPassive2",
+    "AizenPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "AizenPassive1",
+   "display_name": "Everpresent Deception",
+   "unlock_upgrade": 0,
+   "description": "This unit is unsellable until Upgrade 2.\n\nIf this unit is not currently placed on the map:\n- The next placed unit is immediately replaced with this unit for free (Excludes Farm units)\n- If that unit is a BleachCategory unit, this unit places itself next to them instead (Affects each player’s units independently)\n\nFor only the first placement of this unit, pair with the closest IchigoVasto.\nWhen this unit is upgraded to a higher level than its pair:\n- Upgrade the paired unit \nIf the paired unit is removed from the map:\n- Pair with the next closest IchigoVasto"
+  },
+  {
+   "name": "AizenPassive2",
+   "display_name": "Collapse, Mirror Flower",
+   "unlock_upgrade": 0,
+   "description": "When this unit is inflicted with a StatusEffect or Debuff:\n- Reflect the attempt back to the source and follow-up with Aizen_Skill1 for 70% of this unit’s damage on the targeted enemy, inflicting Hypnosis\n- Hypnosis: Stays active for 10 seconds. On expiry, teleport enemy back to the original spot where they received Hypnosis\n- Enemies inflicted with Hypnosis will take 20% more damage from BleachCategory units.\n\nEvery 15s:\n- Inflict the 5 strongest enemies on the map with Hypnosis"
+  },
+  {
+   "name": "AizenPassive3",
+   "display_name": "The Ideal World",
+   "unlock_upgrade": 0,
+   "description": "If an enemy activates a Modifier within this unit’s range:\n- The Modifier’s effect is immediately cancelled\n- That Modifier can’t be reactivated again so long as the enemy remains within this unit’s range\n- That enemy cannot have its Modifier disabled again by this passive after it exits the range of the placement that disabled it"
+  }
+ ],
+ "abilities": []
+}

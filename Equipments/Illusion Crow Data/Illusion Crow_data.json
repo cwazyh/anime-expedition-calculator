@@ -1,0 +1,40 @@
+{
+ "for_unit": "Crow (Black Fire)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "ItachiEquipmentPassive1",
+   "display_name": "Broken Mind",
+   "description": "While an enemy is in $Illusion state:\n- Store all damage taken from this unit\nWhen $Illusion expires:\n- Deal stored damage at {1}% effectiveness in a small AoE ({2} range)",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "ItachiPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

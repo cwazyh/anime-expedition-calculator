@@ -1,0 +1,52 @@
+{
+ "for_unit": "Sovereign (Djinn)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "SinbadEquipmentPassive1",
+   "display_name": "Djinn's Judgment",
+   "description": "Every {1} seconds summon a $LightningStrike on the strongest enemy in this unit's range:\n- $LightningStrike deals {2}% of this unit's damage\n- $LightningStrike will chain between {3} enemies\n- Each chain deals {4}% of this unit's current damage\n- Each chain will also apply $Freeze",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 7,
+     "max": 7,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "SinbadPassive4"
+   ]
+  }
+ ],
+ "abilities": []
+}

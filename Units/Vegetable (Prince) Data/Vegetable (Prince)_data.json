@@ -1,0 +1,240 @@
+{
+ "unit_name": "Vegetable (Prince)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 1,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Warrior's Strike",
+   "cost": 1650,
+   "damage": 267,
+   "range": 17,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Warrior's Strike",
+   "cost": 2150,
+   "damage": 419,
+   "range": 18,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Warrior's Strike",
+   "cost": 2700,
+   "damage": 621,
+   "range": 20,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Warrior's Strike",
+   "cost": 3500,
+   "damage": 862,
+   "range": 21,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Blue Flash",
+   "cost": 4000,
+   "damage": 1031,
+   "range": 22,
+   "spa": 5.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Blue Flash",
+   "cost": 4500,
+   "damage": 1255,
+   "range": 23,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Blue Flash",
+   "cost": 5750,
+   "damage": 1401,
+   "range": 23,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Blue Flash",
+   "cost": 6500,
+   "damage": 1654,
+   "range": 24,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Super Energy Flash",
+   "cost": 8000,
+   "damage": 1779,
+   "range": 26,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Super Energy Flash",
+   "cost": 10000,
+   "damage": 1932,
+   "range": 28,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "VegetaPassive1",
+    "VegetaPassive2",
+    "VegetaPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "VegetaPassive1",
+   "display_name": "Prince's Pursuit",
+   "unlock_upgrade": 0,
+   "description": "Enemies that leave this unit's range will take 10% of its current damage."
+  },
+  {
+   "name": "VegetaPassive2",
+   "display_name": "Royal Rivalry",
+   "unlock_upgrade": 0,
+   "description": "For every RegularAttack from another unit in this unit's range:\n- Increase this unit's damage by 5% (Capacity: 25%)\nFor every CriticalAttack from another unit in this unit's range:\n- Increase this unit's critical chance by 5% (Capacity: 25%)\nFor every FollowUpAttack from another unit in this unit's range:\n- Increase this unit's critical damage by 5% (Capacity: 15%)"
+  },
+  {
+   "name": "VegetaPassive3",
+   "display_name": "Awakened Pride",
+   "unlock_upgrade": 0,
+   "description": "This unit has VegetaMeter, starting at 100.\nOn Takedowns within this unit's range:\n- Decrease VegetaMeter by 5\nIf another unit Transforms within this unit's range:\n- Instantly empty VegetaMeter\n- Increase the transformed unit's damage by 15%\nWhen VegetaMeter is emptied:\n- Transform this unit into VegetaTransformation\n- Increase Damage by 15%\n- Increase Critical Damage by 35%\n- Increase Critical Chance by 20%"
+  }
+ ],
+ "abilities": []
+}

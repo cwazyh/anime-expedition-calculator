@@ -1,0 +1,251 @@
+{
+ "unit_name": "Water Sage (Founder)",
+ "rarity": "Exclusive",
+ "archetype": "Physical",
+ "element": "Hydro",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Teleporting Flash",
+   "cost": 1100,
+   "damage": 620,
+   "range": 12,
+   "spa": 12.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Teleporting Flash",
+   "cost": 2100,
+   "damage": 765,
+   "range": 13,
+   "spa": 12.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Teleporting Flash",
+   "cost": 2800,
+   "damage": 930,
+   "range": 14,
+   "spa": 12.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Whirlpool Column",
+   "cost": 3600,
+   "damage": 700,
+   "range": 15,
+   "spa": 7.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Whirlpool Column",
+   "cost": 4500,
+   "damage": 875,
+   "range": 16,
+   "spa": 7.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Whirlpool Column",
+   "cost": 5700,
+   "damage": 1075,
+   "range": 17,
+   "spa": 7.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Hydro Downpour",
+   "cost": 7300,
+   "damage": 2225,
+   "range": 18,
+   "spa": 13.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 13,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Hydro Downpour",
+   "cost": 9500,
+   "damage": 2740,
+   "range": 20,
+   "spa": 13.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 13,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Hydro Downpour",
+   "cost": 12400,
+   "damage": 3250,
+   "range": 22,
+   "spa": 13,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 13,
+   "passives": [
+    "TobiramaPassive1",
+    "TobiramaPassive2",
+    "TobiramaPassive3",
+    "TobiramaPassive4"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "TobiramaPassive1",
+   "display_name": "Creator of Mirror Clones",
+   "unlock_upgrade": 0,
+   "description": "Every 15 seconds:\n- Spawn a MirrorClone within this unit's range (Capacity: 3)\nMirrorClone:\n- Has 10% of this unit's current damage\n- Disappears after 3 attacks\nFor each MirrorClone spawned by this unit that is currently on the map:\n- Increase this unit's damage by 10%\n- Increase this unit's range by 10%"
+  },
+  {
+   "name": "TobiramaPassive2",
+   "display_name": "Thunder God",
+   "unlock_upgrade": 0,
+   "description": "The attacks of this unit and its MirrorClone both always do a FollowUpAttack respectively.\n\nFollowUpAttacks from this unit and its MirrorClone will :\n- Deal 120% of this unit's current damage"
+  },
+  {
+   "name": "TobiramaPassive3",
+   "display_name": "Flash Mastery",
+   "unlock_upgrade": 0,
+   "description": "This unit has a StormFlashMeter, starting at 0. (Capacity : 3)\nEvery 5 FollowUpAttacks from this unit or a MirrorClone will :\n- Increase StormFlashMeter by 1.\nWhen the closest allied unit in this unit's range is stunned :\n- Consume 1 StormFlashMeter stacks\n- Cleanse the Stun"
+  },
+  {
+   "name": "TobiramaPassive4",
+   "display_name": "Bomb Tags Master",
+   "unlock_upgrade": 0,
+   "description": "Whenever a FollowUpAttack happens in this unit's range:\n- Place a BombTag where this enemy was hit (Capacity : 5)\nBombTag :\n- Acts as a PathTrap\nWhen an enemy is hit by BombTag :\n- Deal 25% of this unit's current damage to that enemy.\n- Decrease this unit's SPA by 1% (Capacity : 5%)"
+  }
+ ],
+ "abilities": []
+}

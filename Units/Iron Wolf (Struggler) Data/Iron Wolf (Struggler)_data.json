@@ -1,0 +1,283 @@
+{
+ "unit_name": "Iron Wolf (Struggler)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 1,
+ "update": 2.5,
+ "obtainable": true,
+ "desc": "Full AoE 6 hits, bleed that becomes true damage.",
+ "traits": [
+  "Unbound",
+  "Forsaken"
+ ],
+ "equipment": [
+  "Warrior's Axe",
+  "Sacrificial Mark",
+  "Royal Gi"
+ ],
+ "tdps": 18000,
+ "deploy": 1500,
+ "cost": 49650,
+ "placeholder": false,
+ "status_effects": {
+  "Bleed": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Bleed",
+   "duration": 6,
+   "scaling": 0.65,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 6,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "False Cannon",
+   "cost": 1500,
+   "damage": 358,
+   "range": 19,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "False Cannon",
+   "cost": 1850,
+   "damage": 461,
+   "range": 19,
+   "spa": 4.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "False Cannon",
+   "cost": 2650,
+   "damage": 585,
+   "range": 20,
+   "spa": 4.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "False Cannon",
+   "cost": 3250,
+   "damage": 700,
+   "range": 21,
+   "spa": 4.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "False Cannon",
+   "cost": 4000,
+   "damage": 844,
+   "range": 21,
+   "spa": 4.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Sword Slam",
+   "cost": 5500,
+   "damage": 1555,
+   "range": 22,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Sword Slam",
+   "cost": 6000,
+   "damage": 1893,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Sword Slam",
+   "cost": 6500,
+   "damage": 2350,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Sword Slam",
+   "cost": 7500,
+   "damage": 2985,
+   "range": 24,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Rampaging Impact",
+   "cost": 9000,
+   "damage": 2529,
+   "range": 25,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Rampaging Impact",
+   "cost": 9600,
+   "damage": 3231,
+   "range": 26,
+   "spa": 6.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "GutsPassive1",
+    "GutsPassive2",
+    "GutsPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "GutsPassive1",
+   "display_name": "Sacrificial Brand",
+   "unlock_upgrade": 0,
+   "description": "Each hit of an attack from this unit will apply Bleed\n\nEvery hit from a RegularAttack from this unit will:\n- Deal the remaining total damage of all Bleed stacks on the enemy instantly as TrueDamage\n- Remove all Bleed stacks on the enemy"
+  },
+  {
+   "name": "GutsPassive2",
+   "display_name": "Crimson Spill",
+   "unlock_upgrade": 0,
+   "description": "When an enemy that have been inflicted with Bleed at least 1 time dies:\n- Leave 1 GutsSpill on the ground for 6 seconds\n\nGutsSpill will apply 1 stack of Bleed every 5 seconds.\nOnly 2 non-permanent GutsSpill may exist at a time."
+  },
+  {
+   "name": "GutsPassive3",
+   "display_name": "Feeding Ground",
+   "unlock_upgrade": 0,
+   "description": "If 2 GutsSpill overlap, they will combine into 1 GutsSpill.\n\nEach time GutsSpill combines:\n- Add 4 seconds to its despawn timer\n- Increase its radius by 15%\n\nWhen a GutsSpill combines 10 times:\n- The GutsSpill becomes permanent\n\nPermanent GutsSpill's cannot combine.\nOnly 2 permanent GutsSpill may exist at a time."
+  }
+ ],
+ "abilities": []
+}

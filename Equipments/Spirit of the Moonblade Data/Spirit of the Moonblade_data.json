@@ -1,0 +1,40 @@
+{
+ "for_unit": "Reaper (Released)",
+ "general_use": false,
+ "buffs": {
+  "CritChance": {
+   "min": 1,
+   "max": 10
+  },
+  "CritDamage": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "IchigoEquipmentPassive1",
+   "display_name": "Adaptation",
+   "description": "This unit gains permanent $Buffs after attacking different enemy types:\nFor each enemy type attacked:\n- Increase Damage by {1}%\n- Increase Critical Chance by {2}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "IchigoPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

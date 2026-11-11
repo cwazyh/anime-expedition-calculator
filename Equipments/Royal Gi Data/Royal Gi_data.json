@@ -1,0 +1,64 @@
+{
+ "for_unit": "Vegetable (Prince)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "VegetaEquipmentPassive1",
+   "display_name": "Royal Rivalry",
+   "description": "For every $RegularAttack from another unit in this unit's range:\n- Increase this unit's damage by {1}% (Capacity: {2}%)\nFor every $CriticalAttack from another unit in this unit's range:\n- Increase this unit's critical chance by {3}% (Capacity: {4}%)\nFor every $FollowUpAttack from another unit in this unit's range:\n- Increase this unit's critical damage by {5}% (Capacity: {6}%)",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 30,
+     "max": 30,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "VegetaPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

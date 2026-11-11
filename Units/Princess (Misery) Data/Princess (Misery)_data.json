@@ -1,0 +1,270 @@
+{
+ "unit_name": "Princess (Misery)",
+ "rarity": "Mythic",
+ "archetype": "Psychic",
+ "element": "Gale",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 5,
+ "obtainable": true,
+ "desc": "Full AoE, exploding ghosts, Gloom and Possession.",
+ "traits": [
+  "Unbound",
+  "Range"
+ ],
+ "equipment": [
+  "Hexed Blade",
+  "Memory Pendant",
+  "Mentor's Cape"
+ ],
+ "tdps": 14903,
+ "deploy": 1450,
+ "cost": 69160,
+ "placeholder": false,
+ "summons": [
+  {
+   "archetype": "Psychic",
+   "display_name": "Small Ghost",
+   "element": "Gale",
+   "key": "PeronaSmallGhost",
+   "placement_limit": 3,
+   "placement_type": "Ground",
+   "rarity": "Mythic",
+   "summonable": {},
+   "update": 5,
+   "upgrades": [
+    {
+     "Abilities": {},
+     "AttackSpeed": 1,
+     "Cost": 1000,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 100,
+     "DisplayName": "Dash",
+     "DoTDamage": 0,
+     "HitboxSize": 5,
+     "HitboxType": "Circle",
+     "Passives": {},
+     "Range": 10,
+     "SPA": 7.5,
+     "SkillName": "Skill1",
+     "Tags": [
+      "OnePieceCategory"
+     ],
+     "Unplaceable": false,
+     "Unsellable": false
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "Gloom": {
+   "cooldown": 10,
+   "description": "Mark applied by $PeronaPassive1",
+   "display_name": "Gloom",
+   "duration": 8,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 5
+  },
+  "Possession": {
+   "cooldown": 0,
+   "description": "Mark applied by $PeronaPassive1",
+   "display_name": "Possession",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Mini-Hollow",
+   "cost": 1450,
+   "damage": 900,
+   "range": 13,
+   "spa": 7.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 45,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Mini-Hollow",
+   "cost": 2350,
+   "damage": 1460,
+   "range": 13.8,
+   "spa": 7.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 45,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Mini-Hollow",
+   "cost": 3700,
+   "damage": 2150,
+   "range": 15,
+   "spa": 7.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 45,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Mini-Hollow",
+   "cost": 5050,
+   "damage": 2840,
+   "range": 16,
+   "spa": 7.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 45,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Mini-Hollow Grab",
+   "cost": 6850,
+   "damage": 4350,
+   "range": 19,
+   "spa": 8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Mini-Hollow Grab",
+   "cost": 7650,
+   "damage": 4850,
+   "range": 20.5,
+   "spa": 8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Special Hollow",
+   "cost": 9200,
+   "damage": 5530,
+   "range": 22,
+   "spa": 7.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": [
+    "PeronaAbility1"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Special Hollow",
+   "cost": 11750,
+   "damage": 7550,
+   "range": 24,
+   "spa": 7.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "PeronaPassive1",
+    "PeronaPassive2"
+   ],
+   "abilities": [
+    "PeronaAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "PeronaPassive1",
+   "display_name": "Mysterious Four's Princess",
+   "unlock_upgrade": 0,
+   "description": "When a OnePieceCategory unit attacks an enemy within this unit's range:\n- Enemies hit are inflicted with Gloom for 6s\n- Gloom: Enemies afflicted are immobilized for 3s and cannot inflict StatusEffects on units for the effect's duration\n\nOn attack against enemies afflicted with Gloom, inflict Possession\n- Possession: Upon death, revive as friendly summon for 15% of this unit's damage\n\n(Summon Cap: 20)"
+  },
+  {
+   "name": "PeronaPassive2",
+   "display_name": "Ghost Masquerade: Final Act",
+   "unlock_upgrade": 0,
+   "description": "Every 30s:\n- Spawn a PeronaSpecialGhost at the end of this unit's range\nWhen this PeronaSpecialGhost hits an enemy:\n- Instantly explodes in a 12 radius for 100% of this unit's damage\n\nFor every enemy that died in this unit's range while afflicted with Gloom:\n- Increase this explosion's damage dealt by +20% and its radius by +15% (Total Cap: 200% and 150%)\n- Counter resets every cycle and only counts enemies within each cycle"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "PeronaAbility1",
+   "display_name": "Lover of Company",
+   "unlock_upgrade": 6,
+   "description": "On activation:\n- Select a spot within this unit's range to place a PeronaSmallGhost\n- PeronaSmallGhost has 30% of this unit's damage and 60% of this unit's range\n- Sell a PeronaSmallGhost to gain a use of this ability\n- PeronaSmallGhost counts as a OnePieceCategory unit\n\nFor the purposes of this unit's passives:\n- The range of PeronaSmallGhost is counted as part of this unit's range\n- PeronaSmallGhost counts as this unit"
+  }
+ ]
+}

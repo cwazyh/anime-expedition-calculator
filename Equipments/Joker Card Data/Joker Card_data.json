@@ -1,0 +1,64 @@
+{
+ "for_unit": "Wild Card (Ace)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "JokerEquipmentPassive1",
+   "display_name": "Royal Suit",
+   "description": "Every attack rotates between $JokerPassive2 effects:\n\n$Jack:\n- The enemy's $FireDoT deals {1}% increased damage for {2} seconds\n\n$Queen:\n- Reapply 1 $FireDoT on the enemy based on {3}% of this unit's damage\n\n$King:\n- Apply $Fire for {4} ticks over {5} seconds\n- Deal {6}% of this unit's current damage\n\n$Joker:\n- Apply $Jack, $Queen, and $King\n\n$Queen and $King cannot create more than 1 $FireDoT from this unit on the same enemy.",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 75,
+     "max": 75,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 6,
+     "max": 6,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 6,
+     "max": 6,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 90,
+     "max": 90,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "JokerPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

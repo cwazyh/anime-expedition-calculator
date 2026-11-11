@@ -1,0 +1,76 @@
+{
+ "for_unit": "Cursed Immortal (Black Sun)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "CritChance": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "ZerefEquipmentPassive1",
+   "display_name": "Reckless Control",
+   "description": "This unit has $ZerefBlackMagic meter, starting at 0.\n- When $ZerefBlackMagic Meter is increasing this unit will be in \"Caring State\"\n- When $ZerefBlackMagic Meter is decreasing this unit will be in \"Cold state\"\nCaring state:\n- Every {1} seconds this unit walks increases this meter by {2}\n- Deal {3}% of this unit's current damage in {4}% of his range\nCold State:\n- Every {5} seconds this unit walks decrease this meter by {6}\n- Deal {7}% of this unit's current damage in {8}% of his range",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 75,
+     "max": 75,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 7,
+     "min": 150,
+     "max": 150,
+     "decimals": 0
+    },
+    {
+     "placeholder": 8,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "ZerefPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

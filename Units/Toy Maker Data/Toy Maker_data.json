@@ -1,0 +1,154 @@
+{
+ "unit_name": "Toy Maker",
+ "rarity": "Exclusive",
+ "archetype": "Psychic",
+ "element": "Dark",
+ "limited": true,
+ "placement_limit": 1,
+ "update": 0,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Teddy Bears",
+   "cost": 2200,
+   "damage": 1263,
+   "range": 12,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 2900,
+   "damage": 1552,
+   "range": 12,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 4750,
+   "damage": 1966,
+   "range": 12,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 6250,
+   "damage": 2471,
+   "range": 12,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 7750,
+   "damage": 2926,
+   "range": 12,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 9750,
+   "damage": 3348,
+   "range": 12,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Teddy Bears",
+   "cost": 14750,
+   "damage": 3804,
+   "range": 12,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 3,
+   "passives": [
+    "SugarPassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "SugarPassive",
+   "display_name": "Build-a-toy",
+   "unlock_upgrade": 0,
+   "description": "This unit will summon SugarToy on all paths in this unit's range instead of attacking.\n- SugarToys will have 100% of this unit's current damage as health\nUpgrade 2:\n- SugarToys gain 15% movement speed\nUpgrade 4:\n- SugarToys deal 10% of their max health as AoE damage on death\nUpgrade 6:\n- Every 5th cycle of summons, SugarToy is mutated, increasing health by 150%\nSugarToys can spawn on all paths in this unit's range. The summons health is divided by the number of paths they spawn on."
+  }
+ ],
+ "abilities": []
+}

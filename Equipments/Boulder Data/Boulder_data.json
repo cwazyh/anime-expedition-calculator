@@ -1,0 +1,52 @@
+{
+ "for_unit": "Lady Giant (Envy)",
+ "general_use": false,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -5
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "DianeEquipmentPassive1",
+   "display_name": "Stone Wall",
+   "description": "Summon a $DianeStoneWall every {1} seconds. (Capacity: {2})\n- $DianeStoneWall will have {3}% of this unit's current damage as health\n- In $DianeTransformation: $DianeStoneWall will have {4}% of this unit's current damage as health",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 12,
+     "max": 12,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 75,
+     "max": 75,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "DianePassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,247 @@
+{
+ "unit_name": "Black Heart (Revived)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Gale",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 4,
+ "obtainable": true,
+ "desc": "Low cost, Oppression +10% damage taken by enemies.",
+ "traits": [
+  "Unbound",
+  "Investor"
+ ],
+ "equipment": [
+  "Sacrificial Mark",
+  "Economist's Coin",
+  "Memory Pendant"
+ ],
+ "tdps": 12776,
+ "deploy": 700,
+ "cost": 44700,
+ "placeholder": false,
+ "status_effects": {
+  "Knockback": {
+   "apply_cap": 10,
+   "cooldown": 10,
+   "description": "Pushes the target backward with force $Scaling.",
+   "display_name": "Knockback",
+   "duration": 3,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Oppression": {
+   "cooldown": 10,
+   "description": "Mark applied by $UlquiorraPassive2.",
+   "display_name": "Oppression",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 4
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Lethal Piercer",
+   "cost": 700,
+   "damage": 1200,
+   "range": 15,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Lethal Piercer",
+   "cost": 3600,
+   "damage": 1450,
+   "range": 15,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Lethal Piercer",
+   "cost": 4100,
+   "damage": 1520,
+   "range": 15.5,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Lethal Piercer",
+   "cost": 5500,
+   "damage": 1700,
+   "range": 15.6,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Death Piercer",
+   "cost": 6100,
+   "damage": 2250,
+   "range": 18.5,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 75,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Death Piercer",
+   "cost": 7000,
+   "damage": 2650,
+   "range": 19.4,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 75,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Death Piercer",
+   "cost": 8000,
+   "damage": 3150,
+   "range": 21,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 75,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Launch of Despair",
+   "cost": 11500,
+   "damage": 5450,
+   "range": 24,
+   "spa": 10,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "UlquiorraPassive1",
+    "UlquiorraPassive2",
+    "UlquiorraPassive3"
+   ],
+   "abilities": [
+    "UlquiorraAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "UlquiorraPassive1",
+   "display_name": "Accustomed View",
+   "unlock_upgrade": 0,
+   "description": "This unit ignores Elemental Resistance applied through Modifiers.\n\nOn Attack:\n- Removes the enemy’s ability to regenerate health\n- Applies Knockback at 6 distance"
+  },
+  {
+   "name": "UlquiorraPassive2",
+   "display_name": "Way Without Enemies",
+   "unlock_upgrade": 0,
+   "description": "On Attack:\n- Also performs UlquiorraEVO_Skill3 for 50% of this unit’s damage, targeting the enemy in Last (Cooldown: 5s)\n\n\nWhen this unit hits an enemy outside its range with any attack:\n- Inflict Oppression for 5 seconds\n- Enemies afflicted with Oppression take 10% more damage"
+  },
+  {
+   "name": "UlquiorraPassive3",
+   "display_name": "Rise From The Ash",
+   "unlock_upgrade": 0,
+   "description": "If IchigoVasto is on the map:\n- UlquiorraPassive2 will instead target IchigoVasto, stunning that unit\n- Enemies in the radius of the attack are still hit normally"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "UlquiorraAbility1",
+   "display_name": "Second Stage",
+   "unlock_upgrade": 7,
+   "description": "- Transforms into UlquiorraTransformation\n- Increase Damage by +65% and set Range to 0\n- Oppression applied by this unit now lasts permanently and increases its potency by +10%\n- This unit can now target outside its range"
+  }
+ ]
+}

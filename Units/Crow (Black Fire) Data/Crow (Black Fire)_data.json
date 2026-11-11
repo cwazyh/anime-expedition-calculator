@@ -1,0 +1,306 @@
+{
+ "unit_name": "Crow (Black Fire)",
+ "rarity": "Secret",
+ "archetype": "Magical",
+ "element": "Flame",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 0.5,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "BlackFire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Black Fire",
+   "duration": 12,
+   "scaling": 2,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 12,
+   "update": 0.5
+  },
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "Illusion": {
+   "cooldown": 10,
+   "description": "Mark applied by $ItachiPassive1.",
+   "display_name": "Illusion",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0.5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Scorching Wave",
+   "cost": 1400,
+   "damage": 231,
+   "range": 19,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Scorching Wave",
+   "cost": 2700,
+   "damage": 301.5,
+   "range": 19,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Scorching Wave",
+   "cost": 3050,
+   "damage": 432,
+   "range": 20,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Scorching Wave",
+   "cost": 4700,
+   "damage": 700.5,
+   "range": 21,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Shadow Blaze",
+   "cost": 6250,
+   "damage": 945,
+   "range": 24,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Shadow Blaze",
+   "cost": 7500,
+   "damage": 1164,
+   "range": 24,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Shadow Blaze",
+   "cost": 8250,
+   "damage": 1222.5,
+   "range": 24,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Hellfire Drop",
+   "cost": 9350,
+   "damage": 1335,
+   "range": 26,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Hellfire Drop",
+   "cost": 10250,
+   "damage": 1501.5,
+   "range": 28,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Wraith Slash",
+   "cost": 12250,
+   "damage": 1667,
+   "range": 28,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill4",
+   "attack_name": "Wraith Slash",
+   "cost": 12750,
+   "damage": 1800,
+   "range": 29,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "ItachiPassive1",
+    "ItachiPassive2",
+    "ItachiPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "ItachiPassive1",
+   "display_name": "Crow's Illusion",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack:\r\nApply Illusion for 12 seconds"
+  },
+  {
+   "name": "ItachiPassive2",
+   "display_name": "Broken Mind",
+   "unlock_upgrade": 0,
+   "description": "While an enemy is in Illusion state:\n- Store all damage taken from this unit\nWhen Illusion expires:\n- Deal stored damage at 25% effectiveness in a small AoE (2 range)"
+  },
+  {
+   "name": "ItachiPassive3",
+   "display_name": "Searing Flames",
+   "unlock_upgrade": 0,
+   "description": "- BlackFire damage shields every tick\n- Enemies with shields within this unit's range gain a stack of BlackFire"
+  }
+ ],
+ "abilities": []
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@
       overflow-x: hidden;
     }
 
-    /* ===== RARITY GRADIENTS (Palette.css esatto del wiki) ===== */
+    /* ===== RARITY GRADIENTS (exact wiki Palette.css) ===== */
     .c-secret    { --bg: linear-gradient(135deg, rgb(255,0,0), rgb(90,19,19), rgb(255,0,0)); }
     .c-exclusive { --bg: linear-gradient(135deg, rgb(183,249,255), rgb(225,178,255), rgb(183,249,255)); }
     .c-mythic    { --bg: linear-gradient(135deg, rgb(255,7,7), rgb(247,221,27), rgb(93,229,30), rgb(43,174,194), rgb(97,61,206), rgb(255,84,238)); }
@@ -185,7 +185,7 @@
       box-shadow: 0 5px 0 currentColor, 0 10px 0 currentColor;
     }
 
-    /* ===== FILTER POPUP (stile gioco - screenshot 5) ===== */
+    /* ===== FILTER POPUP (game style) ===== */
     .filter-overlay {
       position: fixed;
       inset: 0;
@@ -329,7 +329,7 @@
       gap: 28px;
     }
 
-    /* ===== EBOX CARD (CSS esatto del wiki) ===== */
+    /* ===== EBOX CARD (exact wiki CSS) ===== */
     .unit-card {
       position: relative;
       display: flex;
@@ -356,7 +356,7 @@
       z-index: 1;
       background-image:
         radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(0,0,0,0.25) 100%),
-        url('assets/frames/EntityBox_Dark.png'),
+        url('UI/EntityBox_Dark.png'),
         var(--bg, linear-gradient(135deg, gray, #454545));
       background-size: cover, 91%, 99% 99%;
       background-position: center;
@@ -365,7 +365,7 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.45);
     }
 
-    /* Bordo colorato + outline nero */
+    /* Colored border + black outline */
     .ebox-gradient::after {
       content: '';
       position: absolute;
@@ -399,7 +399,7 @@
       object-fit: contain;
     }
 
-    /* Badge quantita: placeholder */
+    /* Quantity badge (placeholder) */
     .ebox-amount {
       position: absolute;
       display: block;
@@ -421,7 +421,7 @@
       letter-spacing: 0.5px;
     }
 
-    /* Titolo unita */
+    /* Unit title */
     .ebox-title {
       width: 100%;
       margin-top: 9px;
@@ -453,7 +453,7 @@
     .rarity-chip.c-secret { color: #fff; }
     .rarity-chip.c-epic { color: #fff; }
 
-    /* Stats riga */
+    /* Stats row */
     .card-stats {
       display: flex;
       justify-content: space-between;
@@ -539,10 +539,14 @@
       display: inline-flex;
     }
 
-    /* Popup immagine equipment (hover) */
+    /* ===== EQUIPMENT DETAIL TOOLTIP (hover) =====
+       Appears below the equipment image; flips above when cut off by the
+       viewport, and repositions on scroll instead of disappearing. */
     .equip-popup {
       position: fixed;
       z-index: 500;
+      width: 300px;
+      max-width: calc(100vw - 16px);
       background: #191919;
       border: 2px solid var(--ochre);
       border-radius: 12px;
@@ -550,17 +554,106 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.6);
       display: none;
       pointer-events: none;
-      will-change: transform, opacity;
+      will-change: top, left;
     }
     .equip-popup.show { display: block; animation: popIn 0.15s ease-out; }
-    .equip-popup img {
-      width: 96px;
-      height: 96px;
+
+    .ep-head {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .ep-head img {
+      width: 52px;
+      height: 52px;
       object-fit: contain;
+      flex-shrink: 0;
       display: block;
     }
+    .ep-name {
+      font-family: var(--font-card);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .ep-tags {
+      display: flex;
+      gap: 5px;
+      margin-top: 5px;
+      flex-wrap: wrap;
+    }
+    .ep-tag {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: #2a2a3a;
+      color: #bbb;
+      border: 1px solid #3a3a4a;
+    }
+    .ep-tag.bound {
+      background: rgba(255,170,45,0.15);
+      color: var(--ochre);
+      border-color: rgba(255,170,45,0.45);
+    }
+    .ep-buffs {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-top: 9px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .ep-buff {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 11px;
+    }
+    .ep-buff span { color: var(--muted); }
+    .ep-buff b { color: #fff; font-weight: 600; white-space: nowrap; }
+    .ep-sec {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .ep-sec-title {
+      font-family: var(--font-card);
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--ochre);
+      margin-bottom: 6px;
+    }
+    .ep-passive { margin-bottom: 7px; }
+    .ep-passive:last-child { margin-bottom: 0; }
+    .ep-pname {
+      font-family: var(--font-card);
+      font-size: 11px;
+      font-weight: 700;
+      color: #ddd;
+      margin-bottom: 2px;
+    }
+    .ep-pdesc {
+      font-family: var(--font-body);
+      font-size: 11px;
+      line-height: 1.45;
+      color: #9a9ab0;
+      white-space: pre-line;
+    }
+    .ep-loading {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
 
-    /* ===== EQUIPMENT SLOTS (screenshot 7: background + immagine + nome) ===== */
+    /* ===== EQUIPMENT SLOTS (background + image + name) ===== */
     .card-equips {
       display: flex;
       gap: 10px;
@@ -642,7 +735,7 @@
     .obtain-dot.no { background: #f44336; box-shadow: 0 0 6px #f44336; }
     .obtain-dot.ph { background: #888; box-shadow: 0 0 6px #888; }
 
-    /* ===== EMPTY STATE ===== */
+    /* ===== EMPTY / LOADING STATE ===== */
     .empty-state {
       text-align: center;
       padding: 90px 40px;
@@ -679,6 +772,14 @@
       color: #fff;
       margin-bottom: 8px;
     }
+    .loading-state {
+      text-align: center;
+      padding: 90px 40px;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-size: 18px;
+    }
+    .loading-state.hide { display: none; }
 
     /* ===== DETAIL MODAL ===== */
     .detail-overlay {
@@ -729,6 +830,29 @@
       letter-spacing: 2px;
       color: var(--ochre);
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .element-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 6px;
+      padding: 2px 9px;
+      border-radius: 20px;
+      background: #0d0d14;
+      border: 1px solid #262636;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      color: #bbb;
+      text-transform: none;
+    }
+    .element-chip img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
     }
     .detail-name {
       font-family: var(--font-display);
@@ -785,10 +909,12 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+    .detail-block { margin-bottom: 24px; }
+    .detail-block:last-child { margin-bottom: 0; }
     .detail-traits {
       display: flex;
       gap: 14px;
-      margin-bottom: 24px;
+      flex-wrap: wrap;
     }
     .detail-trait {
       display: flex;
@@ -826,6 +952,7 @@
     .detail-equips {
       display: flex;
       gap: 14px;
+      flex-wrap: wrap;
     }
     .detail-equips .equip-slot {
       max-width: 120px;
@@ -833,6 +960,86 @@
     }
     .detail-equips .equip-slot img { width: 60px; height: 60px; }
     .detail-equips .equip-slot .equip-name { font-size: 11px; }
+
+    /* Passives / abilities / data blocks inside the modal */
+    .passive-item {
+      background: #0d0d14;
+      border: 1px solid #262636;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .passive-item:last-child { margin-bottom: 0; }
+    .passive-item .pname {
+      font-family: var(--font-card);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ochre);
+      margin-bottom: 6px;
+    }
+    .passive-item .pdesc {
+      font-family: var(--font-body);
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #aaa;
+      white-space: pre-line;
+    }
+    .data-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .data-chip {
+      font-family: var(--font-card);
+      font-size: 11px;
+      font-weight: 600;
+      color: #ccc;
+      background: #0d0d14;
+      border: 1px solid #262636;
+      border-radius: 20px;
+      padding: 5px 12px;
+      cursor: default;
+    }
+
+    /* Live DPS calculation table (calculated units) */
+    .dps-note {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .dps-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      font-size: 11.5px;
+    }
+    .dps-table th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 9.5px;
+      letter-spacing: 0.6px;
+      padding: 6px 8px;
+      border-bottom: 1px solid #262636;
+    }
+    .dps-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: #ddd;
+      vertical-align: top;
+    }
+    .dps-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .dps-table tr.top td { color: var(--ochre); font-weight: 700; }
+    .dps-table .eq-names { color: #9a9ab0; font-size: 10.5px; line-height: 1.4; }
+    .dps-pending {
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 0;
+    }
 
     .detail-close {
       position: absolute;
@@ -903,6 +1110,7 @@
       .detail-top { flex-direction: column; align-items: center; text-align: center; }
       .detail-stats-grid { grid-template-columns: repeat(3, 1fr); }
       .detail-equips { flex-wrap: wrap; justify-content: center; }
+      .detail-rarity { justify-content: center; }
     }
   </style>
 </head>
@@ -910,15 +1118,13 @@
 
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Popup immagine trait -->
-  <div class="equip-popup" id="equipPopup">
-    <img src="" alt="" id="equipPopupImg">
-  </div>
+  <!-- Equipment detail tooltip (hover) -->
+  <div class="equip-popup" id="equipPopup"></div>
 
-  <!-- TOP NAV: a destra solo la search bar -->
+  <!-- TOP NAV: search bar on the right -->
   <nav class="top-nav">
     <a class="nav-logo">
-      <img class="nav-logo-icon" src="assets/items/100px-Expeditions_Wheel_Icon.png" alt="" width="30" height="30" decoding="async">
+      <img class="nav-logo-icon" src="UI/expeditions_wheel.png" alt="" width="30" height="30" decoding="async">
       Anime Expedition Calculator
     </a>
 
@@ -952,19 +1158,6 @@
             <span class="filter-label">Trait</span>
             <select class="filter-select" id="fTrait">
               <option value="all">All Traits</option>
-              <option value="Unbound">Unbound</option>
-              <option value="Primordial">Primordial</option>
-              <option value="Forsaken">Forsaken</option>
-              <option value="Limit Breaker">Limit Breaker</option>
-              <option value="Draconic">Draconic</option>
-              <option value="Speed">Speed</option>
-              <option value="Range">Range</option>
-              <option value="Precision">Precision</option>
-              <option value="Strength">Strength</option>
-              <option value="Enlightenment">Enlightenment</option>
-              <option value="Investor">Investor</option>
-              <option value="Bolt">Bolt</option>
-              <option value="Optics">Optics</option>
             </select>
           </div>
           <div class="filter-row">
@@ -1004,8 +1197,11 @@
       </div>
     </div>
 
-    <!-- GRID UNITA: 3 per riga, stile ebox wiki -->
+    <!-- UNITS GRID: 3 per row, wiki ebox style -->
     <div class="units-grid" id="unitsGrid"></div>
+
+    <!-- Loading state (before the JSON database is fetched) -->
+    <div class="loading-state" id="loadingState">Loading unit database...</div>
 
     <div class="empty-state" id="emptyState">
       <div class="empty-box"></div>
@@ -1032,811 +1228,35 @@
         </div>
       </div>
       <div class="detail-bottom">
-        <div class="detail-section-title">Suggested Traits</div>
-        <div class="detail-traits" id="detailTraits"></div>
-        <div class="detail-section-title">Equipment</div>
-        <div class="detail-equips" id="detailEquips"></div>
+        <div class="detail-block" id="blkTraits">
+          <div class="detail-section-title">Suggested Traits</div>
+          <div class="detail-traits" id="detailTraits"></div>
+        </div>
+        <div class="detail-block" id="blkEquips">
+          <div class="detail-section-title">Equipment</div>
+          <div class="detail-equips" id="detailEquips"></div>
+        </div>
+        <div class="detail-block" id="blkPassives">
+          <div class="detail-section-title">Passives</div>
+          <div id="detailPassives"></div>
+        </div>
+        <div class="detail-block" id="blkSummons" hidden>
+          <div class="detail-section-title">Summons</div>
+          <div class="data-chips" id="detailSummons"></div>
+        </div>
+        <div class="detail-block" id="blkStatus" hidden>
+          <div class="detail-section-title">Status Effects</div>
+          <div class="data-chips" id="detailStatus"></div>
+        </div>
+        <div class="detail-block" id="blkDps" hidden>
+          <div class="detail-section-title">DPS Calculation</div>
+          <div id="detailDps"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    // ===== ICONE TRAIT =====
-    const TRAITS = {
-      'Unbound':      'assets/traits/Unbound_Icon.png',
-      'Primordial':   'assets/traits/Primordial_Icon.png',
-      'Forsaken':     'assets/traits/Forsaken_Icon.png',
-      'Limit Breaker':'assets/traits/Limit_Breaker_Icon.png',
-      'Draconic':     'assets/traits/Draconic_Icon.png',
-      'Speed':        'assets/traits/Speed_2_Icon.png',
-      'Range':        'assets/traits/Range_2_Icon.png',
-      'Precision':    'assets/traits/Precision_2_Icon.png',
-      'Strength':     'assets/traits/Strength_2_Icon.png',
-      'Enlightenment':'assets/traits/Enlightenment_Icon.png',
-      'Investor':     'assets/traits/Investor_Icon.png',
-      'Bolt':         'assets/traits/Bolt_Icon.png',
-      'Optics':       'assets/traits/Optics_Icon.png'
-    };
-
-    // ===== DATABASE UNITA (immagini reali dal wiki) =====
-    const unitsData = [
-{ name: "Wolf (Revived)", rarity: "mythic", tdps: 75789, deploy: 2000, cost: 72750, obtainable: true,
-        icon: "assets/units/180px-Wolf__Revived_.png",
-        desc: "Lowest SPA in the game, Line AoE 5 hits, 3 passives. Best raw DPS.",
-        traits: ["Unbound", "Primordial"],
-        equips: [
-          { name: "Shinigami Sword", icon: "assets/equipments/Shinigami_Sword_Equipment.png" },
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Atom (Totality)", rarity: "exclusive", tdps: 24937, deploy: 1250, cost: 59250, obtainable: false,
-        icon: "assets/units/180px-Atom__Totality_.png",
-        desc: "3 nuclear passives, map-wide ability. Low deploy cost.",
-        traits: ["Unbound", "Precision"],
-        equips: [
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" },
-          { name: "Magic Orb", icon: "assets/equipments/Magic_Orb_Equipment.png" }
-        ]},
-{ name: "Reaper (Frenzied)", rarity: "secret", tdps: 24625, deploy: 2000, cost: 94450, obtainable: true,
-        icon: "assets/units/180px-Reaper__Frenzied_.png",
-        desc: "3 passives, boss grab 200%, cleanse and stun.",
-        traits: ["Unbound", "Forsaken"],
-        equips: [
-          { name: "Reaper's Glove", icon: "assets/equipments/Reaper's_Glove_Equipment.png" },
-          { name: "Soul Splitter", icon: "assets/equipments/Soul_Splitter_Equipment.png" },
-          { name: "Hell's Flower", icon: "assets/equipments/Hell's_Flower_Equipment.png" }
-        ]},
-{ name: "Emerald Fist", rarity: "exclusive", tdps: 22056, deploy: 1200, cost: 51200, obtainable: false,
-        icon: "assets/units/180px-Emerald_Fist.png",
-        desc: "4 gates, +150% damage, stun on every hit.",
-        traits: ["Unbound", "Strength"],
-        equips: [
-          { name: "Dragon Hilt", icon: "assets/equipments/Dragon_Hilt_Equipment.png" },
-          { name: "Warrior's Axe", icon: "assets/equipments/Warrior's_Axe_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" }
-        ]},
-{ name: "First Blade (Strongest)", rarity: "mythic", tdps: 14547, deploy: 1800, cost: 69160, obtainable: false,
-        icon: "assets/units/180px-First_Blade.png",
-        desc: "Cleanse allies +20% damage, self +25%.",
-        traits: ["Unbound", "Forsaken"],
-        equips: [
-          { name: "Enhanced Katana", icon: "assets/equipments/Enhanced_Katana_Equipment.png" },
-          { name: "Emperor's Attire", icon: "assets/equipments/Emperor's_Attire_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Princess (Misery)", rarity: "mythic", tdps: 14903, deploy: 1450, cost: 69160, obtainable: false,
-        icon: "assets/units/180px-Princess__Misery_.png",
-        desc: "Full AoE, exploding ghosts, Gloom and Possession.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Hexed Blade", icon: "assets/equipments/Hexed_Blade_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" },
-          { name: "Mentor's Cape", icon: "assets/equipments/Mentor's_Cape_Equipment.png" }
-        ]},
-{ name: "Silver Falcon", rarity: "secret", tdps: 4533, deploy: 2000, cost: 69160, obtainable: true,
-        icon: "assets/units/180px-Silver_Falcon.png",
-        desc: "Universal +20% damage buff for all units.",
-        traits: ["Primordial", "Enlightenment"],
-        equips: [
-          { name: "Beacon Of Pride", icon: "assets/equipments/Beacon_Of_Pride_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" },
-          { name: "Raid Cape", icon: "assets/equipments/Raid_Cape_Equipment.png" }
-        ]},
-{ name: "Black Heart (Revived)", rarity: "mythic", tdps: 12776, deploy: 700, cost: 44700, obtainable: true,
-        icon: "assets/units/180px-Black_Heart__Revived_.png",
-        desc: "Low cost, Oppression +10% damage taken by enemies.",
-        traits: ["Unbound", "Investor"],
-        equips: [
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Economist's Coin", icon: "assets/equipments/Economist's_Coin_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Dead Melody (Solo)", rarity: "mythic", tdps: 8397, deploy: 1000, cost: 49750, obtainable: false,
-        icon: "assets/units/180px-Dead_Melody__Solo_.png",
-        desc: "Very strong Seafarer buff, limited, CC with Deep Freeze.",
-        traits: ["Primordial", "Range"],
-        equips: [
-          { name: "Magic Book", icon: "assets/equipments/Magic_Book_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" },
-          { name: "Evening Umbrella", icon: "assets/equipments/Evening_Umbrella_Equipment.png" }
-        ]},
-{ name: "5th God Hand", rarity: "secret", tdps: 15000, deploy: 1350, cost: 55250, obtainable: true,
-        icon: "assets/units/180px-5th_God_Hand.png",
-        desc: "Full AoE Calamity, good crowd control.",
-        traits: ["Unbound", "Strength"],
-        equips: [
-          { name: "Soul Splitter", icon: "assets/equipments/Soul_Splitter_Equipment.png" },
-          { name: "Predator's Skull", icon: "assets/equipments/Predator's_Skull_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Iron Wolf (Struggler)", rarity: "secret", tdps: 18000, deploy: 1500, cost: 49650, obtainable: true,
-        icon: "assets/units/180px-Iron_Wolf.png",
-        desc: "Full AoE 6 hits, bleed that becomes true damage.",
-        traits: ["Unbound", "Forsaken"],
-        equips: [
-          { name: "Warrior's Axe", icon: "assets/equipments/Warrior's_Axe_Equipment.png" },
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" }
-        ]},
-{ name: "Devil (Hero)", rarity: "mythic", tdps: 5300, deploy: 1000, cost: 51150, obtainable: true,
-        icon: "assets/units/180px-Devil.png",
-        desc: "Circle AoE 2 hits, stacking burn.",
-        traits: ["Unbound", "Precision"],
-        equips: [
-          { name: "Fiery Staff", icon: "assets/equipments/Fiery_Staff_Equipment.png" },
-          { name: "Burning Critter", icon: "assets/equipments/Burning_Critter_Equipment.png" },
-          { name: "Magic Orb", icon: "assets/equipments/Magic_Orb_Equipment.png" }
-        ]},
-{ name: "Impaler (Ultimate)", rarity: "secret", tdps: 14100, deploy: 2000, cost: 59250, obtainable: false,
-        icon: "assets/units/180px-Impaler__Ultimate_.png",
-        desc: "Dual attack modes, bleed consume.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Lanza de Luz", icon: "assets/equipments/Lanza_de_Luz_Equipment.png" },
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Emperor's Attire", icon: "assets/equipments/Emperor's_Attire_Equipment.png" }
-        ]},
-{ name: "Cubert", rarity: "exclusive", tdps: 3651, deploy: 950, cost: 43250, obtainable: true,
-        icon: "assets/units/180px-Cubert.png",
-        desc: "Support with cube link +5% ally damage.",
-        traits: ["Primordial", "Enlightenment"],
-        equips: [
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" },
-          { name: "Mentor's Cape", icon: "assets/equipments/Mentor's_Cape_Equipment.png" }
-        ]},
-{ name: "Subject 8 (Monster)", rarity: "secret", tdps: 11212, deploy: 2000, cost: 47500, obtainable: false,
-        icon: "assets/units/180px-Subject_8__Monster_.png",
-        desc: "Stack-based, Control Meter, Colossal Roar.",
-        traits: ["Unbound", "Strength"],
-        equips: [
-          { name: "Predator's Skull", icon: "assets/equipments/Predator's_Skull_Equipment.png" },
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" }
-        ]},
-{ name: "Nen Hunter", rarity: "epic", tdps: 23000, deploy: 325, cost: 11000, obtainable: true,
-        icon: "assets/units/180px-Nen_Hunter.png",
-        desc: "Circle AoE 4 hits, low damage without Unbound.",
-        traits: ["Unbound", "Precision"],
-        equips: [
-          { name: "Enhanced Katana", icon: "assets/equipments/Enhanced_Katana_Equipment.png" },
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Scissor", rarity: "legendary", tdps: 23210, deploy: 650, cost: 17750, obtainable: true,
-        icon: "assets/units/180px-Scissor.png",
-        desc: "Line AoE 4 hits, low damage without Unbound.",
-        traits: ["Unbound", "Speed"],
-        equips: [
-          { name: "Hypnotic Edge", icon: "assets/equipments/Hypnotic_Edge_Equipment.png" },
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Evening Umbrella", icon: "assets/equipments/Evening_Umbrella_Equipment.png" }
-        ]},
-{ name: "Water Princess", rarity: "legendary", tdps: 31290, deploy: 800, cost: 6500, obtainable: true,
-        icon: "assets/units/180px-Water_Princess.png",
-        desc: "Circle AoE, low damage, support shield.",
-        traits: ["Primordial", "Range"],
-        equips: [
-          { name: "Tideblade", icon: "assets/equipments/Tideblade_Equipment.png" },
-          { name: "Magic Orb", icon: "assets/equipments/Magic_Orb_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Forbidden Teacher", rarity: "legendary", tdps: 15000, deploy: 1000, cost: 20000, obtainable: true,
-        icon: "assets/units/180px-Forbidden_Teacher.png",
-        desc: "Legendary unit from the wiki.",
-        traits: ["Primordial", "Enlightenment"],
-        equips: [
-          { name: "Magic Book", icon: "assets/equipments/Magic_Book_Equipment.png" },
-          { name: "Mentor's Cape", icon: "assets/equipments/Mentor's_Cape_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Greed", rarity: "legendary", tdps: 14000, deploy: 900, cost: 18000, obtainable: true,
-        icon: "assets/units/180px-Greed.png",
-        desc: "Legendary unit from the wiki.",
-        traits: ["Investor", "Unbound"],
-        equips: [
-          { name: "Economist's Coin", icon: "assets/equipments/Economist's_Coin_Equipment.png" },
-          { name: "Promise Ring", icon: "assets/equipments/Promise_Ring_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Ice Queen", rarity: "legendary", tdps: 13500, deploy: 1100, cost: 19000, obtainable: true,
-        icon: "assets/units/180px-Ice_Queen.png",
-        desc: "Legendary unit from the wiki.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Staff of Chaos", icon: "assets/equipments/Staff_of_Chaos_Equipment.png" },
-          { name: "Magic Orb", icon: "assets/equipments/Magic_Orb_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Ramen Guy", rarity: "legendary", tdps: 12000, deploy: 750, cost: 16000, obtainable: true,
-        icon: "assets/units/180px-Ramen_Guy.png",
-        desc: "Legendary unit from the wiki.",
-        traits: ["Unbound", "Speed"],
-        equips: [
-          { name: "Pointy Straw", icon: "assets/equipments/Pointy_Straw_Equipment.png" },
-          { name: "Bamboo Bottle", icon: "assets/equipments/Bamboo_Bottle_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" }
-        ]},
-{ name: "The Hero", rarity: "legendary", tdps: 10500, deploy: 950, cost: 14000, obtainable: true,
-        icon: "assets/units/180px-The_Hero.png",
-        desc: "Legendary unit from the wiki.",
-        traits: ["Unbound", "Strength"],
-        equips: [
-          { name: "Chosen Sabre", icon: "assets/equipments/Chosen_Sabre_Equipment.png" },
-          { name: "Beacon Of Pride", icon: "assets/equipments/Beacon_Of_Pride_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" }
-        ]},
-{ name: "Bounty Hunter", rarity: "epic", tdps: 18000, deploy: 400, cost: 8000, obtainable: true,
-        icon: "assets/units/180px-Bounty_Hunter.png",
-        desc: "Epic unit from the wiki.",
-        traits: ["Unbound", "Precision"],
-        equips: [
-          { name: "Demonic Pistols", icon: "assets/equipments/Demonic_Pistols_Equipment.png" },
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Corps Captain", rarity: "epic", tdps: 17000, deploy: 450, cost: 9000, obtainable: true,
-        icon: "assets/units/180px-Corps_Captain.png",
-        desc: "Epic unit from the wiki.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Blossom Blade", icon: "assets/equipments/Blossom_Blade_Equipment.png" },
-          { name: "Raid Cape", icon: "assets/equipments/Raid_Cape_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Demon Cyborg", rarity: "epic", tdps: 16500, deploy: 500, cost: 9500, obtainable: true,
-        icon: "assets/units/180px-Demon_Cyborg.png",
-        desc: "Epic unit from the wiki.",
-        traits: ["Unbound", "Bolt"],
-        equips: [
-          { name: "Mechanical Wings", icon: "assets/equipments/Mechanical_Wings_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Ice Mage", rarity: "epic", tdps: 16000, deploy: 480, cost: 8500, obtainable: true,
-        icon: "assets/units/180px-Ice_Mage.png",
-        desc: "Epic unit from the wiki.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Staff of Chaos", icon: "assets/equipments/Staff_of_Chaos_Equipment.png" },
-          { name: "Magic Orb", icon: "assets/equipments/Magic_Orb_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Curly Brow", rarity: "rare", tdps: 5000, deploy: 200, cost: 3000, obtainable: true,
-        icon: "assets/units/180px-Curly_Brow.png",
-        desc: "Common unit from the wiki.",
-        traits: ["Unbound", "Speed"],
-        equips: [
-          { name: "Katana", icon: "assets/equipments/Katana_Equipment.png" },
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Kid Assassin", rarity: "rare", tdps: 4800, deploy: 250, cost: 3500, obtainable: true,
-        icon: "assets/units/180px-Kid_Assassin.png",
-        desc: "Common unit from the wiki.",
-        traits: ["Unbound", "Speed"],
-        equips: [
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Enhanced Katana", icon: "assets/equipments/Enhanced_Katana_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Reishi Archer", rarity: "rare", tdps: 5280, deploy: 275, cost: 4700, obtainable: true,
-        icon: "assets/units/180px-Reishi_Archer.png",
-        desc: "Line AoE 4 hits, very low damage.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Pirate's Slingshot", icon: "assets/equipments/Pirate's_Slingshot_Equipment.png" },
-          { name: "Elf Suitcase", icon: "assets/equipments/Elf_Suitcase_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Rubber Boy", rarity: "rare", tdps: 4900, deploy: 300, cost: 3800, obtainable: true,
-        icon: "assets/units/180px-Rubber_Boy.png",
-        desc: "Common unit from the wiki.",
-        traits: ["Unbound", "Speed"],
-        equips: [
-          { name: "Katana", icon: "assets/equipments/Katana_Equipment.png" },
-          { name: "Bamboo Bottle", icon: "assets/equipments/Bamboo_Bottle_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Little Carrot", rarity: "rare", tdps: 5330, deploy: 950, cost: 43250, obtainable: true,
-        icon: "assets/units/180px-Little_Carrot.png",
-        desc: "Line AoE 4 hits, very low damage.",
-        traits: ["Unbound", "Strength"],
-        equips: [
-          { name: "Carrot's Gi", icon: "assets/equipments/Carrot's_Gi_Equipment.png" },
-          { name: "Royal Gi", icon: "assets/equipments/Royal_Gi_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Thunder Shinobi", rarity: "rare", tdps: 4600, deploy: 350, cost: 4000, obtainable: true,
-        icon: "assets/units/180px-Thunder_Shinobi.png",
-        desc: "Common unit from the wiki.",
-        traits: ["Unbound", "Bolt"],
-        equips: [
-          { name: "Lightning Dagger", icon: "assets/equipments/Lightning_Dagger_Equipment.png" },
-          { name: "Kunai", icon: "assets/equipments/Kunai_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Flame Emperor (Reincarnate)", rarity: "secret", tdps: 21000, deploy: 2200, cost: 88000, obtainable: false,
-        icon: "assets/units/180px-Flame_Emperor__Reincarnate_.png",
-        desc: "Secret unit with powerful flame passives.",
-        traits: ["Unbound", "Forsaken"],
-        equips: [
-          { name: "Fiery Staff", icon: "assets/equipments/Fiery_Staff_Equipment.png" },
-          { name: "Burning Critter", icon: "assets/equipments/Burning_Critter_Equipment.png" },
-          { name: "Emperor's Attire", icon: "assets/equipments/Emperor's_Attire_Equipment.png" }
-        ]},
-{ name: "Cursed Immortal (Black Sun)", rarity: "secret", tdps: 19500, deploy: 2100, cost: 85000, obtainable: false,
-        icon: "assets/units/180px-Cursed_Immortal__Black_Sun_.png",
-        desc: "Secret unit with Black Sun mechanics.",
-        traits: ["Unbound", "Range"],
-        equips: [
-          { name: "Hexed Blade", icon: "assets/equipments/Hexed_Blade_Equipment.png" },
-          { name: "Sacrificial Mark", icon: "assets/equipments/Sacrificial_Mark_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "Fallen Angel (Holy)", rarity: "secret", tdps: 17800, deploy: 1900, cost: 79000, obtainable: false,
-        icon: "assets/units/180px-Fallen_Angel__Holy_.png",
-        desc: "Secret unit, holy damage passives.",
-        traits: ["Unbound", "Enlightenment"],
-        equips: [
-          { name: "Angel Blade", icon: "assets/equipments/Angel_Blade_Equipment.png" },
-          { name: "Beacon Of Pride", icon: "assets/equipments/Beacon_Of_Pride_Equipment.png" },
-          { name: "Memory Pendant", icon: "assets/equipments/Memory_Pendant_Equipment.png" }
-        ]},
-{ name: "String Demon (Awakened)", rarity: "mythic", tdps: 16200, deploy: 1600, cost: 71000, obtainable: false,
-        icon: "assets/units/180px-String_Demon__Awakened_.png",
-        desc: "Mythic unit with string mechanics.",
-        traits: ["Unbound", "Precision"],
-        equips: [
-          { name: "Webbed Fruit", icon: "assets/equipments/Webbed_Fruit_Equipment.png" },
-          { name: "Hypnotic Edge", icon: "assets/equipments/Hypnotic_Edge_Equipment.png" },
-          { name: "Technique Amplifier", icon: "assets/equipments/Technique_Amplifier_Equipment.png" }
-        ]},
-{ name: "Crimson Captain (Moon)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Crimson_Captain__Moon_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Lightning God (Overcharged)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Lightning_God__Overcharged_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Sovereign (Djinn)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Sovereign__Djinn_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Prodigy (Rage)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Prodigy__Rage_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Crow (Black Fire)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Crow__Black_Fire_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Shadow (Divine)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Shadow__Divine_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "8th Sword (Berserk)", rarity: "secret", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-8th_Sword__Berserk_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Water Sage (Founder)", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Water_Sage__Founder_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Jester", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Jester.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Kitsune", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Kitsune.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Crimson (Brother)", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Crimson__Brother_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Toy Maker", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Toy_Maker.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "True Saint (Holy)", rarity: "exclusive", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-True_Saint__Holy_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Noble Captain (Vibrant)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Noble_Captain__Vibrant_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Traitor (Illusion)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Traitor__Illusion_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Alchemy Brothers (Truth)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Alchemy_Brothers__Truth_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Ignition Commander (Betrayal)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Ignition_Commander__Betrayal_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Wild Card (Ace)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Wild_Card__Ace_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Eclipse Hunter (Savior)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Eclipse_Hunter__Savior_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Head Captain (Char)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Head_Captain__Char_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Rainman (Forecast)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Rainman__Forecast_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Sand (Alligator)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Sand__Alligator_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Sharkfang (Abyssal)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Sharkfang__Abyssal_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Water Mage (Scholar)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Water_Mage__Scholar_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Bioinsect (Final Form)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Bioinsect__Final_Form_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Carrot (Unleashed)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Carrot__Unleashed_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "The Drink (Juicebox)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-The_Drink__Juicebox_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Vegetable (Prince)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Vegetable__Prince_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Dark Mage (Sovereign)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Dark_Mage__Sovereign_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Razorjaw (Hunter)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Razorjaw__Hunter_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Cursed Student (True Love)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Cursed_Student__True_Love_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Elf Mage (Unleashed)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Elf_Mage__Unleashed_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Hollow (Blaze)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Hollow__Blaze_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Lady Giant (Envy)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Lady_Giant__Envy_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Puppet (Telekinetic)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Puppet__Telekinetic_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Salmon Sorcerer (Grade 1)", rarity: "mythic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Salmon_Sorcerer__Grade_1_.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] },
-{ name: "Stone Alchemist", rarity: "epic", tdps: null, deploy: null, cost: null, obtainable: null, placeholder: true,
-        icon: "assets/units/180px-Stone_Alchemist.png",
-        desc: "Placeholder - data not available yet.",
-        traits: [],
-        equips: [] }
-    ];
-
-    // ===== FORMATTAZIONE =====
-    function fmt(n) { return (n === null || n === undefined) ? '—' : n.toLocaleString('it-IT'); }
-    function yen(n) { return (n === null || n === undefined) ? '—' : '¥' + fmt(n); }
-
-    // Populate unit count directly from actual data (no hardcoded number)
-    document.getElementById('unitCount').textContent = unitsData.length + ' units loaded';
-
-    // ===== RENDER CARD =====
-    function renderUnits(list) {
-      const grid = document.getElementById('unitsGrid');
-      const empty = document.getElementById('emptyState');
-      grid.innerHTML = '';
-
-      if (list.length === 0) {
-        empty.classList.add('show');
-        return;
-      }
-      empty.classList.remove('show');
-
-      list.forEach((u, idx) => {
-        const card = document.createElement('div');
-        card.className = 'unit-card';
-        card.setAttribute('data-idx', idx);
-
-        const traitIcons = u.traits.map((t, i) =>
-          `<span class="trait-wrap">
-             <div class="trait-icon">
-               <img src="${TRAITS[t] || ''}" alt="${t}" loading="lazy" decoding="async">
-             </div>
-             <span class="trait-rank rank-${i+1}">#${i+1}</span>
-           </span>`
-        ).join('');
-
-        const equipSlots = u.equips.map(e =>
-          `<div class="equip-slot" data-img="${e.icon}">
-             <img src="${e.icon}" alt="${e.name}" loading="lazy" decoding="async">
-             <span class="equip-name">${e.name}</span>
-           </div>`
-        ).join('');
-
-        card.innerHTML = `
-          <div class="ebox-gradient c-${u.rarity}">
-            <div class="ebox-amount">placeholder</div>
-            <div class="ebox-img"><img src="${u.icon}" alt="${u.name}" loading="lazy" decoding="async" onerror="this.style.opacity=0.15"></div>
-          </div>
-          <div class="ebox-title">${u.name}</div>
-          <div class="rarity-chip c-${u.rarity}">${u.rarity}</div>
-          <div class="card-stats">
-            <div class="card-stat"><span class="card-stat-value">${fmt(u.tdps)}</span><span class="card-stat-label">TDPS</span></div>
-            <div class="card-stat"><span class="card-stat-value yen">${yen(u.deploy)}</span><span class="card-stat-label">Deploy</span></div>
-            <div class="card-stat"><span class="card-stat-value yen">${yen(u.cost)}</span><span class="card-stat-label">Max UPG</span></div>
-          </div>
-          <div class="card-traits">${traitIcons}</div>
-          <div class="card-equips">${equipSlots}</div>
-          <div class="obtain-tag">
-            <span class="obtain-dot ${u.obtainable === null ? 'ph' : (u.obtainable ? 'yes' : 'no')}"></span>
-            ${u.obtainable === null ? 'TBD' : (u.obtainable ? 'Obtainable' : 'Unobtainable')}
-          </div>
-        `;
-
-        // Click card -> detail modal (ignore clicks on interactive children)
-        card.addEventListener('click', (ev) => {
-          if (ev.target.closest('.equip-slot')) return;
-          openDetail(u);
-        });
-
-        grid.appendChild(card);
-      });
-
-      // Equipment hover popup (event delegation)
-      grid.onmouseover = (ev) => {
-        const slot = ev.target.closest('.equip-slot');
-        if (!slot) return;
-        const img = slot.getAttribute('data-img');
-        if (!img) return;
-        const popup = document.getElementById('equipPopup');
-        document.getElementById('equipPopupImg').src = img;
-        popup.classList.add('show');
-        const r = slot.getBoundingClientRect();
-        popup.style.left = Math.min(window.innerWidth - 130, Math.max(10, r.left + r.width/2 - 60)) + 'px';
-        popup.style.top = Math.max(10, r.top - 145) + 'px';
-      };
-      grid.onmouseout = (ev) => {
-        if (ev.target.closest('.equip-slot')) {
-          document.getElementById('equipPopup').classList.remove('show');
-        }
-      };
-    }
-
-    // ===== DETAIL MODAL =====
-    function openDetail(u) {
-      document.getElementById('detailEbox').innerHTML = `
-        <div class="ebox-gradient c-${u.rarity}" style="width:100%">
-          <div class="ebox-amount">placeholder</div>
-          <div class="ebox-img"><img src="${u.icon}" alt="${u.name}"></div>
-        </div>`;
-      document.getElementById('detailRarity').textContent = u.rarity;
-      document.getElementById('detailName').textContent = u.name;
-      document.getElementById('detailDesc').textContent = u.desc;
-      document.getElementById('dTdps').textContent = fmt(u.tdps);
-      document.getElementById('dDeploy').textContent = yen(u.deploy);
-      document.getElementById('dCost').textContent = yen(u.cost);
-      document.getElementById('detailTraits').innerHTML = u.traits.length === 0
-        ? '<div class="ph-note">Traits TBD</div>'
-        : u.traits.map((t, i) => `
-        <div class="detail-trait">
-          <span class="trait-wrap">
-            <div class="trait-icon">
-              <img src="${TRAITS[t] || ''}" alt="${t}">
-            </div>
-            <span class="trait-rank rank-${i+1}">#${i+1}</span>
-          </span>
-          <span class="tname">${t}${i===0?' (Best)':' (2nd)'}</span>
-        </div>`).join('');
-
-      document.getElementById('detailEquips').innerHTML = u.equips.length === 0
-        ? '<div class="ph-note">Equipment TBD</div>'
-        : u.equips.map(e => `
-        <div class="equip-slot" data-img="${e.icon}">
-          <img src="${e.icon}" alt="${e.name}">
-          <span class="equip-name">${e.name}</span>
-        </div>`).join('');
-
-      // Equipment hover popup in modal (delegation)
-      const eq = document.getElementById('detailEquips');
-      eq.onmouseover = (ev) => {
-        const slot = ev.target.closest('.equip-slot');
-        if (!slot) return;
-        const img = slot.getAttribute('data-img');
-        if (!img) return;
-        const popup = document.getElementById('equipPopup');
-        document.getElementById('equipPopupImg').src = img;
-        popup.classList.add('show');
-        const r = slot.getBoundingClientRect();
-        popup.style.left = Math.min(window.innerWidth - 130, Math.max(10, r.left + r.width/2 - 60)) + 'px';
-        popup.style.top = Math.max(10, r.top - 145) + 'px';
-      };
-      eq.onmouseout = (ev) => {
-        if (ev.target.closest('.equip-slot')) {
-          document.getElementById('equipPopup').classList.remove('show');
-        }
-      };
-
-      document.getElementById('detailOverlay').classList.add('open');
-    }
-
-    document.getElementById('detailClose').addEventListener('click', () => {
-      document.getElementById('detailOverlay').classList.remove('open');
-    });
-    document.getElementById('detailOverlay').addEventListener('click', (e) => {
-      if (e.target.id === 'detailOverlay') e.currentTarget.classList.remove('open');
-    });
-
-    // ===== FILTRI =====
-    let currentFilters = { trait: 'all', rarity: 'all', obtain: 'all', sort: 'tdps', search: '' };
-
-    function applyAndRender() {
-      let list = unitsData.filter(u => {
-        const f = currentFilters;
-        const matchTrait = f.trait === 'all' || u.traits.includes(f.trait);
-        const matchRarity = f.rarity === 'all' || u.rarity === f.rarity;
-        const matchObtain = f.obtain === 'all' ||
-          (f.obtain === 'obtainable' && u.obtainable === true) ||
-          (f.obtain === 'unobtainable' && u.obtainable === false);
-        const matchSearch = !f.search || u.name.toLowerCase().includes(f.search.toLowerCase());
-        return matchTrait && matchRarity && matchObtain && matchSearch;
-      });
-
-      const s = currentFilters.sort;
-      // placeholder units (null stats) always sort last
-      const ph = u => u.placeholder ? 1 : 0;
-      list.sort((a, b) => {
-        if (ph(a) !== ph(b)) return ph(a) - ph(b);
-        if (s === 'tdps') return b.tdps - a.tdps;
-        if (s === 'deploy') return a.deploy - b.deploy;
-        if (s === 'cost') return a.cost - b.cost;
-        if (s === 'name') return a.name.localeCompare(b.name);
-        return 0;
-      });
-
-      renderUnits(list);
-      document.getElementById('unitCount').textContent = list.length + ' units shown';
-    }
-
-    // Filter popup
-    const filterOverlay = document.getElementById('filterOverlay');
-    document.getElementById('openFilter').addEventListener('click', () => {
-      filterOverlay.classList.add('open');
-      document.getElementById('openFilter').classList.add('active');
-    });
-    document.getElementById('closeFilter').addEventListener('click', () => {
-      filterOverlay.classList.remove('open');
-      document.getElementById('openFilter').classList.remove('active');
-    });
-    filterOverlay.addEventListener('click', (e) => {
-      if (e.target === filterOverlay) {
-        filterOverlay.classList.remove('open');
-        document.getElementById('openFilter').classList.remove('active');
-      }
-    });
-
-    document.getElementById('applyFilter').addEventListener('click', () => {
-      currentFilters.trait = document.getElementById('fTrait').value;
-      currentFilters.rarity = document.getElementById('fRarity').value;
-      currentFilters.obtain = document.getElementById('fObtain').value;
-      currentFilters.sort = document.getElementById('fSort').value;
-      filterOverlay.classList.remove('open');
-      document.getElementById('openFilter').classList.remove('active');
-      applyAndRender();
-      showToast('Filters applied');
-    });
-
-    document.getElementById('resetFilter').addEventListener('click', () => {
-      document.getElementById('fTrait').value = 'all';
-      document.getElementById('fRarity').value = 'all';
-      document.getElementById('fObtain').value = 'all';
-      document.getElementById('fSort').value = 'tdps';
-      currentFilters = { trait: 'all', rarity: 'all', obtain: 'all', sort: 'tdps', search: currentFilters.search };
-      applyAndRender();
-      showToast('Filters reset');
-    });
-
-    // Search (debounced for fluidity)
-    let searchTimer = null;
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      const val = e.target.value;
-      clearTimeout(searchTimer);
-      searchTimer = setTimeout(() => {
-        currentFilters.search = val;
-        applyAndRender();
-      }, 120);
-    });
-
-    // Hide equipment popup on window scroll
-    window.addEventListener('scroll', () => {
-      document.getElementById('equipPopup').classList.remove('show');
-    }, { passive: true });
-
-    // ===== TOAST =====
-    function showToast(msg) {
-      const c = document.getElementById('toastContainer');
-      const t = document.createElement('div');
-      t.className = 'toast';
-      t.textContent = msg;
-      c.appendChild(t);
-      setTimeout(() => {
-        t.style.transition = 'opacity 0.4s';
-        t.style.opacity = '0';
-        setTimeout(() => t.remove(), 450);
-      }, 2600);
-    }
-
-    // ===== INIT =====
-    document.addEventListener('DOMContentLoaded', () => {
-      applyAndRender();
-      setTimeout(() => showToast('Database loaded: ' + unitsData.length + ' units'), 500);
-    });
-  </script>
+  <script src="js/calculator.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

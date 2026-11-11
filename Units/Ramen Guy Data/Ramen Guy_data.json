@@ -1,0 +1,174 @@
+{
+ "unit_name": "Ramen Guy",
+ "rarity": "Legendary",
+ "archetype": "Physical",
+ "element": "Farm",
+ "limited": false,
+ "placement_limit": 1,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Legendary unit from the wiki.",
+ "traits": [
+  "Unbound",
+  "Speed"
+ ],
+ "equipment": [
+  "Pointy Straw",
+  "Bamboo Bottle",
+  "Royal Gi"
+ ],
+ "tdps": 12000,
+ "deploy": 750,
+ "cost": 16000,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Noodle Cart",
+   "cost": 750,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 1750,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 2500,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 4000,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 8000,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 10500,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Noodle Cart",
+   "cost": 12500,
+   "damage": 0,
+   "range": 5,
+   "spa": 0,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Farm",
+   "hitbox_size": 0,
+   "passives": [
+    "IchirakuPassive",
+    "IchirakuPassive2"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "IchirakuPassive",
+   "display_name": "Capital Lock",
+   "unlock_upgrade": 0,
+   "description": "Selling this unit returns only 10% of its total cost."
+  },
+  {
+   "name": "IchirakuPassive2",
+   "display_name": "Donburi",
+   "unlock_upgrade": 0,
+   "description": "Increase Yen earned from kills by 50%"
+  }
+ ],
+ "abilities": []
+}

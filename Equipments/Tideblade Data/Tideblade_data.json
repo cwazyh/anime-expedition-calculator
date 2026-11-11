@@ -1,0 +1,46 @@
+{
+ "for_unit": "Sharkfang (Abyssal)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "HarribelEquipmentPassive1",
+   "display_name": "Waterfall",
+   "description": "Every {1} seconds:\n- Summon $HarribelPassive1 at the end of this unit's range moving towards spawn\n$HarribelPassive1 will:\n- $Slow enemies hit by {2}%\n- Deal {3}% of this unit's current damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 8,
+     "max": 8,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 35,
+     "max": 35,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "HarribelPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

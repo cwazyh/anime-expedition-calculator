@@ -1,0 +1,70 @@
+{
+ "for_unit": "Alchemy Brothers (Truth)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "EdwardAlphonseEquipmentPassive1",
+   "display_name": "Understand, Deconstruct, Reconstruct",
+   "description": "This unit’s attacks cycle through 3 attacks\n\n$Understand:\nOn attack:\n- Apply $AlchemyMark\n  (Capacity: {1})\n- $AlchemyMark will not be removed through each rotation\n\n$Deconstruct:\nOn attack:\n- Grants all units in range {2}% $Magical damage per $AlchemyMark applied\n  (Capacity {3}% $Magical damage)\n  For {7} seconds\n\n$Reconstruct:\nOn attack:\n- Deal {4}% of this unit’s current damage\n- Apply {5}% $Slow for {6} seconds",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 65,
+     "max": 65,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 150,
+     "max": 150,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 70,
+     "max": 70,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 6,
+     "max": 6,
+     "decimals": 0
+    },
+    {
+     "placeholder": 7,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "EdwardAlphonsePassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

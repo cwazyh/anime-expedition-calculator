@@ -1,0 +1,281 @@
+{
+ "unit_name": "Kitsune",
+ "rarity": "Exclusive",
+ "archetype": "Magical",
+ "element": "Flame",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Illusion": {
+   "cooldown": 10,
+   "description": "Mark applied by $ItachiPassive1.",
+   "display_name": "Illusion",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0.5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Illusion Dance",
+   "cost": 1300,
+   "damage": 146.78,
+   "range": 26,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Illusion Dance",
+   "cost": 1800,
+   "damage": 238.07,
+   "range": 26,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Illusion Dance",
+   "cost": 2250,
+   "damage": 304.3,
+   "range": 26,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Illusion Dance",
+   "cost": 2750,
+   "damage": 486.88,
+   "range": 26,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Phantom Flurry",
+   "cost": 3800,
+   "damage": 735.69,
+   "range": 26,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Phantom Flurry",
+   "cost": 4750,
+   "damage": 1265.53,
+   "range": 26,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Phantom Flurry",
+   "cost": 5250,
+   "damage": 1417.68,
+   "range": 26,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Phantom Flurry",
+   "cost": 6000,
+   "damage": 1931.41,
+   "range": 26,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Koi",
+   "cost": 6500,
+   "damage": 2058.5,
+   "range": 26,
+   "spa": 5.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2",
+    "SparklePassive3"
+   ],
+   "abilities": [
+    "SparkleAbility1"
+   ]
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Koi",
+   "cost": 7000,
+   "damage": 2108.62,
+   "range": 26,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2",
+    "SparklePassive3"
+   ],
+   "abilities": [
+    "SparkleAbility1"
+   ]
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Koi",
+   "cost": 7250,
+   "damage": 2308,
+   "range": 26,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SparklePassive1",
+    "SparklePassive2",
+    "SparklePassive3"
+   ],
+   "abilities": [
+    "SparkleAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "SparklePassive1",
+   "display_name": "Red Herring",
+   "unlock_upgrade": 0,
+   "description": "This unit has SkillPoints, starting at 0.\nOn RegularAttack:\n- Gain 1 SkillPoint (Capacity: 3)"
+  },
+  {
+   "name": "SparklePassive2",
+   "display_name": "Dreamdiver",
+   "unlock_upgrade": 0,
+   "description": "When this unit has a SkillPoint, instead of attacking, the strongest unit in range:\n- Decrease SPA by 15% for 10 seconds\n- Increase Attack Speed by 15% for 10 seconds\nIf SparklePassive2 is already applied to selected unit:\n- Apply to the next strongest unit instead"
+  },
+  {
+   "name": "SparklePassive3",
+   "display_name": "Monodrama",
+   "unlock_upgrade": 8,
+   "description": "This unit has SparkleMeter, starting at 0.\nOn RegularAttack or when buffing a unit:\n- Increase SparkleMeter by 20 (Capacity: 100)\nAt SparkleMeter reaching capacity:\n- Unlock SparkleAbility1"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "SparkleAbility1",
+   "display_name": "The Hero with a Thousand Faces",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- Set SkillPoints to max capacity\n- Decrease this unit's SPA by 15% until SkillPoints are at 0\n- Increase every unit's damage in range by 35% for 30 seconds"
+  }
+ ]
+}

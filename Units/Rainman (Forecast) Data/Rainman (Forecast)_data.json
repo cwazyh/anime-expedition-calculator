@@ -1,0 +1,272 @@
+{
+ "unit_name": "Rainman (Forecast)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Gale",
+ "limited": true,
+ "placement_limit": 2,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Frog": {
+   "cooldown": 0,
+   "display_name": "Frog",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "ticks": 0,
+   "update": 2
+  },
+  "Poison": {
+   "cooldown": 0,
+   "decayed_damage_scaling": 0.5,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.\nAdditionally deal $DecayedDamageScalingx damage every tick",
+   "display_name": "Poison",
+   "duration": 6,
+   "scaling": 0.3,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 6,
+   "update": 2
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Wind Tornado",
+   "cost": 1500,
+   "damage": 396,
+   "range": 17,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Wind Tornado",
+   "cost": 2600,
+   "damage": 772,
+   "range": 17,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Wind Tornado",
+   "cost": 3650,
+   "damage": 1118,
+   "range": 18,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Wind Tornado",
+   "cost": 4850,
+   "damage": 1354,
+   "range": 19,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Wind Tornado",
+   "cost": 6600,
+   "damage": 1569,
+   "range": 21,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Wind Punch",
+   "cost": 7750,
+   "damage": 1660,
+   "range": 22,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Wind Punch",
+   "cost": 9950,
+   "damage": 1819,
+   "range": 23,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Wind Barrage",
+   "cost": 11500,
+   "damage": 1999,
+   "range": 24,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9.5,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Wind Barrage",
+   "cost": 14000,
+   "damage": 2201,
+   "range": 25,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9.5,
+   "passives": [
+    "WeatherPassive1",
+    "WeatherPassive2",
+    "WeatherPassive3"
+   ],
+   "abilities": [
+    "WeatherAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "WeatherPassive1",
+   "display_name": "Heavy Rain",
+   "unlock_upgrade": 0,
+   "description": "This unit has WeatherMeter, starting at 0.\nEvery hit from WeatherAbility1:\n- Increase WeatherMeter by 5\nWhen WeatherMeter is at 100:\n- WeatherAbility1 turns into WeatherPassive2"
+  },
+  {
+   "name": "WeatherPassive2",
+   "display_name": "Frog Storm",
+   "unlock_upgrade": 0,
+   "description": "Every 1 seconds:\n- Decrease WeatherMeter by 20\nWhen an enemy comes within 5 range of WeatherPassive2:\n- Enemy will stop moving for 5 seconds\nIf an enemy dies in WeatherPassive2:\n- Enemy is converted into a WeatherFrog\nWhen WeatherMeter is emptied:\n- WeatherPassive2  turns into WeatherAbility1"
+  },
+  {
+   "name": "WeatherPassive3",
+   "display_name": "Poison Frog",
+   "unlock_upgrade": 0,
+   "description": "WeatherFrogs are a stationary path summon.\nIf an enemy walks over WeatherFrog:\n- WeatherFrog will explode for 100% of this unit's current damage and apply Poison in 3 range"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "WeatherAbility1",
+   "display_name": "Rain Cloud",
+   "unlock_upgrade": 0,
+   "description": "Select a position within this unit's range to summon WeatherAbility1\nEnemies within WeatherAbility1 will:\n- Take damage equal to 15% of this unit's damage every 1 seconds"
+  }
+ ]
+}

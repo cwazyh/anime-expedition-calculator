@@ -1,0 +1,52 @@
+{
+ "for_unit": "String Demon (Awakened)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "DoflamingoEquipmentPassive1",
+   "display_name": "Cocoon of Carnage",
+   "description": "Every {1} $RegularAttack will $DoflamingoCocoon the enemies hit: \n- Enemies are either stunned for {2} hits, or {3} seconds\nIf the $DoflamingoCocoon is broken after {2} hits:\n- Deal {4}% of this unit's current damage\nIf the $DoflamingoCocoon is not broken before {3} seconds:\n- $DoflamingoCocoon despawns",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "DoflamingoPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

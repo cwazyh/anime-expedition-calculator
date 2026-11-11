@@ -1,0 +1,161 @@
+{
+ "unit_name": "Water Princess",
+ "rarity": "Legendary",
+ "archetype": "Magical",
+ "element": "Hydro",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Circle AoE, low damage, support shield.",
+ "traits": [
+  "Primordial",
+  "Range"
+ ],
+ "equipment": [
+  "Tideblade",
+  "Magic Orb",
+  "Memory Pendant"
+ ],
+ "tdps": 31290,
+ "deploy": 800,
+ "cost": 6500,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Sea Dragon: Waterball",
+   "cost": 800,
+   "damage": 156,
+   "range": 16,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Sea Dragon: Waterball",
+   "cost": 1200,
+   "damage": 189,
+   "range": 16,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Sea Dragon: Waterball",
+   "cost": 1650,
+   "damage": 281,
+   "range": 18,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Sea Dragon: Waterball",
+   "cost": 2000,
+   "damage": 343,
+   "range": 18,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Sea Dragon: Roar",
+   "cost": 2250,
+   "damage": 370,
+   "range": 18,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Sea Dragon: Roar",
+   "cost": 3000,
+   "damage": 485,
+   "range": 19,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Sea Dragon: Roar",
+   "cost": 3350,
+   "damage": 515,
+   "range": 21,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "NoellePassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "NoellePassive",
+   "display_name": "Sea Dragon Shield",
+   "unlock_upgrade": 0,
+   "description": "This unit grants a shield to the nearest unit within range\n- Shield is destroyed after blocking a Debuff or EnemyAttack\n- Shield regenerates after 15 seconds"
+  }
+ ],
+ "abilities": []
+}

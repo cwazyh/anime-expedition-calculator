@@ -1,0 +1,33 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "SacrificialMarkPassive",
+   "display_name": "Sacrificial Mark",
+   "description": "Increase Damage by {1}% (Capacity: {2}%) for each enemy with $Bleed or $Marks applied in this unit's range",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 15,
+     "max": 25,
+     "decimals": 0
+    }
+   ]
+  }
+ ],
+ "abilities": []
+}

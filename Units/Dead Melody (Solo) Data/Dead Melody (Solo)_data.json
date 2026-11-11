@@ -1,0 +1,183 @@
+{
+ "unit_name": "Dead Melody (Solo)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Storm",
+ "limited": true,
+ "placement_limit": 1,
+ "update": 5,
+ "obtainable": true,
+ "desc": "Very strong Seafarer buff, limited, CC with Deep Freeze.",
+ "traits": [
+  "Primordial",
+  "Range"
+ ],
+ "equipment": [
+  "Magic Book",
+  "Memory Pendant",
+  "Evening Umbrella"
+ ],
+ "tdps": 8397,
+ "deploy": 1000,
+ "cost": 49750,
+ "placeholder": false,
+ "status_effects": {
+  "DeepFreeze": {
+   "cooldown": 10,
+   "description": "Freezes the target, increasing damage taken from $OnePieceCategory units.",
+   "display_name": "Deep Freeze",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 0,
+   "update": 5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Devil's Thunder",
+   "cost": 1000,
+   "damage": 550,
+   "range": 18,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Devil's Thunder",
+   "cost": 3500,
+   "damage": 1050,
+   "range": 19,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Devil's Thunder",
+   "cost": 4500,
+   "damage": 1450,
+   "range": 20,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Rainy Night",
+   "cost": 6750,
+   "damage": 2100,
+   "range": 21,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Rainy Night",
+   "cost": 7500,
+   "damage": 2450,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "King's Power Chord",
+   "cost": 10000,
+   "damage": 3250,
+   "range": 22,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10,
+   "passives": [
+    "BrookPassive1",
+    "BrookPassive2",
+    "BrookPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "BrookPassive1",
+   "display_name": "Seafarer Quintet",
+   "unlock_upgrade": 0,
+   "description": "To units in range with the Unbound trait:\n- +15% Damage\n- +5% Range\nTo units in range without the Unbound trait:\n- +30% Damage\n- +10% Range\n\nThe first OnePieceCategory unit placed in this unit's range is designated as the BrookCaptain\nThe BrookCaptain gains:\n- +20% Critical Chance\n- +25% Critical Damage\nIf the BrookCaptain is removed from the map:\n- Designate the closest OnePieceCategory unit as the BrookCaptain\n\nSummoned units and clones do not receive these buffs directly and cannot become the BrookCaptain."
+  },
+  {
+   "name": "BrookPassive2",
+   "display_name": "Ever-Travelling Superstar",
+   "unlock_upgrade": 0,
+   "description": "This unit can switch between two melodies.\n\nIf the closest unit is a OnePieceCategory unit, switch to the BrookMelody1:\nFor this unit:\n- +35% Damage\n- +100% Critical Chance\n- +15% Critical Damage\n- Inflict DeepFreeze on attack\n- DeepFreeze: Immobilizes enemies for 3s. OnePieceCategory units deal +20% damage to enemies afflicted with DeepFreeze\n\nIf the closest unit is not a OnePieceCategory unit, switch to BrookMelody2:\n- This unit stops attacking\nFor all units in range:\n- +20% Damage\n- +5% Range\n- +10% Critical Chance\n\nSummoned units and clones are ignored when choosing a melody and do not receive Brew's Melody's buffs directly."
+  },
+  {
+   "name": "BrookPassive3",
+   "display_name": "Afterlife Channeling",
+   "unlock_upgrade": 0,
+   "description": "On attack:\n- FollowUpAttack with BrookEVO_Skill2\n\nOn FollowUpAttack:\n- Creates an area within the AoE that lingers for 8s. Any enemy that enters this area is afflicted with DeepFreeze for 3s.\nWhen this unit attacks an enemy within this area:\n- Extend DeepFreeze duration by 1s (Extension Cap: 1)\n\nIf this unit attacks an enemy afflicted with DeepFreeze:\n- Deals an additional instance of 30% damage to hit enemies"
+  }
+ ],
+ "abilities": []
+}

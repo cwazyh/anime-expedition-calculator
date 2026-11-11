@@ -1,0 +1,70 @@
+{
+ "for_unit": "Silver Falcon",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "GriffithSilverEquipmentPassive1",
+   "display_name": "The Captain",
+   "description": "On Placement:\n- Increase all players' units' base damage by {1}% (+{2}% per upgrade)\n- Increase all players' $Physical $Archetype units' damage by {3}% (+{4}% per upgrade)\n- Increase all players' $Magical $Archetype units' damage by {5}% (+{6}% per upgrade)\n\nThe player's most equipped $Archetype gains an additional {7}% damage.\n$Buffs from $GriffithSilverPassive1 do not stack.",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 7,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "GriffithSilverPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

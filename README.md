@@ -1,132 +1,93 @@
-# Anime Expedition Calculator - Struttura Completa
+# Anime Expedition Calculator
 
-## Organizzazione Cartelle
+A static, client-side calculator/database for the Roblox game **Anime Expeditions**.
+Open `index.html` on GitHub Pages (or any static server) and everything runs in the
+browser: the JSON files are the single source of truth, and the DPS calculation is
+performed live by JavaScript — no build step, no backend.
 
-L'applicazione è strutturata con le seguenti cartelle principali:
+## Structure
 
 ```
-/Anime Expedition Calculator/
-  ├── index.html          
-  ├── Units/              
-  │   ├── <unit_name>\ Data     
-  │   │   ├── <unit_name>_data.json         --- Including summons, passives, DoT etc...
-  │   │   └── <unit_name>_image.jpg
-  │   └── [all the units' folders]
-  ├── Equipments/
-  │   ├── <equipment_name>\ Data     
-  │   │   ├── <equipment_name>_data.json         --- Including their passives, unit bounds etc...
-  │   │   └── <equipment_name>_image.jpg
-  │   └── [all the equipments' folders]
-  ├── Logos/           
-  │   ├── hydro.png
-  │   ├── pyro.png
-  │   └── [tutti gli elementi .png]
-  └── Traits/ 
-      ├── <trait_name>\ Data     
-      │   ├── <trait_name>_data.json         
-      │   └── <trait_name>_image.jpg
-      └── [all the traits' folders]
+index.html               # the whole site (markup + CSS)
+js/calculator.js         # DPS calculator (JS port of dps_calculator.py)
+js/app.js                # data loading, rendering, tooltips, live calculation
+manifest.json            # lists every unit / equipment / trait NAME only
+Units/<name> Data/
+    <name>_data.json     # stats, upgrades, passives, abilities, summons, status
+                         # effects (incl. DoT), traits, equipment, obtainable...
+    <name>_image.png
+Equipments/<name> Data/
+    <name>_data.json     # buffs (stat ranges), passives, unit bounds
+    <name>_image.png
+Traits/<name> Data/
+    <name>_data.json     # trait stats (Damage / SPA / Crit / Range / PlacementLimit)
+    <name>_image.png
+Logos/<element>.png      # element icons (lowercase: hydro.png, flame.png, ...)
+UI/                      # site chrome (expeditions_wheel.png, EntityBox_Dark.png)
+utils/                   # data pipeline scripts (see below)
 ```
 
-## Come Funziona l'Applicazione
+All paths are **derived by convention** from names in `manifest.json`, so adding a
+new unit/equipment/trait only requires creating its folder and updating the manifest.
 
-L'HTML `index.html` è un file statico che può essere aperto su qualsiasi browser web (Chrome, Firefox, Safari, Edge). Non richiede server web, database o connessione internet per funzionare dopo il caricamento iniziale dei dati.
+## How the site uses the data
 
-### Struttura Dati Units
+- **`obtainable`** is read from the unit's `_data.json` — edit the JSON directly to
+  flip a unit between obtainable/unobtainable. Nothing is hardcoded elsewhere.
+- **Deploy / max-upgrade cost**: curated values stored in the unit JSON always win.
+  If a non-placeholder unit has `deploy`/`cost` set to `null`, they are derived at
+  runtime: `deploy = upgrades[0].cost`, `cost = sum(upgrades[1:])`. Placeholder
+  cards keep showing "—".
+- **Traits / equipment on cards**: taken from the unit JSON (`traits`,
+  `equipment`). Units flagged `"calculated": true` (currently only
+  *Traitor (Illusion)*) instead show **live** results: best trait, best equipment
+  combo and DPS computed in the browser.
+- **`placeholder": true`** marks cards whose data is not final; they show a
+  "placeholder" pill, sort last, and don't derive costs.
 
-Ogni unità nel file JavaScript ha questo formato:
-```javascript
-{
-  name: "Nome Unità",
-  rarity: "Secret",        // Secret/Exclusive/Mythic/Legendary/Epic/Rare
-  deployCost: 2000,        // Costo in yen per schierare
-  totalCost: 72750,        // Costo totale per max upgrade
-  tdps: 75789,            // TDPS calcolato (DPS totale su 3 nemici con Unbound)
-  trait1: "Unbound",      // Tratto #1 (sempre Unbound per max danno)
-  trait2: "Primordial",   // Tratto #2 (varia per tipo unità)
-  obtainable: true,       // true = ottenibile, false = Limited/Non Ottenibile
-  element: "Hydro/Magical", // Elemento dell'unità
-  typeLogo: "warrior",    // Logo tipo unità dal gioco
-  icon: "units/wolf-revived.png"  // Percorso immagine
-}
+## DPS calculation (live, client-side)
+
+`js/calculator.js` is a faithful port of `dps_calculator.py` (verified: all 17
+traits match the Python output exactly, including the live-game validation anchor
+`D=81470, SPA=6.2, DPS=13140.32`):
+
+```
+D   = round1(base_DMG × level_mult × (1+asc_dmg) × (1+pot_dmg) × (1+trait_dmg) × (1+equip_dmg))
+SPA = round1(base_SPA × (1+trait_spa) × (1+pot_spa) × (1+equip_spa))
+DPS = round2(D / SPA × crit_mult × passive_mult)
 ```
 
-### Le 4 Container per Riga (Design)
+Settings: Level 50, Ascension 3, Potential Z, equipment rolls MAX (including
+equipment passives — Shinigami Sword at 15/15), expected crit, no duplicate
+equipment, hypnosis share fixed at 100%, `enemies_in_range = 4`.
 
-Ogni unità è visualizzata come una card con **4 container interni**:
-1. **Icona Unità** (in alto) - logo/immagine dell'unità
-2. **Nome Unità** (al centro) - testo leggibile
-3. **Rarità** (in alto a destra) - badge colorato per rarità
-4. **Tratti** (sotto il nome) - tratti #1 e #2 visualizzati come badge
+Because everything is read from the JSONs at runtime, **new units, equipment and
+traits are picked up automatically** — no code changes needed.
 
-Ogni card contiene anche:
-- Costo Deploy (¥)
-- Stato Ottenibilità (Ottenibile/Non Ottenibile)
+## Adding or updating content
 
-### Colori per Rarità
+1. Create `Units/<name> Data/` (or `Equipments/`, `Traits/`) with
+   `<name>_data.json` and `<name>_image.png` (always `.png`, images have alpha).
+2. Regenerate the manifest:
 
-- **Secret**: #ffd700 (oro)
-- **Exclusive**: #b4e6ff (azzurro chiaro)
-- **Mythic**: #ff0080 (rosa shocking)
-- **Legendary**: #a335ee (viola)
-- **Epic**: #3b3ce3 (blu elettrico)
-- **Rare**: #8b572c (marrone)
+   ```bash
+   python3 utils/update_manifest.py
+   ```
 
-### Stato Ottenibilità
+   The script refuses to write if any folder is missing its JSON or image.
+3. Commit and push. GitHub Pages serves it as-is (`.nojekyll` disables Jekyll).
 
-- **Ottenibile** (verde): Unità non Limited, disponibili in qualsiasi momento
-- **Non Ottenibile** (rosso): Unità Limited, eventi temporanei, banner specifici
+Other pipeline scripts in `utils/` (`extract_all_units.py`, `download_images.py`,
+`extract_units.py`) document how the data/images were originally harvested and can
+be reused as a reference.
 
-### Per Far Funzionare il Sito al 100%
+## Notes
 
-1. **Aggiungere le immagini**: Scaricare tutte le immagini unità da wiki.animeexpeditions.com/Units e metterle nella cartella `units/`
-   - Nome file: `unità-cognome.png` (es. `wolf-revived.png`)
-   - Formato: PNG, dimensione consigliata 64x64px o maggiore
-
-2. **Aggiungere dati completi**: Popolare la variabile `unitsData` nel file JavaScript con tutti i dati TDPS, costi, tratti per tutte le 680 unità
-
-3. **Aggiungere elementi e tratti**: Popolare le cartelle `elements/` e `cresttypes/` con i loghi corrispondenti
-
-4. **Equipaggiamenti**: Aggiungere icone nella cartella `equipments/` e collegarle nelle card unità
-
-### Per Far Girare l'Applicazione 24/7
-
-Essendo un file HTML locale:
-- Basta avere il computer acceso
-- Aprire il file `/Users/nxco/Desktop/Anime Expedition Calculator/index.html` su qualsiasi browser
-- Il sito rimarrà aperto e funzionante finché il browser rimane aperto
-- Non richiede connessione internet dopo il caricamento iniziale (se i dati e le immagini sono locali)
-- Puoi usare la funzione "Aggiungi a Home screen" su mobile o "Create shortcut" su desktop per un accesso rapido
-
-### Struttura Dati da Popolare
-
-Il file `index.html` contiene già la struttura HTML e CSS. La variabile `unitsData` nel tag `<script>` deve essere popolata con tutti i dati. Ecco l'elenco delle unità che devono essere incluse (in ordine di rarità e importanza):
-
-**Secret (23 unità)**: Wolf, Atom, Reaper, Emerald Fist, First Blade, Princess, Silver Falcon, Black Heart, Dead Melody, 5th God Hand, Iron Wolf, Devil, Crimson Captain, Lightning God, Sovereign, Cubert, Crow, Impaler, e altre...
-
-**Exclusive (6 unità)**: Atom Totality, Crimson Brother, Cubert, ecc.
-
-**Mythic (24 unità)**: Dead Melody, First Blade, Princess, Black Heart, Alchemy Brothers, Rainman, Ignition Commander, Traitor, Noble Captain, Bioinsect, Cursed Student, Elf Mage, Flame Emperor, Hollow, e altre...
-
-**Legendary (8 unità)**: Forbidden Teacher, Greed, Ice Queen, Ramen Guy, Scissor, Reaper, The Hero, Water Princess
-
-**Epic (4 unità)**: Bounty Hunter, Corps Captain, Demon Cyborg, Ice Mage
-
-**Rare (6 unità)**: Curly Brow, Kid Assassin, Reishi Archer, Rubber Boy, Little Carrot, Thunder Shinobi
-
-### Note Importanti
-
-- Il file tier list statico `TIER_LIST_ANIME_EXPEDITIONS.md` sul desktop contiene tutti i dati TDPS precisi, costi, passivi ed equipaggiamenti che possono essere utilizzati come riferimento per popolare il database
-- Il calculator è stato progettato per essere elegante e funzionale, stile vicino a quello del gioco ma non 1:1 copia
-- Tutte le immagini andranno estratte dal wiki o dal client gioco e messe nelle cartelle appropriate
-- Il sito può essere "incollato" sulla home screen del computer o del telefono per un accesso rapido tipo app
-
-### Passaggi Successivi
-
-1. Estrarre tutte le immagini unità dal wiki e metterle in `units/`
-2. Popolare `unitsData` con tutti i dati delle 680 unità
-3. Aggiungere loghi elementi in `elements/`
-4. Aggiungere loghi tratti in `cresttypes/`
-5. Aggiungere icone equipaggiamenti in `equipments/`
-6. Testare il sito su browser desktop e mobile
-7. Aggiungere funzionalità extra: filtri per rarità, tratti, tipo AOe, calcolatore TDPS personalizzato
+- **Buff element icon**: the game itself does not define one
+  (`InvalidElements = {Farm, Buff}` — and Farm's icon exists while Buff's does not),
+  so `Logos/buff.png` is the only asset that may be missing. The UI degrades
+  gracefully to a text-only element chip until the file is added.
+- Element icons in `Logos/` are the original 512×512 icons pulled from the live
+  game (`ReplicatedStorage.Shared.Information.Elements` → `ElementData[el].Image`).
+- The page must be served over HTTP (GitHub Pages or `python3 -m http.server`);
+  opening it as a `file://` will fail because of `fetch()`.

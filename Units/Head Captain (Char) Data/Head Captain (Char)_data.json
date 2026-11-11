@@ -1,0 +1,236 @@
+{
+ "unit_name": "Head Captain (Char)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Flame",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Blazing Swing",
+   "cost": 750,
+   "damage": 130,
+   "range": 20,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Blazing Swing",
+   "cost": 1300,
+   "damage": 167,
+   "range": 20,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Blazing Swing",
+   "cost": 1800,
+   "damage": 271,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Blazing Swing",
+   "cost": 2400,
+   "damage": 404,
+   "range": 22,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Blazing Swing",
+   "cost": 3300,
+   "damage": 503,
+   "range": 23,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Flaming Column",
+   "cost": 3900,
+   "damage": 620,
+   "range": 24,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Flaming Column",
+   "cost": 4800,
+   "damage": 744,
+   "range": 24,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Solar Ravine",
+   "cost": 5750,
+   "damage": 868,
+   "range": 26,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2",
+    "YamamotoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Solar Ravine",
+   "cost": 7000,
+   "damage": 939,
+   "range": 26,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "YamamotoPassive1",
+    "YamamotoPassive2",
+    "YamamotoPassive3"
+   ],
+   "abilities": [
+    "YamamotoAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "YamamotoPassive2",
+   "display_name": "West",
+   "unlock_upgrade": 3,
+   "description": "Fire applied by this unit can stack infinitely.\nFire deals 5% more damage for each stack of Fire on enemies within this unit's range (Capacity: 150%)"
+  },
+  {
+   "name": "YamamotoPassive1",
+   "display_name": "East",
+   "unlock_upgrade": 0,
+   "description": "When an enemy enters this unit's range:\n- Apply Fire\nIf the enemy entering this unit's range has a Shield:\n- Apply an additional stack of Fire that can Pierce"
+  },
+  {
+   "name": "YamamotoPassive3",
+   "display_name": "South",
+   "unlock_upgrade": 7,
+   "description": "On Takedown within this unit's range:\n- Transform the enemy into a YamamotoSkeleton (Capacity: 3)\nEach YamamotoSkeleton will act as a PathTrap:\n- When touched by an enemy, deal 25% of this unit's current damage\n- Explode and apply Fire to enemies within 3 range\nEach YamamotoSkeleton summoned will:\n- Increase this unit's damage by 5%"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "YamamotoAbility1",
+   "display_name": "North",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- Deal 200% of this unit's current damage to all enemies in range\n- Deal an additional 100% damage divided among all enemies in range"
+  }
+ ]
+}

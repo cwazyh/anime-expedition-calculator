@@ -1,0 +1,81 @@
+{
+ "for_unit": "Lightning God (Overcharged)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "EnelEquipmentPassive1",
+   "display_name": "Tempest Discharge",
+   "description": "At {1} $EnelMeter stacks:\n- Summon a $LightningStrike at this unit's position\n- Reset $EnelMeter\nOn $LightningStrike:\n- Deal {2}% of this unit's current damage and apply $Electricity to all enemies in this unit's range\n- Leave $ElectricResidue on the ground that will despawn after {3} seconds\n$ElectricResidue will:\n- Keep $Electricity permanently active on enemy until enemy has left range or it has despawned",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 60,
+     "max": 60,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 200,
+     "max": 200,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "EnelPassive3"
+   ]
+  },
+  {
+   "slot": 2,
+   "name": "EnelEquipmentPassive2",
+   "display_name": "Molten Gold",
+   "description": "Every {1} seconds:\n- Apply $Golden to {2} enemies in range\n$Golden will:\n- Stun an enemy for {3} seconds\n- Increase chain lightning hits from $Electricity to an additional {4} enemies",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 4,
+     "max": 4,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "EnelPassive4"
+   ]
+  }
+ ],
+ "abilities": []
+}

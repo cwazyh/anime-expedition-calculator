@@ -1,0 +1,81 @@
+{
+ "for_unit": "Noble Captain (Vibrant)",
+ "general_use": false,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -5
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "ByakuyaEquipmentPassive1",
+   "display_name": "Broken Coda",
+   "description": " This unit deals +{1}% more damage to enemies with Movespeed-related $Modifiers.\n\nWhen an enemy is inflicted with $HardCC, this unit will:\n- $FollowUpAttack on that enemy with $Byakuya_Skill2 for {2}% of this unit's damage\n(Local Cooldown: {3}s)",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 7,
+     "max": 7,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "ByakuyaPassive1"
+   ]
+  },
+  {
+   "slot": 2,
+   "name": "ByakuyaEquipmentPassive2",
+   "display_name": "Precipice Flower",
+   "description": "When this unit attacks an enemy afflicted with $Dismember, gains:\n- +{1}% Damage\n- +{2}% Range\nIf $Dismember was applied by a $BleachCategory unit, instead gains:\n- +{3}% Damage\n- +{4}% Range",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 40,
+     "max": 40,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "ByakuyaPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,267 @@
+{
+ "unit_name": "Impaler (Ultimate)",
+ "rarity": "Secret",
+ "archetype": "Psychic",
+ "element": "Dark",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 5,
+ "obtainable": true,
+ "desc": "Dual attack modes, bleed consume.",
+ "traits": [
+  "Unbound",
+  "Range"
+ ],
+ "equipment": [
+  "Lanza de Luz",
+  "Sacrificial Mark",
+  "Emperor's Attire"
+ ],
+ "tdps": 14100,
+ "deploy": 2000,
+ "cost": 59250,
+ "placeholder": false,
+ "status_effects": {
+  "Bleed": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Bleed",
+   "duration": 6,
+   "scaling": 0.65,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 6,
+   "update": 0
+  },
+  "Burdened": {
+   "cooldown": 0,
+   "description": "Mark applied by $AlucardAbility1",
+   "display_name": "Burdened",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "Hold",
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Bullet Blast",
+   "cost": 2000,
+   "damage": 750,
+   "range": 17,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Bullet Blast",
+   "cost": 4500,
+   "damage": 950,
+   "range": 17.5,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Bullet Blast",
+   "cost": 5000,
+   "damage": 1850,
+   "range": 18.2,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Bullet Blast",
+   "cost": 6500,
+   "damage": 2350,
+   "range": 18.8,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Nightmare Execution",
+   "cost": 7850,
+   "damage": 3850,
+   "range": 21,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Nightmare Execution",
+   "cost": 8000,
+   "damage": 4450,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Nightmare Execution",
+   "cost": 8250,
+   "damage": 5350,
+   "range": 21.5,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Ocean of Death",
+   "cost": 9000,
+   "damage": 5850,
+   "range": 22,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Ocean of Death",
+   "cost": 12500,
+   "damage": 6450,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10,
+   "passives": [
+    "AlucardPassive1",
+    "AlucardPassive2",
+    "AlucardPassive3"
+   ],
+   "abilities": [
+    "AlucardAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "AlucardPassive1",
+   "display_name": "Piety & Obliteration",
+   "unlock_upgrade": 0,
+   "description": "This unit has two attack modes to switch between. Select a mode at the top of this unit's Upgrade UI.\n\nCustom Arms \"Piety\":\n- -35% SPA\n- +50% Damage\n- On attack: Inflicts Bleed for 50% damage over 6 seconds to any enemy type except Boss\n\nAnti-Freak \"Obliteration\":\n- +35% SPA\n- +100% Damage\n- +20% Range\n- On attack: Inflicts Bleed for 100% damage over 12 seconds to any enemy type except Basic, and deal 50% more damage"
+  },
+  {
+   "name": "AlucardPassive2",
+   "display_name": "The Bird of Hermes",
+   "unlock_upgrade": 0,
+   "description": "All Bleed and Bleed​-related PathTraps that exist in this unit's range have their source changed to this unit. All Bleed that is sourced from this unit is enhanced, increasing its damage factor by 10%, and cannot be affected by other units.\n\nAll Bleed​-related PathTraps in this unit's range have their properties enhanced:\n- Radius increased by 100%\n- Duration increased by 10s\n- Damage increased by 100%\n\nOn attacking an enemy afflicted with Bleed:\n- This unit will consume all Bleed stacks, increasing their tick rate to instantly complete\n- If this unit consumes Bleed stacks, for both this unit and the unit whom originally applied the stack, +25% Damage\n"
+  },
+  {
+   "name": "AlucardPassive3",
+   "display_name": "Humanity's Trump Card",
+   "unlock_upgrade": 0,
+   "description": "This unit can regenerate from any StatusEffect and Debuff, decreasing their duration by 99%. This unit has built-in access to Relocation. On usage:\n- Transform into mist, instantly relocating to the selected position\n- Disable Unit Moving for 30 seconds\n\nFor PathSummons created by this unit, spawn at the end of its range. When this unit gets a kill:\n- Summon a AlucardVampire for 15% of this unit's damage (Cap: 3)\nIf this unit gets a takedown instead:\n- Summon a AlucardGhoul for 5% of this unit's damage (Cap: 6)"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "AlucardAbility1",
+   "display_name": "Total Release: Level Zero",
+   "unlock_upgrade": 8,
+   "description": "You are the Commander. \n\nOn activation:\n- Speak the command: Search & Destroy\n- Opens this unit's Cadaver Domain for 10s\n- Performs AlucardEVO_Skill3 for 1000% damage\n\nCadaver Domain: All enemies on the map are afflicted with Burdened for the duration of the ability\n- Burdened immobilizes enemies and bypasses all lockouts without applying a lockout of its own"
+  }
+ ]
+}

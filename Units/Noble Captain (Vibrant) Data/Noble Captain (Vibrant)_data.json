@@ -1,0 +1,268 @@
+{
+ "unit_name": "Noble Captain (Vibrant)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 4,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Dismember": {
+   "cooldown": 9999,
+   "description": "Permanently reduces movement speed by $SpeedScaling.",
+   "display_name": "Dismembered",
+   "duration": 9999,
+   "scaling": 0,
+   "speed_scaling": 0.15,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stagger": {
+   "cooldown": 5,
+   "description": "Interrupts actions and briefly delays movement.",
+   "display_name": "Stagger",
+   "duration": 4,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Flash Combo",
+   "cost": 1200,
+   "damage": 870,
+   "range": 15,
+   "spa": 7.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Flash Combo",
+   "cost": 2560,
+   "damage": 1360,
+   "range": 16,
+   "spa": 7.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Flash Combo",
+   "cost": 2920,
+   "damage": 1830,
+   "range": 18,
+   "spa": 7.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Flash Combo",
+   "cost": 3720,
+   "damage": 2380,
+   "range": 18.5,
+   "spa": 7.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Flash Combo",
+   "cost": 4890,
+   "damage": 2970,
+   "range": 20,
+   "spa": 6.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Petal Execution",
+   "cost": 5540,
+   "damage": 3520,
+   "range": 21,
+   "spa": 6.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10.5,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Petal Execution",
+   "cost": 6470,
+   "damage": 4440,
+   "range": 22,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10.5,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Petal Execution",
+   "cost": 7830,
+   "damage": 4930,
+   "range": 23,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10.5,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility2"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Petal Execution",
+   "cost": 9870,
+   "damage": 5660,
+   "range": 23,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 10.5,
+   "passives": [
+    "ByakuyaPassive1",
+    "ByakuyaPassive2"
+   ],
+   "abilities": [
+    "ByakuyaAbility1",
+    "ByakuyaAbility2"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "ByakuyaPassive1",
+   "display_name": "Broken Coda",
+   "unlock_upgrade": 0,
+   "description": " This unit deals +25% more damage to enemies with Movespeed-related Modifiers.\n\nWhen an enemy is inflicted with HardCC, this unit will:\n- FollowUpAttack on that enemy with Byakuya_Skill2 for 25% of this unit's damage\n(Local Cooldown: 7s)"
+  },
+  {
+   "name": "ByakuyaPassive2",
+   "display_name": "Precipice Flower",
+   "unlock_upgrade": 0,
+   "description": "When this unit attacks an enemy afflicted with Dismember, gains:\n- +15% Damage\n- +5% Range\nIf Dismember was applied by a BleachCategory unit, instead gains:\n- +30% Damage\n- +10% Range"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "ByakuyaAbility2",
+   "display_name": "Flash Blossom",
+   "unlock_upgrade": 0,
+   "description": "On activation:\n- Select a spot within this unit's range to Relocate to\n- Immediately FollowUpAttack with Byakuya_Skill2, targeting the Fastest enemy, inflicting Stagger for 2s"
+  },
+  {
+   "name": "ByakuyaAbility1",
+   "display_name": "Full Release",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- This unit lets go of its sword and switches into ByakuyaTransformation\n\nByakuyaTransformation:\n- Gains ByakuyaPassive3\n- Gains ByakuyaAbility3\n- Loses Physical & gains Magical\n- Switches to Byakuya_Skill3\n- Becomes unsellable"
+  }
+ ]
+}

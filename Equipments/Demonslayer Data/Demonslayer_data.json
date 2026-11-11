@@ -1,0 +1,64 @@
+{
+ "for_unit": "Iron Wolf (Struggler)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "GutsEquipmentPassive1",
+   "display_name": "Crimson Spill",
+   "description": "When an enemy that have been inflicted with $Bleed at least {1} time dies:\n- Leave 1 $GutsSpill on the ground for {3} seconds\n\n$GutsSpill will apply {4} stack of $Bleed every {5} seconds.\nOnly {6} non-permanent $GutsSpill may exist at a time.",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 6,
+     "max": 6,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "GutsPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

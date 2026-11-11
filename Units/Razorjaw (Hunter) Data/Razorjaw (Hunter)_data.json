@@ -1,0 +1,215 @@
+{
+ "unit_name": "Razorjaw (Hunter)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Neutral",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 0.5,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Stagger": {
+   "cooldown": 5,
+   "description": "Interrupts actions and briefly delays movement.",
+   "display_name": "Stagger",
+   "duration": 4,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Cero",
+   "cost": 1000,
+   "damage": 238,
+   "range": 17,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Cero",
+   "cost": 1650,
+   "damage": 292,
+   "range": 18,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Cero",
+   "cost": 2550,
+   "damage": 433,
+   "range": 18,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Cero",
+   "cost": 3350,
+   "damage": 675,
+   "range": 19,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Grand Cero",
+   "cost": 4600,
+   "damage": 806,
+   "range": 20,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Grand Cero",
+   "cost": 6000,
+   "damage": 907,
+   "range": 21,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Grand Cero",
+   "cost": 6750,
+   "damage": 1068,
+   "range": 21,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Desgarron",
+   "cost": 8050,
+   "damage": 1255,
+   "range": 23,
+   "spa": 4.9,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Desgarron",
+   "cost": 9350,
+   "damage": 1499,
+   "range": 25,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 15,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GrimmjowPassive1"
+   ],
+   "abilities": [
+    "GrimmjowAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "GrimmjowPassive1",
+   "display_name": "Roar",
+   "unlock_upgrade": 0,
+   "description": "Every 10 seconds:\n- Unleash a Full AoE Roar attack dealing 35% of this unit's current damage and apply Stagger to enemies for 1 seconds\n- For each enemy hit by this attack, this unit gains 1% Critical Chance (Capacity: 25%)"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "GrimmjowAbility1",
+   "display_name": "Endless Slashes",
+   "unlock_upgrade": 8,
+   "description": "On activation:\nThis unit will teleport to base, and begin slashing down the whole path.\n- Each Slash attack will increase in damage by 10%\nUpon hitting the enemy base, this unit will return to its original position."
+  }
+ ]
+}

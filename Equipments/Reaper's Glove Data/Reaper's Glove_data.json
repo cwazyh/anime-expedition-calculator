@@ -1,0 +1,27 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Range": {
+   "min": 5,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "ReapersGlovePassive",
+   "display_name": "Reaper's Glove",
+   "description": "After this unit receives a $StatusEffect or $Debuff:\n- This unit's next $Attack deals {1}% extra damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 10,
+     "max": 15,
+     "decimals": 0
+    }
+   ]
+  }
+ ],
+ "abilities": []
+}

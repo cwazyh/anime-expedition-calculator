@@ -1,0 +1,105 @@
+{
+ "for_unit": "Impaler (Ultimate)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "AlucardEquipmentPassive1",
+   "display_name": "The Bird of Hermes",
+   "description": "All $Bleed and $Bleed​-related $PathTraps that exist in this unit's range have their source changed to this unit. All $Bleed that is sourced from this unit is enhanced, increasing its damage factor by {1}%, and cannot be affected by other units.\n\nAll $Bleed​-related $PathTraps in this unit's range have their properties enhanced:\n- Radius increased by {2}%\n- Duration increased by {3}s\n- Damage increased by {4}%\n\nOn attacking an enemy afflicted with $Bleed:\n- This unit will consume all $Bleed stacks, increasing their tick rate to instantly complete\n- If this unit consumes $Bleed stacks, for both this unit and the unit whom originally applied the stack, +{5}% Damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 150,
+     "max": 150,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 200,
+     "max": 200,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "AlucardPassive2"
+   ]
+  },
+  {
+   "slot": 2,
+   "name": "AlucardEquipmentPassive2",
+   "display_name": "Humanity's Trump Card",
+   "description": "This unit can regenerate from any $StatusEffect and $Debuff, decreasing their duration by {1}%. This unit has built-in access to Unit Moving. On usage:\n- Transform into mist, instantly relocating to the selected position\n- Disable Unit Moving for {2} seconds\n\nFor $PathSummons created by this unit, spawn at the end of its range. When this unit gets a kill:\n- Summon a $AlucardVampire for {3}% of this unit's damage (Cap: {4})\nIf this unit gets a takedown instead:\n- Summon a $AlucardGhoul for {5}% of this unit's damage (Cap: {6})",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 12,
+     "max": 12,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "AlucardPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

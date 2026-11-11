@@ -1,0 +1,52 @@
+{
+ "for_unit": "Black Heart (Revived)",
+ "general_use": false,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -5
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "UlquiorraEquipmentPassive1",
+   "display_name": "Way Without Enemies",
+   "description": "On $Attack:\n- Also performs $UlquiorraEVO_Skill3 for {1}% of this unit’s damage, targeting the enemy in Last (Cooldown: {2}s)\n\n\nWhen this unit hits an enemy outside its range with any attack:\n- Inflict $Oppression for {3} seconds\n- Enemies afflicted with $Oppression take {4}% more damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "UlquiorraPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,143 @@
+{
+ "unit_name": "Greed",
+ "rarity": "Legendary",
+ "archetype": "Physical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Legendary unit from the wiki.",
+ "traits": [
+  "Investor",
+  "Unbound"
+ ],
+ "equipment": [
+  "Economist's Coin",
+  "Promise Ring",
+  "Memory Pendant"
+ ],
+ "tdps": 14000,
+ "deploy": 900,
+ "cost": 18000,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Flatline",
+   "cost": 650,
+   "damage": 54,
+   "range": 19,
+   "spa": 3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Flatline",
+   "cost": 1650,
+   "damage": 58,
+   "range": 21,
+   "spa": 3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Bind",
+   "cost": 2100,
+   "damage": 92,
+   "range": 22,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Bind",
+   "cost": 2550,
+   "damage": 106,
+   "range": 22,
+   "spa": 3.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill3",
+   "attack_name": "Ruthless Prey",
+   "cost": 3100,
+   "damage": 196,
+   "range": 23,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Ruthless Prey",
+   "cost": 3750,
+   "damage": 325,
+   "range": 25,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "BanPassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "BanPassive",
+   "display_name": "Fox Hunt",
+   "unlock_upgrade": 0,
+   "description": "Deal 20% more damage to Boss enemy type."
+  }
+ ],
+ "abilities": []
+}

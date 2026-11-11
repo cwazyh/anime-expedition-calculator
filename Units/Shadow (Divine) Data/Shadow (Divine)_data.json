@@ -1,0 +1,335 @@
+{
+ "unit_name": "Shadow (Divine)",
+ "rarity": "Secret",
+ "archetype": "Magical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "summons": [
+  {
+   "archetype": "Magical",
+   "display_name": "Winged Spirit (Divine)",
+   "element": "Dark",
+   "key": "MegumiNue",
+   "placement_limit": 1,
+   "placement_type": "Ground",
+   "rarity": "Secret",
+   "skill_info": {
+    "Skill1": {
+     "AttackSpeed": 1,
+     "DelayAfterAttack": 0.5,
+     "DelayBeforeAttack": 0.88,
+     "DelayBetweenTicks": 0.23,
+     "Ticks": 2
+    }
+   },
+   "summonable": {},
+   "update": 0,
+   "upgrades": [
+    {
+     "Abilities": [
+      "NueAbility1"
+     ],
+     "AttackSpeed": 1,
+     "Cost": 100,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 12,
+     "DisplayName": "Shock",
+     "DoTDamage": 0,
+     "HitboxSize": 7,
+     "HitboxType": "Radial",
+     "Passives": {},
+     "Range": 0,
+     "SPA": 6.5,
+     "SkillName": "Skill1",
+     "StatusEffects": {
+      "Stun": {
+       "Duration": 2
+      }
+     },
+     "Tags": [
+      "HardCrowdControl"
+     ],
+     "Unplaceable": false,
+     "Unsellable": true
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "ShadowRewind": {
+   "apply_cap": 2,
+   "cooldown": 10,
+   "description": "Teleports enemies back towards the enemies base.",
+   "display_name": "Shadow Rewind",
+   "duration": 1,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Shadow Slash",
+   "cost": 1100,
+   "damage": 160,
+   "range": 19,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Shadow Slash",
+   "cost": 1650,
+   "damage": 219,
+   "range": 20,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Shadow Slash",
+   "cost": 2500,
+   "damage": 297,
+   "range": 22,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Shadow Slash",
+   "cost": 3650,
+   "damage": 364,
+   "range": 23,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "MegumiPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Shadow Slash",
+   "cost": 4500,
+   "damage": 488,
+   "range": 24,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "MegumiPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Shadow Slash",
+   "cost": 6000,
+   "damage": 600,
+   "range": 25,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Bunny Swarm",
+   "cost": 7250,
+   "damage": 748,
+   "range": 26,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Bunny Swarm",
+   "cost": 8250,
+   "damage": 845,
+   "range": 26,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Bunny Swarm",
+   "cost": 11500,
+   "damage": 944,
+   "range": 27,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": [
+    "MegumiAbility1"
+   ]
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill2",
+   "attack_name": "Bunny Swarm",
+   "cost": 13500,
+   "damage": 1393,
+   "range": 28,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": [
+    "MegumiAbility1"
+   ]
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill2",
+   "attack_name": "Bunny Swarm",
+   "cost": 14000,
+   "damage": 1495,
+   "range": 29,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "MegumiPassive1",
+    "MegumiPassive2"
+   ],
+   "abilities": [
+    "MegumiAbility1",
+    "MegumiAbility2"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "MegumiPassive1",
+   "display_name": "Winged Spirit",
+   "unlock_upgrade": 3,
+   "description": "On Upgrade 3:\n- Summon a WingedSpirit at this unit's position that will circle at 50% of this unit's range\n- WingedSpirit will deal 50% of this unit's current damage every 8 seconds in its current location and apply Stun"
+  },
+  {
+   "name": "MegumiPassive2",
+   "display_name": "Wolf Spirit",
+   "unlock_upgrade": 5,
+   "description": "On Upgrade 5:\n- Summon a WolfSpirit at this unit's position\n- WolfSpirit can be upgraded independently"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "MegumiAbility1",
+   "display_name": "Shadow Realm",
+   "unlock_upgrade": 7,
+   "description": "On activation:\n- Transform the whole map into ShadowRealm\nShadowRealm will:\n- ShadowRewind all enemies in range for 50% of this unit's range\n- Apply 25% Damage Buff to all Magical units for 30 seconds\nShadowRewind can be applied to an enemy a maximum of 2 times."
+  },
+  {
+   "name": "MegumiAbility2",
+   "display_name": "Divine Spirit",
+   "unlock_upgrade": 10,
+   "description": "On activation:\n- Summon DivineSpirit\n- Stun this unit for 15 seconds \n- DivineSpirit's damage will be equal to 100% of this unit's base damage\nDivineSpirit cannot despawn, be killed or stunned."
+  }
+ ]
+}

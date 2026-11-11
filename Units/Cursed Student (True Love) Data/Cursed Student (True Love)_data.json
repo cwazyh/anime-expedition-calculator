@@ -1,0 +1,269 @@
+{
+ "unit_name": "Cursed Student (True Love)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "summons": [
+  {
+   "archetype": "Physical",
+   "display_name": "Bat Spirit",
+   "element": "Dark",
+   "key": "YutaBatSpirit",
+   "placement_limit": 1,
+   "placement_type": "Ground",
+   "rarity": "Mythic",
+   "skill_info": {
+    "Skill1": {
+     "AttackSpeed": 1,
+     "DelayAfterAttack": 0.5,
+     "DelayBeforeAttack": 0.5,
+     "DelayBetweenTicks": 0,
+     "Ticks": 1
+    }
+   },
+   "summonable": {},
+   "update": 0,
+   "upgrades": [
+    {
+     "Abilities": {},
+     "AttackSpeed": 1,
+     "Cost": 0,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 12,
+     "DisplayName": "Bite",
+     "DoTDamage": 0,
+     "HitboxSize": 5,
+     "HitboxType": "Circle",
+     "Passives": {},
+     "Range": 24,
+     "SPA": 10,
+     "SkillName": "Skill1",
+     "StatusEffects": {
+      "Bleed": {
+       "Duration": 6
+      }
+     },
+     "Tags": {},
+     "Unplaceable": false,
+     "Unsellable": true
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "Bleed": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Bleed",
+   "duration": 6,
+   "scaling": 0.65,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 6,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Slash",
+   "cost": 1250,
+   "damage": 229,
+   "range": 20,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Slash",
+   "cost": 3000,
+   "damage": 335,
+   "range": 20,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Black Flash",
+   "cost": 3600,
+   "damage": 598,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Black Flash",
+   "cost": 3750,
+   "damage": 740,
+   "range": 22,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill3",
+   "attack_name": "Die",
+   "cost": 4750,
+   "damage": 887,
+   "range": 24,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Die",
+   "cost": 6250,
+   "damage": 937,
+   "range": 25,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Die",
+   "cost": 7750,
+   "damage": 1078,
+   "range": 26,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill4",
+   "attack_name": "True Love",
+   "cost": 9750,
+   "damage": 1369,
+   "range": 27,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill4",
+   "attack_name": "True Love",
+   "cost": 11750,
+   "damage": 1482,
+   "range": 27,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "YutaPassive1",
+    "YutaPassive2"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "YutaPassive1",
+   "display_name": "Cursed Mimicry",
+   "unlock_upgrade": 0,
+   "description": "Every 3 RegularAttack:\n- FollowUp with a copy of an attack of the closest unit in range\nThe FollowUpAttack will deal:\n- 100% of this unit's current damage, plus 40% of the closest unit's current damage\nOn New Attack:\n- FollowUpAttack percentage of closest unit is increased by 20%"
+  },
+  {
+   "name": "YutaPassive2",
+   "display_name": "Spirit Bats",
+   "unlock_upgrade": 0,
+   "description": "Every 20 total stacks of Bleed in this unit's range:\n- Summon a YutaBatSpirit at this unit's position (Capacity: 3)\n- YutaBatSpirits will deal 15% of this unit's current damage per attack\n- YutaBatSpirits despawn after 3 attacks"
+  }
+ ],
+ "abilities": []
+}

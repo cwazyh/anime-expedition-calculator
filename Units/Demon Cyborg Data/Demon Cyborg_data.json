@@ -1,0 +1,141 @@
+{
+ "unit_name": "Demon Cyborg",
+ "rarity": "Epic",
+ "archetype": "Physical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Epic unit from the wiki.",
+ "traits": [
+  "Unbound",
+  "Bolt"
+ ],
+ "equipment": [
+  "Mechanical Wings",
+  "Technique Amplifier",
+  "Memory Pendant"
+ ],
+ "tdps": 16500,
+ "deploy": 500,
+ "cost": 9500,
+ "placeholder": false,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Rapid Fire",
+   "cost": 325,
+   "damage": 15,
+   "range": 13,
+   "spa": 3.75,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 5,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Rapid Fire",
+   "cost": 550,
+   "damage": 29,
+   "range": 13,
+   "spa": 3.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 5,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Rapid Fire",
+   "cost": 775,
+   "damage": 44,
+   "range": 14,
+   "spa": 3.375,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 5,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Incinerate",
+   "cost": 900,
+   "damage": 58,
+   "range": 15,
+   "spa": 3.375,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 4,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Incinerate",
+   "cost": 1200,
+   "damage": 82,
+   "range": 16,
+   "spa": 3.15,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 4,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Incinerate",
+   "cost": 1600,
+   "damage": 125,
+   "range": 16,
+   "spa": 3.15,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 4,
+   "passives": [],
+   "abilities": []
+  }
+ ],
+ "passives": [],
+ "abilities": []
+}

@@ -1,0 +1,347 @@
+{
+ "unit_name": "Crimson Captain (Moon)",
+ "rarity": "Secret",
+ "archetype": "Magical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "summons": [
+  {
+   "archetype": "Magical",
+   "display_name": "Fire Banner",
+   "element": "Flame",
+   "key": "BenimaruBroom",
+   "placement_limit": 3,
+   "placement_type": "Ground",
+   "rarity": "Secret",
+   "skill_info": {
+    "Skill1": {
+     "AttackSpeed": 1,
+     "DelayAfterAttack": 0.5,
+     "DelayBeforeAttack": 0.5,
+     "DelayBetweenTicks": 0,
+     "Ticks": 1
+    }
+   },
+   "summonable": {},
+   "update": 3,
+   "upgrades": [
+    {
+     "Abilities": {},
+     "AttackSpeed": 1,
+     "Cost": 1000,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 100,
+     "DisplayName": "Attack1",
+     "DoTDamage": 0,
+     "HitboxSize": 10,
+     "HitboxType": "Circle",
+     "Passives": {},
+     "Range": 10,
+     "SPA": 7.5,
+     "SkillName": "Skill1",
+     "Tags": {},
+     "Unplaceable": false,
+     "Unsellable": false
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "Scorched": {
+   "cooldown": 10,
+   "description": "Mark applied by $BenimaruPassive1.",
+   "display_name": "Scorched",
+   "duration": 5,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 3
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Flame Crescent",
+   "cost": 2500,
+   "damage": 330,
+   "range": 13,
+   "spa": 3.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Flame Crescent",
+   "cost": 2900,
+   "damage": 390,
+   "range": 14,
+   "spa": 3.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Flame Crescent",
+   "cost": 3300,
+   "damage": 475,
+   "range": 15,
+   "spa": 3.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Flame Crescent",
+   "cost": 3800,
+   "damage": 570,
+   "range": 16,
+   "spa": 3.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Explosive Banners",
+   "cost": 4400,
+   "damage": 1910,
+   "range": 19,
+   "spa": 8.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Explosive Banners",
+   "cost": 5100,
+   "damage": 2280,
+   "range": 20,
+   "spa": 8.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Explosive Banners",
+   "cost": 5900,
+   "damage": 2700,
+   "range": 21,
+   "spa": 8.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Explosive Banners",
+   "cost": 6900,
+   "damage": 3115,
+   "range": 22,
+   "spa": 8.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Heaven’s Flame",
+   "cost": 8000,
+   "damage": 3170,
+   "range": 24,
+   "spa": 7.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 100,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": [
+    "BenimaruAbility1"
+   ]
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Heaven’s Flame",
+   "cost": 9200,
+   "damage": 3550,
+   "range": 25,
+   "spa": 7.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 100,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": [
+    "BenimaruAbility1"
+   ]
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Heaven’s Flame",
+   "cost": 10200,
+   "damage": 3925,
+   "range": 26,
+   "spa": 7.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 100,
+   "passives": [
+    "BenimaruPassive1",
+    "BenimaruPassive2",
+    "BenimaruPassive3"
+   ],
+   "abilities": [
+    "BenimaruAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "BenimaruPassive1",
+   "display_name": "Scorched Earth",
+   "unlock_upgrade": 0,
+   "description": "If an enemy is within this unit's range:\n- Gain 1 Scorched stack every 3 seconds (Capacity : 10)\nEnemies afflicted with Scorched will :\n- Take 10% increased damage from FireElement units\n- Take 20% increased damage from any FireDoT\nFor every FireElement unit placed or unique stack of FireDoT on an enemy in this unit's range:\n- Increase damage by 5% (Capacity : 25%)\n- Increase buffs from Scorched by 2% (Capacity : 10%)"
+  },
+  {
+   "name": "BenimaruPassive2",
+   "display_name": "Absolute Flames",
+   "unlock_upgrade": 0,
+   "description": "When an enemy has the maximum amount of Scorched stacks currently applied to them:\n- This unit's FireDoT will always critically strike on that enemy\nEach enemy with max Scorched stacks in this unit's range will:\n- Increase this unit's critical damage by 5% (Capacity: 50%)"
+  },
+  {
+   "name": "BenimaruPassive3",
+   "display_name": "Fiery Banner",
+   "unlock_upgrade": 0,
+   "description": "Every 10 seconds:\n- Spawn a FireBanner next to this unit (Capacity: 5)\nFireBanner will :\n- Deal 15% of this unit's current damage\n- Have a fixed SPA of 5\n- Have 75% of this unit's current range\n- Apply their own instance of FireDoT\nOnce 5 FireBanner have been spawned by this unit :\n- Spawn FireBanner from the base as summons\nFireBanner Summons will :\n- Deal 20% of this unit's current damage when passing through an enemy\n- Summons do not lose HP when passing through enemies"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "BenimaruAbility1",
+   "display_name": "Seventh Form, Wheel of the Sun",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- Deal 250% damage to all enemies in range\n- Apply Fire dealing 100% Damage per tick to all enemies in range"
+  }
+ ]
+}

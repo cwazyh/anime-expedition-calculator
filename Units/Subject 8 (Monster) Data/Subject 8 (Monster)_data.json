@@ -1,0 +1,284 @@
+{
+ "unit_name": "Subject 8 (Monster)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Storm",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 3.5,
+ "obtainable": false,
+ "desc": "Stack-based, Control Meter, Colossal Roar.",
+ "traits": [
+  "Unbound",
+  "Strength"
+ ],
+ "equipment": [
+  "Predator's Skull",
+  "Sacrificial Mark",
+  "Royal Gi"
+ ],
+ "tdps": 11212,
+ "deploy": 2000,
+ "cost": 47500,
+ "placeholder": false,
+ "status_effects": {
+  "Dismember": {
+   "cooldown": 9999,
+   "description": "Permanently reduces movement speed by $SpeedScaling.",
+   "display_name": "Dismembered",
+   "duration": 9999,
+   "scaling": 0,
+   "speed_scaling": 0.15,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Beast Assault",
+   "cost": 2000,
+   "damage": 1365,
+   "range": 10,
+   "spa": 9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Beast Assault",
+   "cost": 2600,
+   "damage": 1620,
+   "range": 11,
+   "spa": 8.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Beast Assault",
+   "cost": 3200,
+   "damage": 1940,
+   "range": 12,
+   "spa": 8.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Beast Assault",
+   "cost": 3800,
+   "damage": 2310,
+   "range": 13,
+   "spa": 8.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Colusssus Kick",
+   "cost": 4700,
+   "damage": 3315,
+   "range": 15,
+   "spa": 10.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Colusssus Kick",
+   "cost": 5700,
+   "damage": 3910,
+   "range": 17,
+   "spa": 10.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Colusssus Kick",
+   "cost": 6800,
+   "damage": 4565,
+   "range": 19,
+   "spa": 10.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Colusssus Kick",
+   "cost": 8100,
+   "damage": 5285,
+   "range": 21,
+   "spa": 10.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Monster Breath",
+   "cost": 9600,
+   "damage": 5580,
+   "range": 22,
+   "spa": 9.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Monster Breath",
+   "cost": 11300,
+   "damage": 6350,
+   "range": 23,
+   "spa": 9.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Monster Breath",
+   "cost": 11300,
+   "damage": 7100,
+   "range": 24,
+   "spa": 9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "KafkaPassive1",
+    "KafkaPassive2",
+    "KafkaPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "KafkaPassive1",
+   "display_name": "Losing Control",
+   "unlock_upgrade": 0,
+   "description": "This unit has a ControlMeter, starting at 0 (Capacity : 100):\n- Every Attack adds +15\n- Every Takedown adds +1\nAt 25 stacks:\n- Attack deals an additional instance of 30% of this unit's current damage\nAt 50 stacks:\n- Increase AoE Size by 30%\n- Immune to all status effect debuff\nAt 75 stacks:\n- Decrease SPA by 15%\n- Increase Range by 20%\nAt 100 stacks:\n- Unlock KafkaPassive2"
+  },
+  {
+   "name": "KafkaPassive2",
+   "display_name": "Unbound",
+   "unlock_upgrade": 0,
+   "description": "At full ControlMeter stacks, unlock this passive\nFor 20 seconds:\n- Increase damage by 50%\n- Decrease SPA by 15%\n- Increase AoE Size by 20%\nEnemies hit by KafkaPassive3:\n- Deals 100% of this units current damage over 5 hits\n- Grants all units in range 20% Physical damage\nOnce timer runs out, reset ControlMeter to 0"
+  },
+  {
+   "name": "KafkaPassive3",
+   "display_name": "Colossal Roar",
+   "unlock_upgrade": 0,
+   "description": "Any enemy within 50% of this units current range triggers a Full AoE attack which:\n- Applies Dismember to all enemies in range\n- Deals 75% of this units current damage over 5 hits\n- Grants all units in range 10% Physical damage\n15 second cooldown"
+  }
+ ],
+ "abilities": []
+}

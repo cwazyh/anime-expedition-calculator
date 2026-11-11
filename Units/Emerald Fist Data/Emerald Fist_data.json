@@ -1,0 +1,228 @@
+{
+ "unit_name": "Emerald Fist",
+ "rarity": "Exclusive",
+ "archetype": "Physical",
+ "element": "Terra",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 4,
+ "obtainable": true,
+ "desc": "4 gates, +150% damage, stun on every hit.",
+ "traits": [
+  "Unbound",
+  "Strength"
+ ],
+ "equipment": [
+  "Dragon Hilt",
+  "Warrior's Axe",
+  "Royal Gi"
+ ],
+ "tdps": 22056,
+ "deploy": 1200,
+ "cost": 51200,
+ "placeholder": false,
+ "status_effects": {
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Cyclone Barrage",
+   "cost": 1200,
+   "damage": 1650,
+   "range": 16,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 2200,
+   "damage": 1750,
+   "range": 16.2,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 3300,
+   "damage": 2250,
+   "range": 16.9,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 4100,
+   "damage": 2750,
+   "range": 17.6,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 5500,
+   "damage": 3250,
+   "range": 18.4,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 7200,
+   "damage": 3950,
+   "range": 19.3,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 8200,
+   "damage": 5250,
+   "range": 22,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 9500,
+   "damage": 6450,
+   "range": 24,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill1",
+   "attack_name": "Cyclone Barrage",
+   "cost": 10000,
+   "damage": 7450,
+   "range": 26,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "RockLeePassive1",
+    "RockLeePassive2"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "RockLeePassive1",
+   "display_name": "Ankle Weights",
+   "unlock_upgrade": 0,
+   "description": "This unit enters the fight with heavy training weights, limiting its potential:\n- Increase SPA by +35%"
+  },
+  {
+   "name": "RockLeePassive2",
+   "display_name": "Inner Limits",
+   "unlock_upgrade": 0,
+   "description": "This unit’s SPA cannot be affected by outside sources. This unit does not gain new attacks through upgrades and can only access new attacks through RockLeePassive2.\n\nEvery 20s:\n- Release a new Limit\n\nRockLeeGate1: \nEvery 20s:\n- Target the strongest enemy on the map and perform RockLee_Skill2 for 350% damage\n- Stun self for 5s\n\nRockLeeGate2:\n- Increase Damage by +50% for 30 seconds.\nEvery 2s:\n- Cleanse StatusEffects and Debuffs from self\n\nRockLeeGate3: \n- This unit will release both the third and fourth gates at the same time.\n- Disable RockLeePassive1 and further decrease SPA by -50%\n- Increase Damage by +150% \n- Switch to RockLee_Skill3\nEvery Attack this unit performs in this state will:\n- Increase SPA by +2.5% \n- Decrease Damage by -5%\n- Apply Stun on hit for 3s\n- Hit every enemy in range\nAfter 10 Attacks: \n- Unrelease all Limits\n- Stuns self for 10 seconds\n- Re-enable RockLeePassive1"
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,236 @@
+{
+ "unit_name": "Dark Mage (Sovereign)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Hydro",
+ "limited": true,
+ "placement_limit": 2,
+ "update": 0.5,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Freeze": {
+   "cooldown": 5,
+   "description": "Freezes the target, preventing movement and actions for $Durations.",
+   "display_name": "Freeze",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Elemental Weapons",
+   "cost": 1500,
+   "damage": 290,
+   "range": 22,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 2400,
+   "damage": 430,
+   "range": 22,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 3550,
+   "damage": 699,
+   "range": 23,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11.5,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 4200,
+   "damage": 895,
+   "range": 24,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 6950,
+   "damage": 1071,
+   "range": 24,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 7750,
+   "damage": 1185,
+   "range": 25,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 11750,
+   "damage": 1443,
+   "range": 25,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 13250,
+   "damage": 1693,
+   "range": 26,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 13,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill1",
+   "attack_name": "Elemental Weapons",
+   "cost": 13750,
+   "damage": 1822,
+   "range": 26,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 13,
+   "passives": [
+    "JudarPassive1",
+    "JudarPassive2",
+    "JudarPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "JudarPassive1",
+   "display_name": "Magic Cycle",
+   "unlock_upgrade": 0,
+   "description": "After 8 RegularAttacks, this unit will cycle:\n- Attack 1 (Ice Magic) - Circle AoE (Size: 12)\n- Attack 2 (Lightning Magic) - Cone AoE (Size: 55)"
+  },
+  {
+   "name": "JudarPassive2",
+   "display_name": "Lightning Orbs",
+   "unlock_upgrade": 0,
+   "description": "On switching to Lightning Magic:\n- Summon an Arc of Lightning on the path inside of this unit's range\n- Enemies that are touching Arc of Lightning will take 25% of this unit's current damage every 1 second"
+  },
+  {
+   "name": "JudarPassive3",
+   "display_name": "Ice Barrage",
+   "unlock_upgrade": 0,
+   "description": "On switching to Ice Magic:\n- This unit gains Freeze on attack\nOn RegularAttack:\n- Gain 1 stack of JudarMeter per enemy hit (Capacity: 20)\nAt 20 JudarMeter stacks:\n- This unit's next attack against enemies inflicted with Freeze will shatter, unfreezing them and dealing 10% additional damage in a small AoE (5 range)"
+  }
+ ],
+ "abilities": []
+}

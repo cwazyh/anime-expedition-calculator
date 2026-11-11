@@ -1,0 +1,254 @@
+{
+ "unit_name": "Atom (Totality)",
+ "rarity": "Exclusive",
+ "archetype": "Magical",
+ "element": "Plasma",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 5,
+ "obtainable": true,
+ "desc": "3 nuclear passives, map-wide ability. Low deploy cost.",
+ "traits": [
+  "Unbound",
+  "Precision"
+ ],
+ "equipment": [
+  "Technique Amplifier",
+  "Memory Pendant",
+  "Magic Orb"
+ ],
+ "tdps": 24937,
+ "deploy": 1250,
+ "cost": 59250,
+ "placeholder": false,
+ "status_effects": {
+  "Radiation": {
+   "cooldown": 10,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Radiation",
+   "duration": 14,
+   "scaling": 0.1,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 7,
+   "update": 5
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Abyssal Eruption",
+   "cost": 1250,
+   "damage": 1400,
+   "range": 19,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Abyssal Eruption",
+   "cost": 2850,
+   "damage": 2750,
+   "range": 19.5,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Abyssal Eruption",
+   "cost": 4150,
+   "damage": 3450,
+   "range": 20,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Voidstep Strike",
+   "cost": 4950,
+   "damage": 4850,
+   "range": 21,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 14,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Voidstep Strike",
+   "cost": 5850,
+   "damage": 5825,
+   "range": 21,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 14,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Voidstep Strike",
+   "cost": 6600,
+   "damage": 6650,
+   "range": 22,
+   "spa": 5.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 14,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Umbral Flash",
+   "cost": 8550,
+   "damage": 7885,
+   "range": 23,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Umbral Flash",
+   "cost": 9750,
+   "damage": 8635,
+   "range": 23.5,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": [
+    "CidAbility1"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Umbral Flash",
+   "cost": 12050,
+   "damage": 9650,
+   "range": 25,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 14.5,
+   "passives": [
+    "CidPassive1",
+    "CidPassive2",
+    "CidPassive3"
+   ],
+   "abilities": [
+    "CidAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "CidPassive1",
+   "display_name": "Archetype Nuclear",
+   "unlock_upgrade": 0,
+   "description": "All buffs applied from this passive last 15 seconds and do not stack.\nWhen this unit attacks a Basic enemy:\n- +15% Damage\nWhen this unit attacks an Elite:\n- +40% Critical Chance\nWhen this unit attacks a Boss:\n- Counts as attacking a Basic and an Elite\n- +10% Range\n- +20% Critical Damage"
+  },
+  {
+   "name": "CidPassive2",
+   "display_name": "Phantom Nuclear",
+   "unlock_upgrade": 0,
+   "description": "When Boss enters range:\n- That Boss receives +100% Damage Dealt for 10s\nAfter 10s have passed:\n- That Boss is dealt an instance of damage for 300% of this unit's damage\n- All enemies in range are dealt an instance of damage for 100% of this unit's damage\n\nPer-Player Cooldown: 60s"
+  },
+  {
+   "name": "CidPassive3",
+   "display_name": "Rising Nuclear",
+   "unlock_upgrade": 0,
+   "description": "After attacking the same enemy 3 times with basic attacks, inflict that enemy with Radiation:\n- Radiation: Deals 10% of this unit's damage in 7 ticks over 14s\n- Non-Boss enemies afflicted with Radiation will be executed at or below 5% health\n\nOn basic attack against an enemy afflicted with Radiation:\n- Increase the damage factor of existing Radiation on that enemy by +20% (Up to +100%)\nIf this unit is the source of the Radiation:\n- Refresh the duration of Radiation on that enemy"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "CidAbility1",
+   "display_name": "Complete Nuclear",
+   "unlock_upgrade": 7,
+   "description": "On activation:\n- Remove any existing Radiation stacks from enemies\n- Starting at 500% of this unit's damage, each stack of Radiation removed will increase this ability's damage by +10% (Bonus Cap: 500%)\n- Charges for 8s before firing\n- This ability will hit every enemy on the map and bypass all mechanics"
+  }
+ ]
+}

@@ -1,0 +1,249 @@
+{
+ "unit_name": "Crimson (Brother)",
+ "rarity": "Exclusive",
+ "archetype": "Magical",
+ "element": "Dark",
+ "limited": true,
+ "placement_limit": 2,
+ "update": 0,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "ChosoMark": {
+   "cooldown": 10,
+   "description": "Mark applied by $ChosoPassive1 and $ChosoAbility1.",
+   "display_name": "Crimson Mark",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Paint Spears",
+   "cost": 1000,
+   "damage": 301,
+   "range": 18,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Paint Spears",
+   "cost": 1400,
+   "damage": 370,
+   "range": 19,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Paint Spears",
+   "cost": 1700,
+   "damage": 483,
+   "range": 21,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Paint Spears",
+   "cost": 2050,
+   "damage": 670,
+   "range": 22,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Paint Bombs",
+   "cost": 2250,
+   "damage": 1110,
+   "range": 23,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Paint Bombs",
+   "cost": 2700,
+   "damage": 1244,
+   "range": 24,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Paint Bombs",
+   "cost": 3050,
+   "damage": 1507,
+   "range": 25,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Paint Bombs",
+   "cost": 3350,
+   "damage": 1697,
+   "range": 25,
+   "spa": 4.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Paint Beam",
+   "cost": 3600,
+   "damage": 1789,
+   "range": 26,
+   "spa": 4.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 5.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Paint Beam",
+   "cost": 3750,
+   "damage": 1867,
+   "range": 27,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 5.5,
+   "passives": [
+    "ChosoPassive1",
+    "ChosoPassive2"
+   ],
+   "abilities": [
+    "ChosoAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "ChosoPassive1",
+   "display_name": "Crimson Explosion",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack:\n- Inflict enemies with ChosoMark\nkeywordChosoMarked enemies will ChosoExplode after 5 seconds dealing 15% of this unit's current damage."
+  },
+  {
+   "name": "ChosoPassive2",
+   "display_name": "Crimson Pool",
+   "unlock_upgrade": 0,
+   "description": "When ChosoExplode activates:\n- Leave a ChosoCrimsonPool on the ground for 6 seconds (Capacity: 3)\n- Enemies walking on ChosoCrimsonPool will take 10% of this unit's current damage every 2 seconds"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "ChosoAbility1",
+   "display_name": "Piercing Crimson",
+   "unlock_upgrade": 9,
+   "description": "On activation:\n- Select a point within this unit's range to fire ChosoAbility1 at for 10 seconds\nEnemies in ChosoAbility1 will:\n- Take 75% of this unit's damage every 1 seconds\n- Be inflicted with ChosoMark\nThis unit will not Attack whilst this ability is active."
+  }
+ ]
+}

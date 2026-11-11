@@ -1,0 +1,230 @@
+{
+ "unit_name": "Lady Giant (Envy)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Terra",
+ "limited": false,
+ "placement_limit": 4,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Shockwave",
+   "cost": 850,
+   "damage": 154,
+   "range": 17,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Shockwave",
+   "cost": 1300,
+   "damage": 345,
+   "range": 19,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Shockwave",
+   "cost": 1750,
+   "damage": 602,
+   "range": 21,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Shockwave",
+   "cost": 2400,
+   "damage": 708,
+   "range": 22,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Earth Meteor",
+   "cost": 2650,
+   "damage": 1211,
+   "range": 24,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Earth Meteor",
+   "cost": 3050,
+   "damage": 1296,
+   "range": 25,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Earth Meteor",
+   "cost": 3250,
+   "damage": 1373,
+   "range": 27,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Mother Earth Catastrophe",
+   "cost": 6250,
+   "damage": 2543,
+   "range": 23,
+   "spa": 10.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 20,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Mother Earth Catastrophe",
+   "cost": 8500,
+   "damage": 2860,
+   "range": 23,
+   "spa": 10.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 20,
+   "passives": [
+    "DianePassive1",
+    "DianePassive2"
+   ],
+   "abilities": [
+    "DianeAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "DianePassive1",
+   "display_name": "Stone Wall",
+   "unlock_upgrade": 0,
+   "description": "Summon a DianeStoneWall every 15 seconds. (Capacity: 2)\n- DianeStoneWall will have 75% of this unit's current damage as health\n- In DianeTransformation: DianeStoneWall will have 50% of this unit's current damage as health"
+  },
+  {
+   "name": "DianePassive2",
+   "display_name": "Rock Storm",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack:\n- Gain 1 DianeRockChunk\nAt 4 DianeRockChunks:\n- Unleash a FollowUpAttack throwing a DianeRock at the closest enemy in range\n- DianeRock will deal 100% of this unit's current damage\nIn DianeTransformation:\n- DianeRock will deal 125% of this unit's current damage"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "DianeAbility1",
+   "display_name": "Size Control: Giant",
+   "unlock_upgrade": 0,
+   "description": "On activation:\n- Lady Giant alters her size to DianeTransformation for the next 25s:\n- Damage is increased by 125%\n- SPA is increased by 25%\n- Range is increased by 50%"
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "unit_name": "Cursed Immortal (Black Sun)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Dark",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 0.5,
+ "obtainable": false,
+ "desc": "Secret unit with Black Sun mechanics.",
+ "traits": [
+  "Unbound",
+  "Range"
+ ],
+ "equipment": [
+  "Hexed Blade",
+  "Sacrificial Mark",
+  "Memory Pendant"
+ ],
+ "tdps": 19500,
+ "deploy": 2100,
+ "cost": 85000,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Wandering",
+   "cost": 725,
+   "damage": 85.55,
+   "range": 15,
+   "spa": 2.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 1400,
+   "damage": 146.45,
+   "range": 15,
+   "spa": 2.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 2050,
+   "damage": 274.05,
+   "range": 15,
+   "spa": 2.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 3250,
+   "damage": 387.15,
+   "range": 15,
+   "spa": 2.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 4000,
+   "damage": 466.9,
+   "range": 15,
+   "spa": 2.25,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 4750,
+   "damage": 617.6999999999999,
+   "range": 15,
+   "spa": 2.21,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 5750,
+   "damage": 732.25,
+   "range": 15,
+   "spa": 2.17,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 6500,
+   "damage": 811,
+   "range": 15,
+   "spa": 2.13,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 7750,
+   "damage": 999,
+   "range": 15,
+   "spa": 2.09,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill1",
+   "attack_name": "Wandering",
+   "cost": 9600,
+   "damage": 1146,
+   "range": 15,
+   "spa": 2.05,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Support",
+   "hitbox_size": 0,
+   "passives": [
+    "ZerefPassive1",
+    "ZerefPassive2",
+    "ZerefPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "ZerefPassive1",
+   "display_name": "Wandering Death",
+   "unlock_upgrade": 0,
+   "description": "This unit does not deal or receive damage when passing through enemies. Instead, it deals damage every tick to all enemies within its aura."
+  },
+  {
+   "name": "ZerefPassive2",
+   "display_name": "Reckless Control",
+   "unlock_upgrade": 0,
+   "description": "This unit has ZerefBlackMagic meter, starting at 0.\n- When ZerefBlackMagic Meter is increasing this unit will be in \"Caring State\"\n- When ZerefBlackMagic Meter is decreasing this unit will be in \"Cold state\"\nCaring state:\n- Every 1 seconds this unit walks increases this meter by 5\n- Deal 50% of this unit's current damage in 50% of his range\nCold State:\n- Every 1 seconds this unit walks decreases this meter by 2\n- Deal 125% of this unit's current damage in 25% of his range"
+  },
+  {
+   "name": "ZerefPassive3",
+   "display_name": "State of Critical Mass",
+   "unlock_upgrade": 0,
+   "description": "If this unit changes State:\n- Increase Critical Chance by 5% (Capacity: 30%)"
+  }
+ ],
+ "abilities": []
+}

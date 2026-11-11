@@ -1,0 +1,143 @@
+{
+ "unit_name": "The Hero",
+ "rarity": "Legendary",
+ "archetype": "Physical",
+ "element": "Buff",
+ "limited": false,
+ "placement_limit": 4,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Legendary unit from the wiki.",
+ "traits": [
+  "Unbound",
+  "Strength"
+ ],
+ "equipment": [
+  "Chosen Sabre",
+  "Beacon Of Pride",
+  "Royal Gi"
+ ],
+ "tdps": 10500,
+ "deploy": 950,
+ "cost": 14000,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Slash",
+   "cost": 800,
+   "damage": 152,
+   "range": 12,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Slash",
+   "cost": 1200,
+   "damage": 205,
+   "range": 12,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Slash",
+   "cost": 1500,
+   "damage": 237,
+   "range": 12,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Lunge",
+   "cost": 1800,
+   "damage": 258,
+   "range": 12,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Lunge",
+   "cost": 2000,
+   "damage": 275,
+   "range": 12,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Lunge",
+   "cost": 2500,
+   "damage": 330,
+   "range": 12,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "HimmelPassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "HimmelPassive",
+   "display_name": "Hero Blessing",
+   "unlock_upgrade": 0,
+   "description": "Apply Damage Buff to all Physical units within range\nIncreased by 5% each upgrade"
+  }
+ ],
+ "abilities": []
+}

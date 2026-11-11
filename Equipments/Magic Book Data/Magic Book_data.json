@@ -1,0 +1,12 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Magical": {
+   "min": 5,
+   "max": 20
+  }
+ },
+ "passives": [],
+ "abilities": []
+}

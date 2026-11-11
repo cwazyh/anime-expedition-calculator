@@ -1,0 +1,84 @@
+{
+ "for_unit": "8th Sword (Berserk)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 10,
+   "max": 20
+  },
+  "Physical": {
+   "min": 1,
+   "max": 5
+  },
+  "Damage": {
+   "min": 100,
+   "max": 100
+  },
+  "Cost": {
+   "min": -20,
+   "max": -20
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "KenpachiEquipment2Passive1",
+   "display_name": "Savage Rush EX",
+   "description": "All of this unit's $FollowUpAttacks apply $Dismember to enemies. Whenever an ally in this unit's range is stunned, this unit will also be stunned\n\nWhen this unit is stunned:\n- Immediately $Cleanse the stun\n- $FollowUpAttack ($KenpachiEVO_Skill4) at {1}% current damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 200,
+     "max": 200,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "KenpachiPassive2",
+    "KenpachiPassive3"
+   ]
+  },
+  {
+   "slot": 2,
+   "name": "KenpachiEquipment2Passive2",
+   "display_name": "The Nameless Butcher EX",
+   "description": "This unit won't accept any external support. After {1} $Takedowns or upon being stunned, this unit will enter $KenpachiTransformation for 15 seconds:\n- Increase Damage by +{2}%\n- Decrease SPA by -{3}%\n- Apply $Dismember on every $Attack\n\n$KenpachiTransformation entered through this passive:\n- Increase $Dismember factor to {4}%\n- Increase $KenpachiPassive1 size to {5}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "KenpachiPassive4"
+   ]
+  }
+ ],
+ "abilities": []
+}

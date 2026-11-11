@@ -1,0 +1,318 @@
+{
+ "unit_name": "Reaper (Frenzied)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 4,
+ "obtainable": true,
+ "desc": "3 passives, boss grab 200%, cleanse and stun.",
+ "traits": [
+  "Unbound",
+  "Forsaken"
+ ],
+ "equipment": [
+  "Reaper's Glove",
+  "Soul Splitter",
+  "Hell's Flower"
+ ],
+ "tdps": 24625,
+ "deploy": 2000,
+ "cost": 94450,
+ "placeholder": false,
+ "status_effects": {
+  "Slow": {
+   "cooldown": 5,
+   "description": "Reduces movement speed by $SpeedScaling for $Durations.",
+   "display_name": "Slow",
+   "duration": 5,
+   "scaling": 0,
+   "speed_scaling": 0.5,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Feral Rush",
+   "cost": 2000,
+   "damage": 1250,
+   "range": 16,
+   "spa": 6.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Feral Rush",
+   "cost": 3500,
+   "damage": 1450,
+   "range": 16.5,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Feral Rush",
+   "cost": 4300,
+   "damage": 1950,
+   "range": 16.5,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Feral Rush",
+   "cost": 5000,
+   "damage": 2650,
+   "range": 17.2,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Feral Rush",
+   "cost": 5750,
+   "damage": 3450,
+   "range": 17.8,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Beast's Wrath",
+   "cost": 6500,
+   "damage": 4450,
+   "range": 19,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Beast's Wrath",
+   "cost": 6950,
+   "damage": 5350,
+   "range": 19.5,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Beast's Wrath",
+   "cost": 7800,
+   "damage": 5850,
+   "range": 20,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Beast's Wrath",
+   "cost": 8600,
+   "damage": 6250,
+   "range": 20,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 11.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Ravaging Execution",
+   "cost": 9750,
+   "damage": 7250,
+   "range": 21,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 13.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Ravaging Execution",
+   "cost": 19500,
+   "damage": 9250,
+   "range": 21.5,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 13.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2"
+   ],
+   "abilities": [
+    "IchigoVastoAbility1"
+   ]
+  },
+  {
+   "level": 11,
+   "skill_name": "Skill3",
+   "attack_name": "Ravaging Execution",
+   "cost": 20000,
+   "damage": 10050,
+   "range": 22.8,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 13.5,
+   "passives": [
+    "IchigoVastoPassive1",
+    "IchigoVastoPassive2",
+    "IchigoVastoPassive3"
+   ],
+   "abilities": [
+    "IchigoVastoAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "IchigoVastoPassive1",
+   "display_name": "Crush The World Down",
+   "unlock_upgrade": 0,
+   "description": "When an enemy leaves this unit’s range:\n- Perform IchigoVasto_Skill1 on that enemy for 200% damage (Cooldown: 8s)\nIf the enemy survives that attack:\n- Apply 50% Slow to that enemy for 10 seconds"
+  },
+  {
+   "name": "IchigoVastoPassive2",
+   "display_name": "Higher Than The Moon",
+   "unlock_upgrade": 0,
+   "description": "When this unit is afflicted with a StatusEffect:\n- Cleanses itself & perform IchigoVasto_Skill4 for 150% of its damage\n- This attack hits all enemies in range & applies Stun for 3s\nCooldown: 5s"
+  },
+  {
+   "name": "IchigoVastoPassive3",
+   "display_name": "Go For The Heart",
+   "unlock_upgrade": 11,
+   "description": "When a Boss leaves this unit’s range:\n- This unit stops attacking and becomes a PathSummon, grabbing the Boss and dragging them along the path back to the closest spot on the track near this unit’s position (Global Cooldown: 30s)\n- The Boss takes 200% of this unit’s damage from the initial grab, guaranteed to crit\n- Every enemy hit by the PathSummon takes 150% of this unit’s damage\nMax application per Boss: 1"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "IchigoVastoAbility1",
+   "display_name": "Annihilation Zero",
+   "unlock_upgrade": 10,
+   "description": "Select a unit within this unit’s range. On activation:\n- This unit pins that unit to the ground and performs IchigoVasto_Skill2 aimed at the unit\n- Stuns that unit for 8 seconds\n- All enemies in range of the attack are hit for 300% damage"
+  }
+ ]
+}

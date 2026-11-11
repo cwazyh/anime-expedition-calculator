@@ -1,0 +1,244 @@
+{
+ "unit_name": "Carrot (Unleashed)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Gale",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 1,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Stagger": {
+   "cooldown": 5,
+   "description": "Interrupts actions and briefly delays movement.",
+   "display_name": "Stagger",
+   "duration": 4,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Spirit Blast",
+   "cost": 950,
+   "damage": 342,
+   "range": 19,
+   "spa": 9.3,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Spirit Blast",
+   "cost": 1650,
+   "damage": 477,
+   "range": 19,
+   "spa": 9.3,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Spirit Blast",
+   "cost": 2250,
+   "damage": 762,
+   "range": 20,
+   "spa": 9.1,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Spirit Barrage",
+   "cost": 3100,
+   "damage": 1042.5,
+   "range": 21,
+   "spa": 8.7,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Spirit Barrage",
+   "cost": 4250,
+   "damage": 1353,
+   "range": 22,
+   "spa": 8.7,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Spirit Barrage",
+   "cost": 5000,
+   "damage": 1864.5,
+   "range": 23,
+   "spa": 8.3,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Spirit Burst",
+   "cost": 6500,
+   "damage": 2119.5,
+   "range": 23,
+   "spa": 10,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Spirit Burst",
+   "cost": 7000,
+   "damage": 2385,
+   "range": 24,
+   "spa": 9.5,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Spirit Burst",
+   "cost": 7500,
+   "damage": 2572,
+   "range": 25,
+   "spa": 9.3,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "GokuPassive1",
+    "GokuPassive2"
+   ],
+   "abilities": [
+    "GokuAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "GokuPassive1",
+   "display_name": "Battle Instinct",
+   "unlock_upgrade": 0,
+   "description": "Every 3 non-CriticalAttacks:\n- Next RegularAttack will be a guaranteed CriticalAttack"
+  },
+  {
+   "name": "GokuPassive2",
+   "display_name": "Limitless Warrior",
+   "unlock_upgrade": 0,
+   "description": "This unit has GokuMeter, starting at 0.\nOn CriticalAttack:\n- Increase GokuMeter by 10\nIf this unit is Debuffed or Stun:\n- Increase GokuMeter by 20\nAt 30 GokuMeter stacks:\n- Transform this unit into GokuTransformation\nIn GokuTransformation form:\n- Apply Stagger to all enemies in range\n- This unit becomes immune to StatusEffects\n- Increase Damage by 15%\n- Increase Crit Damage by 20%\n- GokuMeter will decrease by 1 every 2 seconds\nWhen GokuMeter is depleted:\n- Transform back into base"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "GokuAbility1",
+   "display_name": "Instant Relocation",
+   "unlock_upgrade": 8,
+   "description": "Select a unit on the map or a position within this unit's range to Relocate to for 15 seconds.\r\nOn Relocate to a unit:\r\n- Immediately perform a FollowUpAttack dealing 75% of this unit's current damage\r\n- Trigger the selected unit to perform the same FollowUpAttack dealing 75% of the selected unit's current damage\r\nOn Relocate to a position:\r\n- Immediately perform a FollowUpAttack dealing 75% of this unit's current damage\r\n- Increase this unit's Damage by 50% for 15 seconds"
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -10
+  }
+ },
+ "passives": [],
+ "abilities": []
+}

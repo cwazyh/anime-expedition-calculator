@@ -1,0 +1,46 @@
+{
+ "for_unit": "Ignition Commander (Betrayal)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "BurnsEquipmentPassive1",
+   "display_name": "Ignition Release",
+   "description": "When $Rewind is applied from $BurnsPassive1:\n- Deal {1}% damage to all enemies within $BurnsZone1\n  {2} second cooldown\nWhen an enemy reaches the $HeatStack capacity from $BurnsPassive1:\n- $BurnsPassive3 deals {3}% increase damage to them",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "BurnsPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

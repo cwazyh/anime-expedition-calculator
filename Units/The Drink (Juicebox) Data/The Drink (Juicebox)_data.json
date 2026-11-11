@@ -1,0 +1,239 @@
+{
+ "unit_name": "The Drink (Juicebox)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Hydro",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 1,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Golden": {
+   "cooldown": 0,
+   "description": "On application of $Golden an enemy will be stunned and become more conductive, allowing $Electricity to chain to 2 additional enemies.",
+   "display_name": "Golden",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 2
+  },
+  "TrunksMark": {
+   "cooldown": 10,
+   "description": "Mark applied by $TrunksPassive1 and $TrunksPassive2.",
+   "display_name": "The Drink Mark",
+   "duration": 9999,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 1
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Energy Bomb",
+   "cost": 1200,
+   "damage": 234,
+   "range": 17,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Energy Bomb",
+   "cost": 2000,
+   "damage": 396.5,
+   "range": 19,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Energy Bullets",
+   "cost": 2750,
+   "damage": 630.5,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Energy Bullets",
+   "cost": 3500,
+   "damage": 778.7,
+   "range": 21,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Energy Bullets",
+   "cost": 4250,
+   "damage": 929.5,
+   "range": 22,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Slashing Barrage",
+   "cost": 5750,
+   "damage": 1154.4,
+   "range": 23,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Slashing Barrage",
+   "cost": 6500,
+   "damage": 1285.7,
+   "range": 24,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Slashing Barrage",
+   "cost": 8500,
+   "damage": 1371.5,
+   "range": 24,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9.5,
+   "passives": [
+    "TrunksPassive1",
+    "TrunksPassive2",
+    "TrunksPassive3"
+   ],
+   "abilities": [
+    "TrunksAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "TrunksPassive1",
+   "display_name": "Precision Slash",
+   "unlock_upgrade": 0,
+   "description": "Every 6 RegularAttacks:\n- Inflict enemies with TrunksMark for 15 seconds\nTrunksMark will:\n- Increase all FollowUpAttack damage by 10%\n- Apply a Physical weakness at 10%"
+  },
+  {
+   "name": "TrunksPassive2",
+   "display_name": "Quick Assist",
+   "unlock_upgrade": 0,
+   "description": "When a FollowUpAttack happens in this unit's range (Cooldown: 8s):\n- FollowUpAttack at 150% of this unit's current damage\n- Apply TrunksPassive1"
+  },
+  {
+   "name": "TrunksPassive3",
+   "display_name": "Perfected Strikes",
+   "unlock_upgrade": 0,
+   "description": "On applying TrunksMark during TrunksTransformation:\n- All FollowUpAttacks from this unit will critically strike and deal 15% increased critical damage"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "TrunksAbility1",
+   "display_name": "Golden Ascension",
+   "unlock_upgrade": 7,
+   "description": "On activation:\n- This unit will transform into TrunksTransformation for 60 seconds\n- Decreases TrunksPassive1 attacks required by 1\n- Increases TrunksPassive2 FollowUpAttack damage by 15%\n- Decrease SPA by 10%\n- Increase RNG by 10%"
+  }
+ ]
+}

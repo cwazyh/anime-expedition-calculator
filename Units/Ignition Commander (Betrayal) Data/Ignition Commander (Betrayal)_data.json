@@ -1,0 +1,340 @@
+{
+ "unit_name": "Ignition Commander (Betrayal)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "HeatStack": {
+   "cooldown": 10,
+   "description": "Mark applied by $BurnsPassive1.",
+   "display_name": "Heat Stack",
+   "duration": 4,
+   "scaling": 0.25,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 4,
+   "update": 3
+  },
+  "Rewind": {
+   "apply_cap": 10,
+   "cooldown": 10,
+   "description": "Forces the target to move backward along its path.",
+   "display_name": "Rewind",
+   "duration": 3,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Voltage Barrage",
+   "cost": 2200,
+   "damage": 915,
+   "range": 16,
+   "spa": 8.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Voltage Barrage",
+   "cost": 2700,
+   "damage": 1100,
+   "range": 17,
+   "spa": 8.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Voltage Barrage",
+   "cost": 3300,
+   "damage": 1330,
+   "range": 18,
+   "spa": 8.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Voltage Barrage",
+   "cost": 3800,
+   "damage": 1585,
+   "range": 19,
+   "spa": 8.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Flame Fist",
+   "cost": 4600,
+   "damage": 2060,
+   "range": 20,
+   "spa": 9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Flame Fist",
+   "cost": 4900,
+   "damage": 2470,
+   "range": 21,
+   "spa": 8.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Flame Fist",
+   "cost": 5400,
+   "damage": 2930,
+   "range": 22,
+   "spa": 8.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Flame Fist",
+   "cost": 6200,
+   "damage": 3610,
+   "range": 23,
+   "spa": 8.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Nova Cyclone",
+   "cost": 6500,
+   "damage": 4070,
+   "range": 24,
+   "spa": 9.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Nova Cyclone",
+   "cost": 7000,
+   "damage": 4635,
+   "range": 25,
+   "spa": 9.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Nova Cyclone",
+   "cost": 7600,
+   "damage": 5155,
+   "range": 25.5,
+   "spa": 9.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 11,
+   "skill_name": "Skill3",
+   "attack_name": "Nova Cyclone",
+   "cost": 8200,
+   "damage": 5605,
+   "range": 26,
+   "spa": 9.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "BurnsPassive1",
+    "BurnsPassive2",
+    "BurnsPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "BurnsPassive1",
+   "display_name": "Immovable",
+   "unlock_upgrade": 0,
+   "description": "Whenever an enemy is within 60% of this unit's range, they enter BurnsZone1\nEnemies within BurnsZone1:\n- Gain 1 HeatStack per second until they leave this unit's range (Capacity: 10 Stacks)\nWhenever an enemy is within 30% of this unit's range, they enter BurnsZone2\n- Enemies within BurnsZone2 are given:\n- Stun for 2 seconds\nAfter Stun expires:\n- Apply Rewind for 7 distance\n- Can only happen once per enemy\nIf the same enemy enters BurnsZone2 again:\n- Gain 2 HeatStack per second until they leave BurnsZone2\nIf Rewind takes an enemy outside this unit's range:\n- The enemy does not lose their current HeatStack"
+  },
+  {
+   "name": "BurnsPassive2",
+   "display_name": "Human Furnace",
+   "unlock_upgrade": 0,
+   "description": "For each HeatStack applied to an enemy, this unit deals:\n- 3% increased damage to that enemy per HeatStack\n\nWhen an enemy reaches 10 HeatStack:\n- This unit applies Fire to that enemy"
+  },
+  {
+   "name": "BurnsPassive3",
+   "display_name": "Ignition Release",
+   "unlock_upgrade": 0,
+   "description": "When Rewind is applied from BurnsPassive1:\n- Deal 75% damage to all enemies within BurnsZone1\n  15 second cooldown\nWhen an enemy reaches the HeatStack capacity from BurnsPassive1:\n- BurnsPassive3 deals 15% increase damage to them"
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,313 @@
+{
+ "unit_name": "Devil (Hero)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Circle AoE 2 hits, stacking burn.",
+ "traits": [
+  "Unbound",
+  "Precision"
+ ],
+ "equipment": [
+  "Fiery Staff",
+  "Burning Critter",
+  "Magic Orb"
+ ],
+ "tdps": 5300,
+ "deploy": 1000,
+ "cost": 51150,
+ "placeholder": false,
+ "status_effects": {
+  "DemonHead": {
+   "cooldown": 10,
+   "description": "Mark applied by $ShinraPassive1.",
+   "display_name": "Demon Head",
+   "duration": 5,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 0,
+   "update": 3
+  },
+  "EnhancedBurn": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Enhanced Burn",
+   "duration": 4,
+   "scaling": 0.75,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 3
+  },
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Inferno Drive",
+   "cost": 1000,
+   "damage": 650,
+   "range": 13,
+   "spa": 8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Inferno Drive",
+   "cost": 1700,
+   "damage": 790,
+   "range": 14,
+   "spa": 7.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Inferno Drive",
+   "cost": 2200,
+   "damage": 1140,
+   "range": 15,
+   "spa": 7.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Inferno Drive",
+   "cost": 2800,
+   "damage": 1400,
+   "range": 16,
+   "spa": 7.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Hell Impact",
+   "cost": 3800,
+   "damage": 2000,
+   "range": 18,
+   "spa": 9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Hell Impact",
+   "cost": 4500,
+   "damage": 2295,
+   "range": 19,
+   "spa": 8.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Hell Impact",
+   "cost": 5500,
+   "damage": 2740,
+   "range": 20,
+   "spa": 8.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Hell Impact",
+   "cost": 7000,
+   "damage": 3300,
+   "range": 21,
+   "spa": 8.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Scorching Breakdance",
+   "cost": 8500,
+   "damage": 3280,
+   "range": 23,
+   "spa": 8.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Scorching Breakdance",
+   "cost": 9500,
+   "damage": 3376,
+   "range": 25,
+   "spa": 8.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Scorching Breakdance",
+   "cost": 11000,
+   "damage": 3700,
+   "range": 27,
+   "spa": 8.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShinraPassive1",
+    "ShinraPassive2",
+    "ShinraPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "ShinraPassive1",
+   "display_name": "Horned Fire Ball",
+   "unlock_upgrade": 0,
+   "description": "Every 20 seconds:\n- This unit's next attack applies a DemonHead radius on an enemy for 10 seconds\nEnemies inside DemonHead's radius:\n- Take 10% increased damage from this unit\nDemonHead:\n- When this unit attacks an enemy inside its radius, apply 1 instance of EnhancedBurn\n- EnhancedBurn deals 75% damage in 4 ticks over 4 seconds\n- Stores all EnhancedBurn damage dealt while active"
+  },
+  {
+   "name": "ShinraPassive2",
+   "display_name": "Horns Fire Charge",
+   "unlock_upgrade": 0,
+   "description": "This unit has DemonMeter, starting at 0. (Capacity: 20)\nWhile an enemy is affected by DemonHead:\n- Gain 1 DemonMeter every second\nFor each DemonMeter:\n- Decrease SPA by 1%\n- Increase Attack Speed by 1%"
+  },
+  {
+   "name": "ShinraPassive3",
+   "display_name": "Horned Fire Bite",
+   "unlock_upgrade": 0,
+   "description": "When DemonHead expires:\n- Detonate in a small radius\n- Apply Fire\n- Deal 50% of all stored EnhancedBurn damage\nWhen DemonMeter is full:\n- Deal 15% of this unit's current damage as extra damage\n- Reset DemonMeter"
+  }
+ ],
+ "abilities": []
+}

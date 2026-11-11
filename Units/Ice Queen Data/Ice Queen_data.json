@@ -1,0 +1,161 @@
+{
+ "unit_name": "Ice Queen",
+ "rarity": "Legendary",
+ "archetype": "Magical",
+ "element": "Hydro",
+ "limited": false,
+ "placement_limit": 4,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Legendary unit from the wiki.",
+ "traits": [
+  "Unbound",
+  "Range"
+ ],
+ "equipment": [
+  "Staff of Chaos",
+  "Magic Orb",
+  "Memory Pendant"
+ ],
+ "tdps": 13500,
+ "deploy": 1100,
+ "cost": 19000,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Ice Pulse",
+   "cost": 650,
+   "damage": 110,
+   "range": 16,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Ice Pulse",
+   "cost": 900,
+   "damage": 126,
+   "range": 17,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Ice Pulse",
+   "cost": 1650,
+   "damage": 126,
+   "range": 18,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Sub Zero Slash",
+   "cost": 1900,
+   "damage": 129,
+   "range": 19,
+   "spa": 3.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Sub Zero Slash",
+   "cost": 2150,
+   "damage": 170,
+   "range": 20,
+   "spa": 3.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Snow Moon",
+   "cost": 2850,
+   "damage": 288,
+   "range": 21,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Snow Moon",
+   "cost": 3350,
+   "damage": 330,
+   "range": 22,
+   "spa": 4.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "RukiaPassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "RukiaPassive",
+   "display_name": "Soul Rend",
+   "unlock_upgrade": 0,
+   "description": "Deal 20% more damage to enemies below 20% health."
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,294 @@
+{
+ "unit_name": "8th Sword (Berserk)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Neutral",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Dismember": {
+   "cooldown": 9999,
+   "description": "Permanently reduces movement speed by $SpeedScaling.",
+   "display_name": "Dismembered",
+   "duration": 9999,
+   "scaling": 0,
+   "speed_scaling": 0.15,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Thunderclap Cut",
+   "cost": 2000,
+   "damage": 183,
+   "range": 16,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Thunderclap Cut",
+   "cost": 2750,
+   "damage": 309,
+   "range": 17,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Thunderclap Cut",
+   "cost": 4000,
+   "damage": 472,
+   "range": 19,
+   "spa": 3.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Thunderclap Cut",
+   "cost": 5750,
+   "damage": 566,
+   "range": 20,
+   "spa": 3.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Unrestrained Rampage",
+   "cost": 7100,
+   "damage": 676,
+   "range": 22,
+   "spa": 3.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Unrestrained Rampage",
+   "cost": 8550,
+   "damage": 801,
+   "range": 22,
+   "spa": 3.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Skyward Slash",
+   "cost": 9250,
+   "damage": 1587,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Skyward Slash",
+   "cost": 9900,
+   "damage": 1869,
+   "range": 24,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Skyward Slash",
+   "cost": 12750,
+   "damage": 2129,
+   "range": 24,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Way of the Sword",
+   "cost": 14250,
+   "damage": 3163,
+   "range": 22,
+   "spa": 8.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill4",
+   "attack_name": "Way of the Sword",
+   "cost": 16500,
+   "damage": 3794,
+   "range": 23,
+   "spa": 8.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "KenpachiPassive1",
+    "KenpachiPassive2",
+    "KenpachiPassive3",
+    "KenpachiPassive4"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "KenpachiPassive1",
+   "display_name": "Demonic Presence",
+   "unlock_upgrade": 0,
+   "description": "Enemies within 40% of this unit's range will take 5% of this unit's current damage every 1 seconds."
+  },
+  {
+   "name": "KenpachiPassive2",
+   "display_name": "Savage Rebound",
+   "unlock_upgrade": 0,
+   "description": "When this unit is stunned:\n- Immediately Cleanse the stun\n- FollowUpAttack (Kenpachi_Skill1) at 100% of this unit's current damage\nAll of this unit's FollowUpAttacks apply Dismember to enemies"
+  },
+  {
+   "name": "KenpachiPassive3",
+   "display_name": "Dismemberer's Rush",
+   "unlock_upgrade": 0,
+   "description": "When an enemy in range goes below 10% health:\n- FollowUpAttack (Kenpachi_Skill2) at 100% of this unit's current damage"
+  },
+  {
+   "name": "KenpachiPassive4",
+   "display_name": "The Nameless Demon",
+   "unlock_upgrade": 0,
+   "description": "After 25 Takedowns this unit will enter KenpachiTransformation for 15 seconds:\n- Increase DMG by 20%\n- Decrease SPA by 10%\n- Apply Dismember on every Attack"
+  }
+ ],
+ "abilities": []
+}

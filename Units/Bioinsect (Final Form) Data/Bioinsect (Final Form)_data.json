@@ -1,0 +1,99 @@
+{
+ "unit_name": "Bioinsect (Final Form)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Terra",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 1,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "BioGel": {
+   "cooldown": 10,
+   "description": "Mark applied by $CellPassive2.",
+   "display_name": "Bio Gel",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark",
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 1
+  },
+  "Slow": {
+   "cooldown": 5,
+   "description": "Reduces movement speed by $SpeedScaling for $Durations.",
+   "display_name": "Slow",
+   "duration": 5,
+   "scaling": 0,
+   "speed_scaling": 0.5,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Piercing Ray",
+   "cost": 1350,
+   "damage": 0,
+   "range": 20,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "CellPassive1",
+    "CellPassive2"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "CellPassive1",
+   "display_name": "Passive Absorption",
+   "unlock_upgrade": 0,
+   "description": "After this unit scores 50 takedowns in CellTransformation1:\n- Spawn Mecha17 as an enemy Boss\n- Mecha17 health is 10000\nWhen Mecha17 is defeated:\n- This unit transforms from CellTransformation1 to CellTransformation2\nAfter this unit scores 50 takedowns in CellTransformation2:\n- Spawn Mecha18 as an enemy Boss\n- Mecha18 health is 20000\nWhen Mecha18 is defeated:\n- This unit transforms from CellTransformation2 to CellTransformation3"
+  },
+  {
+   "name": "CellPassive2",
+   "display_name": "Genetic Code",
+   "unlock_upgrade": 0,
+   "description": "In Imperfect form:\n- Copy 50% base damage of the strongest unit in range\nIn Semiperfect form:\n- This unit gains BioGel on attack\n- Unlock CellAbility1\nBioGel will:\n- Slow enemies by 60% for 5 seconds\n- Stun enemies for 3 seconds on expiry\nIn Perfect form:\nUnlock CellAbility2\nOn Takedown of an enemy inflicted with BioGel:\n- Increase this unit's range by 0.2% (Capacity: 30%)\n- Increase this unit's AoE size by 0.4% (Capacity: 20%)"
+  }
+ ],
+ "abilities": []
+}

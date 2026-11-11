@@ -1,0 +1,240 @@
+{
+ "unit_name": "Eclipse Hunter (Savior)",
+ "rarity": "Mythic",
+ "archetype": "Psychic",
+ "element": "Neutral",
+ "limited": false,
+ "placement_limit": 4,
+ "update": 2.5,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Warp Slash",
+   "cost": 0,
+   "damage": 241,
+   "range": 20,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Warp Slash",
+   "cost": 1500,
+   "damage": 337,
+   "range": 20.5,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Warp Slash",
+   "cost": 1750,
+   "damage": 472,
+   "range": 21,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Warp Slash",
+   "cost": 2500,
+   "damage": 632,
+   "range": 21.5,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Warp Slash",
+   "cost": 3250,
+   "damage": 835,
+   "range": 22,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Stampede Crash",
+   "cost": 4000,
+   "damage": 958,
+   "range": 24,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Stampede Crash",
+   "cost": 4500,
+   "damage": 1222,
+   "range": 24.5,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Stampede Crash",
+   "cost": 4750,
+   "damage": 1508,
+   "range": 25,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Dimensional Shatter",
+   "cost": 6000,
+   "damage": 1859,
+   "range": 27,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Dimensional Shatter",
+   "cost": 6250,
+   "damage": 2222,
+   "range": 28,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "SkullKnightPassive1",
+    "SkullKnightPassive2",
+    "SkullKnightPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "SkullKnightPassive1",
+   "display_name": "Sacrificial Brand Denier",
+   "unlock_upgrade": 0,
+   "description": "When placing a unit (excluding Farms), this unit is placed alongside them.\nThe other unit placed will be SkullKnightSelected.\n\nIf a stage has a Resistance Debuff that matches the SkullKnightSelected's Archetype or Element:\n- Reduce the Resistance by 10% (GlobalCap: 30%)"
+  },
+  {
+   "name": "SkullKnightPassive2",
+   "display_name": "Savior",
+   "unlock_upgrade": 0,
+   "description": "If the SkullKnightSelected unit has less damage than this unit:\n- Increase this unit's damage by 15%\n\nIf the SkullKnightSelected unit has more damage than this unit:\n- Increase the SkullKnightSelected unit's range by 5%\n- Increase the SkullKnightSelected unit's AoE Size by 10%\n\nIf the SkullKnightSelected unit is Iron Wolf (Struggler) or Silver Falcon:\n- Increase the SkullKnightSelected unit's damage by 15%\n- Increase the SkullKnightSelected unit's range by 5%\n- Increase the SkullKnightSelected unit's AoE Size by 10%"
+  },
+  {
+   "name": "SkullKnightPassive3",
+   "display_name": "The King",
+   "unlock_upgrade": 0,
+   "description": "Every 3 upgrades on the SkullKnightSelected unit will:\n- Upgrade this unit for free\n\nEvery upgrade on this unit:\n- Reduce the cost of all of your placed Eclipse Hunter (Savior)'s upgrades by 5%"
+  }
+ ],
+ "abilities": []
+}

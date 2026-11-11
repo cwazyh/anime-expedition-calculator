@@ -1,0 +1,259 @@
+{
+ "unit_name": "Fallen Angel (Holy)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Secret unit, holy damage passives.",
+ "traits": [
+  "Unbound",
+  "Enlightenment"
+ ],
+ "equipment": [
+  "Angel Blade",
+  "Beacon Of Pride",
+  "Memory Pendant"
+ ],
+ "tdps": 17800,
+ "deploy": 1900,
+ "cost": 79000,
+ "placeholder": false,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "TimeStop": {
+   "apply_cap": 3,
+   "cooldown": 5,
+   "description": "Stops time for the target, preventing movement and actions for $Durations.",
+   "display_name": "Time Stop",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 3
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Teleporting Strike",
+   "cost": 1500,
+   "damage": 480,
+   "range": 15,
+   "spa": 7.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Teleporting Strike",
+   "cost": 2300,
+   "damage": 595,
+   "range": 16,
+   "spa": 7.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Teleporting Strike",
+   "cost": 2900,
+   "damage": 720,
+   "range": 17,
+   "spa": 7.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Teleporting Strike",
+   "cost": 3600,
+   "damage": 865,
+   "range": 18,
+   "spa": 7.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Feathered Slash",
+   "cost": 4600,
+   "damage": 1315,
+   "range": 19,
+   "spa": 8.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Feathered Slash",
+   "cost": 5500,
+   "damage": 1570,
+   "range": 20,
+   "spa": 8.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Feathered Slash",
+   "cost": 6700,
+   "damage": 1830,
+   "range": 21,
+   "spa": 8.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Holy Slash",
+   "cost": 8000,
+   "damage": 1745,
+   "range": 22,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Holy Slash",
+   "cost": 9800,
+   "damage": 2065,
+   "range": 23,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "ShoPassive1",
+    "ShoPassive2",
+    "ShoPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "ShoPassive1",
+   "display_name": "Frozen Flames",
+   "unlock_upgrade": 0,
+   "description": "Every 30 seconds:\n- TimeStop all enemies in range for 10 seconds (Maximum 3 times per enemy)\nDuring TimeStop:\n- This unit applies Fire on attack\n- Fire deals 2% increased damage per tick (Capacity: 20%)\n- All currently applied DoT have their durations paused until TimeStop ends (Enemies can be afflicted by additional DoT during this)"
+  },
+  {
+   "name": "ShoPassive2",
+   "display_name": "Flame Bonded",
+   "unlock_upgrade": 0,
+   "description": "During TimeStop, enemies inflicted by this unit's Fire    \n- Spread an instance of Fire to 3 of the closest enemies\nWhen TimeStop ends, enemies which had Fire spread onto them   \n- Take damage equal to 15% of the damage dealt by this unit during TimeStop"
+  },
+  {
+   "name": "ShoPassive3",
+   "display_name": "Idle Flames",
+   "unlock_upgrade": 0,
+   "description": "For every enemy killed with TimeStop applied:\n- Increases TimeStop duration by 1 second\n- Gain a stack of FlameFeather (Capacity: 10)\nOn next TimeStop activation:\n- Consume all FlameFeather stacks\nFor each stack consumed, this unit’s next attack:\n- Applies an instance of Fire per consumed stack"
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,257 @@
+{
+ "unit_name": "First Blade (Strongest)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Hydro",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 5,
+ "obtainable": true,
+ "desc": "Cleanse allies +20% damage, self +25%.",
+ "traits": [
+  "Unbound",
+  "Forsaken"
+ ],
+ "equipment": [
+  "Enhanced Katana",
+  "Emperor's Attire",
+  "Technique Amplifier"
+ ],
+ "tdps": 14547,
+ "deploy": 1800,
+ "cost": 69160,
+ "placeholder": false,
+ "status_effects": {
+  "Liquefy": {
+   "cooldown": 0,
+   "description": "Mark applied by $UnohanaPassive3",
+   "display_name": "Liquefy",
+   "duration": 2,
+   "scaling": 0.5,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 2,
+   "update": 5
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Red Laceration",
+   "cost": 1800,
+   "damage": 1150,
+   "range": 17,
+   "spa": 8.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Red Laceration",
+   "cost": 3400,
+   "damage": 1870,
+   "range": 17.8,
+   "spa": 7.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Red Laceration",
+   "cost": 4700,
+   "damage": 2780,
+   "range": 18,
+   "spa": 7.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Red Laceration",
+   "cost": 5280,
+   "damage": 3430,
+   "range": 18.5,
+   "spa": 7.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Despair and Bliss",
+   "cost": 7970,
+   "damage": 4475,
+   "range": 19,
+   "spa": 7.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Despair and Bliss",
+   "cost": 9740,
+   "damage": 4650,
+   "range": 20,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Despair and Bliss",
+   "cost": 10610,
+   "damage": 5040,
+   "range": 20.6,
+   "spa": 6.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Despair and Bliss",
+   "cost": 12820,
+   "damage": 5850,
+   "range": 21,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Despair and Bliss",
+   "cost": 15280,
+   "damage": 6450,
+   "range": 22.3,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 65,
+   "passives": [
+    "UnohanaPassive1",
+    "UnohanaPassive2",
+    "UnohanaPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "UnohanaPassive1",
+   "display_name": "Can't Fear Your Own Sword",
+   "unlock_upgrade": 0,
+   "description": "If a unit in range is afflicted with a StatusEffect or Debuff:\n- Cleanse that unit\n\nWhen this unit performs a Cleanse, for all allies in range:\n- +20% Damage for 30 seconds\n- This buff is doubled for BleachCategory units\n\nAt the same time, for this unit:\n- +25% Damage for 45 seconds\n- This buff is doubled if cleansing KenpachiEVO\n\nLocal Cooldown: 2s"
+  },
+  {
+   "name": "UnohanaPassive2",
+   "display_name": "Killers Not Dead",
+   "unlock_upgrade": 0,
+   "description": "If KenpachiEVO is in range, for this unit:\n- Switch to Unohana_Skill3\n- +10% Damage\n- +5% Range\n\nWhen this unit performs Unohana_Skill3, for any KenpachiEVO in range:\n- Stun that unit for 2s, bypassing any immunities\n- Enhance that unit's next attack for x15% damage dealt\n- Enable that unit's next attack to stun this unit and all enemies in range for 3s "
+  },
+  {
+   "name": "UnohanaPassive3",
+   "display_name": "Eliminate From Heaven",
+   "unlock_upgrade": 0,
+   "description": "If this unit is afflicted with a StatusEffect or Debuff, for the next attack:\n- Switch to Unohana_Skill3\n- +25% Damage\n\nWhen performing Unohana_Skill3, inflict Liquefy.\nLiquefy:\n- Deals 50% of this unit's damage over 2 seconds\n- On expiry: Enemy heals equal to the damage that the initial application dealt, then Liquefy is reapplied at double the damage factor"
+  }
+ ],
+ "abilities": []
+}

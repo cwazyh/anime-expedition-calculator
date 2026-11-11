@@ -1,0 +1,204 @@
+{
+ "unit_name": "Prodigy (Rage)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 1,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Instantaneous Strike",
+   "cost": 1150,
+   "damage": 509.25,
+   "range": 18,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Instantaneous Strike",
+   "cost": 2000,
+   "damage": 665,
+   "range": 18,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Instantaneous Strike",
+   "cost": 2500,
+   "damage": 952,
+   "range": 19,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Instantaneous Strike",
+   "cost": 3750,
+   "damage": 1309,
+   "range": 20,
+   "spa": 5.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Light Rays",
+   "cost": 5000,
+   "damage": 1611.75,
+   "range": 21,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Light Rays",
+   "cost": 5500,
+   "damage": 1925,
+   "range": 21,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2",
+    "GohanPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Light Rays",
+   "cost": 7000,
+   "damage": 2259.25,
+   "range": 22,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2",
+    "GohanPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Destructive Punches",
+   "cost": 8000,
+   "damage": 4112.5,
+   "range": 25,
+   "spa": 8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12.5,
+   "passives": [
+    "GohanPassive1",
+    "GohanPassive2",
+    "GohanPassive3"
+   ],
+   "abilities": [
+    "GohanAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "GohanPassive1",
+   "display_name": "Hidden Potential",
+   "unlock_upgrade": 0,
+   "description": "On Upgrade 3:\n- Transform into GohanTransformation\n- Every 4 RegularAttacks will deal 25% of this unit's damage to all enemies within its range\nOn Upgrade 5:\n- Unlock GohanPassive3"
+  },
+  {
+   "name": "GohanPassive2",
+   "display_name": "Unyielding Spirit",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack against an enemy with a StatusEffect:\n- Deal 10% increased damage per stack of each StatusEffect (Cap: 100%)\nIf the StatusEffect is a DoT:\n- Refresh the duration\n- Change the source to this unit\n- This can only trigger once per DoT type per enemy"
+  },
+  {
+   "name": "GohanPassive3",
+   "display_name": "Rage Unleashed",
+   "unlock_upgrade": 5,
+   "description": "This unit has GohanMeter, starting at 0.\nOn RegularAttack:\n- Increase GohanMeter by 5\nWhen enemies leave this unit's range:\n- Increase GohanMeter by 1\nAt 100 GohanMeter stacks:\n- Remove GohanMeter\n- Transform this unit into GohanTransformation2\nIn GohanTransformation2 form:\n- Increase this unit's damage by 25%\n- Every 3 RegularAttacks will deal 75% of this unit's damage to all enemies within its range"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "GohanAbility1",
+   "display_name": "Father and Son Spirit Energy",
+   "unlock_upgrade": 7,
+   "description": "On activation:\n- Select a point within this unit's range to fire GohanAbility1 at for 10 seconds\nEnemies in GohanAbility1 will:\n- Take 75% of this unit's damage every 1 seconds\nThis unit will not Attack whilst this ability is active."
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {},
+ "passives": [
+  {
+   "slot": 1,
+   "name": "EconomistsCoinPassive",
+   "display_name": "Economists Coin",
+   "description": "At the end of each wave, return {1}% of Yen spent during that wave (Per Player, Does not stack)",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 10,
+     "decimals": 0
+    }
+   ]
+  }
+ ],
+ "abilities": []
+}

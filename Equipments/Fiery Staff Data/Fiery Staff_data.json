@@ -1,0 +1,52 @@
+{
+ "for_unit": "Head Captain (Char)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "YamamotoEquipmentPassive1",
+   "display_name": "South",
+   "description": "On $Takedown within this unit's range:\n- Transform the enemy into a $YamamotoSkeleton (Capacity: {1})\nEach $YamamotoSkeleton will act as a $PathTrap:\n- When touched by an enemy, deal {2}% of this unit's current damage\n- Explode and apply $Fire to enemies within {3} range\nEach $YamamotoSkeleton summoned will:\n- Increase this unit's damage by {4}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "YamamotoPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

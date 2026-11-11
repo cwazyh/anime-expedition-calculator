@@ -1,0 +1,52 @@
+{
+ "for_unit": "Shadow (Divine)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "MegumiEquipmentPassive1",
+   "display_name": "Winged Spirit",
+   "description": "On Upgrade {1}:\n- Summon a $WingedSpirit at this unit's position that will circle at {2}% of this unit's range\n- $WingedSpirit will deal {3}% of this unit's current damage every {4} seconds in its current location and apply $Stun",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 75,
+     "max": 75,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "MegumiPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

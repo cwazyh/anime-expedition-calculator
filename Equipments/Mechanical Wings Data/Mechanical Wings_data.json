@@ -1,0 +1,99 @@
+{
+ "for_unit": "Bioinsect (Final Form)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [],
+ "abilities": [
+  {
+   "slot": 1,
+   "name": "CellEquipmentAbility1",
+   "display_name": "Genetic Duplication",
+   "description": "On activation:\nSummon {1} $MiniBioinsect at this unit's position (Capacity: {2})\n$MiniBioinsect will:\n- Take {3}% of this unit's current damage as its own damage\n- Have {4}% of this unit's current SPA\n- Have {5}% of this unit's current range as its range\n$MiniBioinsect is permanently in $CellTransformation1, and does not have passives or abilities.",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 45,
+     "max": 45,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 7,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "CellAbility1"
+   ]
+  },
+  {
+   "slot": 2,
+   "name": "CellEquipmentAbility2",
+   "display_name": "Bio Reset",
+   "description": "On activation:\n- This unit will reset back to $CellTransformation1\n- Permanently increase its own damage by {1}%\n- Permanently increase its own range by {2}% (Capacity: {3}%)",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "CellAbility2"
+   ]
+  }
+ ]
+}

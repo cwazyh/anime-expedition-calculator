@@ -1,0 +1,345 @@
+{
+ "unit_name": "Wolf (Revived)",
+ "rarity": "Secret",
+ "archetype": "Magical",
+ "element": "Hydro",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 4,
+ "obtainable": true,
+ "desc": "Lowest SPA in the game, Line AoE 5 hits, 3 passives. Best raw DPS.",
+ "traits": [
+  "Unbound",
+  "Primordial"
+ ],
+ "equipment": [
+  "Shinigami Sword",
+  "Sacrificial Mark",
+  "Technique Amplifier"
+ ],
+ "tdps": 75789,
+ "deploy": 2000,
+ "cost": 72750,
+ "placeholder": false,
+ "summons": [
+  {
+   "archetype": "Magical",
+   "display_name": "Soul Wolf",
+   "element": "Hydro",
+   "key": "StarrkWolf",
+   "placement_limit": 3,
+   "placement_type": "Ground",
+   "rarity": "Secret",
+   "skill_info": {
+    "Skill1": {
+     "DelayAfterAttack": 0,
+     "DelayBeforeAttack": 2,
+     "DelayBetweenTicks": 0,
+     "Ticks": 1
+    }
+   },
+   "summonable": {},
+   "update": 4,
+   "upgrades": [
+    {
+     "Abilities": {},
+     "AttackSpeed": 1,
+     "Cost": 1000,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 100,
+     "DisplayName": "Attack1",
+     "DoTDamage": 0,
+     "HitboxSize": 10,
+     "HitboxType": "Circle",
+     "Passives": [
+      "UnohanaPassive1",
+      "UnohanaPassive2",
+      "UnohanaPassive3"
+     ],
+     "Range": 10,
+     "SPA": 7.5,
+     "SkillName": "Skill1",
+     "StatusEffects": {
+      "ManaBurn": {
+       "Scaling": 0.15
+      }
+     },
+     "Tags": [
+      "BleachCategory"
+     ],
+     "Unplaceable": false,
+     "Unsellable": true
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "ManaBurn": {
+   "cooldown": 10,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Mana Burn",
+   "duration": 8,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 8,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Phantom Fury",
+   "cost": 2000,
+   "damage": 1250,
+   "range": 20,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Phantom Fury",
+   "cost": 2500,
+   "damage": 1650,
+   "range": 21,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Phantom Fury",
+   "cost": 3212,
+   "damage": 2025,
+   "range": 21.5,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Phantom Fury",
+   "cost": 4212,
+   "damage": 2250,
+   "range": 22,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Dimensional Judgement",
+   "cost": 5500,
+   "damage": 2850,
+   "range": 22.5,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Dimensional Judgement",
+   "cost": 6231,
+   "damage": 3350,
+   "range": 22.5,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Dimensional Judgement",
+   "cost": 7025,
+   "damage": 4250,
+   "range": 23,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Dimensional Judgement",
+   "cost": 8070,
+   "damage": 4850,
+   "range": 23.5,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 12,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Ruin",
+   "cost": 10500,
+   "damage": 5550,
+   "range": 25,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 15,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Ruin",
+   "cost": 12500,
+   "damage": 6050,
+   "range": 28,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 15,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill3",
+   "attack_name": "Spectral Ruin",
+   "cost": 15000,
+   "damage": 8000,
+   "range": 30,
+   "spa": 1.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 15,
+   "passives": [
+    "StarrkPassive1",
+    "StarrkPassive2",
+    "StarrkPassive3"
+   ],
+   "abilities": [
+    "StarrkAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "StarrkPassive1",
+   "display_name": "Rhythm of the Wolf",
+   "unlock_upgrade": 0,
+   "description": "This unit’s base SPA cannot go lower than 1s. This unit’s attacks ignore animation lock.\n\nOn Attack:\n- Forcibly performs StarrkEVO_Skill1\n- Increase SPA by +50% for every attack performed in the cycle\n\nOn 5th Attack:\n- Perform current attack instead of StarrkEVO_Skill1\n- Reset SPA to 0%"
+  },
+  {
+   "name": "StarrkPassive2",
+   "display_name": "Howling Tempest",
+   "unlock_upgrade": 0,
+   "description": "On the 5th Attack of StarrkPassive1 and for that attack only:\n- Increase AOE Size by +50% \n- Increase Damage by +100%\n- This attack has infinite range."
+  },
+  {
+   "name": "StarrkPassive3",
+   "display_name": "Soul Pack",
+   "unlock_upgrade": 0,
+   "description": "On the 5th Attack of each cycle performed through StarrkPassive1:\n- Spawn 2 StarrkWolves (Capacity: 3)\n\nStarrkWolf:\n- Spawns next to this unit’s position\n- Has 15% of this unit’s damage \n- Applies ManaBurn for 15% of its damage\n\nOn Attack:\n- StarrkWolf deletes itself"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "StarrkAbility1",
+   "display_name": "Zero Machine Gun",
+   "unlock_upgrade": 10,
+   "description": "This unit stops attacking for 5s. After 5s:\n- Performs a modified version of StarrkEVO_Skill3 that fires constantly for 8s, dealing 65% of this unit’s damage per second\n- Inflicts ManaBurn for 100% at 6 ticks over 6 seconds\n- This ability always crits and is treated with the same effects as the 5th attack of StarrkPassive1"
+  }
+ ]
+}

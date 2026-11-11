@@ -1,0 +1,46 @@
+{
+ "for_unit": "Eclipse Hunter (Savior)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "SkullKnightEquipmentPassive1",
+   "display_name": "Savior",
+   "description": "If the $SkullKnightSelected unit has less damage than this unit:\n- Increase this unit's damage by {1}%\n\nIf the $SkullKnightSelected unit has more damage than this unit:\n- Increase the $SkullKnightSelected unit's range by {2}%\n- Increase the $SkullKnightSelected unit's AoE Size by {3}%\n\nIf the $SkullKnightSelected unit is Iron Wolf (Struggler) or Silver Falcon:\n- Increase the $SkullKnightSelected unit's damage by {1}%\n- Increase the $SkullKnightSelected unit's range by {2}%\n- Increase the $SkullKnightSelected unit's AoE Size by {3}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 30,
+     "max": 30,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "SkullKnightPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

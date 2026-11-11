@@ -1,0 +1,245 @@
+{
+ "unit_name": "Puppet (Telekinetic)",
+ "rarity": "Mythic",
+ "archetype": "Psychic",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 2,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "GowtherMark": {
+   "cooldown": 0,
+   "description": "Mark applied by $GowtherPassive1.",
+   "display_name": "Puppet Mark",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Rewind": {
+   "apply_cap": 10,
+   "cooldown": 10,
+   "description": "Forces the target to move backward along its path.",
+   "display_name": "Rewind",
+   "duration": 3,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Overdrive Edition",
+   "cost": 1150,
+   "damage": 334,
+   "range": 20,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Overdrive Edition",
+   "cost": 2250,
+   "damage": 651,
+   "range": 21,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Fearful Barrage",
+   "cost": 2750,
+   "damage": 741,
+   "range": 22,
+   "spa": 4.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Fearful Barrage",
+   "cost": 3250,
+   "damage": 1129,
+   "range": 23,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill3",
+   "attack_name": "Gatling Jack",
+   "cost": 3750,
+   "damage": 1953,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Gatling Jack",
+   "cost": 6250,
+   "damage": 2790,
+   "range": 24,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Gatling Jack",
+   "cost": 9750,
+   "damage": 3065,
+   "range": 24,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill4",
+   "attack_name": "Rewrite Light",
+   "cost": 12250,
+   "damage": 4942,
+   "range": 26,
+   "spa": 9.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill4",
+   "attack_name": "Rewrite Light",
+   "cost": 15750,
+   "damage": 5093,
+   "range": 27,
+   "spa": 9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "GowtherPassive1",
+    "GowtherPassive2"
+   ],
+   "abilities": [
+    "GowtherAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "GowtherPassive1",
+   "display_name": "Marionette’s Gaze",
+   "unlock_upgrade": 0,
+   "description": "Every 15 seconds:\n- Inflict GowtherMark on the strongest enemy in this unit's range without GowtherMark applied for 15 seconds\nGowtherMarked enemies receive 20% increased incoming damage"
+  },
+  {
+   "name": "GowtherPassive2",
+   "display_name": "Puppet Creation",
+   "unlock_upgrade": 0,
+   "description": "When an enemy with GowtherMark from this unit dies:\n- Summon a GowtherDoll in front of the killed enemy (Capacity: 1)\n- GowtherDolls will have 150% of this unit's current damage as health"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "GowtherAbility1",
+   "display_name": "Complete Control",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- Rewind all enemies in range for 2 seconds"
+  }
+ ]
+}

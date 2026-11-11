@@ -1,0 +1,52 @@
+{
+ "for_unit": "Princess (Misery)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "PeronaEquipmentPassive1",
+   "display_name": "Mysterious Four's Princess",
+   "description": "When a $OnePieceCategory unit attacks an enemy within this unit's range:\n- Enemies hit are inflicted with $Gloom for {1}s\n- $Gloom: Enemies afflicted are immobilized for {2}s and cannot inflict $StatusEffects on units for the effect's duration\n\nOn attack against enemies afflicted with $Gloom, inflict $Possession\n- $Possession: Upon death, revive as friendly summon for {3}% of this unit's damage\n\n(Summon Cap: {4})",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 12,
+     "max": 12,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 30,
+     "max": 30,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "PeronaPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

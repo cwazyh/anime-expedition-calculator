@@ -1,0 +1,52 @@
+{
+ "for_unit": "Prodigy (Rage)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "GohanEquipmentPassive1",
+   "display_name": "Hidden Potential",
+   "description": "On Upgrade {1}:\n- Transform into $GohanTransformation\n- Every {2} $RegularAttacks will deal {3}% of this unit's damage to all enemies within its range\nOn Upgrade {4}:\n- Unlock $GohanPassive3",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "GohanPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

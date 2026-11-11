@@ -1,0 +1,227 @@
+{
+ "unit_name": "Silver Falcon",
+ "rarity": "Secret",
+ "archetype": "Magical",
+ "element": "Light",
+ "limited": false,
+ "placement_limit": 1,
+ "update": 2.5,
+ "obtainable": true,
+ "desc": "Universal +20% damage buff for all units.",
+ "traits": [
+  "Primordial",
+  "Enlightenment"
+ ],
+ "equipment": [
+  "Beacon Of Pride",
+  "Memory Pendant",
+  "Raid Cape"
+ ],
+ "tdps": 4533,
+ "deploy": 2000,
+ "cost": 69160,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Divine Ray",
+   "cost": 2000,
+   "damage": 319,
+   "range": 17.5,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Divine Ray",
+   "cost": 3350,
+   "damage": 435,
+   "range": 18,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Holy Cross",
+   "cost": 4600,
+   "damage": 702,
+   "range": 19,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Holy Cross",
+   "cost": 5400,
+   "damage": 906,
+   "range": 19.5,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Holy Cross",
+   "cost": 7000,
+   "damage": 1156,
+   "range": 20,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Holy Cross",
+   "cost": 8350,
+   "damage": 1498,
+   "range": 20.5,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Radiant Excalibur",
+   "cost": 10000,
+   "damage": 2213,
+   "range": 22,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Radiant Excalibur",
+   "cost": 12800,
+   "damage": 2697,
+   "range": 23,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Radiant Excalibur",
+   "cost": 15750,
+   "damage": 3155,
+   "range": 24,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 60,
+   "passives": [
+    "GriffithSilverPassive1",
+    "GriffithSilverPassive2",
+    "GriffithSilverPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "GriffithSilverPassive1",
+   "display_name": "The Captain",
+   "unlock_upgrade": 0,
+   "description": "On Placement:\n- Increase all players' units' base damage by 10% (+1% per upgrade)\n- Increase all players' Physical Archetype units' damage by 5% (+1% per upgrade)\n- Increase all players' Magical Archetype units' damage by 5% (+1% per upgrade)\n\nThe player's most equipped Archetype gains an additional 10% damage.\nBuffs from GriffithSilverPassive1 do not stack."
+  },
+  {
+   "name": "GriffithSilverPassive2",
+   "display_name": "The Falcon's Pawn",
+   "unlock_upgrade": 0,
+   "description": "Every 20 seconds, any unit within this unit's range will have its Range increased by 15% for 10 seconds.\n\nFor every unit buffed by both GriffithSilverPassive1 and GriffithSilverPassive2 at the same time (Capacity: 10):\n- Increase this unit's Critical Chance by 5%\n- Increase this unit's Critical Damage by 5%\n- Increase this unit's Range by 5%"
+  },
+  {
+   "name": "GriffithSilverPassive3",
+   "display_name": "War Chest",
+   "unlock_upgrade": 0,
+   "description": "This unit has a GriffithSilverMeter, starting at 0. (Capacity: 50)\n\nEvery 5 Kills (from any source):\n- Increase GriffithSilverMeter by 1\n\nEverytime GriffithSilverMeter increases:\n- The next enemy Kill will drop 15% more yen\n\nEvery stack of GriffithSilverMeter will:\n- Increase the dropped yen by 5%\n\nThis meter does not reset unless this unit is sold."
+  }
+ ],
+ "abilities": []
+}

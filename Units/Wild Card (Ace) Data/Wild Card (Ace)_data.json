@@ -1,0 +1,257 @@
+{
+ "unit_name": "Wild Card (Ace)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Dark",
+ "limited": false,
+ "placement_limit": 4,
+ "update": 3,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Magician's Transformation",
+   "cost": 800,
+   "damage": 195,
+   "range": 14,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Magician's Transformation",
+   "cost": 1000,
+   "damage": 250,
+   "range": 16,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Magician's Transformation",
+   "cost": 1200,
+   "damage": 420,
+   "range": 17,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Magician's Transformation",
+   "cost": 1500,
+   "damage": 635,
+   "range": 19,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Exploding Gambit",
+   "cost": 1900,
+   "damage": 840,
+   "range": 20,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Exploding Gambit",
+   "cost": 2200,
+   "damage": 1015,
+   "range": 21,
+   "spa": 6.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Exploding Gambit",
+   "cost": 2600,
+   "damage": 1135,
+   "range": 22,
+   "spa": 6.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Exploding Gambit",
+   "cost": 3100,
+   "damage": 1355,
+   "range": 23,
+   "spa": 6.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 5,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Dust Detonation",
+   "cost": 3900,
+   "damage": 1660,
+   "range": 24,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Dust Detonation",
+   "cost": 4200,
+   "damage": 1930,
+   "range": 25,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "JokerPassive1",
+    "JokerPassive2",
+    "JokerPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "JokerPassive1",
+   "display_name": "Two-Five's Presence",
+   "unlock_upgrade": 0,
+   "description": "When this unit is placed:\n- All FireDoT gain 2 ticks over 2 seconds\nWhen a unit hits an enemy affected by their own FireDoT:\n- Refresh 1 of that unit's FireDoT on that enemy\n- Each FireDoT can only be refreshed once by JokerPassive1"
+  },
+  {
+   "name": "JokerPassive2",
+   "display_name": "Royal Suit",
+   "unlock_upgrade": 0,
+   "description": "Every attack rotates between JokerPassive2 effects:\n\nJack:\n- The enemy's FireDoT deals 15% increased damage for 5 seconds\n\nQueen:\n- Reapply 1 FireDoT on the enemy based on 60% of this unit's damage\n\nKing:\n- Apply Fire for 6 ticks over 6 seconds\n- Deal 75% of this unit's current damage\n\nJoker:\n- Apply Jack, Queen, and King\n\nQueen and King cannot create more than 1 FireDoT from this unit on the same enemy."
+  },
+  {
+   "name": "JokerPassive3",
+   "display_name": "Fifty-Two Bluff",
+   "unlock_upgrade": 0,
+   "description": "Every 5 attacks:\n- Apply all JokerPassive2 effects at double efficiency\n- Does not advance the JokerPassive2 rotation\nEach time this effect activates:\n- Increase this unit's Fire damage by 5%\n  (Capacity: 50%)"
+  }
+ ],
+ "abilities": []
+}

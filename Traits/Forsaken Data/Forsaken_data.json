@@ -1,0 +1,6 @@
+{
+ "description": "Increase Crit DMG by 35% - Increase Crit Chance by 35% - Increase Range by 10%",
+ "Range": 0.1,
+ "CritChance": 0.35,
+ "CritDamage": 0.35
+}

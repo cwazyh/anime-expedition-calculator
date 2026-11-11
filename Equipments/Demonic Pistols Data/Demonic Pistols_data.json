@@ -1,0 +1,52 @@
+{
+ "for_unit": "Wolf (Revived)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Magical": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "StarrkEquipmentPassive1",
+   "display_name": "Soul Pack",
+   "description": "On the 5th $Attack of each cycle performed through $StarrkPassive1:\n- Spawn {1} $StarrkWolves (Capacity: {2})\n\n$StarrkWolf:\n- Spawns next to this unit’s position\n- Has {3}% of this unit’s damage \n- Applies $ManaBurn for {4}% of its damage\n\nOn $Attack:\n- $StarrkWolf deletes itself",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "StarrkPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

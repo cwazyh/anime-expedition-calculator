@@ -1,0 +1,70 @@
+{
+ "for_unit": "Subject 8 (Monster)",
+ "general_use": false,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -5
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "KafkaEquipmentPassive2",
+   "display_name": "Unbound",
+   "description": "At full $ControlMeter stacks, unlock this passive\nFor {1} seconds:\n- Increase damage by {2}%\n- Decrease SPA by {3}%\n- Increase AoE Size by {4}%\nEnemies hit by $KafkaPassive3:\n- Deals {5}% of this units current damage over {6} hits\n- Grants all units in range {7}% $Physical damage\nOnce timer runs out, reset $ControlMeter to 0",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 75,
+     "max": 75,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 7,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "KafkaPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

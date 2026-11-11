@@ -1,0 +1,236 @@
+{
+ "unit_name": "Elf Mage (Unleashed)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Storm",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "ManaBurn": {
+   "cooldown": 10,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Mana Burn",
+   "duration": 8,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 8,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Reality Drift",
+   "cost": 1000,
+   "damage": 373,
+   "range": 18,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 1550,
+   "damage": 584,
+   "range": 19,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 2500,
+   "damage": 687,
+   "range": 21,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 3250,
+   "damage": 770,
+   "range": 24,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 4750,
+   "damage": 842,
+   "range": 25,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 5850,
+   "damage": 1418,
+   "range": 27,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill1",
+   "attack_name": "Reality Drift",
+   "cost": 6250,
+   "damage": 1482,
+   "range": 29,
+   "spa": 5.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Mana Release",
+   "cost": 7500,
+   "damage": 2775,
+   "range": 24,
+   "spa": 9.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill2",
+   "attack_name": "Mana Release",
+   "cost": 10000,
+   "damage": 3000,
+   "range": 25,
+   "spa": 9.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "FrierenPassive1",
+    "FrierenPassive2",
+    "FrierenPassive3"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "FrierenPassive1",
+   "display_name": "Arcane Magic",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack:\n- Gain 1 Arcane Charge (Capacity: 7)\n- Charges reset after reaching capacity"
+  },
+  {
+   "name": "FrierenPassive2",
+   "display_name": "Overcharge",
+   "unlock_upgrade": 0,
+   "description": "On Charge Reset:\n- Increase FrierenPassive3 damage by 5% (Capacity: 5)"
+  },
+  {
+   "name": "FrierenPassive3",
+   "display_name": "Arcane Spells",
+   "unlock_upgrade": 0,
+   "description": "FrierenPassive3 are considered FollowUpAttacks\nAt 3 Charges, cast Voltraak\n- Line AoE at 100% current damage\nAt 5 Charges, cast Vhalzanbel\n- Circle AoE at 100% current damage, and inflict ManaBurn\nAt 7 Charges, cast Jundrathym\n- Full AoE at 100% current damage"
+  }
+ ],
+ "abilities": []
+}

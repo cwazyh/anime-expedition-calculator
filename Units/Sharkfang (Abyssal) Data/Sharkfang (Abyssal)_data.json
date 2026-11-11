@@ -1,0 +1,265 @@
+{
+ "unit_name": "Sharkfang (Abyssal)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Hydro",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "Rewind": {
+   "apply_cap": 10,
+   "cooldown": 10,
+   "description": "Forces the target to move backward along its path.",
+   "display_name": "Rewind",
+   "duration": 3,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Slow": {
+   "cooldown": 5,
+   "description": "Reduces movement speed by $SpeedScaling for $Durations.",
+   "display_name": "Slow",
+   "duration": 5,
+   "scaling": 0,
+   "speed_scaling": 0.5,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Water Whip",
+   "cost": 900,
+   "damage": 245,
+   "range": 20,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Water Whip",
+   "cost": 1550,
+   "damage": 406,
+   "range": 20,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Water Whip",
+   "cost": 2150,
+   "damage": 552,
+   "range": 21,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Water Whip",
+   "cost": 2900,
+   "damage": 735,
+   "range": 22,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill1",
+   "attack_name": "Water Whip",
+   "cost": 3950,
+   "damage": 922,
+   "range": 22,
+   "spa": 5.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Water Blast",
+   "cost": 4650,
+   "damage": 1087,
+   "range": 23,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Water Blast",
+   "cost": 5700,
+   "damage": 1243,
+   "range": 24,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": [
+    "HarribelAbility1"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Blasting Downpour",
+   "cost": 6850,
+   "damage": 1398,
+   "range": 25,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10.5,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": [
+    "HarribelAbility1"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Blasting Downpour",
+   "cost": 8350,
+   "damage": 1567,
+   "range": 25,
+   "spa": 5.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10.5,
+   "passives": [
+    "HarribelPassive1",
+    "HarribelPassive2"
+   ],
+   "abilities": [
+    "HarribelAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "HarribelPassive1",
+   "display_name": "Waterfall",
+   "unlock_upgrade": 0,
+   "description": "Every 12 seconds:\n- Summon HarribelPassive1 at the end of this unit's range moving towards spawn\nHarribelPassive1 will:\n- Slow enemies hit by 35%\n- Deal 15% of this unit's current damage"
+  },
+  {
+   "name": "HarribelPassive2",
+   "display_name": "Boiling Waters",
+   "unlock_upgrade": 0,
+   "description": "When HarribelPassive1 or HarribelAbility1 despawn:\n- Summon HarribelVaporCloud at that location for 5 seconds\nWhile an enemy is inside of HarribelVaporCloud:\n- Apply Fire\n- Fire from HarribelVaporCloud can stack\n- Deal 15% of this unit's current damage every 1 seconds"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "HarribelAbility1",
+   "display_name": "Tidal Wave",
+   "unlock_upgrade": 6,
+   "description": "On activation:\n- Summon 2 instances of HarribelAbility1 from the end of this unit's range moving towards enemy spawn\nHarribelAbility1 will:\n- Apply Rewind to enemies hit for 10 distance\n- Deal 50% of this unit's current damage"
+  }
+ ]
+}

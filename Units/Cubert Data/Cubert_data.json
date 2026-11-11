@@ -1,0 +1,346 @@
+{
+ "unit_name": "Cubert",
+ "rarity": "Exclusive",
+ "archetype": "Magical",
+ "element": "Hydro",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 1,
+ "obtainable": false,
+ "desc": "Support with cube link +5% ally damage.",
+ "traits": [
+  "Primordial",
+  "Enlightenment"
+ ],
+ "equipment": [
+  "Technique Amplifier",
+  "Memory Pendant",
+  "Mentor's Cape"
+ ],
+ "tdps": 3651,
+ "deploy": 950,
+ "cost": 43250,
+ "placeholder": false,
+ "summons": [
+  {
+   "archetype": "Magical",
+   "display_name": "Cube",
+   "element": "Hydro",
+   "key": "KhunCube",
+   "placement_limit": 3,
+   "placement_type": "Ground",
+   "rarity": "Exclusive",
+   "skill_info": {
+    "Skill1": {
+     "DelayAfterAttack": 0.5,
+     "DelayBeforeAttack": 0.35,
+     "DelayBetweenTicks": 0,
+     "Ticks": 1
+    },
+    "Skill2": {
+     "DelayAfterAttack": 1.5,
+     "DelayBeforeAttack": 1.75,
+     "DelayBetweenTicks": 0,
+     "Ticks": 1
+    }
+   },
+   "summonable": [
+    "None"
+   ],
+   "update": 1,
+   "upgrades": [
+    {
+     "Abilities": {},
+     "AttackSpeed": 1,
+     "Cost": 0,
+     "CritChance": 0,
+     "CritDamage": 100,
+     "Damage": 1,
+     "DisplayName": "Energy Shot",
+     "DoTDamage": 0,
+     "HitboxSize": 3,
+     "HitboxType": "Circle",
+     "Passives": [
+      "KitePassive1",
+      "KitePassive2",
+      "KitePassive3",
+      "KitePassive4",
+      "KitePassive5"
+     ],
+     "Range": 25,
+     "SPA": 1,
+     "SkillName": "Skill1",
+     "Tags": {},
+     "Unplaceable": false,
+     "Unsellable": true
+    }
+   ]
+  }
+ ],
+ "status_effects": {
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Briefcase Slash",
+   "cost": 950,
+   "damage": 208,
+   "range": 18,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 6,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Briefcase Slash",
+   "cost": 1500,
+   "damage": 255,
+   "range": 19,
+   "spa": 3.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 6,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Knife Surprise",
+   "cost": 2000,
+   "damage": 494,
+   "range": 20,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Knife Surprise",
+   "cost": 2450,
+   "damage": 606,
+   "range": 20,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Knife Surprise",
+   "cost": 3250,
+   "damage": 720,
+   "range": 21,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Lighthouse Barrage",
+   "cost": 4750,
+   "damage": 791,
+   "range": 21,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Lighthouse Barrage",
+   "cost": 7250,
+   "damage": 932,
+   "range": 22,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Lighthouse Barrage",
+   "cost": 8000,
+   "damage": 1094,
+   "range": 22,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill4",
+   "attack_name": "Lighthouse Beam",
+   "cost": 8750,
+   "damage": 1307,
+   "range": 23,
+   "spa": 5.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Lighthouse Beam",
+   "cost": 9500,
+   "damage": 1490,
+   "range": 23,
+   "spa": 5.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "KhunPassive1",
+    "KhunPassive2",
+    "KhunPassive3"
+   ],
+   "abilities": [
+    "KhunAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "KhunPassive1",
+   "display_name": "Cubes",
+   "unlock_upgrade": 0,
+   "description": "Every 10 seconds:\n- Gain 1 ability charge (Capacity: 2)\nKhunCubes will deal 35% of this unit's current damage per attack"
+  },
+  {
+   "name": "KhunPassive2",
+   "display_name": "Cube Link",
+   "unlock_upgrade": 0,
+   "description": "Attached KhunCubes will:\n- Increase Damage by 5%\n- Increase Range by 2.5%\nBonuses stack (additively) if KhunCubes are within range of eachother"
+  },
+  {
+   "name": "KhunPassive3",
+   "display_name": "Cube Overload",
+   "unlock_upgrade": 0,
+   "description": "KhunCube has KhunMeter, starting at 0.\nOn attached unit's RegularAttack:\n- Increase KhunMeter by 1\nAt 3 KhunMeter stacks:\n- KhunCube will explode applying Stun and dealing 15% of this unit's current damage"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "KhunAbility1",
+   "display_name": "Cube Summon",
+   "unlock_upgrade": 0,
+   "description": "On activation:\n- Select another unit on the map to summon a KhunCube\n- Decrease KhunMeter by 1\n- Only 2 KhunCubes can be active at once (per unit).\n- Only 6 KhunCubes can be active at once (globally)."
+  }
+ ]
+}

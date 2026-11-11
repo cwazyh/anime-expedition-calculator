@@ -1,0 +1,52 @@
+{
+ "for_unit": "Cursed Student (True Love)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "YutaEquipmentPassive1",
+   "display_name": "Spirit Bats",
+   "description": "Every {1} total stacks of $Bleed in this unit's range:\n- Summon a $YutaBatSpirit at this unit's position (Capacity: {2})\n- $YutaBatSpirits will deal {3}% of this unit's current damage per attack\n- $YutaBatSpirits despawn after {4} attacks",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "YutaPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

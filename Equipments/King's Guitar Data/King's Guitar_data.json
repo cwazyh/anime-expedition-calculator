@@ -1,0 +1,64 @@
+{
+ "for_unit": "Dead Melody (Solo)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "BrookEquipmentPassive1",
+   "display_name": "Seafarer Quintet",
+   "description": "To units in range with the $Unbound trait:\n- +{1}% Damage\n- +{2}% Range\nTo units in range without the $Unbound trait:\n- +{3}% Damage\n- +{4}% Range\n\nThe first $OnePieceCategory unit placed in this unit's range is designated as the $BrookCaptain\nThe $BrookCaptain gains:\n- +{5}% Critical Chance\n- +{6}% Critical Damage\nIf the $BrookCaptain is removed from the map:\n- Designate the closest $OnePieceCategory unit as the $BrookCaptain\n\nSummoned units and clones do not receive these buffs directly and cannot become the $BrookCaptain.",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 35,
+     "max": 35,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "BrookPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

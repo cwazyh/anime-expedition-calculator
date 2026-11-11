@@ -1,0 +1,52 @@
+{
+ "for_unit": "The Drink (Juicebox)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "TrunksEquipmentPassive1",
+   "display_name": "Precision Slash",
+   "description": "Every {1} $RegularAttacks:\n- Inflict enemies with $TrunksMark for {2} seconds\n$TrunksMark will:\n- Increase all $FollowUpAttack damage by {3}%\n- Apply a $Physical weakness at {4}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 4,
+     "max": 4,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "TrunksPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

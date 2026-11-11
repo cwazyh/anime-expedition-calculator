@@ -1,0 +1,58 @@
+{
+ "for_unit": "First Blade (Strongest)",
+ "general_use": false,
+ "buffs": {
+  "Physical": {
+   "min": 1,
+   "max": 10
+  },
+  "SPA": {
+   "min": -1,
+   "max": -5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "UnohanaEquipmentPassive1",
+   "display_name": "Killers Not Dead",
+   "description": "If $KenpachiEVO is in range, for this unit:\n- Switch to $Unohana_Skill3\n- +{1}% Damage\n- +{2}% Range\n\nWhen this unit performs $Unohana_Skill3, for any $KenpachiEVO in range:\n- Stun that unit for {3}s, bypassing any immunities\n- Enhance that unit's next attack for +{4}% damage dealt\n- Enable that unit's next attack to stun this unit and all enemies in range for {5}s ",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 2,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 200,
+     "max": 200,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "UnohanaPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

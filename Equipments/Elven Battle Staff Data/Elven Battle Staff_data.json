@@ -1,0 +1,64 @@
+{
+ "for_unit": "Elf Mage (Unleashed)",
+ "general_use": false,
+ "buffs": {
+  "SPA": {
+   "min": -1,
+   "max": -5
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "FrierenEquipmentPassive1",
+   "display_name": "Arcane Spells",
+   "description": "$FrierenEquipmentPassive1 are considered $FollowUpAttacks\nAt {1} Charges, cast $Voltraak\n- Line AoE at {2}% current damage\nAt {3} Charges, cast $Vhalzanbel\n- Circle AoE at {4}% current damage, and inflict $ManaBurn\nAt {5} Charges, cast $Jundrathym\n- Full AoE at {6}% current damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 7,
+     "max": 7,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 150,
+     "max": 150,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "FrierenPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

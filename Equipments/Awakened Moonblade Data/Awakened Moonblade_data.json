@@ -1,0 +1,71 @@
+{
+ "for_unit": "Reaper (Frenzied)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "IchigoVastoEquipmentPassive1",
+   "display_name": "Higher Than The Moon",
+   "description": "When this unit is afflicted with a $StatusEffect:\n- $Cleanse itself & perform $IchigoVasto_Skill4 for {1}% of its damage\n- This attack hits all enemies in range & applies $Stun for {2}s\nCooldown: {3}s",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 300,
+     "max": 300,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 3,
+     "max": 3,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "IchigoVastoPassive2"
+   ]
+  }
+ ],
+ "abilities": [
+  {
+   "slot": 1,
+   "name": "IchigoVastoEquipmentAbility1",
+   "display_name": "Annihilation Zero",
+   "description": "Select a unit within this unit’s range. On activation:\n- This unit pins that unit to the ground and performs $IchigoVasto_Skill2 aimed at the unit\n- Stuns that unit for {1} seconds\n- All enemies in range of the attack are hit for {2}% damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 500,
+     "max": 500,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "IchigoVastoAbility1"
+   ],
+   "cooldown": 90
+  }
+ ]
+}

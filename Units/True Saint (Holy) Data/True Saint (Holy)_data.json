@@ -1,0 +1,269 @@
+{
+ "unit_name": "True Saint (Holy)",
+ "rarity": "Exclusive",
+ "archetype": "Magical",
+ "element": "Light",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "HinataMark": {
+   "cooldown": 10,
+   "description": "Mark applied by $HinataPassive1.",
+   "display_name": "True Saint Mark",
+   "duration": 1,
+   "scaling": 0,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Astral Bind",
+   "cost": 900,
+   "damage": 128,
+   "range": 15,
+   "spa": 6.7,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Astral Bind",
+   "cost": 1300,
+   "damage": 157,
+   "range": 16,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Astral Bind",
+   "cost": 2000,
+   "damage": 209,
+   "range": 17,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill1",
+   "attack_name": "Astral Bind",
+   "cost": 2500,
+   "damage": 283,
+   "range": 18,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Fragmented Barrage",
+   "cost": 3000,
+   "damage": 398,
+   "range": 19,
+   "spa": 6.4,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Fragmented Barrage",
+   "cost": 4250,
+   "damage": 545,
+   "range": 19,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Specter Flash",
+   "cost": 4800,
+   "damage": 721,
+   "range": 21,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Specter Flash",
+   "cost": 5000,
+   "damage": 789,
+   "range": 23,
+   "spa": 6.6,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Specter Flash",
+   "cost": 6250,
+   "damage": 829,
+   "range": 24,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 8.5,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Dead End Rainbow",
+   "cost": 6750,
+   "damage": 1115,
+   "range": 22,
+   "spa": 8.5,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill4",
+   "attack_name": "Dead End Rainbow",
+   "cost": 7500,
+   "damage": 1096,
+   "range": 22,
+   "spa": 8,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 11,
+   "skill_name": "Skill4",
+   "attack_name": "Dead End Rainbow",
+   "cost": 8750,
+   "damage": 1145,
+   "range": 22,
+   "spa": 7.8,
+   "crit_damage": 100,
+   "crit_chance": 10,
+   "dot_damage": 0,
+   "hitbox_type": "Full",
+   "hitbox_size": 0,
+   "passives": [
+    "HinataPassive1"
+   ],
+   "abilities": [
+    "HinataAbility2"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "HinataPassive1",
+   "display_name": "Predictive Calculation",
+   "unlock_upgrade": 0,
+   "description": "On RegularAttack:\n- Inflict enemies with HinataMark (Maximum 5 enemies)\nOn CriticalAttack:\n- Remove all HinataMark and deal 10% current damage to marked enemies\nOn Upgrade:\n- Increase Critical Chance by 1.5%"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "HinataAbility2",
+   "display_name": "Seize",
+   "unlock_upgrade": 11,
+   "description": "On activation:\n- Steal 20% of damage from the 3 strongest units in this unit's range for 60 seconds"
+  }
+ ]
+}

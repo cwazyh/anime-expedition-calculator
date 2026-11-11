@@ -1,0 +1,59 @@
+{
+ "for_unit": "Carrot (Unleashed)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [],
+ "abilities": [
+  {
+   "slot": 1,
+   "name": "GokuEquipmentAbility1",
+   "display_name": "Instant Relocation",
+   "description": "Select a unit on the map or a position within this unit's range to $Relocate to for {1} seconds.\r\nOn $Relocate to a unit:\r\n- Immediately perform a $FollowUpAttack dealing {2}% of this unit's current damage\r\n- Trigger the selected unit to perform the same $FollowUpAttack dealing {3}% of the selected unit's current damage\r\nOn $Relocate to a position:\r\n- Immediately perform a $FollowUpAttack dealing {4}% of this unit's current damage\r\n- Increase this unit's Damage by {5}% for {1} seconds",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 125,
+     "max": 125,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 50,
+     "max": 50,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "GokuAbility1"
+   ],
+   "cooldown": 20
+  }
+ ]
+}

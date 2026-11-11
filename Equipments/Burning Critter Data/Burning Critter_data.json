@@ -1,0 +1,27 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "CritterPassive",
+   "display_name": "Critter",
+   "description": "When this unit applies $Fire to a target:\r\n- The next $DoT applied after will deal {1}% increased damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 10,
+     "max": 25,
+     "decimals": 0
+    }
+   ]
+  }
+ ],
+ "abilities": []
+}

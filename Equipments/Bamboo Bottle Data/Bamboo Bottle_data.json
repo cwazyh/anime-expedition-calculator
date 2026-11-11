@@ -1,0 +1,33 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "BambooBottlePassive",
+   "display_name": "Bamboo Bottle",
+   "description": "Every time this unit uses an Active Ability, reduce the Active Ability cooldown by {1}% (Capacity: {2}%).",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 1,
+     "max": 2,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ]
+  }
+ ],
+ "abilities": []
+}

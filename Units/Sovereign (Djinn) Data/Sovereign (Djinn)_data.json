@@ -1,0 +1,293 @@
+{
+ "unit_name": "Sovereign (Djinn)",
+ "rarity": "Secret",
+ "archetype": "Physical",
+ "element": "Storm",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Freeze": {
+   "cooldown": 5,
+   "description": "Freezes the target, preventing movement and actions for $Durations.",
+   "display_name": "Freeze",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Lightning Blade",
+   "cost": 950,
+   "damage": 584,
+   "range": 17,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Lightning Blade",
+   "cost": 1300,
+   "damage": 792,
+   "range": 17,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Lightning Release",
+   "cost": 1950,
+   "damage": 1037,
+   "range": 19,
+   "spa": 4.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Lightning Release",
+   "cost": 2500,
+   "damage": 1306,
+   "range": 20,
+   "spa": 4.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Lightning Release",
+   "cost": 3250,
+   "damage": 1650,
+   "range": 21,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Lightning Release",
+   "cost": 4000,
+   "damage": 1962,
+   "range": 21,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Lightning Release",
+   "cost": 4500,
+   "damage": 2227,
+   "range": 22,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill3",
+   "attack_name": "Thunder Strike from Heaven",
+   "cost": 5250,
+   "damage": 2503,
+   "range": 24,
+   "spa": 4.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11.5,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Thunder Strike from Heaven",
+   "cost": 6000,
+   "damage": 2746,
+   "range": 24,
+   "spa": 4.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 11.5,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Lightning Charged Beam",
+   "cost": 6500,
+   "damage": 2924,
+   "range": 26,
+   "spa": 4.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 10,
+   "skill_name": "Skill4",
+   "attack_name": "Lightning Charged Beam",
+   "cost": 7000,
+   "damage": 3072,
+   "range": 26,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 10,
+   "passives": [
+    "SinbadPassive1",
+    "SinbadPassive2",
+    "SinbadPassive3",
+    "SinbadPassive4"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "SinbadPassive1",
+   "display_name": "Djinn Combination",
+   "unlock_upgrade": 0,
+   "description": "When no Boss is in this unit's range:\n- SinbadPassive2 is active\nWhen a Boss is in this unit's range:\n- SinbadPassive3 is active\n- Does not deactivate SinbadPassive2"
+  },
+  {
+   "name": "SinbadPassive2",
+   "display_name": "Lightning Djinn",
+   "unlock_upgrade": 0,
+   "description": "While active:\n- Each attack creates 5 chains\n- Each chain deals 25% of this unit's current damage\n- Chains bounce between enemies\nIf there are fewer than 5 enemies:\n- Chains bounce between the existing enemies\nIf there's only 1 enemy:\n- All chains hit the same enemy"
+  },
+  {
+   "name": "SinbadPassive3",
+   "display_name": "Nine Tailed Fox Djinn",
+   "unlock_upgrade": 0,
+   "description": "While active:\n- Increase Damage by 50%\n- Attacks apply Freeze\n- This unit auto targets the boss\nAfter Freeze effect wears off:\n- Permanently slow the enemy by 15% (Can’t stack)"
+  },
+  {
+   "name": "SinbadPassive4",
+   "display_name": "Djinn's Judgment",
+   "unlock_upgrade": 0,
+   "description": "Every 7 seconds summon a LightningStrike on the strongest enemy in this unit's range:\n- LightningStrike deals 75% of this unit's damage\n- LightningStrike will chain between 3 enemies\n- Each chain deals 20% of this unit's current damage\n- Each chain will also apply Freeze"
+  }
+ ],
+ "abilities": []
+}

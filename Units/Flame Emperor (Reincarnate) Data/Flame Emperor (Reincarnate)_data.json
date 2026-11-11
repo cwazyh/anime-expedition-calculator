@@ -1,0 +1,223 @@
+{
+ "unit_name": "Flame Emperor (Reincarnate)",
+ "rarity": "Mythic",
+ "archetype": "Magical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 5,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Secret unit with powerful flame passives.",
+ "traits": [
+  "Unbound",
+  "Forsaken"
+ ],
+ "equipment": [
+  "Fiery Staff",
+  "Burning Critter",
+  "Emperor's Attire"
+ ],
+ "tdps": 21000,
+ "deploy": 2200,
+ "cost": 88000,
+ "placeholder": false,
+ "status_effects": {
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Flame: Pistol",
+   "cost": 550,
+   "damage": 74,
+   "range": 23,
+   "spa": 4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Flame: Pistol",
+   "cost": 1050,
+   "damage": 111,
+   "range": 24,
+   "spa": 3.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Flame: Fireball",
+   "cost": 1450,
+   "damage": 166,
+   "range": 25,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Flame: Fireball",
+   "cost": 2200,
+   "damage": 222,
+   "range": 25,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6.5,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill3",
+   "attack_name": "Flame: Flame Wall",
+   "cost": 2500,
+   "damage": 305,
+   "range": 26,
+   "spa": 7.4,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Flame: Flame Wall",
+   "cost": 3050,
+   "damage": 339,
+   "range": 27,
+   "spa": 7.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Flame: Flame Wall",
+   "cost": 3750,
+   "damage": 365,
+   "range": 28,
+   "spa": 7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill4",
+   "attack_name": "Flame: Fire Pillar",
+   "cost": 4750,
+   "damage": 413,
+   "range": 30,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill4",
+   "attack_name": "Flame: Fire Pillar",
+   "cost": 7250,
+   "damage": 518,
+   "range": 32,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 10,
+   "passives": [
+    "SaboPassive1"
+   ],
+   "abilities": [
+    "SaboAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "SaboPassive1",
+   "display_name": "Wildfire",
+   "unlock_upgrade": 0,
+   "description": "On applying Fire:\n- Spread to the 3 nearest enemies, that do not have Fire applied"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "SaboAbility1",
+   "display_name": "Wall of Fire",
+   "unlock_upgrade": 8,
+   "description": "On activation:\n- Summon a SaboSummon on any path within this unit's range\n- Enemies that pass through SaboSummon are inflicted with Fire"
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "for_unit": "Sand (Alligator)",
+ "general_use": false,
+ "buffs": {
+  "Range": {
+   "min": 1,
+   "max": 10
+  },
+  "Damage": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "CrocodileEquipmentPassive1",
+   "display_name": "Desert Storm",
+   "description": "$CrocodilePassive1 appears at this unit's location\n$CrocodilePassive1 will:\n- Increase {1}% in size every {2} seconds (Capacity: {3}%)\n- Apply $Sandstorm to enemies inside\nAfter $CrocodilePassive1 has been at {3}% for {5} seconds:\n- Reset $CrocodilePassive1 size to {6}%",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 1,
+     "max": 1,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 60,
+     "max": 60,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 14,
+     "max": 14,
+     "decimals": 0
+    },
+    {
+     "placeholder": 6,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "CrocodilePassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

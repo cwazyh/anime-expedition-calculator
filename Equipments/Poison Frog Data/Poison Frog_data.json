@@ -1,0 +1,40 @@
+{
+ "for_unit": "Rainman (Forecast)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "WeatherEquipmentPassive1",
+   "display_name": "Poison Frog",
+   "description": "$WeatherFrogs are a stationary path summon.\nIf an enemy walks over $WeatherFrog:\n- $WeatherFrog will explode for {1}% of this unit's current damage and apply $Poison in {2} range",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 200,
+     "max": 200,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "WeatherPassive3"
+   ]
+  }
+ ],
+ "abilities": []
+}

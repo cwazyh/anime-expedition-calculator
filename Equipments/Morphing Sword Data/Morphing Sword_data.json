@@ -1,0 +1,58 @@
+{
+ "for_unit": "Atom (Totality)",
+ "general_use": false,
+ "buffs": {
+  "CritChance": {
+   "min": 1,
+   "max": 10
+  },
+  "Magical": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "CidEquipmentPassive1",
+   "display_name": "Archetype Nuclear",
+   "description": "All buffs applied from this passive last {1} seconds and do not stack.\nWhen this unit attacks a $Basic enemy:\n- +{2}% Damage\nWhen this unit attacks an $Elite:\n- +{3}% Critical Chance\nWhen this unit attacks a $Boss:\n- Counts as attacking a $Basic and an $Elite\n- +{4}% Range\n- +{5}% Critical Damage",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 30,
+     "max": 30,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 30,
+     "max": 30,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 80,
+     "max": 80,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 20,
+     "max": 20,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 35,
+     "max": 35,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "CidPassive1"
+   ]
+  }
+ ],
+ "abilities": []
+}

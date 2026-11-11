@@ -1,0 +1,295 @@
+{
+ "unit_name": "Sand (Alligator)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Terra",
+ "limited": true,
+ "placement_limit": 3,
+ "update": 2,
+ "obtainable": false,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "Golden": {
+   "cooldown": 0,
+   "description": "On application of $Golden an enemy will be stunned and become more conductive, allowing $Electricity to chain to 2 additional enemies.",
+   "display_name": "Golden",
+   "duration": 5,
+   "scaling": 0,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "Mark"
+   ],
+   "ticks": 1,
+   "update": 2
+  },
+  "Poison": {
+   "cooldown": 0,
+   "decayed_damage_scaling": 0.5,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.\nAdditionally deal $DecayedDamageScalingx damage every tick",
+   "display_name": "Poison",
+   "duration": 6,
+   "scaling": 0.3,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage"
+   ],
+   "ticks": 6,
+   "update": 2
+  },
+  "Sandstorm": {
+   "cooldown": 5,
+   "description": "Reduces movement speed by $SpeedScaling for $Durations.",
+   "display_name": "Sandstorm",
+   "duration": 5,
+   "scaling": 0,
+   "speed_scaling": 0.2,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Slow": {
+   "cooldown": 5,
+   "description": "Reduces movement speed by $SpeedScaling for $Durations.",
+   "display_name": "Slow",
+   "duration": 5,
+   "scaling": 0,
+   "speed_scaling": 0.5,
+   "stack": false,
+   "stun": false,
+   "tags": [
+    "SoftCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  },
+  "Stun": {
+   "cooldown": 5,
+   "description": "Prevents all actions and movement for $Durations.",
+   "display_name": "Stun",
+   "duration": 2,
+   "scaling": 0,
+   "stack": false,
+   "stun": true,
+   "tags": [
+    "HardCrowdControl"
+   ],
+   "ticks": 1,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Sand Slash",
+   "cost": 1000,
+   "damage": 166,
+   "range": 17,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Sand Slash",
+   "cost": 1850,
+   "damage": 242,
+   "range": 17,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Sand Slash",
+   "cost": 2350,
+   "damage": 358,
+   "range": 18,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 6,
+   "passives": [],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Desert Slicer",
+   "cost": 3100,
+   "damage": 543,
+   "range": 19,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "CrocodilePassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Desert Slicer",
+   "cost": 3900,
+   "damage": 666,
+   "range": 19,
+   "spa": 4.9,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "CrocodilePassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Desert Slicer",
+   "cost": 4700,
+   "damage": 812,
+   "range": 20,
+   "spa": 4.8,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "CrocodilePassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill2",
+   "attack_name": "Desert Slicer",
+   "cost": 5850,
+   "damage": 965,
+   "range": 21,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "CrocodilePassive1"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill2",
+   "attack_name": "Desert Slicer",
+   "cost": 6850,
+   "damage": 1083,
+   "range": 21,
+   "spa": 4.7,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 9,
+   "passives": [
+    "CrocodilePassive1",
+    "CrocodilePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill3",
+   "attack_name": "Desert Knives",
+   "cost": 8050,
+   "damage": 1198,
+   "range": 23,
+   "spa": 4.6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 75,
+   "passives": [
+    "CrocodilePassive1",
+    "CrocodilePassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill3",
+   "attack_name": "Desert Knives",
+   "cost": 9350,
+   "damage": 1299,
+   "range": 24,
+   "spa": 4.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 75,
+   "passives": [
+    "CrocodilePassive1",
+    "CrocodilePassive2"
+   ],
+   "abilities": [
+    "CrocodileAbility1"
+   ]
+  }
+ ],
+ "passives": [
+  {
+   "name": "CrocodilePassive1",
+   "display_name": "Desert Storm",
+   "unlock_upgrade": 3,
+   "description": "CrocodilePassive1 appears at this unit's location\nCrocodilePassive1 will:\n- Increase 5% in size every 1 seconds (Capacity: 100%)\n- Apply Sandstorm to enemies inside\nAfter CrocodilePassive1 has been at 100% for 7 seconds:\n- Reset CrocodilePassive1 size to 10%"
+  },
+  {
+   "name": "CrocodilePassive2",
+   "display_name": "Golden Hook",
+   "unlock_upgrade": 7,
+   "description": "This unit's Poison will:\n- Deal 15% increased damage per tick\nIf an enemy is inside CrocodilePassive1 or CrocodileAbility1:\n- Poison will deal 25% increased damage per tick (Capacity: 150%)\nWhen CrocodilePassive1 reaches 20% range:\n- Apply extra stack of Poison while the enemy remains inside"
+  }
+ ],
+ "abilities": [
+  {
+   "name": "CrocodileAbility1",
+   "display_name": "Ground Eruption",
+   "unlock_upgrade": 9,
+   "description": "On activation:\n- CrocodilePassive1 will increase 10% in size every 1 seconds (Capacity: 100%)\nThis unit will not Attack whilst this ability is active.\nIf CrocodileAbility1 is re-triggered before 100% range is reached:\n- Slow enemies in CrocodileAbility1 by 65%\n- Deal 125% of this unit's current damage to all enemies in range\nIf CrocodileAbility1 reaches 100% range:\n- Stun enemies in CrocodileAbility1 for 5 seconds\n- Deal 200% of this unit's current damage to all enemies in range"
+  }
+ ]
+}

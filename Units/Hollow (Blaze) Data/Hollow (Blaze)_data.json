@@ -1,0 +1,256 @@
+{
+ "unit_name": "Hollow (Blaze)",
+ "rarity": "Mythic",
+ "archetype": "Physical",
+ "element": "Flame",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Placeholder - data not available yet.",
+ "traits": [],
+ "equipment": [],
+ "tdps": null,
+ "deploy": null,
+ "cost": null,
+ "placeholder": true,
+ "status_effects": {
+  "AustereFlames": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Austere Flames",
+   "duration": 4,
+   "scaling": 0.65,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  },
+  "Fire": {
+   "cooldown": 0,
+   "description": "Deals $Scalingx damage in $Ticks ticks over $Durations.",
+   "display_name": "Burn",
+   "duration": 4,
+   "scaling": 0.5,
+   "stack": true,
+   "stun": false,
+   "tags": [
+    "Damage",
+    "Burn"
+   ],
+   "ticks": 4,
+   "update": 0
+  }
+ },
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Fire Rocks",
+   "cost": 1150,
+   "damage": 124,
+   "range": 16,
+   "spa": 5.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 55,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Fire Rocks",
+   "cost": 2250,
+   "damage": 192,
+   "range": 18,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 55,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill2",
+   "attack_name": "Fire Dart",
+   "cost": 2750,
+   "damage": 308,
+   "range": 21,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Fire Dart",
+   "cost": 3500,
+   "damage": 401,
+   "range": 23,
+   "spa": 5.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 7,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill3",
+   "attack_name": "Martial Arts",
+   "cost": 4750,
+   "damage": 485,
+   "range": 25,
+   "spa": 5.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill3",
+   "attack_name": "Martial Arts",
+   "cost": 5250,
+   "damage": 593,
+   "range": 26,
+   "spa": 5.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 6,
+   "skill_name": "Skill3",
+   "attack_name": "Martial Arts",
+   "cost": 6750,
+   "damage": 723,
+   "range": 27,
+   "spa": 5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Circle",
+   "hitbox_size": 9,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 7,
+   "skill_name": "Skill4",
+   "attack_name": "Fire Breath",
+   "cost": 8500,
+   "damage": 1111,
+   "range": 27,
+   "spa": 7.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 55,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 8,
+   "skill_name": "Skill4",
+   "attack_name": "Fire Breath",
+   "cost": 9750,
+   "damage": 1282,
+   "range": 27,
+   "spa": 7.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 55,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 9,
+   "skill_name": "Skill4",
+   "attack_name": "Fire Breath",
+   "cost": 10500,
+   "damage": 1388,
+   "range": 28,
+   "spa": 7.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 55,
+   "passives": [
+    "GabimaruPassive1",
+    "GabimaruPassive2"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "GabimaruPassive1",
+   "display_name": "Radial Flames",
+   "unlock_upgrade": 0,
+   "description": "If an enemy with Fire stops ticking within this unit's range:\n- Convert 1 Fire application into AustereFlames dealing 65% of this unit's current damage\n- Instance of AustereFlames from GabimaruPassive1 do not stack"
+  },
+  {
+   "name": "GabimaruPassive2",
+   "display_name": "Attack Flames",
+   "unlock_upgrade": 0,
+   "description": "If this unit Attacks an enemy that currently has Fire applied:\n- Convert 1 Fire application into AustereFlames dealing 65% of this unit's current damage\n- Instance of AustereFlames from GabimaruPassive2 do not stack"
+  }
+ ],
+ "abilities": []
+}

@@ -1,0 +1,58 @@
+{
+ "for_unit": "Traitor (Illusion)",
+ "general_use": false,
+ "buffs": {
+  "Damage": {
+   "min": 1,
+   "max": 10
+  },
+  "Range": {
+   "min": 1,
+   "max": 5
+  }
+ },
+ "passives": [
+  {
+   "slot": 1,
+   "name": "AizenEquipmentPassive1",
+   "display_name": "Collapse, Mirror Flower",
+   "description": "When this unit is inflicted with a $StatusEffect or $Debuff:\n- Reflect the attempt back to the source and follow-up with $Aizen_Skill1 for {1}% of this unit’s damage on the targeted enemy, inflicting $Hypnosis\n- $Hypnosis: Stays active for {2} seconds. On expiry, teleport enemy back to the original spot where they received $Hypnosis\n- Enemies inflicted with $Hypnosis will take {3}% more damage from $BleachCategory units.\n\nEvery {4}s:\n- Inflict the {5} strongest enemies on the map with $Hypnosis",
+   "effects": [
+    {
+     "placeholder": 1,
+     "min": 100,
+     "max": 100,
+     "decimals": 0
+    },
+    {
+     "placeholder": 2,
+     "min": 10,
+     "max": 10,
+     "decimals": 0
+    },
+    {
+     "placeholder": 3,
+     "min": 25,
+     "max": 25,
+     "decimals": 0
+    },
+    {
+     "placeholder": 4,
+     "min": 15,
+     "max": 15,
+     "decimals": 0
+    },
+    {
+     "placeholder": 5,
+     "min": 5,
+     "max": 5,
+     "decimals": 0
+    }
+   ],
+   "overrides": [
+    "AizenPassive2"
+   ]
+  }
+ ],
+ "abilities": []
+}

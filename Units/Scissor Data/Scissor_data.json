@@ -1,0 +1,143 @@
+{
+ "unit_name": "Scissor",
+ "rarity": "Legendary",
+ "archetype": "Physical",
+ "element": "Terra",
+ "limited": false,
+ "placement_limit": 3,
+ "update": 0,
+ "obtainable": true,
+ "desc": "Line AoE 4 hits, low damage without Unbound.",
+ "traits": [
+  "Unbound",
+  "Speed"
+ ],
+ "equipment": [
+  "Hypnotic Edge",
+  "Kunai",
+  "Evening Umbrella"
+ ],
+ "tdps": 23210,
+ "deploy": 650,
+ "cost": 17750,
+ "placeholder": false,
+ "upgrades": [
+  {
+   "level": 0,
+   "skill_name": "Deploy",
+   "attack_name": "Cleaning Time",
+   "cost": 600,
+   "damage": 141,
+   "range": 20,
+   "spa": 6.3,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 1,
+   "skill_name": "Skill1",
+   "attack_name": "Cleaning Time",
+   "cost": 1050,
+   "damage": 152,
+   "range": 21,
+   "spa": 6.1,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 2,
+   "skill_name": "Skill1",
+   "attack_name": "Cleaning Time",
+   "cost": 1250,
+   "damage": 203,
+   "range": 22,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Cone",
+   "hitbox_size": 40,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 3,
+   "skill_name": "Skill2",
+   "attack_name": "Scissor Slam",
+   "cost": 1950,
+   "damage": 267,
+   "range": 23,
+   "spa": 6.5,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 4,
+   "skill_name": "Skill2",
+   "attack_name": "Scissor Slam",
+   "cost": 2500,
+   "damage": 390,
+   "range": 23,
+   "spa": 6.2,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  },
+  {
+   "level": 5,
+   "skill_name": "Skill2",
+   "attack_name": "Scissor Slam",
+   "cost": 3200,
+   "damage": 450,
+   "range": 24,
+   "spa": 6,
+   "crit_damage": 100,
+   "crit_chance": 0,
+   "dot_damage": 0,
+   "hitbox_type": "Line",
+   "hitbox_size": 8,
+   "passives": [
+    "RiyoPassive"
+   ],
+   "abilities": []
+  }
+ ],
+ "passives": [
+  {
+   "name": "RiyoPassive",
+   "display_name": "Stacking Cuts",
+   "unlock_upgrade": 0,
+   "description": "Each consecutive RegularAttack on the same enemy increases damage dealt by 5% (Capacity: 20%)"
+  }
+ ],
+ "abilities": []
+}

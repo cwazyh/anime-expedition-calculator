@@ -1,0 +1,12 @@
+{
+ "for_unit": null,
+ "general_use": true,
+ "buffs": {
+  "Range": {
+   "min": 5,
+   "max": 15
+  }
+ },
+ "passives": [],
+ "abilities": []
+}
