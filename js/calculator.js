@@ -22,8 +22,9 @@
    * Same settings as dps_calculator.py:
    *   Level 50, Ascension 3, Potential Z (dmg +20% / spa -15% / rng +15%),
    *   competitive OFF, equipment rolls MAX (Value=1), expected crit,
-   *   equipment passives MAX (Shinigami at 15/15), hypnosis share 100%,
-   *   enemies in range = 4 (hypnosis / in-range conditionals).
+   *   equipment passives MAX (Shinigami at 15/15), hypnotized enemies = 0
+   *   by default (Hypnosis buff OFF until raised from the site's Variables
+   *   panel), enemies in range = 4 (denominator of the hypnosis share).
    */
   var DEFAULT_T = {
     // stat amplifier settings
@@ -50,7 +51,7 @@
     shinigami_capacity: 15,
     hypnosis_uptime: 10 / 15,         // Aizen: 10s every 15s on 5 strongest
     hypnosis_damage_bonus: 0.25,      // +25% damage taken
-    hypnosis_target_share: 1.0,       // FIXED 100%, not a site variable
+    hypnosis_target_share: 0,         // default 0: Variables panel raises it (0..1)
     aizen_is_bleach_category: true,
     reflect_procs_per_min: 0,
     reapers_glove_procs_per_min: 0
@@ -259,9 +260,13 @@
           var hyp = 1 + T.hypnosis_uptime * T.hypnosis_target_share *
                     T.hypnosis_damage_bonus;
           passive_mult *= hyp;
-          notes.push("Hypnosis x" + hyp.toFixed(4) + " (uptime " +
-                     Math.round(T.hypnosis_uptime * 100) + "%, share " +
-                     Math.round(T.hypnosis_target_share * 100) + "%)");
+          if (T.hypnosis_target_share > 0) {
+            notes.push("Hypnosis x" + hyp.toFixed(4) + " (uptime " +
+                       Math.round(T.hypnosis_uptime * 100) + "%, share " +
+                       Math.round(T.hypnosis_target_share * 100) + "%)");
+          } else {
+            notes.push("Hypnosis: OFF (0 hypnotized enemies)");
+          }
         }
         passive_mult = evalPassives(combo, passive_mult, notes, withEquipment);
       }

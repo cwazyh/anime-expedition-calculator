@@ -61,7 +61,15 @@ DPS = round2(D / SPA × crit_mult × passive_mult)
 
 Settings: Level 50, Ascension 3, Potential Z, equipment rolls MAX (including
 equipment passives — Shinigami Sword at 15/15), expected crit, no duplicate
-equipment, hypnosis share fixed at 100%, `enemies_in_range = 4`.
+equipment, `enemies_in_range = 4`. Placements are always at MAX — they are not
+a variable.
+
+The **Variables** block in each unit's modal decides what the calculation
+includes: every passive has an on/off toggle (a disabled passive is left out of
+the DPS), *Hypnotized enemies* defaults to **0** — the Hypnosis buff is OFF
+until the user raises it (it only affects BleachCategory units, i.e. Aizen) —
+and *Theoretic max buff* turns every variable to its cap (hypnosis share 100%).
+The settings are saved in `localStorage` and survive a reload.
 
 Because everything is read from the JSONs at runtime, **new units, equipment and
 traits are picked up automatically** — no code changes needed.

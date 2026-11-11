@@ -496,23 +496,99 @@
     return dataReady().then(function () { return calcCache[u.unit_name]; });
   }
 
+  /* ====================== UNIT SETTINGS (VARIABLES PANEL) ======================
+   * Per-unit controls rendered in the detail modal's "Variables" block:
+   *   - enable/disable each passive (a disabled passive is left out of the
+   *     live DPS calculation)
+   *   - Hypnotized enemies: default 0 -> the Hypnosis buff is OFF until the
+   *     user raises it (it only affects BleachCategory units, i.e. Aizen)
+   *   - Enemies in range: default 4, denominator of the hypnosis share
+   * "Theoretic max" turns every variable to its cap (share 100%).
+   * Placements are NOT a variable (always max placements) and equipment
+   * passives stay at MAX (Shinigami Sword 15/15).
+   * The choice is stored in localStorage so it survives a reload.
+   */
+  var SETTINGS_KEY = "aec.unitSettings.v1";
+  var HYPNOSIS_PASSIVE = "Collapse, Mirror Flower";
+  var unitSettings = {};
+  var poolLoaded = false;
+
+  function loadUnitSettings() {
+    try {
+      var raw = window.localStorage.getItem(SETTINGS_KEY);
+      if (raw) unitSettings = JSON.parse(raw) || {};
+    } catch (e) { unitSettings = {}; }
+  }
+  function saveUnitSettings() {
+    try { window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(unitSettings)); }
+    catch (e) { /* private mode: settings stay for this session only */ }
+  }
+  function unitSetting(name) {
+    var s = unitSettings[name];
+    if (!s || typeof s !== "object") s = unitSettings[name] = {};
+    if (!s.passives || typeof s.passives !== "object") s.passives = {};
+    if (typeof s.hypnotized !== "number") s.hypnotized = 0;
+    if (typeof s.enemiesInRange !== "number") s.enemiesInRange = 4;
+    return s;
+  }
+  function clampInt(v, lo, hi, dflt) {
+    var s = String(v == null ? "" : v).trim();
+    var n = s === "" ? NaN : Math.round(Number(s));   // empty input -> default
+    if (!isFinite(n)) n = dflt;
+    return Math.max(lo, Math.min(hi, n));
+  }
+
+  // share of in-range enemies affected by Hypnosis (0 = buff off)
+  function hypShare(u) {
+    var s = unitSetting(u.unit_name);
+    if (s.passives[HYPNOSIS_PASSIVE] === false) return 0;
+    if (s.hypnotized <= 0) return 0;
+    return Math.min(1, s.hypnotized / Math.max(1, s.enemiesInRange));
+  }
+
+  // calculator overrides built from the unit's Variables
+  function unitT(u) {
+    return { hypnosis_target_share: hypShare(u) };
+  }
+
+  function currentUnit() {
+    if (!currentDetail) return null;
+    for (var i = 0; i < units.length; i++) {
+      if (units[i].unit_name === currentDetail) return units[i];
+    }
+    return null;
+  }
+
   function computeCalculated() {
     if (!window.AECalc) return;
     units.forEach(function (u) {
       if (!u.calculated || calcCache[u.unit_name]) return;
-      try {
-        var calc = window.AECalc.createCalculator({
-          unit: u, traits: traitData, equipments: equipData
-        });
-        var table = calc.traitTable();
-        if (!table.length) return;
-        calcCache[u.unit_name] = { calc: calc, table: table, best: table[0] };
-        patchCard(u);
-        refreshDetail(u);
-      } catch (e) {
-        console.error("DPS calculation failed for " + u.unit_name, e);
-      }
+      try { buildCalc(u); }
+      catch (e) { console.error("DPS calculation failed for " + u.unit_name, e); }
     });
+    poolLoaded = true;
+  }
+
+  function buildCalc(u) {
+    var calc = window.AECalc.createCalculator({
+      unit: u, traits: traitData, equipments: equipData, T: unitT(u)
+    });
+    var table = calc.traitTable();
+    if (!table.length) return false;
+    calcCache[u.unit_name] = { calc: calc, table: table, best: table[0] };
+    patchCard(u);
+    refreshDetail(u);
+    return true;
+  }
+
+  // rebuild one unit's calculator after a Variables change and re-sort the
+  // grid (its TDPS may move the card up or down the list)
+  function recomputeUnit(u) {
+    if (!u.calculated || !window.AECalc) return;
+    if (!poolLoaded) { dataReady().then(function () { recomputeUnit(u); }); return; }
+    try {
+      if (buildCalc(u)) scheduleIdle(applyAndRender);
+    } catch (e) { console.error("DPS recalculation failed for " + u.unit_name, e); }
   }
 
   /* ============================== DETAIL MODAL ============================== */
@@ -567,6 +643,65 @@
     }).join("");
   }
 
+  function fillVars(u) {
+    var box = $("detailVars");
+    var s = unitSetting(u.unit_name);
+    var passives = u.passives || [];
+    var html = "";
+
+    $("blkVars").hidden = !u.calculated && passives.length === 0;
+
+    html += '<div class="var-group">Passives</div>';
+    if (!passives.length) {
+      html += '<div class="ph-note">This unit has no passives.</div>';
+    } else {
+      html += passives.map(function (p) {
+        var name = p.display_name || p.name || "";
+        var on = s.passives[name] !== false;
+        var sub;
+        if (!u.calculated) sub = "Applied as soon as this unit's DPS is calculated";
+        else if (name === HYPNOSIS_PASSIVE) sub = "Hypnosis buff - feeds the live DPS";
+        else sub = "No DPS effect modeled";
+        return '<label class="var-row"><span class="var-info">' +
+          '<span class="var-label">' + esc(name) + "</span>" +
+          '<span class="var-sub">' + sub + "</span></span>" +
+          '<span class="switch"><input type="checkbox" data-pass="' + esc(name) + '"' +
+          (on ? " checked" : "") + '><span class="slider"></span></span></label>';
+      }).join("");
+    }
+
+    if (u.calculated) {
+      var share = hypShare(u);
+      html += '<div class="var-group">Variables</div>';
+      html += '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Hypnotized enemies</span>' +
+        '<span class="var-sub">Enemies taking extra damage from Hypnosis - default 0 (buff off)</span>' +
+        '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
+        s.hypnotized + '"></div>';
+      html += '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Enemies in range</span>' +
+        '<span class="var-sub">Denominator of the hypnosis share - default 4</span>' +
+        '</span><input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
+        s.enemiesInRange + '"></div>';
+      html += '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
+        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; Ascension 3 &middot; Potential Z</div>";
+      html += '<div class="var-actions">' +
+        '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
+        '<button type="button" class="var-btn" id="varReset">Reset</button></div>';
+      html += '<div class="var-note">' +
+        (share > 0
+          ? "Hypnosis share " + Math.round(share * 100) + "% (" + s.hypnotized +
+            " hypnotized / " + s.enemiesInRange + " in range)."
+          : "Hypnosis buff OFF (" + s.hypnotized + " hypnotized enemies).") +
+        " Toggle the passives to include or exclude them from the DPS table.</div>";
+    } else {
+      html += '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
+        "saved and applied as soon as its calculation is available.</div>";
+    }
+
+    box.innerHTML = html;
+  }
+
   function fillDps(u) {
     var box = $("detailDps");
     if (!u.calculated) { $("blkDps").hidden = true; return; }
@@ -583,6 +718,12 @@
 
     var T = c.calc.T;
     var bound = c.calc.info.bound;
+    var st = unitSetting(u.unit_name);
+    var share = hypShare(u);
+    var hypTxt = share > 0
+      ? "hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
+        "/" + st.enemiesInRange + " hypnotized)"
+      : "hypnosis OFF (" + st.hypnotized + " hypnotized enemies)";
     var rows = c.table.map(function (r, i) {
       var combo = bound.concat(r.combo).join(" + ");
       return '<tr class="' + (i === 0 ? "top" : "") + '">' +
@@ -597,7 +738,8 @@
       '<div class="dps-note">Calculated live by <b>js/calculator.js</b> from the unit, trait and ' +
       "equipment JSONs: Level " + T.level + " &middot; Ascension " + T.ascension +
       " &middot; Potential Z &middot; equipment rolls MAX (incl. passives) &middot; expected crit &middot; " +
-      "hypnosis share 100% &middot; Shinigami Sword 15/15. Combo includes the unit-bound equipment.</div>" +
+      hypTxt + " &middot; Shinigami Sword 15/15 &middot; placements MAX. " +
+      "Combo includes the unit-bound equipment.</div>" +
       '<table class="dps-table"><thead><tr><th>Trait</th><th>Best equipment</th>' +
       "<th>D</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>";
   }
@@ -637,6 +779,7 @@
     fillPassives(u);
     fillSummons(u);
     fillStatus(u);
+    fillVars(u);
     fillDps(u);
 
     $("detailOverlay").classList.add("open");
@@ -753,6 +896,55 @@
     }, 2600);
   }
 
+  /* ====================== VARIABLES PANEL EVENTS ====================== */
+  function applyVars(u) {
+    saveUnitSettings();
+    fillVars(u);
+    recomputeUnit(u);
+  }
+
+  function bindVars() {
+    var box = $("detailVars");
+
+    // passive toggles + variable inputs
+    box.addEventListener("change", function (e) {
+      var u = currentUnit();
+      if (!u) return;
+      var t = e.target;
+      var s = unitSetting(u.unit_name);
+      if (t && t.hasAttribute && t.hasAttribute("data-pass")) {
+        s.passives[t.getAttribute("data-pass")] = !!t.checked;
+      } else if (t && t.id === "varHyp") {
+        s.hypnotized = clampInt(t.value, 0, 10, 0);
+      } else if (t && t.id === "varRange") {
+        s.enemiesInRange = clampInt(t.value, 1, 10, 4);
+      } else {
+        return;
+      }
+      applyVars(u);
+    });
+
+    // Theoretic max buff / Reset
+    box.addEventListener("click", function (e) {
+      var u = currentUnit();
+      if (!u) return;
+      var id = e.target && e.target.id;
+      if (id !== "varMax" && id !== "varReset") return;
+      var s = unitSetting(u.unit_name);
+      if (id === "varMax") {
+        s.passives = {};                                       // every passive ON
+        s.enemiesInRange = clampInt(s.enemiesInRange, 1, 10, 4);
+        s.hypnotized = s.enemiesInRange;                       // share = 100%
+      } else {
+        s.passives = {};                                       // every passive ON
+        s.hypnotized = 0;                                      // hypnosis buff OFF
+        s.enemiesInRange = 4;
+      }
+      applyVars(u);
+      showToast(id === "varMax" ? "Theoretic max buff applied" : "Variables reset");
+    });
+  }
+
   /* ============================== INIT ============================== */
   async function boot() {
     try {
@@ -777,8 +969,10 @@
   }
 
   function init() {
+    loadUnitSettings();
     bindTooltip();
     bindFilters();
+    bindVars();
 
     $("detailClose").addEventListener("click", function () {
       $("detailOverlay").classList.remove("open");
