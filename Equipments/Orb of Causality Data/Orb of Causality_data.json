@@ -1,6 +1,7 @@
 {
  "for_unit": "5th God Hand",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

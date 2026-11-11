@@ -1,5 +1,6 @@
 {
  "description": "Increase Critical Chance by 10% - Increase Critical Damage by 5%",
+ "rarity": "Legendary",
  "CritChance": 0.1,
  "CritDamage": 0.05
 }

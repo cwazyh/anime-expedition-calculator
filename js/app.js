@@ -36,6 +36,48 @@
   };
   function traitFile(name) { return TRAIT_ALIAS[name] || name; }
 
+  /* ====================== RARITY / AURA COLORS ======================
+   * "rarity" comes from the game data shipped in each equipment/trait JSON
+   * (Shared.Information.Equipment / Traits). The aura accents are the traits
+   * that own an in-game aura (ReplicatedStorage.Assets.TraitAuras).
+   */
+  function eqRarity(name) {
+    var e = equipData[name];
+    return e && e.rarity ? String(e.rarity).toLowerCase() : "";
+  }
+  function eqSlotCls(name) {
+    var r = eqRarity(name);
+    return r ? " eq-" + r : "";
+  }
+  function traitRarity(name) {
+    var t = traitData[traitFile(name)];
+    return t && t.rarity ? String(t.rarity).toLowerCase() : "";
+  }
+  var TRAIT_AURAS = {
+    "Primordial": "primordial", "Forsaken": "forsaken", "Unbound": "unbound",
+    "Limit Breaker": "limitbreaker", "Draconic": "draconic", "Optics": "optics",
+    "Investor": "investor", "Bolt": "bolt"
+  };
+  function traitAura(name) { return TRAIT_AURAS[traitFile(name)] || ""; }
+
+  function traitIconCls(name) {
+    var r = traitRarity(name), a = traitAura(name);
+    return "trait-icon" + (r ? " tr-" + r : "") + (a ? " tr-aura-" + a : "");
+  }
+
+  // accent color of a trait's name (aura color first, then rarity tier)
+  var TRAIT_AURA_HEX = {
+    primordial: "#76cbe0", forsaken: "#ad60e0", unbound: "#a1caff",
+    limitbreaker: "#b0393b", draconic: "#ce7d31", optics: "#5d90ff",
+    investor: "#dac471", bolt: "#46adfd"
+  };
+  var TRAIT_RARITY_HEX = { mythic: "#cf9bff", legendary: "#e8c46a", rare: "#9fa4ee" };
+  function traitColorHex(name) {
+    var a = traitAura(name);
+    if (a) return TRAIT_AURA_HEX[a];
+    return TRAIT_RARITY_HEX[traitRarity(name)] || "";
+  }
+
   /* ============================== STATE ============================== */
   var manifest = null;
   var units = [];                 // enriched unit JSONs
@@ -203,7 +245,8 @@
 
   function traitsHTML(cd) {
     return cd.traits.map(function (t, i) {
-      return '<span class="trait-wrap" data-trait="' + esc(t) + '"><div class="trait-icon">' +
+      return '<span class="trait-wrap" data-trait="' + esc(t) + '"><div class="' +
+        traitIconCls(t) + '">' +
         '<img src="' + traitImg(traitFile(t)) + '" alt="' + esc(t) +
         '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
         '</div><span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>';
@@ -212,7 +255,7 @@
 
   function equipsHTML(cd) {
     return cd.equips.map(function (e) {
-      return '<div class="equip-slot" data-equip="' + esc(e.name) + '">' +
+      return '<div class="equip-slot' + eqSlotCls(e.name) + '" data-equip="' + esc(e.name) + '">' +
         '<img src="' + equipImg(e.name) + '" alt="' + esc(e.name) +
         '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
         '<span class="equip-name">' + esc(e.name) + '</span></div>';
@@ -244,11 +287,30 @@
     );
   }
 
+  /* Rarity background effects run only for on-screen cards: the observer
+   * toggles .aura-live (CSS keeps the animation paused without it), so a
+   * long grid never pays for off-screen animations.
+   */
+  var auraObserver = null;
+  function observeAuras(root) {
+    if (!root || !("IntersectionObserver" in window)) return;
+    if (!auraObserver) {
+      auraObserver = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          entries[i].target.classList.toggle("aura-live", entries[i].isIntersecting);
+        }
+      }, { rootMargin: "80px" });
+    }
+    var nodes = root.querySelectorAll(".ebox-gradient");
+    for (var i = 0; i < nodes.length; i++) auraObserver.observe(nodes[i]);
+  }
+
   function renderUnits(list) {
     var grid = $("unitsGrid");
     var empty = $("emptyState");
     // never leave an equipment tooltip pointing at a destroyed slot
     if (tipSlot && grid.contains(tipSlot)) hideTip();
+    if (auraObserver) auraObserver.disconnect();   // drop refs to removed cards
     grid.innerHTML = "";
     cardEls = {};
 
@@ -271,6 +333,7 @@
       frag.appendChild(card);
     });
     grid.appendChild(frag);
+    observeAuras(grid);
   }
 
   // update one card in place after its live calculation becomes available
@@ -295,9 +358,14 @@
   function tipEl() { return $("equipPopup"); }
 
   function tipTags(eq) {
-    if (eq.for_unit) return '<span class="ep-tag bound">Bound to ' + esc(eq.for_unit) + "</span>";
-    if (eq.general_use) return '<span class="ep-tag">General</span>';
-    return "";
+    var out = "";
+    if (eq.rarity) {
+      out += '<span class="ep-tag r-' + String(eq.rarity).toLowerCase() + '">' +
+        esc(eq.rarity) + "</span>";
+    }
+    if (eq.for_unit) out += '<span class="ep-tag bound">Bound to ' + esc(eq.for_unit) + "</span>";
+    else if (eq.general_use) out += '<span class="ep-tag">General</span>';
+    return out;
   }
 
   function passiveHTML(p) {
@@ -342,10 +410,12 @@
   // same tooltip style as equipment, showing only the trait's full
   // description (it already lists every buff in text form)
   function traitTipHTML(name, t) {
+    var r = t.rarity ? String(t.rarity).toLowerCase() : "";
     var html = '<div class="ep-head"><img src="' + traitImg(traitFile(name)) +
       '" alt="" onerror="this.style.display=\'none\'"><div><div class="ep-name">' +
-      esc(name) + '</div><div class="ep-tags"><span class="ep-tag">Trait</span>' +
-      '</div></div></div>';
+      esc(name) + '</div><div class="ep-tags">' +
+      (r ? '<span class="ep-tag r-' + r + '">' + esc(t.rarity) + "</span>" : "") +
+      '<span class="ep-tag">Trait</span></div></div></div>';
 
     if (t.description) {
       html += '<div class="ep-sec"><div class="ep-sec-title">Description</div>' +
@@ -485,6 +555,8 @@
         // re-sort the grid now that live TDPS is known (Traitor (Illusion)
         // first renders with no TDPS, then must take its place by DPS)
         applyAndRender();
+        // an already open detail modal gains its rarity colors here too
+        if (currentDetail) { var cu = currentUnit(); if (cu) refreshDetail(cu); }
         return true;
       });
     }
@@ -597,8 +669,12 @@
     $("detailTraits").innerHTML = cd.traits.length === 0
       ? '<div class="ph-note">Traits TBD</div>'
       : cd.traits.map(function (t, i) {
-          return '<div class="detail-trait"><span class="trait-wrap" data-trait="' + esc(t) + '">' +
-            '<div class="trait-icon"><img src="' + traitImg(traitFile(t)) + '" alt="' + esc(t) +
+          var accent = traitColorHex(t);
+          return '<div class="detail-trait"' +
+            (accent ? ' style="--tr-c:' + accent + '"' : "") +
+            '><span class="trait-wrap" data-trait="' + esc(t) + '">' +
+            '<div class="' + traitIconCls(t) + '"><img src="' + traitImg(traitFile(t)) +
+            '" alt="' + esc(t) +
             '" onerror="this.style.display=\'none\'"></div>' +
             '<span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>' +
             '<span class="tname">' + esc(t) + (i === 0 ? " (Best)" : " (2nd)") + "</span></div>";
@@ -764,6 +840,7 @@
         (u.placeholder ? '<div class="ebox-amount">placeholder</div>' : '') +
         '<div class="ebox-img"><img src="' + unitImg(u.unit_name) + '" alt="' + esc(u.unit_name) + '"></div>' +
       "</div>";
+    observeAuras($("detailEbox"));
 
     $("detailRarity").innerHTML = esc(rarity) +
       '<span class="element-chip"><img src="' + elementImg(u.element) + '" alt="" ' +

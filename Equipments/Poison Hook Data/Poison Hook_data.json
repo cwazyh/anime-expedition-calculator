@@ -1,6 +1,7 @@
 {
  "for_unit": "Sand (Alligator)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Range": {
    "min": 1,

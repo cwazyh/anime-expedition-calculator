@@ -1,5 +1,6 @@
 {
  "description": "Increase DMG by 20% - Increase DOT Damage by 120% - Decrease Overall cost by 15%",
+ "rarity": "Mythic",
  "Damage": 0.2,
  "Cost": -0.15,
  "DoTDamage": 1.2

@@ -1,6 +1,7 @@
 {
  "for_unit": "First Blade (Strongest)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Physical": {
    "min": 1,

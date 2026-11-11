@@ -1,6 +1,7 @@
 {
  "for_unit": "Reaper (Released)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "CritChance": {
    "min": 1,

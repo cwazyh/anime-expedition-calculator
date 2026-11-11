@@ -1,6 +1,7 @@
 {
  "for_unit": "Devil (Hero)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

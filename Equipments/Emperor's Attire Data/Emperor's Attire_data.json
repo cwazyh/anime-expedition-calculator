@@ -1,6 +1,7 @@
 {
  "for_unit": "Flame Emperor (Reincarnate)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

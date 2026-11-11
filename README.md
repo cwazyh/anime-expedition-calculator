@@ -17,10 +17,11 @@ Units/<name> Data/
                          # effects (incl. DoT), traits, equipment, obtainable...
     <name>_image.png
 Equipments/<name> Data/
-    <name>_data.json     # buffs (stat ranges), passives, unit bounds
+    <name>_data.json     # buffs (stat ranges), passives, unit bounds, rarity
     <name>_image.png
 Traits/<name> Data/
-    <name>_data.json     # trait stats (Damage / SPA / Crit / Range / PlacementLimit)
+    <name>_data.json     # trait stats (Damage / SPA / Crit / Range / PlacementLimit),
+                         # rarity
     <name>_image.png
 Logos/<element>.png      # element icons (lowercase: hydro.png, flame.png, ...)
 UI/                      # site chrome (expeditions_wheel.png, EntityBox_Dark.png)
@@ -46,6 +47,16 @@ new unit/equipment/trait only requires creating its folder and updating the mani
   verifiable game data, not calculator output.
 - **`placeholder": true`** marks cards whose data is not final; they show a
   "placeholder" pill, sort last, and don't derive costs.
+- **Rarity colors**: each equipment/trait JSON carries a `rarity` field taken
+  from the live game (`Shared.Information.Equipment` / `Traits`). Card boxes use
+  the game's own aura palettes (`ReplicatedStorage.Assets.RarityAuras`, plus
+  `FusionPackage.Colors.Gradients` for Exalted) with a rim-glow background
+  effect per rarity; equipment slots get a tinted background by rarity
+  (bound = Secret, general use = Rare, Oni's Nature = Exalted); trait icons and
+  names are colored by rarity tier and by the accent of traits that own an
+  in-game aura (`ReplicatedStorage.Assets.TraitAuras`). The effect animates only
+  `transform`/`opacity`, only while its card is on screen
+  (IntersectionObserver) and never when `prefers-reduced-motion` is set.
 
 ## DPS calculation (live, client-side)
 

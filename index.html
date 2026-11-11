@@ -32,13 +32,61 @@
       overflow-x: hidden;
     }
 
-    /* ===== RARITY GRADIENTS (exact wiki Palette.css) ===== */
-    .c-secret    { --bg: linear-gradient(135deg, rgb(255,0,0), rgb(90,19,19), rgb(255,0,0)); }
-    .c-exclusive { --bg: linear-gradient(135deg, rgb(183,249,255), rgb(225,178,255), rgb(183,249,255)); }
-    .c-mythic    { --bg: linear-gradient(135deg, rgb(255,7,7), rgb(247,221,27), rgb(93,229,30), rgb(43,174,194), rgb(97,61,206), rgb(255,84,238)); }
-    .c-legendary { --bg: linear-gradient(135deg, rgb(255,203,14) 10%, rgb(218,118,4), rgb(255,203,14) 80%); }
-    .c-epic      { --bg: linear-gradient(135deg, rgb(153,10,255), rgb(76,39,154), rgb(153,10,255)); }
-    .c-rare      { --bg: linear-gradient(135deg, rgb(0,149,255), rgb(25,60,235), rgb(0,149,255)); }
+    /* ===== RARITY PALETTES (extracted from the game) =====
+       Stops taken from ReplicatedStorage.Assets.RarityAuras (ParticleEmitter
+       ColorSequences) and FusionPackage.Colors.Gradients (Exalted). */
+    .c-secret    { --bg: linear-gradient(135deg, #ff2121 0%, #751919 25%, #ff2121 51%, #751919 75%, #ff7b81 100%); }
+    .c-exclusive { --bg: linear-gradient(135deg, #e1b2ff 0%, #dfb5ff 27%, #b7f9ff 48%, #e0b4ff 69%, #e1b2ff 100%); }
+    .c-mythic    { --bg: linear-gradient(135deg, #d93a3a 0%, #d3c249 21%, #6fc547 43%, #43a4b2 64%, #715bb4 81%, #d97ccf 100%); }
+    .c-legendary { --bg: linear-gradient(135deg, #b69947 0%, #a55e1f 100%); }
+    .c-epic      { --bg: linear-gradient(135deg, #be6ef7 0%, #6c2df2 100%); }
+    .c-rare      { --bg: linear-gradient(135deg, #595ac7 0%, #2450c3 100%); }
+    .c-exalted   { --bg: linear-gradient(135deg, #ff0000 0%, #5a1313 45%, #8737cd 78%, #b32c82 100%); }
+
+    /* ===== RARITY BACKGROUND EFFECT (animated) =====
+       A rim-glow layer that drifts and breathes like the game's rarity
+       auras. Only transform + opacity animate (composited, no layout or
+       paint per frame) and the animation runs only while the card is on
+       screen (class .aura-live added by an IntersectionObserver). */
+    .ebox-gradient::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 50% 42%, rgba(0,0,0,0) 32%, var(--bg, #454545) 105%);
+      z-index: 0;
+      opacity: 0.5;
+      transform: translate3d(0, 0, 0) scale(1.3);
+      animation: auraDrift var(--aura-dur, 8s) linear infinite alternate,
+                 auraGlow var(--aura-pulse, 3.2s) ease-in-out infinite alternate;
+      animation-play-state: paused;
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+    .ebox-gradient.aura-live::before { animation-play-state: running; }
+    @keyframes auraDrift {
+      from { transform: translate3d(-7%, -7%, 0) scale(1.3); }
+      to   { transform: translate3d(7%, 7%, 0) scale(1.3); }
+    }
+    @keyframes auraGlow {
+      from { opacity: 0.3; }
+      to   { opacity: 0.9; }
+    }
+    /* per-rarity tempo: Secret pulses fast (like its aura), the rainbow
+       and pastel rarities move slower */
+    .c-secret.ebox-gradient    { --aura-dur: 4s;   --aura-pulse: 1.5s; }
+    .c-mythic.ebox-gradient    { --aura-dur: 6s;   --aura-pulse: 2.6s; }
+    .c-epic.ebox-gradient      { --aura-dur: 7s;   --aura-pulse: 3s; }
+    .c-legendary.ebox-gradient { --aura-dur: 7.5s; --aura-pulse: 3.4s; }
+    .c-rare.ebox-gradient      { --aura-dur: 9s;   --aura-pulse: 3.8s; }
+    .c-exclusive.ebox-gradient { --aura-dur: 11s;  --aura-pulse: 4.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .ebox-gradient::before {
+        animation: none;
+        transform: none;
+        opacity: 0.55;
+      }
+    }
 
     /* ===== TOP NAV ===== */
     .top-nav {
@@ -354,6 +402,7 @@
       aspect-ratio: 1 / 1;
       border-radius: 11px;
       z-index: 1;
+      overflow: hidden;   /* clips the scaled aura layer to the frame */
       background-image:
         radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(0,0,0,0.25) 100%),
         url('UI/EntityBox_Dark.png'),
@@ -399,7 +448,7 @@
       object-fit: contain;
     }
 
-    /* Quantity badge (placeholder) */
+    /* Quantity badge (placeholder) - inset because .ebox-gradient clips */
     .ebox-amount {
       position: absolute;
       display: block;
@@ -410,10 +459,9 @@
       z-index: 13;
       background: rgb(0 0 0 / 80%);
       padding: 2px 7px;
-      margin-left: 4%;
       border-radius: 30px;
-      left: -8px;
-      top: -3px;
+      left: 6px;
+      top: 5px;
       border: 1px solid black;
       font-family: var(--font-card);
       color: #efefef;
@@ -452,6 +500,9 @@
     .rarity-chip.c-mythic { color: #000; }
     .rarity-chip.c-secret { color: #fff; }
     .rarity-chip.c-epic { color: #fff; }
+    .rarity-chip.c-legendary { color: #fff; }
+    .rarity-chip.c-rare { color: #fff; }
+    .rarity-chip.c-exclusive { color: #2b1c3f; }
 
     /* Stats row */
     .card-stats {
@@ -510,6 +561,20 @@
       height: 30px;
       object-fit: contain;
     }
+    /* Trait rarity + aura colors (game: Traits.TraitData[].Rarity and
+       ReplicatedStorage.Assets.TraitAuras). tr-r* / tr-l* / tr-m* are the
+       rarity tiers, tr-aura-* the accent of traits that own an aura. */
+    .trait-icon.tr-rare      { border-color: #5c74d8; box-shadow: 0 0 10px rgba(70,90,200,0.35), inset 0 0 10px rgba(70,90,200,0.16); }
+    .trait-icon.tr-legendary { border-color: #d8b64e; box-shadow: 0 0 10px rgba(216,160,60,0.35), inset 0 0 10px rgba(216,160,60,0.16); }
+    .trait-icon.tr-mythic    { border-color: #a34dff; box-shadow: 0 0 10px rgba(176,47,255,0.4), inset 0 0 10px rgba(176,47,255,0.18); }
+    .trait-icon.tr-aura-primordial  { border-color: #76cbe0; box-shadow: 0 0 10px rgba(118,203,224,0.4), inset 0 0 10px rgba(118,203,224,0.18); }
+    .trait-icon.tr-aura-forsaken    { border-color: #ad60e0; box-shadow: 0 0 10px rgba(173,96,224,0.4), inset 0 0 10px rgba(173,96,224,0.18); }
+    .trait-icon.tr-aura-unbound     { border-color: #a1caff; box-shadow: 0 0 10px rgba(161,202,255,0.4), inset 0 0 10px rgba(161,202,255,0.18); }
+    .trait-icon.tr-aura-limitbreaker{ border-color: #b0393b; box-shadow: 0 0 10px rgba(176,57,59,0.45), inset 0 0 10px rgba(176,57,59,0.2); }
+    .trait-icon.tr-aura-draconic    { border-color: #ce7d31; box-shadow: 0 0 10px rgba(206,125,49,0.4), inset 0 0 10px rgba(206,125,49,0.18); }
+    .trait-icon.tr-aura-optics      { border-color: #5d90ff; box-shadow: 0 0 10px rgba(93,144,255,0.4), inset 0 0 10px rgba(93,144,255,0.18); }
+    .trait-icon.tr-aura-investor    { border-color: #dac471; box-shadow: 0 0 10px rgba(218,196,113,0.4), inset 0 0 10px rgba(218,196,113,0.18); }
+    .trait-icon.tr-aura-bolt        { border-color: #46adfd; box-shadow: 0 0 10px rgba(70,173,253,0.45), inset 0 0 10px rgba(70,173,253,0.2); }
     /* Rank badges on traits */
     .trait-rank {
       position: absolute;
@@ -604,6 +669,12 @@
       color: var(--ochre);
       border-color: rgba(255,170,45,0.45);
     }
+    /* rarity tags inside tooltips (colors from the game's rarity auras) */
+    .ep-tag.r-secret    { background: rgba(255,33,33,0.16); color: #ff8b8b; border-color: rgba(255,33,33,0.45); }
+    .ep-tag.r-rare      { background: rgba(89,90,199,0.18); color: #9fa4ee; border-color: rgba(89,90,199,0.5); }
+    .ep-tag.r-exalted   { background: rgba(183,44,130,0.18); color: #e77ec2; border-color: rgba(183,44,130,0.5); }
+    .ep-tag.r-mythic    { background: rgba(176,47,255,0.16); color: #cf9bff; border-color: rgba(176,47,255,0.45); }
+    .ep-tag.r-legendary { background: rgba(216,160,60,0.16); color: #e8c46a; border-color: rgba(216,160,60,0.45); }
     .ep-buffs {
       display: flex;
       flex-direction: column;
@@ -692,6 +763,27 @@
       width: 180%; height: 180%;
       background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 65%);
       pointer-events: none;
+    }
+    /* Equipment rarity backgrounds (game: bound equipment = Secret,
+       general use = Rare, Oni's Nature = Exalted; tints follow the game's
+       rarity aura colors). */
+    .equip-slot.eq-secret {
+      background:
+        linear-gradient(160deg, rgba(255,33,33,0.30) 0%, rgba(117,25,25,0.16) 55%, rgba(19,19,24,0.95) 100%),
+        linear-gradient(160deg, #26262f 0%, #131318 100%);
+      border-color: rgba(255,64,64,0.55);
+    }
+    .equip-slot.eq-rare {
+      background:
+        linear-gradient(160deg, rgba(89,90,199,0.34) 0%, rgba(36,80,195,0.18) 55%, rgba(19,19,24,0.95) 100%),
+        linear-gradient(160deg, #26262f 0%, #131318 100%);
+      border-color: rgba(103,110,220,0.55);
+    }
+    .equip-slot.eq-exalted {
+      background:
+        linear-gradient(160deg, rgba(255,0,0,0.30) 0%, rgba(135,55,205,0.24) 78%, rgba(19,19,24,0.95) 100%),
+        linear-gradient(160deg, #26262f 0%, #131318 100%);
+      border-color: rgba(183,44,130,0.6);
     }
     .equip-slot:hover {
       border-color: var(--ochre);
@@ -938,8 +1030,9 @@
     .detail-trait .tname {
       font-family: var(--font-card);
       font-size: 11px;
-      color: #bbb;
+      color: var(--tr-c, #bbb);
       font-weight: 600;
+      text-shadow: 0 0 8px color-mix(in srgb, var(--tr-c, #888) 35%, transparent);
     }
     .ph-note {
       font-family: var(--font-card);

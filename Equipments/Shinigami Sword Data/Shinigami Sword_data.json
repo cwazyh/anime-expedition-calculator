@@ -1,6 +1,7 @@
 {
  "for_unit": null,
  "general_use": true,
+ "rarity": "Rare",
  "buffs": {
   "CritChance": {
    "min": 1,

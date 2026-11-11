@@ -1,5 +1,6 @@
 {
  "description": "Increase DMG by 35% - Decrease SPA by 15% - Increase Range by 20%",
+ "rarity": "Mythic",
  "Damage": 0.35,
  "SPA": -0.15,
  "Range": 0.2

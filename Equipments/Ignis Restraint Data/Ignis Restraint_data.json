@@ -1,6 +1,7 @@
 {
  "for_unit": "Ignition Commander (Betrayal)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

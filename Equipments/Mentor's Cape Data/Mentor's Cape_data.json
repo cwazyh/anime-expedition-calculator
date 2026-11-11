@@ -1,6 +1,7 @@
 {
  "for_unit": "Prodigy (Rage)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Range": {
    "min": 1,

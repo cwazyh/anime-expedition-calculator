@@ -1,6 +1,7 @@
 {
  "for_unit": "The Drink (Juicebox)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

@@ -1,6 +1,7 @@
 {
  "for_unit": "Atom (Totality)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "CritChance": {
    "min": 1,

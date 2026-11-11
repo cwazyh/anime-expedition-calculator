@@ -1,6 +1,7 @@
 {
  "for_unit": "8th Sword (Berserk)",
  "general_use": false,
+ "rarity": "Exalted",
  "buffs": {
   "Range": {
    "min": 10,

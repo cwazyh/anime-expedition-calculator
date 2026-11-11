@@ -1,6 +1,7 @@
 {
  "for_unit": "Lightning God (Overcharged)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Range": {
    "min": 1,

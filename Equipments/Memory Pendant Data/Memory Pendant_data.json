@@ -1,6 +1,7 @@
 {
  "for_unit": "Cursed Immortal (Black Sun)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,

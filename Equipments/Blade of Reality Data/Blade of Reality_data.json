@@ -1,6 +1,7 @@
 {
  "for_unit": "Eclipse Hunter (Savior)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Range": {
    "min": 1,

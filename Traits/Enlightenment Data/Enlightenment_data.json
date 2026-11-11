@@ -1,4 +1,5 @@
 {
  "description": "Increase Exp by 50%",
+ "rarity": "Rare",
  "ExpIncrease": 0.5
 }

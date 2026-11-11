@@ -1,6 +1,7 @@
 {
  "for_unit": "Water Mage (Scholar)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "SPA": {
    "min": -1,

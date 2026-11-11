@@ -1,6 +1,7 @@
 {
  "for_unit": "Puppet (Telekinetic)",
  "general_use": false,
+ "rarity": "Secret",
  "buffs": {
   "Damage": {
    "min": 1,
