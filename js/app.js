@@ -55,9 +55,17 @@
     });
   }
 
-  // "en-US" formatting (English site)
+  // "en-US" formatting (English site).
+  // Display rule: what the user sees is always rounded half-up -
+  // DPS/TDPS to a whole number, every other value to max 1 decimal
+  // (8.3 ok, 8.3271 never). The formulas keep full precision.
   function fmt(n) {
-    return (n === null || n === undefined) ? "—" : Number(n).toLocaleString("en-US");
+    if (n === null || n === undefined) return "—";
+    return (Math.round(Number(n) * 10) / 10).toLocaleString("en-US");
+  }
+  function fmtDps(n) {
+    if (n === null || n === undefined) return "—";
+    return Math.round(Number(n)).toLocaleString("en-US");
   }
   function yen(n) {
     return (n === null || n === undefined) ? "—" : "¥" + fmt(n);
@@ -178,7 +186,7 @@
   /* ============================== RENDER ============================== */
   function statsHTML(u, cd) {
     return (
-      '<div class="card-stat"><span class="card-stat-value">' + fmt(cd.tdps) +
+      '<div class="card-stat"><span class="card-stat-value">' + fmtDps(cd.tdps) +
       '</span><span class="card-stat-label">TDPS</span></div>' +
       '<div class="card-stat"><span class="card-stat-value yen">' + yen(deployOf(u)) +
       '</span><span class="card-stat-label">Deploy</span></div>' +
@@ -528,7 +536,7 @@
         '<td class="eq-names">' + esc(combo) + "</td>" +
         '<td class="num">' + fmt(r.res.dmg) + "</td>" +
         '<td class="num">' + fmt(r.res.spa) + "</td>" +
-        '<td class="num">' + fmt(r.res.dps) + "</td></tr>";
+        '<td class="num">' + fmtDps(r.res.dps) + "</td></tr>";
     }).join("");
 
     box.innerHTML =
@@ -543,7 +551,7 @@
   function refreshDetail(u) {
     if (currentDetail !== u.unit_name) return;
     var cd = resolveCardData(u);
-    $("dTdps").textContent = fmt(cd.tdps);
+    $("dTdps").textContent = fmtDps(cd.tdps);
     fillTraits(u);
     fillEquips(u);
     fillDps(u);
@@ -566,7 +574,7 @@
       'onerror="this.remove()">' + esc(u.element) + "</span>";
     $("detailName").textContent = u.unit_name;
     $("detailDesc").textContent = u.desc || "No description available.";
-    $("dTdps").textContent = fmt(cd.tdps);
+    $("dTdps").textContent = fmtDps(cd.tdps);
     $("dDeploy").textContent = yen(deployOf(u));
     $("dCost").textContent = yen(costOf(u));
 
