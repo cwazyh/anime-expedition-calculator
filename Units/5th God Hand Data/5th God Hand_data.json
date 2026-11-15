@@ -232,5 +232,6 @@
    "description": "For every GriffithFemtoMeter stack:\n- Increase the damage of this unit's Distortion by 5%\n\nAt 35 GriffithFemtoMeter stacks:\n- All enemies in range will take 100% of this unit's current damage per second for 5 seconds\n- After 5 seconds reset GriffithFemtoMeter back to 0"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -115,6 +115,73 @@
     "Reaper's Glove", "Bamboo Bottle", "Economists Coin"
   ];
 
+  /* =================== PER-UNIT PASSIVE MODELS ===================
+   * Steady-state models for unit passives that affect DPS, built on the
+   * same philosophy as Traitor (Illusion)'s Hypnosis model: assume the
+   * fight lasts long enough for the effect to reach a steady state
+   * (stacks, uptimes, follow-up attacks) and expose every assumption as
+   * a Variable on the site.
+   *
+   * registerPassives("<unit name>", {
+   *   "<passive display name>": function (T) {
+   *     return {
+   *       dmg:  0.10,   // x1.10 damage layer (applied before rounding)
+   *       spa: -0.15,   // x0.85 SPA (negative = faster attacks)
+   *       cc:   5,      // flat Crit Chance added (final units)
+   *       cd:   10,     // flat Crit Damage added (final units)
+   *       mult: 1.05,   // extra DPS multiplier (after crit)
+   *       notes: ["..."]
+   *     };
+   *   }
+   * });
+   * All fields are optional. The model reads only T (the site's
+   * tunables): T.passive_state[name] === false turns it off, and any
+   * number shown in the Variables panel arrives as T.<key>.
+   */
+  var PASSIVE_MODELS = {};   // unit name -> { display name -> fn(T) }
+  var UNIT_VARS = {};        // unit name -> [{ key, label, sub, min, max, step, def }]
+
+  function registerPassives(unitName, models) {
+    PASSIVE_MODELS[unitName] = models;
+  }
+  function registerUnitVars(unitName, vars) {
+    UNIT_VARS[unitName] = vars;
+  }
+  function hasPassiveModel(unitName, passiveName) {
+    var m = PASSIVE_MODELS[unitName];
+    return !!(m && Object.prototype.hasOwnProperty.call(m, passiveName));
+  }
+  function hasAnyModel(unitName) {
+    var m = PASSIVE_MODELS[unitName];
+    if (!m) return false;
+    for (var k in m) if (Object.prototype.hasOwnProperty.call(m, k)) return true;
+    return false;
+  }
+  function unitVars(unitName) { return UNIT_VARS[unitName] || []; }
+
+  var PM_ZERO = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1 };
+
+  function applyPassiveModels(unitName, T, notes) {
+    var models = PASSIVE_MODELS[unitName];
+    if (!models) return PM_ZERO;
+    var out = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1 };
+    for (var name in models) {
+      if (!Object.prototype.hasOwnProperty.call(models, name)) continue;
+      if (T.passive_state && T.passive_state[name] === false) {
+        notes.push(name + ": OFF (Variables)");
+        continue;
+      }
+      var r = models[name](T) || {};
+      out.dmg *= (1 + (r.dmg || 0));
+      out.spa *= (1 + (r.spa || 0));
+      out.cc += r.cc || 0;
+      out.cd += r.cd || 0;
+      out.mult *= r.mult || 1;
+      if (r.notes) for (var i = 0; i < r.notes.length; i++) notes.push(r.notes[i]);
+    }
+    return out;
+  }
+
   /* ============================== FACTORY ==============================
    * ctx = {
    *   unit:       parsed unit JSON (Units/<name> Data/<name>_data.json),
@@ -238,12 +305,17 @@
               (1 + t_dmg + e_dmg / 100);
         spa = BASE_SPA * (1 + t_spa + e_spa / 100);
       }
-      dmg = r1(dmg * type_mult);
-      spa = Math.max(r1(spa), 0.1);
+
+      // per-unit passive models (dmg/spa/crit layers + extra-damage mult)
+      var notes = [];
+      var pm = withPassives ? applyPassiveModels(UNIT_NAME, T, notes) : PM_ZERO;
+
+      dmg = r1(dmg * type_mult * pm.dmg);
+      spa = Math.max(r1(spa * pm.spa), 0.1);
 
       // crit (bonus semantics: cd includes base 100 = +100% on crit)
-      var cc = BASE_CC + 100 * t_cc + e_cc;
-      var cd = BASE_CD + 100 * t_cd + e_cd;
+      var cc = BASE_CC + 100 * t_cc + e_cc + pm.cc;
+      var cd = BASE_CD + 100 * t_cd + e_cd + pm.cd;
       if (T.competitive_mode) {
         if (cc <= 25) cc = 0;
         cd -= 50;
@@ -254,7 +326,7 @@
       else crit_mult = 1 + (cc / 100) * ((cd - 100) / 100);   // legacy/total
 
       // passives
-      var passive_mult = 1.0, notes = [];
+      var passive_mult = 1.0;
       if (withPassives) {
         if (UNIT_NAME === "Traitor (Illusion)" && T.aizen_is_bleach_category) {
           var hyp = 1 + T.hypnosis_uptime * T.hypnosis_target_share *
@@ -269,6 +341,7 @@
           }
         }
         passive_mult = evalPassives(combo, passive_mult, notes, withEquipment);
+        passive_mult *= pm.mult;
       }
 
       var dps = r2(dmg / spa * crit_mult * passive_mult);
@@ -333,6 +406,11 @@
     DEFAULT_T: DEFAULT_T,
     createCalculator: createCalculator,
     r1: r1,
-    r2: r2
+    r2: r2,
+    registerPassives: registerPassives,
+    registerUnitVars: registerUnitVars,
+    hasPassiveModel: hasPassiveModel,
+    hasAnyModel: hasAnyModel,
+    unitVars: unitVars
   };
 });

@@ -7,13 +7,13 @@
  "placement_limit": 2,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Dismember": {
    "cooldown": 9999,
@@ -290,5 +290,6 @@
    "description": "After 25 Takedowns this unit will enter KenpachiTransformation for 15 seconds:\n- Increase DMG by 20%\n- Decrease SPA by 10%\n- Apply Dismember on every Attack"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

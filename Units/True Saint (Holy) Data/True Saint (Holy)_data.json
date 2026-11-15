@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Exclusive unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "HinataMark": {
    "cooldown": 10,
@@ -265,5 +265,6 @@
    "unlock_upgrade": 11,
    "description": "On activation:\n- Steal 20% of damage from the 3 strongest units in this unit's range for 60 seconds"
   }
- ]
+ ],
+ "calculated": true
 }

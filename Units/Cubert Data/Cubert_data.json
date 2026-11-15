@@ -335,5 +335,6 @@
    "unlock_upgrade": 0,
    "description": "On activation:\n- Select another unit on the map to summon a KhunCube\n- Decrease KhunMeter by 1\n- Only 2 KhunCubes can be active at once (per unit).\n- Only 6 KhunCubes can be active at once (globally)."
   }
- ]
+ ],
+ "calculated": true
 }

@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "summons": [
   {
    "archetype": "Physical",
@@ -265,5 +265,6 @@
    "description": "Every 20 total stacks of Bleed in this unit's range:\n- Summon a YutaBatSpirit at this unit's position (Capacity: 3)\n- YutaBatSpirits will deal 15% of this unit's current damage per attack\n- YutaBatSpirits despawn after 3 attacks"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

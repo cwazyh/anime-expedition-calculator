@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 2,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Fire": {
    "cooldown": 0,
@@ -232,5 +232,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\n- Deal 200% of this unit's current damage to all enemies in range\n- Deal an additional 100% damage divided among all enemies in range"
   }
- ]
+ ],
+ "calculated": true
 }

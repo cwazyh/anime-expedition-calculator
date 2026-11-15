@@ -113,6 +113,28 @@
     return (n === null || n === undefined) ? "—" : "¥" + fmt(n);
   }
 
+  /* ------------------------- FARM UNITS -------------------------
+   * Ramen Guy and Stone Alchemist (Element = "Farm") generate Yen every
+   * wave instead of dealing damage. Their per-level income lives in the
+   * upgrade's "farm" field (game data: UpgradeInfo[n].Farm), so the card
+   * shows the final Yen/wave and the total cost instead of TDPS, with
+   * Economist's Coin as the best equipment (Yen refund per wave).
+   */
+  function isFarm(u) { return u.element === "Farm"; }
+
+  function farmIncome(u) {
+    var ups = u.upgrades || [], best = null;
+    for (var i = 0; i < ups.length; i++) {
+      if (ups[i].farm !== null && ups[i].farm !== undefined) best = ups[i].farm;
+    }
+    return best;
+  }
+  function farmTotalCost(u) {
+    var ups = u.upgrades || [], s = 0;
+    for (var i = 0; i < ups.length; i++) s += ups[i].cost || 0;
+    return s;
+  }
+
   // game tokens like $Aizen_Skill1 -> "Aizen Skill1"
   function cleanText(s) {
     return String(s == null ? "" : s).replace(/\$([A-Za-z_][A-Za-z0-9_]*)/g, function (_, n) {
@@ -202,6 +224,13 @@
    * Everyone else:    static values from the unit JSON.
    */
   function resolveCardData(u) {
+    if (isFarm(u)) {
+      return {
+        tdps: farmIncome(u),
+        traits: [],
+        equips: [{ name: "Economist's Coin" }]
+      };
+    }
     var c = calcCache[u.unit_name];
     if (u.calculated && c) {
       return {
@@ -233,13 +262,16 @@
 
   /* ============================== RENDER ============================== */
   function statsHTML(u, cd) {
+    var farm = isFarm(u);
     return (
-      '<div class="card-stat"><span class="card-stat-value">' + fmtDps(cd.tdps) +
-      '</span><span class="card-stat-label">TDPS</span></div>' +
+      '<div class="card-stat"><span class="card-stat-value">' +
+      (farm ? yen(cd.tdps) : fmtDps(cd.tdps)) +
+      '</span><span class="card-stat-label">' + (farm ? "Yen / wave" : "TDPS") + '</span></div>' +
       '<div class="card-stat"><span class="card-stat-value yen">' + yen(deployOf(u)) +
       '</span><span class="card-stat-label">Deploy</span></div>' +
-      '<div class="card-stat"><span class="card-stat-value yen">' + yen(costOf(u)) +
-      '</span><span class="card-stat-label">Max UPG</span></div>'
+      '<div class="card-stat"><span class="card-stat-value yen">' +
+      (farm ? yen(farmTotalCost(u)) : yen(costOf(u))) +
+      '</span><span class="card-stat-label">' + (farm ? "Total Cost" : "Max UPG") + '</span></div>'
     );
   }
 
@@ -599,6 +631,7 @@
     var s = unitSettings[name];
     if (!s || typeof s !== "object") s = unitSettings[name] = {};
     if (!s.passives || typeof s.passives !== "object") s.passives = {};
+    if (!s.vars || typeof s.vars !== "object") s.vars = {};
     if (typeof s.hypnotized !== "number") s.hypnotized = 0;
     if (typeof s.enemiesInRange !== "number") s.enemiesInRange = 4;
     return s;
@@ -620,7 +653,19 @@
 
   // calculator overrides built from the unit's Variables
   function unitT(u) {
-    return { hypnosis_target_share: hypShare(u) };
+    var s = unitSetting(u.unit_name);
+    var t = {
+      hypnosis_target_share: hypShare(u),
+      enemies_in_range: s.enemiesInRange,
+      passive_state: s.passives
+    };
+    var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
+    for (var i = 0; i < defs.length; i++) {
+      var d = defs[i];
+      var v = s.vars[d.key];
+      t[d.key] = typeof v === "number" ? v : d.def;
+    }
+    return t;
   }
 
   function currentUnit() {
@@ -634,7 +679,7 @@
   function computeCalculated() {
     if (!window.AECalc) return;
     units.forEach(function (u) {
-      if (!u.calculated || calcCache[u.unit_name]) return;
+      if (!u.calculated || calcCache[u.unit_name] || isFarm(u)) return;
       try { buildCalc(u); }
       catch (e) { console.error("DPS calculation failed for " + u.unit_name, e); }
     });
@@ -656,7 +701,7 @@
   // rebuild one unit's calculator after a Variables change and re-sort the
   // grid (its TDPS may move the card up or down the list)
   function recomputeUnit(u) {
-    if (!u.calculated || !window.AECalc) return;
+    if (!u.calculated || !window.AECalc || isFarm(u)) return;
     if (!poolLoaded) { dataReady().then(function () { recomputeUnit(u); }); return; }
     try {
       if (buildCalc(u)) scheduleIdle(applyAndRender);
@@ -724,6 +769,13 @@
     var s = unitSetting(u.unit_name);
     var passives = u.passives || [];
     var html = "";
+    var A = window.AECalc;
+    var farm = isFarm(u);
+    var modeled = !!(A && A.hasAnyModel(u.unit_name));
+    var hyp = passives.some(function (p) {
+      return (p.display_name || p.name) === HYPNOSIS_PASSIVE;
+    });
+    var defs = A ? A.unitVars(u.unit_name) : [];
 
     $("blkVars").hidden = !u.calculated && passives.length === 0;
 
@@ -737,6 +789,8 @@
         var sub;
         if (!u.calculated) sub = "Applied as soon as this unit's DPS is calculated";
         else if (name === HYPNOSIS_PASSIVE) sub = "Hypnosis buff - feeds the live DPS";
+        else if (A && A.hasPassiveModel(u.unit_name, name)) sub = "Feeds the live DPS";
+        else if (farm) sub = "No effect on Yen income";
         else sub = "No DPS effect modeled";
         return '<label class="var-row"><span class="var-info">' +
           '<span class="var-label">' + esc(name) + "</span>" +
@@ -746,31 +800,52 @@
       }).join("");
     }
 
-    if (u.calculated) {
+    if (u.calculated && farm) {
+      html += '<div class="var-group">Variables</div>';
+      html += '<div class="var-note">Farm unit: this unit generates <b>Yen every wave</b> ' +
+        "instead of dealing damage, so passives never change its income. Best equipment: " +
+        "Economist&rsquo;s Coin (returns 10% of the Yen spent during a wave, max roll).</div>";
+    } else if (u.calculated && (hyp || modeled || defs.length)) {
       var share = hypShare(u);
       html += '<div class="var-group">Variables</div>';
-      html += '<div class="var-row"><span class="var-info">' +
-        '<span class="var-label">Hypnotized enemies</span>' +
-        '<span class="var-sub">Enemies taking extra damage from Hypnosis - default 0 (buff off)</span>' +
-        '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
-        s.hypnotized + '"></div>';
-      html += '<div class="var-row"><span class="var-info">' +
-        '<span class="var-label">Enemies in range</span>' +
-        '<span class="var-sub">Denominator of the hypnosis share - default 4</span>' +
-        '</span><input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
-        s.enemiesInRange + '"></div>';
+      if (hyp) {
+        html += '<div class="var-row"><span class="var-info">' +
+          '<span class="var-label">Hypnotized enemies</span>' +
+          '<span class="var-sub">Enemies taking extra damage from Hypnosis - default 0 (buff off)</span>' +
+          '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
+          s.hypnotized + '"></div>';
+      }
+      if (hyp || modeled) {
+        html += '<div class="var-row"><span class="var-info">' +
+          '<span class="var-label">Enemies in range</span>' +
+          '<span class="var-sub">' +
+          (hyp ? "Denominator of the hypnosis share - default 4"
+               : "Enemies assumed in range for stack-based passives - default 4") +
+          '</span></span><input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
+          s.enemiesInRange + '"></div>';
+      }
+      html += defs.map(function (d) {
+        var v = typeof s.vars[d.key] === "number" ? s.vars[d.key] : d.def;
+        return '<div class="var-row"><span class="var-info">' +
+          '<span class="var-label">' + esc(d.label) + "</span>" +
+          '<span class="var-sub">' + esc(d.sub || "") + "</span></span>" +
+          '<input class="var-input" data-var="' + esc(d.key) + '" type="number" min="' + d.min +
+          '" max="' + d.max + '" step="' + (d.step || 1) + '" value="' + v + '"></div>';
+      }).join("");
       html += '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
         "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; Ascension 3 &middot; Potential Z</div>";
       html += '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>';
       html += '<div class="var-note">' +
-        (share > 0
-          ? "Hypnosis share " + Math.round(share * 100) + "% (" + s.hypnotized +
-            " hypnotized / " + s.enemiesInRange + " in range)."
-          : "Hypnosis buff OFF (" + s.hypnotized + " hypnotized enemies).") +
+        (hyp
+          ? (share > 0
+              ? "Hypnosis share " + Math.round(share * 100) + "% (" + s.hypnotized +
+                " hypnotized / " + s.enemiesInRange + " in range)."
+              : "Hypnosis buff OFF (" + s.hypnotized + " hypnotized enemies).")
+          : "Passives run at steady state (full stacks / typical uptime).") +
         " Toggle the passives to include or exclude them from the DPS table.</div>";
-    } else {
+    } else if (!u.calculated) {
       html += '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
         "saved and applied as soon as its calculation is available.</div>";
     }
@@ -782,6 +857,26 @@
     var box = $("detailDps");
     if (!u.calculated) { $("blkDps").hidden = true; return; }
     $("blkDps").hidden = false;
+
+    if (isFarm(u)) {
+      var ups = u.upgrades || [];
+      var rows = ups.map(function (x, i) {
+        var last = i === ups.length - 1;
+        return '<tr class="' + (last ? "top" : "") + '">' +
+          "<td>" + (i === 0 ? "Deploy" : "Upgrade " + i) + "</td>" +
+          '<td class="num">' + yen(x.cost) + "</td>" +
+          '<td class="num">' + yen(x.farm) + "</td></tr>";
+      }).join("");
+      box.innerHTML =
+        '<div class="dps-note">Farm unit: generates <b>Yen every wave</b> (game data ' +
+        "UpgradeInfo.Farm) instead of dealing damage &middot; no DPS table. Best equipment: " +
+        "<b>Economist&rsquo;s Coin</b> &mdash; returns 10% of the Yen spent during a wave " +
+        "(max roll, Per Player, does not stack). Final income and total cost are shown on " +
+        "the card.</div>" +
+        '<table class="dps-table"><thead><tr><th>Level</th><th>Cost</th>' +
+        "<th>Yen / wave</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      return;
+    }
 
     var c = calcCache[u.unit_name];
     if (!c) {
@@ -823,7 +918,7 @@
   function refreshDetail(u) {
     if (currentDetail !== u.unit_name) return;
     var cd = resolveCardData(u);
-    $("dTdps").textContent = fmtDps(cd.tdps);
+    $("dTdps").textContent = isFarm(u) ? yen(cd.tdps) : fmtDps(cd.tdps);
     fillTraits(u);
     fillEquips(u);
     fillDps(u);
@@ -847,9 +942,11 @@
       'onerror="this.remove()">' + esc(u.element) + "</span>";
     $("detailName").textContent = u.unit_name;
     $("detailDesc").textContent = u.desc || "No description available.";
-    $("dTdps").textContent = fmtDps(cd.tdps);
+    $("lTdps").textContent = isFarm(u) ? "Yen / wave" : "TDPS";
+    $("lCost").textContent = isFarm(u) ? "Total Cost" : "Max Upgrade";
+    $("dTdps").textContent = isFarm(u) ? yen(cd.tdps) : fmtDps(cd.tdps);
     $("dDeploy").textContent = yen(deployOf(u));
-    $("dCost").textContent = yen(costOf(u));
+    $("dCost").textContent = isFarm(u) ? yen(farmTotalCost(u)) : yen(costOf(u));
 
     fillTraits(u);
     fillEquips(u);
@@ -894,8 +991,8 @@
     });
 
     var s = currentFilters.sort;
-    // placeholder units always sort last
-    var ph = function (u) { return u.placeholder ? 1 : 0; };
+    // placeholder and farm units always sort last (farms show Yen, not DPS)
+    var ph = function (u) { return (u.placeholder || isFarm(u)) ? 1 : 0; };
     var tdpsOf = function (u) { var v = resolveCardData(u).tdps; return v == null ? -1 : v; };
     var deployS = function (u) { var v = deployOf(u); return v == null ? Infinity : v; };
     var costS = function (u) { var v = costOf(u); return v == null ? Infinity : v; };
@@ -995,6 +1092,13 @@
         s.hypnotized = clampInt(t.value, 0, 10, 0);
       } else if (t && t.id === "varRange") {
         s.enemiesInRange = clampInt(t.value, 1, 10, 4);
+      } else if (t && t.hasAttribute && t.hasAttribute("data-var")) {
+        var key = t.getAttribute("data-var");
+        var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
+        var def = null;
+        for (var i = 0; i < defs.length; i++) if (defs[i].key === key) def = defs[i];
+        if (!def) return;
+        s.vars[key] = clampInt(t.value, def.min, def.max, def.def);
       } else {
         return;
       }
@@ -1008,14 +1112,17 @@
       var id = e.target && e.target.id;
       if (id !== "varMax" && id !== "varReset") return;
       var s = unitSetting(u.unit_name);
+      var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
       if (id === "varMax") {
         s.passives = {};                                       // every passive ON
         s.enemiesInRange = clampInt(s.enemiesInRange, 1, 10, 4);
         s.hypnotized = s.enemiesInRange;                       // share = 100%
+        for (var i = 0; i < defs.length; i++) s.vars[defs[i].key] = defs[i].max;
       } else {
         s.passives = {};                                       // every passive ON
         s.hypnotized = 0;                                      // hypnosis buff OFF
         s.enemiesInRange = 4;
+        for (var j = 0; j < defs.length; j++) s.vars[defs[j].key] = defs[j].def;
       }
       applyVars(u);
       showToast(id === "varMax" ? "Theoretic max buff applied" : "Variables reset");

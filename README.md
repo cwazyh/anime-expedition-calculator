@@ -39,14 +39,24 @@ new unit/equipment/trait only requires creating its folder and updating the mani
   If a non-placeholder unit has `deploy`/`cost` set to `null`, they are derived at
   runtime: `deploy = upgrades[0].cost`, `cost = sum(upgrades[1:])`. Placeholder
   cards keep showing "—".
-- **Traits / equipment / TDPS on cards**: only units flagged `"calculated": true`
-  (currently only *Traitor (Illusion)*) show them, computed **live** in the
-  browser — DPS is reviewed unit by unit. Every other unit ships without these
-  suggestions (`traits: []`, `equipment: []`, `tdps: null`) and renders
+- **Traits / equipment / TDPS on cards**: units flagged `"calculated": true`
+  show them, computed **live** in the browser. Every unit is calculated except
+  *Bioinsect (Final Form)* — a transformation unit with no damage stats of its
+  own (its game data is `Damage = 0`). DPS is reviewed unit by unit, with every
+  passive modeled (see below). Un-calculated units ship without these
+  suggestions (`traits: []`, `equipment: []`, `tdps: null`) and render
   "TBD"/"—". Descriptions, deploy and upgrade costs stay: they are directly
   verifiable game data, not calculator output.
+- **Farm units** (*Ramen Guy*, *Stone Alchemist*, `element = "Farm"`): they
+  generate **Yen every wave** instead of dealing damage, so the card shows the
+  final **Yen / wave** and the **total cost** (all upgrades incl. deploy)
+  instead of TDPS/Max UPG, sorted last, with **Economist's Coin** as best
+  equipment. Per-level income comes from the game's `UpgradeInfo[n].Farm`
+  (stored as `upgrades[i].farm` in the JSON) and the modal shows the full
+  Level/Cost/Yen table instead of the DPS table.
 - **`placeholder": true`** marks cards whose data is not final; they show a
-  "placeholder" pill, sort last, and don't derive costs.
+  "placeholder" pill, sort last, and don't derive costs. (No unit carries it
+  anymore: all upgrade stats were verified 1:1 against the live game.)
 - **Rarity colors**: each equipment/trait JSON carries a `rarity` field taken
   from the live game (`Shared.Information.Equipment` / `Traits`). Card boxes use
   the game's own aura palettes (`ReplicatedStorage.Assets.RarityAuras`, plus
@@ -75,11 +85,21 @@ equipment passives — Shinigami Sword at 15/15), expected crit, no duplicate
 equipment, `enemies_in_range = 4`. Placements are always at MAX — they are not
 a variable.
 
+**Per-unit passive models**: `js/calculator.js` exposes `registerPassives(unit,
+models)` / `registerUnitVars(unit, vars)` — a registry of steady-state models
+for unit passives that affect DPS (same philosophy as Traitor's Hypnosis:
+full stacks / typical uptime). Each model can contribute damage/SPA/crit
+layers or an extra multiplier, reads only the site's tunables
+(`T.passive_state[name] === false` turns it off) and can push human-readable
+`notes` into the DPS table. Variables declared with `registerUnitVars` appear
+as number inputs in the unit's modal.
+
 The **Variables** block in each unit's modal decides what the calculation
 includes: every passive has an on/off toggle (a disabled passive is left out of
 the DPS), *Hypnotized enemies* defaults to **0** — the Hypnosis buff is OFF
 until the user raises it (it only affects BleachCategory units, i.e. Aizen) —
-and *Theoretic max buff* turns every variable to its cap (hypnosis share 100%).
+and *Theoretic max buff* turns every variable to its cap (hypnosis share 100%
+plus every unit variable at its maximum).
 The settings are saved in `localStorage` and survive a reload.
 
 Because everything is read from the JSONs at runtime, **new units, equipment and

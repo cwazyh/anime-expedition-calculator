@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 1,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Golden": {
    "cooldown": 0,
@@ -235,5 +235,6 @@
    "unlock_upgrade": 7,
    "description": "On activation:\n- This unit will transform into TrunksTransformation for 60 seconds\n- Decreases TrunksPassive1 attacks required by 1\n- Increases TrunksPassive2 FollowUpAttack damage by 15%\n- Decrease SPA by 10%\n- Increase RNG by 10%"
   }
- ]
+ ],
+ "calculated": true
 }

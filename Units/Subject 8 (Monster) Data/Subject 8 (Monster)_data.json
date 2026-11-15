@@ -273,5 +273,6 @@
    "description": "Any enemy within 50% of this units current range triggers a Full AoE attack which:\n- Applies Dismember to all enemies in range\n- Deals 75% of this units current damage over 5 hits\n- Grants all units in range 10% Physical damage\n15 second cooldown"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

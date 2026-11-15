@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 3.5,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "summons": [
   {
    "archetype": "Magical",
@@ -372,5 +372,6 @@
    "description": "If the majority of your team have a damaging DoT:\n- Those units can apply 2 more stack of their DoT to the enemy\n\nIf the majority of your team have no damaging DoT:\n- This units AlchemyMark capacity is increased by 3\n- Understand from EdwardAlphonsePassive1 applies an extra AlchemyMark\n\nIf there is no majority:\n- Deconstruct’s Magical damage bonus is increased by 10%\n- Reconstruct’s Slow is increased by 10%\nExcludes all Farms"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -259,5 +259,6 @@
    "unlock_upgrade": 6,
    "description": "On activation:\n- Select a spot within this unit's range to place a PeronaSmallGhost\n- PeronaSmallGhost has 30% of this unit's damage and 60% of this unit's range\n- Sell a PeronaSmallGhost to gain a use of this ability\n- PeronaSmallGhost counts as a OnePieceCategory unit\n\nFor the purposes of this unit's passives:\n- The range of PeronaSmallGhost is counted as part of this unit's range\n- PeronaSmallGhost counts as this unit"
   }
- ]
+ ],
+ "calculated": true
 }

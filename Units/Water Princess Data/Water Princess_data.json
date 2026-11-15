@@ -150,5 +150,6 @@
    "description": "This unit grants a shield to the nearest unit within range\n- Shield is destroyed after blocking a Debuff or EnemyAttack\n- Shield regenerates after 15 seconds"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

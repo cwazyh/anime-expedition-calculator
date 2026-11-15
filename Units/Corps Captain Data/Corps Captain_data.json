@@ -113,5 +113,6 @@
   }
  ],
  "passives": [],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

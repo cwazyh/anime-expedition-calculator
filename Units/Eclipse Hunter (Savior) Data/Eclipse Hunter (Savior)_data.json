@@ -7,13 +7,13 @@
  "placement_limit": 4,
  "update": 2.5,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "upgrades": [
   {
    "level": 0,
@@ -236,5 +236,6 @@
    "description": "Every 3 upgrades on the SkullKnightSelected unit will:\n- Upgrade this unit for free\n\nEvery upgrade on this unit:\n- Reduce the cost of all of your placed Eclipse Hunter (Savior)'s upgrades by 5%"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

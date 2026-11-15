@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Epic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "upgrades": [
   {
    "level": 0,
@@ -29,7 +29,8 @@
    "hitbox_type": "Farm",
    "hitbox_size": 0,
    "passives": [],
-   "abilities": []
+   "abilities": [],
+   "farm": 550
   },
   {
    "level": 1,
@@ -45,7 +46,8 @@
    "hitbox_type": "Farm",
    "hitbox_size": 0,
    "passives": [],
-   "abilities": []
+   "abilities": [],
+   "farm": 1100
   },
   {
    "level": 2,
@@ -61,7 +63,8 @@
    "hitbox_type": "Farm",
    "hitbox_size": 0,
    "passives": [],
-   "abilities": []
+   "abilities": [],
+   "farm": 2750
   },
   {
    "level": 3,
@@ -77,9 +80,11 @@
    "hitbox_type": "Farm",
    "hitbox_size": 0,
    "passives": [],
-   "abilities": []
+   "abilities": [],
+   "farm": 3500
   }
  ],
  "passives": [],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

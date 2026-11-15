@@ -7,13 +7,13 @@
  "placement_limit": 2,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "summons": [
   {
    "archetype": "Magical",
@@ -331,5 +331,6 @@
    "unlock_upgrade": 10,
    "description": "On activation:\n- Summon DivineSpirit\n- Stun this unit for 15 seconds \n- DivineSpirit's damage will be equal to 100% of this unit's base damage\nDivineSpirit cannot despawn, be killed or stunned."
   }
- ]
+ ],
+ "calculated": true
 }

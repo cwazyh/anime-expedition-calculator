@@ -334,5 +334,6 @@
    "unlock_upgrade": 10,
    "description": "This unit stops attacking for 5s. After 5s:\n- Performs a modified version of StarrkEVO_Skill3 that fires constantly for 8s, dealing 65% of this unit’s damage per second\n- Inflicts ManaBurn for 100% at 6 ticks over 6 seconds\n- This ability always crits and is treated with the same effects as the 5th attack of StarrkPassive1"
   }
- ]
+ ],
+ "calculated": true
 }

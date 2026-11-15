@@ -272,5 +272,6 @@
    "description": "If 2 GutsSpill overlap, they will combine into 1 GutsSpill.\n\nEach time GutsSpill combines:\n- Add 4 seconds to its despawn timer\n- Increase its radius by 15%\n\nWhen a GutsSpill combines 10 times:\n- The GutsSpill becomes permanent\n\nPermanent GutsSpill's cannot combine.\nOnly 2 permanent GutsSpill may exist at a time."
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

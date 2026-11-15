@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 4,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Dismember": {
    "cooldown": 9999,
@@ -264,5 +264,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\n- This unit lets go of its sword and switches into ByakuyaTransformation\n\nByakuyaTransformation:\n- Gains ByakuyaPassive3\n- Gains ByakuyaAbility3\n- Loses Physical & gains Magical\n- Switches to Byakuya_Skill3\n- Becomes unsellable"
   }
- ]
+ ],
+ "calculated": true
 }

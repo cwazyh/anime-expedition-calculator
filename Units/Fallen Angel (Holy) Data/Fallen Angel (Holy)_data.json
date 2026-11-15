@@ -248,5 +248,6 @@
    "description": "For every enemy killed with TimeStop applied:\n- Increases TimeStop duration by 1 second\n- Gain a stack of FlameFeather (Capacity: 10)\nOn next TimeStop activation:\n- Consume all FlameFeather stacks\nFor each stack consumed, this unit’s next attack:\n- Applies an instance of Fire per consumed stack"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

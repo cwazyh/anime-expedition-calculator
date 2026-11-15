@@ -302,5 +302,6 @@
    "description": "When DemonHead expires:\n- Detonate in a small radius\n- Apply Fire\n- Deal 50% of all stored EnhancedBurn damage\nWhen DemonMeter is full:\n- Deal 15% of this unit's current damage as extra damage\n- Reset DemonMeter"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

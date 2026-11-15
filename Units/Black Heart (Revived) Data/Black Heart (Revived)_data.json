@@ -236,5 +236,6 @@
    "unlock_upgrade": 7,
    "description": "- Transforms into UlquiorraTransformation\n- Increase Damage by +65% and set Range to 0\n- Oppression applied by this unit now lasts permanently and increases its potency by +10%\n- This unit can now target outside its range"
   }
- ]
+ ],
+ "calculated": true
 }

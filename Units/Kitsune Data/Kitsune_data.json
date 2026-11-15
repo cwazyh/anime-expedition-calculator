@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 2,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Exclusive unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Illusion": {
    "cooldown": 10,
@@ -277,5 +277,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\n- Set SkillPoints to max capacity\n- Decrease this unit's SPA by 15% until SkillPoints are at 0\n- Increase every unit's damage in range by 35% for 30 seconds"
   }
- ]
+ ],
+ "calculated": true
 }

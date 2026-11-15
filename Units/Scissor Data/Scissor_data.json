@@ -132,5 +132,6 @@
    "description": "Each consecutive RegularAttack on the same enemy increases damage dealt by 5% (Capacity: 20%)"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

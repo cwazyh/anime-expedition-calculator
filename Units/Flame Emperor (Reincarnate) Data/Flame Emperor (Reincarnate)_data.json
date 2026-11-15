@@ -212,5 +212,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\n- Summon a SaboSummon on any path within this unit's range\n- Enemies that pass through SaboSummon are inflicted with Fire"
   }
- ]
+ ],
+ "calculated": true
 }

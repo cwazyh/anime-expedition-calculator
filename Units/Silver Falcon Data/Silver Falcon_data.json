@@ -216,5 +216,6 @@
    "description": "This unit has a GriffithSilverMeter, starting at 0. (Capacity: 50)\n\nEvery 5 Kills (from any source):\n- Increase GriffithSilverMeter by 1\n\nEverytime GriffithSilverMeter increases:\n- The next enemy Kill will drop 15% more yen\n\nEvery stack of GriffithSilverMeter will:\n- Increase the dropped yen by 5%\n\nThis meter does not reset unless this unit is sold."
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

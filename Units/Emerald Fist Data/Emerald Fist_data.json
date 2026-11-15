@@ -217,5 +217,6 @@
    "description": "This unit’s SPA cannot be affected by outside sources. This unit does not gain new attacks through upgrades and can only access new attacks through RockLeePassive2.\n\nEvery 20s:\n- Release a new Limit\n\nRockLeeGate1: \nEvery 20s:\n- Target the strongest enemy on the map and perform RockLee_Skill2 for 350% damage\n- Stun self for 5s\n\nRockLeeGate2:\n- Increase Damage by +50% for 30 seconds.\nEvery 2s:\n- Cleanse StatusEffects and Debuffs from self\n\nRockLeeGate3: \n- This unit will release both the third and fourth gates at the same time.\n- Disable RockLeePassive1 and further decrease SPA by -50%\n- Increase Damage by +150% \n- Switch to RockLee_Skill3\nEvery Attack this unit performs in this state will:\n- Increase SPA by +2.5% \n- Decrease Damage by -5%\n- Apply Stun on hit for 3s\n- Hit every enemy in range\nAfter 10 Attacks: \n- Unrelease all Limits\n- Stuns self for 10 seconds\n- Re-enable RockLeePassive1"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

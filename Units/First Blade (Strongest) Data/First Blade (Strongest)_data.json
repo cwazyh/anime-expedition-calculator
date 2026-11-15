@@ -246,5 +246,6 @@
    "description": "If this unit is afflicted with a StatusEffect or Debuff, for the next attack:\n- Switch to Unohana_Skill3\n- +25% Damage\n\nWhen performing Unohana_Skill3, inflict Liquefy.\nLiquefy:\n- Deals 50% of this unit's damage over 2 seconds\n- On expiry: Enemy heals equal to the damage that the initial application dealt, then Liquefy is reapplied at double the damage factor"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

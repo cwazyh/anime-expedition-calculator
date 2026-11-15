@@ -307,5 +307,6 @@
    "unlock_upgrade": 10,
    "description": "Select a unit within this unit’s range. On activation:\n- This unit pins that unit to the ground and performs IchigoVasto_Skill2 aimed at the unit\n- Stuns that unit for 8 seconds\n- All enemies in range of the attack are hit for 300% damage"
   }
- ]
+ ],
+ "calculated": true
 }

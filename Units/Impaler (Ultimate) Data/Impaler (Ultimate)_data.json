@@ -256,5 +256,6 @@
    "unlock_upgrade": 8,
    "description": "You are the Commander. \n\nOn activation:\n- Speak the command: Search & Destroy\n- Opens this unit's Cadaver Domain for 10s\n- Performs AlucardEVO_Skill3 for 1000% damage\n\nCadaver Domain: All enemies on the map are afflicted with Burdened for the duration of the ability\n- Burdened immobilizes enemies and bypasses all lockouts without applying a lockout of its own"
   }
- ]
+ ],
+ "calculated": true
 }

@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 3,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Exclusive unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Stun": {
    "cooldown": 5,
@@ -247,5 +247,6 @@
    "description": "Whenever a FollowUpAttack happens in this unit's range:\n- Place a BombTag where this enemy was hit (Capacity : 5)\nBombTag :\n- Acts as a PathTrap\nWhen an enemy is hit by BombTag :\n- Deal 25% of this unit's current damage to that enemy.\n- Decrease this unit's SPA by 1% (Capacity : 5%)"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

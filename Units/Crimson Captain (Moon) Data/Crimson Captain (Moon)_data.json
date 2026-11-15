@@ -7,13 +7,13 @@
  "placement_limit": 2,
  "update": 3,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "summons": [
   {
    "archetype": "Magical",
@@ -343,5 +343,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\n- Deal 250% damage to all enemies in range\n- Apply Fire dealing 100% Damage per tick to all enemies in range"
   }
- ]
+ ],
+ "calculated": true
 }

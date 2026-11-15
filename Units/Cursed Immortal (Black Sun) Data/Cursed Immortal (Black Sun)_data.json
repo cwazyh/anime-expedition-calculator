@@ -236,5 +236,6 @@
    "description": "If this unit changes State:\n- Increase Critical Chance by 5% (Capacity: 30%)"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

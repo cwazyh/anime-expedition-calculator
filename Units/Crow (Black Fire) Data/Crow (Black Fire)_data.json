@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0.5,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "BlackFire": {
    "cooldown": 0,
@@ -302,5 +302,6 @@
    "description": "- BlackFire damage shields every tick\n- Enemies with shields within this unit's range gain a stack of BlackFire"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

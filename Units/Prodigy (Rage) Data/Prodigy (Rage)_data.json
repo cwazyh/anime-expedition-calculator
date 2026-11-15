@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 1,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "upgrades": [
   {
    "level": 0,
@@ -200,5 +200,6 @@
    "unlock_upgrade": 7,
    "description": "On activation:\n- Select a point within this unit's range to fire GohanAbility1 at for 10 seconds\nEnemies in GohanAbility1 will:\n- Take 75% of this unit's damage every 1 seconds\nThis unit will not Attack whilst this ability is active."
   }
- ]
+ ],
+ "calculated": true
 }

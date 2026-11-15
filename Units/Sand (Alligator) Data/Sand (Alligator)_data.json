@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 2,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Golden": {
    "cooldown": 0,
@@ -291,5 +291,6 @@
    "unlock_upgrade": 9,
    "description": "On activation:\n- CrocodilePassive1 will increase 10% in size every 1 seconds (Capacity: 100%)\nThis unit will not Attack whilst this ability is active.\nIf CrocodileAbility1 is re-triggered before 100% range is reached:\n- Slow enemies in CrocodileAbility1 by 65%\n- Deal 125% of this unit's current damage to all enemies in range\nIf CrocodileAbility1 reaches 100% range:\n- Stun enemies in CrocodileAbility1 for 5 seconds\n- Deal 200% of this unit's current damage to all enemies in range"
   }
- ]
+ ],
+ "calculated": true
 }

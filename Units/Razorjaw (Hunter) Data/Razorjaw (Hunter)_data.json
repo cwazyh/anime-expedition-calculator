@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0.5,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Stagger": {
    "cooldown": 5,
@@ -211,5 +211,6 @@
    "unlock_upgrade": 8,
    "description": "On activation:\nThis unit will teleport to base, and begin slashing down the whole path.\n- Each Slash attack will increase in damage by 10%\nUpon hitting the enemy base, this unit will return to its original position."
   }
- ]
+ ],
+ "calculated": true
 }

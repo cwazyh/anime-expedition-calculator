@@ -32,7 +32,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 425
   },
   {
    "level": 1,
@@ -51,7 +52,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 1000
   },
   {
    "level": 2,
@@ -70,7 +72,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 1900
   },
   {
    "level": 3,
@@ -89,7 +92,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 3300
   },
   {
    "level": 4,
@@ -108,7 +112,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 6000
   },
   {
    "level": 5,
@@ -127,7 +132,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 9000
   },
   {
    "level": 6,
@@ -146,7 +152,8 @@
     "IchirakuPassive",
     "IchirakuPassive2"
    ],
-   "abilities": []
+   "abilities": [],
+   "farm": 11500
   }
  ],
  "passives": [
@@ -163,5 +170,6 @@
    "description": "Increase Yen earned from kills by 50%"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -132,5 +132,6 @@
    "description": "Deal 20% more damage to Boss enemy type."
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

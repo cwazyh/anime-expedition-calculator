@@ -132,5 +132,6 @@
    "description": "Apply Damage Buff to all Physical units within range\nIncreased by 5% each upgrade"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

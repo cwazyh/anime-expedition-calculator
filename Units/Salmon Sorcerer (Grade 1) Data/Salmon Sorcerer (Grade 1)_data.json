@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Slow": {
    "cooldown": 5,
@@ -251,5 +251,6 @@
    "description": "When an enemy comes within 50% of this unit's range:\n- Apply Stagger for 2 seconds"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -243,5 +243,6 @@
    "unlock_upgrade": 7,
    "description": "On activation:\n- Remove any existing Radiation stacks from enemies\n- Starting at 500% of this unit's damage, each stack of Radiation removed will increase this ability's damage by +10% (Bonus Cap: 500%)\n- Charges for 8s before firing\n- This ability will hit every enemy on the map and bypass all mechanics"
   }
- ]
+ ],
+ "calculated": true
 }

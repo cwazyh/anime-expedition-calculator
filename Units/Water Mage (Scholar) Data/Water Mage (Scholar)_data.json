@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 2,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Freeze": {
    "cooldown": 5,
@@ -236,5 +236,6 @@
    "unlock_upgrade": 0,
    "description": "On activation: \n- Select a point on the path to spawn an WaterMageIceTrap (Capacity: 3) \n- WaterMageIceTrap has 100% of this unit's current damage \nOnce placed:\n- WaterMageIceTrap will gain 20% HP per second (Capacity: 500%)"
   }
- ]
+ ],
+ "calculated": true
 }

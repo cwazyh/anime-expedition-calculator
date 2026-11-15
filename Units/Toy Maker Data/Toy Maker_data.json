@@ -7,13 +7,13 @@
  "placement_limit": 1,
  "update": 0,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Exclusive unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "upgrades": [
   {
    "level": 0,
@@ -150,5 +150,6 @@
    "description": "This unit will summon SugarToy on all paths in this unit's range instead of attacking.\n- SugarToys will have 100% of this unit's current damage as health\nUpgrade 2:\n- SugarToys gain 15% movement speed\nUpgrade 4:\n- SugarToys deal 10% of their max health as AoE damage on death\nUpgrade 6:\n- Every 5th cycle of summons, SugarToy is mutated, increasing health by 150%\nSugarToys can spawn on all paths in this unit's range. The summons health is divided by the number of paths they spawn on."
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -7,13 +7,13 @@
  "placement_limit": 4,
  "update": 3,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Fire": {
    "cooldown": 0,
@@ -253,5 +253,6 @@
    "description": "Every 5 attacks:\n- Apply all JokerPassive2 effects at double efficiency\n- Does not advance the JokerPassive2 rotation\nEach time this effect activates:\n- Increase this unit's Fire damage by 5%\n  (Capacity: 50%)"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

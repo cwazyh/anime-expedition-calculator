@@ -220,5 +220,6 @@
    "description": "When the nearest unit in this unit's range performs a RegularAttack:\n- Attach a DoflamingoString to nearest unit (Capacity: 3)\nOn this unit RegularAttack:\n- Units with DoflamingoString will perform a FollowUpAttack dealing 100% of this unit's damage and breaking the DoflamingoString attachment\n- After DoflamingoString breaks, it cannot be reapplied for 15s"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

@@ -7,13 +7,13 @@
  "placement_limit": 3,
  "update": 0,
  "obtainable": true,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "ManaBurn": {
    "cooldown": 10,
@@ -232,5 +232,6 @@
    "description": "FrierenPassive3 are considered FollowUpAttacks\nAt 3 Charges, cast Voltraak\n- Line AoE at 100% current damage\nAt 5 Charges, cast Vhalzanbel\n- Circle AoE at 100% current damage, and inflict ManaBurn\nAt 7 Charges, cast Jundrathym\n- Full AoE at 100% current damage"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

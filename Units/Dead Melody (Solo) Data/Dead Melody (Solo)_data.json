@@ -172,5 +172,6 @@
    "description": "On attack:\n- FollowUpAttack with BrookEVO_Skill2\n\nOn FollowUpAttack:\n- Creates an area within the AoE that lingers for 8s. Any enemy that enters this area is afflicted with DeepFreeze for 3s.\nWhen this unit attacks an enemy within this area:\n- Extend DeepFreeze duration by 1s (Extension Cap: 1)\n\nIf this unit attacks an enemy afflicted with DeepFreeze:\n- Deals an additional instance of 30% damage to hit enemies"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

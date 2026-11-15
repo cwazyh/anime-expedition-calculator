@@ -7,13 +7,13 @@
  "placement_limit": 2,
  "update": 2,
  "obtainable": false,
- "desc": "Placeholder - data not available yet.",
+ "desc": "Exclusive unit from the wiki.",
  "traits": [],
  "equipment": [],
  "tdps": null,
  "deploy": null,
  "cost": null,
- "placeholder": true,
+ "placeholder": false,
  "status_effects": {
   "Bleed": {
    "cooldown": 0,
@@ -262,5 +262,6 @@
    "description": "If the same weapon is rolled 2 times in a row:\n- Activate Bored Jester\nBored Jester:\n- Reduce the Jester Roll timer by 5 seconds\n- Increase the current weapon's damage by 25%\n- Prevent the current weapon from being rolled again"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }
