@@ -158,6 +158,11 @@
     return false;
   }
   function unitVars(unitName) { return UNIT_VARS[unitName] || []; }
+  function passiveModelNames(unitName) {
+    var m = PASSIVE_MODELS[unitName], out = [];
+    if (m) for (var k in m) if (Object.prototype.hasOwnProperty.call(m, k)) out.push(k);
+    return out;
+  }
 
   // Passives that only buff other units (or the team) never change this
   // unit's own DPS: they are listed with a "Doesn't affect dps" tag and
@@ -336,7 +341,8 @@
         ? applyPassiveModels(UNIT_NAME, T, notes, {
             dmg: dmg, spa: spa,
             cc: BASE_CC + 100 * t_cc + e_cc,
-            cd: BASE_CD + 100 * t_cd + e_cd
+            cd: BASE_CD + 100 * t_cd + e_cd,
+            trait: traitName
           })
         : PM_ZERO;
 
@@ -445,6 +451,7 @@
     hasNoDps: hasNoDps,
     hasPassiveModel: hasPassiveModel,
     hasAnyModel: hasAnyModel,
-    unitVars: unitVars
+    unitVars: unitVars,
+    passiveModelNames: passiveModelNames
   };
 });

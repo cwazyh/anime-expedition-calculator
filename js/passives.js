@@ -99,39 +99,42 @@
       return { dmg: 0.025 * n, mult: 1.05,
         notes: ["Causality: " + n + " marked enemies in range (+2.5% each, marked take +5%)"] };
     },
-    // At 35 stacks: all enemies in range take 100% of this unit's damage
-    // per second for 5s, then the meter resets. Duty cycle variable.
+    // At 35 stacks: enemies in range take 100% of this unit's damage per
+    // second for 5s, then the meter resets. Single-target counted; duty
+    // cycle = 5s burst per meter rebuild cycle (~165s, default 3%).
     "Eclipse": function (T) {
-      var u = UP(T, "femto_eclipse_uptime", 30);
-      var extra = 1.00 * EN(T) * u;
-      return { extra: extra, notes: ["Eclipse burst: " + Math.round(u * 100) +
-        "% duty cycle, " + EN(T) + " enemies at 100% dmg/s for 5s"] };
+      var u = UP(T, "femto_eclipse_uptime", 2);
+      var extra = 1.00 * u;
+      return { extra: extra, notes: ["Eclipse burst: 100% dmg/s for 5s, " +
+        Math.round(u * 100) + "% duty cycle (meter rebuild, single-target counted)"] };
     }
   });
   A.registerUnitVars("5th God Hand", [
     V("femto_distortion_hits", "Distortion hits", "Enemies walking into each Distortion - default 1 (estimated)", 0, 10, 1),
-    V("femto_eclipse_uptime", "Eclipse uptime %", "Share of time the 35-stack Eclipse burst is active - default 30%", 0, 100, 30, 5)
+    V("femto_eclipse_uptime", "Eclipse uptime %", "Duty cycle of the 5s Eclipse burst - default 2% (~5s per 250s)", 0, 100, 2, 1)
   ]);
 
   /* ====================== 8TH SWORD (BERSERK) ====================== */
   A.registerPassives("8th Sword (Berserk)", {
     // Enemies within 40% of range take 5% of this unit's damage every 1s.
     "Demonic Presence": function (T) {
-      var n = N(T, "kenpachi_aura_targets", 2);
-      var extra = 0.05 * n;
+      var n = N(T, "kenpachi_aura_targets", 1);
+      var u = UP(T, "kenpachi_aura_uptime", 60);
+      var extra = 0.05 * n * u;
       return { extra: extra, notes: ["Demonic Presence: 5% dmg/s on " + n +
-        " enemy(s) inside 40% of range (estimated)"] };
+        " enemy(s) inside 40% of range at " + Math.round(u * 100) +
+        "% uptime (single-target view)"] };
     },
     // Self-stun cleanse + 100% follow-up: reactive, proc-based.
     "Savage Rebound": function (T) {
-      var ppm = N(T, "kenpachi_stun_ppm", 2);
+      var ppm = N(T, "kenpachi_stun_ppm", 1);
       var extra = 1.00 * ppm / 60;
       return { extra: extra, notes: ["Savage Rebound: " + ppm +
         " stun reflect(s) per minute (estimated)"] };
     },
     // Enemy below 10% HP -> 100% follow-up: execute-window proc.
     "Dismemberer's Rush": function (T) {
-      var ppm = N(T, "kenpachi_execute_ppm", 4);
+      var ppm = N(T, "kenpachi_execute_ppm", 1);
       var extra = 1.00 * ppm / 60;
       return { extra: extra, notes: ["Dismemberer's Rush: " + ppm +
         " execute follow-up(s) per minute (estimated)"] };
@@ -145,9 +148,10 @@
     }
   });
   A.registerUnitVars("8th Sword (Berserk)", [
-    V("kenpachi_aura_targets", "Aura targets", "Enemies inside 40% of range taking Demonic Presence damage - default 2 (estimated)", 0, 10, 2),
-    V("kenpachi_stun_ppm", "Stun reflects / min", "Savage Rebound procs per minute - default 2 (estimated)", 0, 60, 2),
-    V("kenpachi_execute_ppm", "Executes / min", "Dismemberer's Rush procs per minute - default 4 (estimated)", 0, 60, 4),
+    V("kenpachi_aura_targets", "Aura targets", "Enemies inside 40% of range taking Demonic Presence damage - default 1 (single-target view)", 0, 10, 1),
+    V("kenpachi_aura_uptime", "Aura uptime %", "Share of time the primary sits inside 40% of range - default 60%", 0, 100, 60, 5),
+    V("kenpachi_stun_ppm", "Stun reflects / min", "Savage Rebound procs per minute - default 1 (estimated)", 0, 60, 1),
+    V("kenpachi_execute_ppm", "Executes / min", "Dismemberer's Rush procs per minute - default 1 (estimated)", 0, 60, 1),
     V("kenpachi_transform_uptime", "Transformation uptime %", "Share of time in KenpachiTransformation - default 30%", 0, 100, 30, 5)
   ]);
 
@@ -190,23 +194,26 @@
   /* ====================== ATOM (TOTALITY) ====================== */
   A.registerPassives("Atom (Totality)", {
     // +15% dmg vs Basic, +40% crit vs Elite, +10% range/+20% crit dmg vs
-    // Boss (Boss counts as both). Conditional on enemy type -> uptime var.
+    // Boss. Conditional on enemy type -> share of play time per archetype
+    // (defaults: basic 68% / elite 25% / boss 7%).
     "Archetype Nuclear": function (T) {
-      var u = UP(T, "atom_archetype_uptime", 30);
-      return { dmg: 0.15 * u, cc: 40 * u, cd: 20 * u,
-        notes: ["Archetype Nuclear: Basic/Elite/Boss bonuses at " + Math.round(u * 100) +
-        "% uptime (mixed enemy types)"] };
+      var ub = UP(T, "atom_basic_uptime", 68);
+      var ue = UP(T, "atom_elite_uptime", 25);
+      var uboss = UP(T, "atom_boss_uptime", 7);
+      return { dmg: 0.15 * ub, cc: 40 * ue, cd: 20 * uboss,
+        notes: ["Archetype Nuclear: +15% vs Basic at " + Math.round(ub * 100) +
+        "%, +40% crit vs Elite at " + Math.round(ue * 100) + "%, +20% crit dmg vs Boss at " +
+        Math.round(uboss * 100) + "% of play time"] };
     },
     // Boss in range: +100% damage dealt to it for 10s, then a 300% nuke
-    // on the Boss and 100% on everything in range (60s per-player CD).
-    // Modeled as a damage layer during the window + the periodic nuke.
+    // on the Boss (60s per-player CD) - single-target counted.
     "Phantom Nuclear": function (T) {
-      var u = UP(T, "atom_boss_uptime", 30);
+      var u = UP(T, "atom_boss_uptime", 7);
       var dmg = 1.00 * u;
-      var extra = (3.00 + 1.00 * EN(T)) / 60 * (u > 0 ? 1 : 0);
+      var extra = 3.00 / 60 * u;
       return { dmg: dmg, extra: extra,
         notes: ["Phantom Nuclear: +100% vs Boss at " + Math.round(u * 100) +
-        "% uptime, nuke (300% Boss + 100% AoE) every 60s"] };
+        "% uptime (default 7% = boss share of play time), 300% nuke / 60s"] };
     },
     // Radiation DoT: 10% of damage, 7 ticks / 14s (= 0.5%/s per target),
     // refreshed and +20% factor per basic attack on the same enemy
@@ -218,19 +225,21 @@
         n + " enemy(s) (estimated)"] };
     },
     // Ability: charges 8s, hits every enemy on the map for 500% + 10% per
-    // removed Radiation stack (cap +500%). Estimated cadence variable.
+    // removed Radiation stack (cap +500%) -> avg ~750% per cast, single
+    // target counted. extra = power / cooldown seconds.
     "Complete Nuclear": function (T) {
-      var u = UP(T, "atom_ability_uptime", 30);
-      var extra = 10.00 * u;   // 500% base + up to 500% stacks, over 60s cycle
-      return { extra: extra, notes: ["Complete Nuclear: 500-1000% map-wide nuke, " +
-        Math.round(u * 100) + "% effective cadence (estimated)"] };
+      var cd = Math.max(N(T, "atom_ability_cd", 300), 10);
+      var extra = 7.50 / cd;
+      return { extra: extra, notes: ["Complete Nuclear: ~750% map-wide nuke every ~" +
+        cd + "s (estimated cadence, single-target counted)"] };
     }
   });
   A.registerUnitVars("Atom (Totality)", [
-    V("atom_archetype_uptime", "Archetype uptime %", "Share of time fighting Basic/Elite/Boss (mixed bonuses) - default 30%", 0, 100, 30, 5),
-    V("atom_boss_uptime", "Boss uptime %", "Share of time a Boss is in range (Phantom Nuclear) - default 30%", 0, 100, 30, 5),
+    V("atom_basic_uptime", "Basic uptime %", "Share of play time vs Basic enemies (+15% dmg) - default 68%", 0, 100, 68, 5),
+    V("atom_elite_uptime", "Elite uptime %", "Share of play time vs Elite enemies (+40% crit) - default 25%", 0, 100, 25, 5),
+    V("atom_boss_uptime", "Boss uptime %", "Share of play time vs a Boss (+20% crit dmg, Phantom Nuclear) - default 7%", 0, 100, 7, 5),
     V("atom_radiation_targets", "Radiation targets", "Enemies kept Irradiated - default 1 (estimated)", 0, 10, 1),
-    V("atom_ability_uptime", "Ability uptime %", "Complete Nuclear effective cadence - default 30%", 0, 100, 30, 5)
+    V("atom_ability_cd", "Ability cooldown s", "Seconds between Complete Nuclear casts - default 300 (estimated)", 10, 600, 300, 10)
   ]);
 
   /* ====================== BLACK HEART (REVIVED) ====================== */
@@ -296,33 +305,32 @@
   /* ====================== CRIMSON (BROTHER) ====================== */
   A.registerPassives("Crimson (Brother)", {
     // On attack: mark explodes after 5s for 15% of this unit's damage.
-    // Steady state: every attacked enemy carries a mark that detonates.
+    // Single target: the attacked enemy carries the mark.
     "Crimson Explosion": function (T, ctx) {
-      var n = EN(T);
-      var extra = 0.15 * n / 5;
-      return { extra: extra, notes: ["Crimson Explosion: 15% per marked enemy / 5s on " +
-        n + " enemies (steady state)"] };
+      var extra = 0.15 / 5;
+      return { extra: extra, notes: ["Crimson Explosion: 15% on the " +
+        "attacked enemy / 5s (single target)"] };
     },
     // Each explosion leaves a pool (cap 3) burning enemies for 10% / 2s.
     "Crimson Pool": function (T) {
-      var n = N(T, "choso_pool_targets", 2);
+      var n = N(T, "choso_pool_targets", 1);
       var extra = 0.10 * n / 2;
       return { extra: extra, notes: ["Crimson Pool: 10% / 2s on " + n +
-        " enemy(s) standing in pools (cap 3, estimated)"] };
+        " enemy standing in a pool (cap 3, estimated)"] };
     },
     // Ability: 10s field, 75% damage per 1s; this unit does not attack
     // while active (duty cycle variable, attacks replaced by the field).
     "Piercing Crimson": function (T, ctx) {
-      var u = UP(T, "choso_ability_uptime", 30);
+      var u = UP(T, "choso_ability_uptime", 10);
       var extra = 0.75 * u;
-      return { extra: extra, spa: u / Math.max(0.01, 1 - u),   // attacks lost while channeling
+      return { extra: extra, spa: 1 / Math.max(0.01, 1 - u),   // attacks lost while channeling
         notes: ["Piercing Crimson: 75% dmg/s field at " + Math.round(u * 100) +
-        "% uptime, attacks paused while active"] };
+        "% uptime (~10s field per ~100s, estimated), attacks paused while active"] };
     }
   });
   A.registerUnitVars("Crimson (Brother)", [
-    V("choso_pool_targets", "Pool targets", "Enemies standing in Crimson Pools - default 2 (estimated)", 0, 10, 2),
-    V("choso_ability_uptime", "Ability uptime %", "Share of time channeling Piercing Crimson - default 30%", 0, 100, 30, 5)
+    V("choso_pool_targets", "Pool targets", "Enemy standing in Crimson Pools - default 1 (estimated)", 0, 10, 1),
+    V("choso_ability_uptime", "Ability uptime %", "Share of time channeling Piercing Crimson - default 10% (estimated ~10s per 100s)", 0, 100, 10, 5)
   ]);
 
   /* ====================== FORBIDDEN TEACHER ====================== */
@@ -380,8 +388,8 @@
     // +10% dmg from FireElement units vs Scorched enemies (this unit is
     // Flame) + up to +25% per FireElement unit / unique FireDoT stack.
     "Scorched Earth": function (T) {
-      var u = UP(T, "rei_scorched_uptime", 30);
-      var stacks = Math.min(N(T, "rei_fire_sources", 5), 5);
+      var u = UP(T, "rei_scorched_uptime", 25);
+      var stacks = Math.min(N(T, "rei_fire_sources", 2), 5);
       return { dmg: 0.10 * u + 0.05 * stacks,
         notes: ["Scorched Earth: +10% vs Scorched at " + Math.round(u * 100) +
         "% uptime; " + stacks + "/5 Fire sources (+25% cap)"] };
@@ -394,67 +402,76 @@
     },
     // Banner every 10s (cap 5, permanent): each deals 15% dmg / SPA 5 and
     // applies its own FireDoT; after 5, base summons deal 20% on pass-by.
+    // Single-target: banners mostly strike other enemies -> 1 banner and
+    // 1 FireDoT on the primary at the standard uptime share.
     "Fiery Banner": function (T) {
-      var banners = Math.min(N(T, "rei_banners", 5), 5);
+      var banners = Math.min(N(T, "rei_banners", 1), 5);
       var dots = N(T, "rei_banner_dot_targets", 1);
+      var dotU = UP(T, "rei_banner_dot_uptime", 15);
       var pass = N(T, "rei_summon_pass", 0);
-      var extra = banners * 0.15 / 5 + dots * 0.5 / 4 + pass * 0.20 / 6;
+      // Banner attacks strike a random enemy in its (75%) range: 50%
+      // primary share, single-target convention.
+      var extra = banners * 0.15 / 5 * 0.5 + dots * 0.5 / 4 * dotU + pass * 0.20 / 6;
       return { extra: extra, notes: ["Fiery Banner: " + banners +
-        " banners x15%/5s, FireDoT on " + dots + " enemy(s), base summons " +
+        " banner x15%/5s on the primary, FireDoT on " + dots + " enemy at " +
+        Math.round(dotU * 100) + "% uptime, base summons " +
         pass + " pass-through hits/min (estimated)"] };
     },
-    // Ability: 250% nuke to all in range + Fire (100% total) on all.
+    // Ability: 250% nuke to the target + Fire (100% total) on it.
     "Seventh Form, Wheel of the Sun": function (T) {
-      var ppm = N(T, "rei_ability_ppm", 1);
-      var extra = (2.50 + 1.00) * ppm / 60;
+      var cd = Math.max(N(T, "rei_ability_cd", 150), 10);
+      var extra = (2.50 + 1.00) / cd;
       return { extra: extra, notes: ["Seventh Form: 250% + Fire100%, " +
-        ppm + "/min (estimated cadence)"] };
+        "every ~" + cd + "s (estimated cadence, single target)"] };
     }
   });
   A.registerUnitVars("Crimson Captain (Moon)", [
-    V("rei_scorched_uptime", "Scorched uptime %", "Share of time enemies are Scorched - default 30%", 0, 100, 30, 5),
-    V("rei_fire_sources", "Fire sources", "FireElement units / unique FireDoTs in range (cap 5) - default 5", 0, 5, 5),
-    V("rei_max_scorched", "Max-Scorched enemies", "Enemies at 10 stacks in range (+5% crit dmg each) - default 5", 0, 10, 5),
-    V("rei_banners", "Banners active", "FireBanners alive (cap 5, spawn 1/10s) - default 5", 0, 5, 5),
+    V("rei_scorched_uptime", "Scorched uptime %", "Share of time enemies are Scorched - default 25%", 0, 100, 25, 5),
+    V("rei_fire_sources", "Fire sources", "FireElement units / unique FireDoTs in range (cap 5) - default 2", 0, 5, 2),
+    V("rei_max_scorched", "Max-Scorched enemies", "Enemies at 10 stacks in range (+5% crit dmg each) - default 2", 0, 10, 2),
+    V("rei_banners", "Banners on primary", "FireBanners striking the primary target (cap 5) - default 1 (estimated)", 0, 5, 1),
     V("rei_banner_dot_targets", "Banner FireDoT targets", "Enemies burning from banner Fire - default 1 (estimated)", 0, 10, 1),
+    V("rei_banner_dot_uptime", "Banner Fire uptime %", "Share of time the primary burns from banner Fire - default 15%", 0, 100, 15, 5),
     V("rei_summon_pass", "Summon passes / min", "Base FireBanner summons passing enemies - default 0 (estimated)", 0, 30, 0),
-    V("rei_ability_ppm", "Ability uses / min", "Seventh Form activations per minute - default 1 (estimated)", 0, 10, 1)
+    V("rei_ability_cd", "Ability cooldown s", "Seconds between Seventh Form casts - default 150 (estimated)", 10, 600, 150, 10)
   ]);
 
   /* ====================== CROW (BLACK FIRE) ====================== */
   A.registerNoDps("Crow (Black Fire)", ["Crow's Illusion"]);
   A.registerPassives("Crow (Black Fire)", {
     // Stored damage on an illusioned enemy is released at 25% on expiry
-    // (12s cycle): 25% x (damage dealt to it over 12s) / 12s.
+    // (12s cycle): 25% x (damage dealt to it over 12s) / 12s. Single
+    // target: only the illusion on the attacked enemy counts.
     "Broken Mind": function (T, ctx) {
-      var n = EN(T);
-      var extra = 0.25 * n / ctx.spa;
+      var extra = 0.25 / ctx.spa;
       return { extra: extra, notes: ["Broken Mind: 25% of stored damage " +
-        "released per illusioned enemy (" + n + " in range, steady state)"] };
+        "released per cycle on the attacked enemy (single target)"] };
     },
     // BlackFire DoT (status data: 2x damage total over 12s per stack),
-    // refreshed by attacks - assumed applied by this unit's attacks.
+    // applied by this unit's attacks - uptime variable (refresh window
+    // vs attack cadence, default 30% per site convention).
     "Searing Flames": function (T) {
-      var n = N(T, "itachi_blackfire_targets", 1);
-      var extra = 2.0 / 12 * n;
-      return { extra: extra, notes: ["BlackFire: 2x damage / 12s on " + n +
-        " enemy(s) (status data, assumed applied on attack)"] };
+      var u = UP(T, "itachi_blackfire_uptime", 30);
+      var extra = 2.0 / 12 * u;
+      return { extra: extra, notes: ["BlackFire: 2x damage / 12s at " +
+        Math.round(u * 100) + "% uptime on the attacked enemy (status data)"] };
     }
   });
   A.registerUnitVars("Crow (Black Fire)", [
-    V("itachi_blackfire_targets", "BlackFire targets", "Enemies kept burning - default 1 (estimated)", 0, 10, 1)
+    V("itachi_blackfire_uptime", "BlackFire uptime %", "Share of time the attacked enemy burns - default 30%", 0, 100, 30, 5)
   ]);
 
   /* ====================== CUBERT ====================== */
   A.registerNoDps("Cubert", ["Cube Summon"]);
   A.registerPassives("Cubert", {
-    // KhunCubes (cap 2) deal 35% of this unit's damage per attack; cube
-    // attack cycle ~1.35s (skill delays). 1 charge / 10s gates summoning.
+    // KhunCubes (cap 2) deal 35% of this unit's damage per attack; charge
+    // gained every 10s (capacity 2) gates cube strikes, so across both
+    // cubes that is one 35% strike per charge cycle.
     "Cubes": function (T) {
       var cubes = Math.min(N(T, "khun_cubes", 2), 2);
-      var extra = cubes * 0.35 / 1.35 * UP(T, "khun_cube_uptime", 100);
+      var extra = cubes * 0.35 / 20 * UP(T, "khun_cube_uptime", 100);
       return { extra: extra, notes: ["Cubes: " + cubes +
-        " KhunCube(s) x35% per ~1.35s attack"] };
+        " KhunCube(s), 35% strike each ~20s (1 charge / 10s shared)"] };
     },
     // Attached cubes: +5% damage / +2.5% range each (assumed to buff this
     // unit; description is ambiguous about the target).
@@ -528,8 +545,8 @@
     // Every 20 Bleed stacks in range -> YutaBatSpirit (cap 3), 15% of this
     // unit's damage per attack, SPA 10, despawns after 3 attacks.
     "Spirit Bats": function (T) {
-      var bats = Math.min(N(T, "yuuta_bats", 3), 3);
-      var u = UP(T, "yuuta_bat_uptime", 60);
+      var bats = Math.min(N(T, "yuuta_bats", 2), 3);
+      var u = UP(T, "yuuta_bat_uptime", 40);
       var extra = bats * 0.15 / 10 * u;
       return { extra: extra, notes: ["Spirit Bats: " + bats +
         " bat(s) x15% / 10s at " + Math.round(u * 100) +
@@ -539,8 +556,8 @@
   A.registerUnitVars("Cursed Student (True Love)", [
     V("yuuta_ally_dmg", "Closest unit damage %", "Closest unit's damage as % of this unit's - default 100", 0, 300, 100, 10),
     V("yuuta_mimic_bonus", "Mimicry bonus %", "Follow-up share of the ally's damage (desc: +20% per new attack) - default 40", 0, 200, 40, 10),
-    V("yuuta_bats", "Bat Spirits active", "Bats summoned (cap 3, 1 per 20 Bleed stacks) - default 3", 0, 3, 3),
-    V("yuuta_bat_uptime", "Bat uptime %", "Share of time bats are attacking - default 60% (estimated)", 0, 100, 60, 5)
+    V("yuuta_bats", "Bat Spirits active", "Bats summoned (cap 3, 1 per 20 Bleed stacks) - default 2", 0, 3, 2),
+    V("yuuta_bat_uptime", "Bat uptime %", "Share of time bats are attacking - default 40% (estimated)", 0, 100, 40, 5)
   ]);
 
   /* ====================== DARK MAGE (SOVEREIGN) ====================== */
@@ -572,17 +589,19 @@
 
   /* ====================== DEAD MELODY (SOLO) ====================== */
   A.registerPassives("Dead Melody (Solo)", {
-    // Buff aura: +30% damage / +10% range to non-Unbound units in range
-    // (this unit has no Unbound trait; emitter assumed inside its own
-    // range -> self-included). BrookCaptain (+20% cc / +25% cd) is
-    // assumed to be another unit by default (toggle in Variables).
-    "Seafarer Quintet": function (T) {
-      var dmg = 0.30;
+    // Buff aura: +15% dmg/+5% range to units WITH the Unbound trait in
+    // range, +30%/+10% to units WITHOUT it (this unit's own trait decides
+    // its share when the emitter is assumed inside its own range).
+    // BrookCaptain (+20% cc / +25% cd) is assumed to be another unit by
+    // default (toggle in Variables).
+    "Seafarer Quintet": function (T, ctx) {
+      var selfUnbound = (ctx && ctx.trait === "Unbound");
+      var dmg = selfUnbound ? 0.15 : 0.30;
       var cc = 0, cd = 0;
       if (N(T, "brook_captain_self", 0) >= 50) { cc = 20; cd = 25; }
       return { dmg: dmg, cc: cc, cd: cd,
-        notes: ["Seafarer Quintet: +30% to non-Unbound units in range " +
-        "(self included); BrookCaptain " +
+        notes: ["Seafarer Quintet: " + (selfUnbound ? "+15% (Unbound trait)" : "+30%") +
+        " to units in range (self included); BrookCaptain " +
         (cc ? "self (assumed)" : "another unit (assumed)")] };
     },
     // Melody choice (variable): Melody1 = self +35% dmg / +100% cc /
@@ -627,7 +646,7 @@
     // +1% SPA reduction per DemonMeter stack (cap 20) while a head is
     // active -> up to -20% SPA at the cap.
     "Horns Fire Charge": function (T) {
-      var u = UP(T, "shinra_meter_uptime", 30);
+      var u = UP(T, "shinra_meter_uptime", 20);
       return { spa: -0.20 * u, notes: ["Horns Fire Charge: meter at cap " +
         "(-20% SPA) for " + Math.round(u * 100) + "% of the time (estimated)"] };
     },
@@ -643,8 +662,8 @@
   });
   A.registerUnitVars("Devil (Hero)", [
     V("shinra_head_uptime", "DemonHead uptime %", "Share of time DemonHead is active (10s / 20s) - default 50%", 0, 100, 50, 5),
-    V("shinra_head_targets", "DemonHead targets", "Enemies inside the DemonHead radius - default 1 (estimated)", 0, 10, 1),
-    V("shinra_meter_uptime", "Meter-cap uptime %", "Share of time DemonMeter is at 20 (-20% SPA) - default 30% (estimated)", 0, 100, 30, 5)
+    V("shinra_head_targets", "DemonHead targets", "Enemies inside the DemonHead radius - default 1 (single-target view)", 0, 10, 1),
+    V("shinra_meter_uptime", "Meter-cap uptime %", "Share of time DemonMeter is at 20 (-20% SPA) - default 20% (estimated)", 0, 100, 20, 5)
   ]);
 
   /* ====================== ECLIPSE HUNTER (SAVIOR) ====================== */
@@ -773,14 +792,14 @@
     },
     // With KenpachiEVO in range: switch skill, +10% dmg / +5% range.
     "Killers Not Dead": function (T) {
-      var u = UP(T, "unohana_kenpachi_uptime", 30);
+      var u = UP(T, "unohana_kenpachi_uptime", 20);
       return { dmg: 0.10 * u, notes: ["Killers Not Dead: +10% dmg with " +
         "KenpachiEVO in range at " + Math.round(u * 100) + "% uptime"] };
     },
     // When self is debuffed: next attack +25% and inflicts Liquefy
     // (50% of damage over 2s). Conditional -> uptime variable.
     "Eliminate From Heaven": function (T, ctx) {
-      var u = UP(T, "unohana_liquefy_uptime", 30);
+      var u = UP(T, "unohana_liquefy_uptime", 20);
       var extra = 0.50 / 2 * u;
       return { dmg: 0.25 * u, extra: extra,
         notes: ["Eliminate From Heaven: +25% next attack and Liquefy " +
@@ -790,82 +809,80 @@
   A.registerUnitVars("First Blade (Strongest)", [
     V("unohana_cleanse_uptime", "Cleanse uptime %", "Share of time a cleanse proc is active (45s buff, 2s CD) - default 30%", 0, 100, 30, 5),
     V("unohana_kenpachi", "Kenpachi cleansing %", "Chance the cleanse target is KenpachiEVO (doubles the self buff) - default 0%", 0, 100, 0, 10),
-    V("unohana_kenpachi_uptime", "Kenpachi in range %", "Share of time KenpachiEVO is in range - default 30%", 0, 100, 30, 5),
-    V("unohana_liquefy_uptime", "Liquefy uptime %", "Share of time the self-debuff branch is active - default 30%", 0, 100, 30, 5)
+    V("unohana_kenpachi_uptime", "Kenpachi in range %", "Share of time KenpachiEVO is in range - default 20%", 0, 100, 20, 5),
+    V("unohana_liquefy_uptime", "Liquefy uptime %", "Share of time the self-debuff branch is active - default 20%", 0, 100, 20, 5)
   ]);
 
   /* ====================== FLAME EMPEROR (REINCARNATE) ====================== */
   A.registerPassives("Flame Emperor (Reincarnate)", {
-    // On applying Fire: spreads to 3 more enemies without Fire -> own
-    // Burn DoT (0.5x total over 4s) hits up to 3 extra targets.
+    // On applying Fire: spreads to more enemies without Fire. Single
+    // target: only the spread instance that re-lands on the primary counts
+    // (default 30% uptime share).
     "Wildfire": function (T) {
-      var n = Math.min(N(T, "sabo_spread", 3), EN(T));
-      var extra = 0.5 / 4 * n;
-      return { extra: extra, notes: ["Wildfire: Fire spreads to " + n +
-        " extra enemy(s) (0.5x / 4s each, status data)"] };
+      var u = UP(T, "sabo_spread_uptime", 30);
+      var extra = 0.5 / 4 * u;
+      return { extra: extra, notes: ["Wildfire: Fire spread re-hits the " +
+        "primary at " + Math.round(u * 100) + "% uptime (0.5x / 4s, status data)"] };
     },
     // Ability: summon SaboSummon on a path for a duration; enemies
-    // passing through get Fire. Cadence variable.
+    // passing through get Fire. Cadence variable (single target share).
     "Wall of Fire": function (T) {
       var u = UP(T, "sabo_wall_uptime", 30);
-      var n = N(T, "sabo_wall_targets", 2);
-      var extra = 0.5 / 4 * n * u;
-      return { extra: extra, notes: ["Wall of Fire: " + n +
-        " enemies passing per window at " + Math.round(u * 100) +
-        "% uptime (estimated)"] };
+      var extra = 0.5 / 4 * u;
+      return { extra: extra, notes: ["Wall of Fire: primary passes the " +
+        "wall at " + Math.round(u * 100) + "% uptime (0.5x / 4s)"] };
     }
   });
   A.registerUnitVars("Flame Emperor (Reincarnate)", [
-    V("sabo_spread", "Spread targets", "Extra enemies catching Fire from Wildfire - default 3", 0, 10, 3),
-    V("sabo_wall_uptime", "Wall uptime %", "Share of time Wall of Fire is up - default 30% (estimated)", 0, 100, 30, 5),
-    V("sabo_wall_targets", "Wall pass-throughs", "Enemies passing the wall per window - default 2 (estimated)", 0, 10, 2)
+    V("sabo_spread_uptime", "Spread uptime %", "Share of time the spread Fire re-hits the primary - default 30%", 0, 100, 30, 5),
+    V("sabo_wall_uptime", "Wall uptime %", "Share of time Wall of Fire burns the primary - default 30% (estimated)", 0, 100, 30, 5)
   ]);
 
   /* ====================== HEAD CAPTAIN (CHAR) ====================== */
   A.registerPassives("Head Captain (Char)", {
     // Fire stacks infinitely; each stack +5% Fire damage (cap +150%) on
-    // enemies in range. Fire = 0.5x total over 4s (status data).
+    // the primary. Fire = 0.5x total over 4s (status data). Single target
+    // with the standard DoT uptime share.
     "West": function (T) {
-      var amp = N(T, "yama_fire_amp", 100) / 100;    // +100% by default
-      var n = N(T, "yama_fire_targets", 1);
-      var extra = 0.5 / 4 * (1 + amp) * n;
+      var amp = N(T, "yama_fire_amp", 75) / 100;    // +75% by default
+      var u = UP(T, "yama_fire_uptime", 20);
+      var extra = 0.5 / 4 * (1 + amp) * u;
       return { extra: extra, notes: ["West: Fire 0.5x/4s x" +
-        (1 + amp).toFixed(2) + " on " + n + " enemy(s) (" +
-        Math.round(amp * 100) + "% stacks, cap +150%)"] };
+        (1 + amp).toFixed(2) + " on the primary at " + Math.round(u * 100) +
+        "% uptime (" + Math.round(amp * 100) + "% stacks, cap +150%)"] };
     },
     // Enemies entering range catch Fire (0.5x over 4s).
     "East": function (T) {
-      var n = N(T, "yama_enter_targets", 2);
-      var extra = 0.5 / 4 * n * UP(T, "yama_enter_uptime", 30);
-      return { extra: extra, notes: ["East: Fire on " + n +
-        " entering enemy(s) at " + Math.round(UP(T, "yama_enter_uptime", 30) * 100) +
-        "% uptime (estimated)"] };
+      var u = UP(T, "yama_enter_uptime", 15);
+      var extra = 0.5 / 4 * u;
+      return { extra: extra, notes: ["East: Fire on the primary when " +
+        "entering at " + Math.round(u * 100) + "% uptime (estimated)"] };
     },
     // Takedown -> YamamotoSkeleton PathTrap (cap 3): 25% when touched,
     // explodes with Fire, and each skeleton gives +5% damage to this unit.
     "South": function (T) {
-      var s = Math.min(N(T, "yama_skeletons", 3), 3);
-      var touch = N(T, "yama_skeleton_touches", 2);
+      var s = Math.min(N(T, "yama_skeletons", 1), 3);
+      var touch = N(T, "yama_skeleton_touches", 1);
       return { dmg: 0.05 * s, extra: touch * 0.25 / 10,
         notes: ["South: " + s + "/3 skeletons (+5% dmg each), " +
-        touch + " trap hit(s)/min (estimated); each hit also applies Fire"] };
+        touch + " trap hit(s)/min on the primary (estimated); each hit also applies Fire"] };
     },
-    // Ability: 200% to all in range + 100% split among them.
+    // Ability: 200% to all in range + 100% split among them. Single
+    // target: the 200% hit lands, split portion counted on the primary.
     "North": function (T) {
-      var ppm = N(T, "yama_ability_ppm", 1);
-      var extra = 3.00 * ppm / 60;
-      return { extra: extra, notes: ["North: 200% + 100% split nuke, " +
-        ppm + "/min (estimated cadence)"] };
+      var cd = Math.max(N(T, "yama_ability_cd", 150), 10);
+      var extra = 2.50 / cd;
+      return { extra: extra, notes: ["North: 200% + ~50% of the split " +
+        "portion on the primary, every ~" + cd + "s (estimated cadence)"] };
     }
   });
   A.registerUnitVars("Head Captain (Char)", [
-    V("yama_fire_amp", "Fire stack amp %", "Fire damage bonus from stacks - default +100% (cap +150%)", 0, 150, 100, 5),
-    V("yama_fire_targets", "Fire targets", "Enemies burning from this unit - default 1 (estimated)", 0, 10, 1),
-    V("yama_enter_targets", "Entering enemies / wave", "Enemies entering range per wave window - default 2 (estimated)", 0, 10, 2),
-    V("yama_enter_uptime", "Entry uptime %", "Share of time enemies are entering range - default 30%", 0, 100, 30, 5),
-    V("yama_skeletons", "Skeletons active", "YamamotoSkeletons alive (cap 3, +5% dmg each) - default 3", 0, 3, 3),
-    V("yama_skeleton_touches", "Skeleton hits / min", "Enemies touching the PathTraps per minute - default 2 (estimated)", 0, 30, 2),
-    V("yama_ability_ppm", "Ability uses / min", "North activations per minute - default 1 (estimated)", 0, 10, 1)
+    V("yama_fire_amp", "Fire stack amp %", "Fire damage bonus from stacks - default +75% (cap +150%)", 0, 150, 75, 5),
+    V("yama_fire_uptime", "Fire uptime %", "Share of time the primary burns from this unit's Fire - default 20%", 0, 100, 20, 5),
+    V("yama_enter_uptime", "Entry uptime %", "Share of time enemies catch Fire on entry - default 15%", 0, 100, 15, 5),
+    V("yama_skeletons", "Skeletons active", "YamamotoSkeletons alive (cap 3, +5% dmg each) - default 1 (needs takedowns)", 0, 3, 1),
+    V("yama_skeleton_touches", "Skeleton hits / min", "Enemies touching the PathTraps per minute - default 1 (estimated)", 0, 30, 1),
+    V("yama_ability_cd", "Ability cooldown s", "Seconds between North casts - default 150 (estimated)", 10, 600, 150, 10)
   ]);
 
   /* ====================== HOLLOW (BLAZE) ====================== */
@@ -899,7 +916,7 @@
     // +3% damage per HeatStack (cap 10 = +30%) on enemies in range; at
     // 10 stacks the enemy also catches Fire (0.5x / 4s).
     "Human Furnace": function (T) {
-      var u = UP(T, "burns_heat_uptime", 30);
+      var u = UP(T, "burns_heat_uptime", 20);
       var n = N(T, "burns_fire_targets", 1);
       return { dmg: 0.30 * u, extra: 0.5 / 4 * n * u,
         notes: ["Human Furnace: +30% (10 HeatStacks) at " +
@@ -908,8 +925,8 @@
     // Rewind proc: 75% to all in BurnsZone1 (15s CD); enemies at the heat
     // cap take +15% extra damage from this unit.
     "Ignition Release": function (T) {
-      var u = UP(T, "burns_heat_uptime", 30);
-      var ppm = N(T, "burns_release_ppm", 4);
+      var u = UP(T, "burns_heat_uptime", 20);
+      var ppm = N(T, "burns_release_ppm", 2);
       var extra = 0.75 * ppm / 60;
       return { dmg: 0.15 * u, extra: extra,
         notes: ["Ignition Release: 75% zone hit " + ppm +
@@ -917,9 +934,9 @@
     }
   });
   A.registerUnitVars("Ignition Commander (Betrayal)", [
-    V("burns_heat_uptime", "Heat uptime %", "Share of time enemies sit at 10 HeatStacks (+30% dmg) - default 30%", 0, 100, 30, 5),
+    V("burns_heat_uptime", "Heat uptime %", "Share of time enemies sit at 10 HeatStacks (+30% dmg) - default 20%", 0, 100, 20, 5),
     V("burns_fire_targets", "Fire targets", "Enemies ignited at heat cap - default 1 (estimated)", 0, 10, 1),
-    V("burns_release_ppm", "Releases / min", "Ignition Release procs per minute (15s CD) - default 4 (estimated)", 0, 20, 4)
+    V("burns_release_ppm", "Releases / min", "Ignition Release procs per minute (15s CD) - default 2 (estimated)", 0, 20, 2)
   ]);
 
   /* ====================== IMPALER (ULTIMATE) ====================== */
@@ -930,7 +947,7 @@
     // (not Basic) and a +50% damage clause vs applicable enemies.
     "Piety & Obliteration": function (T) {
       var mode = N(T, "alucard_mode", 1);
-      var bleedU = UP(T, "alucard_bleed_uptime", 70);
+      var bleedU = UP(T, "alucard_bleed_uptime", 50);
       // The Bird of Hermes enhances own-sourced Bleed by +10%
       if (mode === 1) {
         var bleed = 0.50 / 6 * 1.10 * bleedU;
@@ -957,7 +974,7 @@
     // On kill: AlucardVampire 15% (cap 3); on takedown: AlucardGhoul 5%
     // (cap 6). Estimated SPA ~5s.
     "Humanity's Trump Card": function (T) {
-      var u = UP(T, "alucard_summons", 60);
+      var u = UP(T, "alucard_summons", 30);
       var extra = (3 * 0.15 + 6 * 0.05) / 5 * u;
       return { extra: extra, notes: ["Humanity's Trump Card: 3 vampires " +
         "15% + 6 ghouls 5% (est. SPA 5) at " + Math.round(u * 100) +
@@ -973,9 +990,9 @@
   });
   A.registerUnitVars("Impaler (Ultimate)", [
     V("alucard_mode", "Mode (1 = Piety / 2 = Obliteration)", "Attack mode from the Upgrade UI - default 1 = Piety (best own DPS)", 1, 2, 1),
-    V("alucard_bleed_uptime", "Bleed uptime %", "Share of attacks landing on Bleed-eligible enemies - default 70%", 0, 100, 70, 5),
+    V("alucard_bleed_uptime", "Bleed uptime %", "Share of attacks landing on Bleed-eligible enemies - default 50%", 0, 100, 50, 5),
     V("alucard_consume_uptime", "Consume uptime %", "Share of time with the +25% consume buff - default 30%", 0, 100, 30, 5),
-    V("alucard_summons", "Summon uptime %", "Share of time vampires/ghouls are attacking (needs kills) - default 60%", 0, 100, 60, 5),
+    V("alucard_summons", "Summon uptime %", "Share of time vampires/ghouls are attacking (needs kills) - default 30%", 0, 100, 30, 5),
     V("alucard_ability_ppm", "Ability uses / min", "Total Release activations per minute - default 1 (estimated)", 0, 10, 1)
   ]);
 
@@ -993,7 +1010,7 @@
     // Bleeding enemy dies -> GutsSpill (cap 2, 6s): 1 Bleed / 5s each
     // (0.65 over 6s per stack, steady ~1.2 stacks alive per spill).
     "Crimson Spill": function (T) {
-      var u = UP(T, "guts_spill_uptime", 30);
+      var u = UP(T, "guts_spill_uptime", 20);
       var extra = 2 * 0.65 * 1.2 / 6 * u;
       return { extra: extra, notes: ["Crimson Spill: 2 spills x ~1.2 " +
         "Bleed stacks at " + Math.round(u * 100) + "% uptime (needs kills)"] };
@@ -1006,7 +1023,7 @@
   });
   A.registerUnitVars("Iron Wolf (Struggler)", [
     V("guts_bleed_factor", "Bleed factor %", "Instant Bleed damage per hit - default 65 (status data)", 0, 200, 65, 5),
-    V("guts_spill_uptime", "Spill uptime %", "Share of time GutsSpills are ticking - default 30%", 0, 100, 30, 5)
+    V("guts_spill_uptime", "Spill uptime %", "Share of time GutsSpills are ticking - default 20%", 0, 100, 20, 5)
   ]);
 
   /* ====================== JESTER ====================== */
@@ -1015,13 +1032,13 @@
     // Scythe window: +25% damage and a travelling cone slash (AoE shape,
     // no extra single-target damage).
     "Scythe": function (T) {
-      var u = UP(T, "kite_scythe", 40);
+      var u = UP(T, "kite_scythe", 30);
       return { dmg: 0.25 * u, notes: ["Scythe: +25% dmg at " +
         Math.round(u * 100) + "% of the weapon cycle (default share)"] };
     },
     // Rifle window: -25% SPA and Bleed on every attack (0.65 / 6s).
     "Rifle": function (T) {
-      var u = UP(T, "kite_rifle", 40);
+      var u = UP(T, "kite_rifle", 30);
       return { spa: -0.25 * u, extra: 0.65 / 6 * u,
         notes: ["Rifle: -25% SPA and Bleed 0.65/6s at " +
         Math.round(u * 100) + "% of the weapon cycle (default share)"] };
@@ -1029,23 +1046,23 @@
     // Mace window: spawns a full clone for 15s (clone attacks at this
     // unit's stats) and instantly rerolls.
     "Mace": function (T, ctx) {
-      var u = UP(T, "kite_mace", 20);
+      var u = UP(T, "kite_mace", 15);
       var extra = 0.75 * u / ctx.spa;   // clone up 15s of the ~20s window
       return { extra: extra, notes: ["Mace: clone for 15s at " +
         Math.round(u * 100) + "% of the weapon cycle (estimated share)"] };
     },
     // Rolling the same weapon twice: +25% on it for the window.
     "Bored Jester": function (T) {
-      var u = UP(T, "kite_bored", 20);
+      var u = UP(T, "kite_bored", 10);
       return { dmg: 0.25 * u, notes: ["Bored Jester: +25% weapon damage " +
         "at " + Math.round(u * 100) + "% uptime (estimated)"] };
     }
   });
   A.registerUnitVars("Jester", [
-    V("kite_scythe", "Scythe share %", "Share of the weapon cycle spent on Scythe - default 40%", 0, 100, 40, 5),
-    V("kite_rifle", "Rifle share %", "Share of the weapon cycle spent on Rifle - default 40%", 0, 100, 40, 5),
-    V("kite_mace", "Mace share %", "Share of the weapon cycle spent on Mace (instant reroll) - default 20%", 0, 100, 20, 5),
-    V("kite_bored", "Bored Jester %", "Share of time with the repeat-roll +25% buff - default 20% (estimated)", 0, 100, 20, 5)
+    V("kite_scythe", "Scythe share %", "Share of the weapon cycle spent on Scythe - default 30%", 0, 100, 30, 5),
+    V("kite_rifle", "Rifle share %", "Share of the weapon cycle spent on Rifle - default 30%", 0, 100, 30, 5),
+    V("kite_mace", "Mace share %", "Share of the weapon cycle spent on Mace (instant reroll) - default 15%", 0, 100, 15, 5),
+    V("kite_bored", "Bored Jester %", "Share of time with the repeat-roll +25% buff - default 10% (estimated)", 0, 100, 10, 5)
   ]);
 
   /* ====================== KITSUNE ====================== */
@@ -1057,7 +1074,7 @@
     // strongest ally (others only - no self damage gain).
     "Dreamdiver": function (T) {
       var u = UP(T, "sparkle_buff_actions", 50);
-      var spa = u / Math.max(0.01, 1 - u);   // share of actions = buffs
+      var spa = 1 / Math.max(0.01, 1 - u);   // share of actions = buffs (attacks lost)
       return { spa: spa, notes: ["Dreamdiver: " + Math.round(u * 100) +
         "% of actions are ally buffs instead of attacks (own attacks " +
         "lost; the -15% SPA / +15% speed buff targets other units)"] };
@@ -1082,7 +1099,7 @@
     // Every 4 attacks: follow-up DianeRock at 100% (125% while
     // transformed). Rock Storm is attack-driven, always on.
     "Rock Storm": function (T, ctx) {
-      var g = UP(T, "diane_transform", 30);
+      var g = UP(T, "diane_transform", 20);
       var dmg = 1.00 * (1 + 0.25 * g);
       var extra = dmg / (4 * ctx.spa);
       return { extra: extra, notes: ["Rock Storm: 100% follow-up every " +
@@ -1091,14 +1108,14 @@
     // Ability: DianeTransformation for 25s: +125% damage, +25% SPA
     // (slower), +50% range - averaged over the cycle (duty variable).
     "Size Control: Giant": function (T) {
-      var g = UP(T, "diane_transform", 30);
+      var g = UP(T, "diane_transform", 20);
       return { dmg: 1.25 * g, spa: 0.25 * g,
         notes: ["Size Control: +125% dmg / +25% SPA at " +
         Math.round(g * 100) + "% duty cycle (25s per activation)"] };
     }
   });
   A.registerUnitVars("Lady Giant (Envy)", [
-    V("diane_transform", "Transformation %", "Duty cycle of DianeTransformation (25s windows) - default 30%", 0, 100, 30, 5)
+    V("diane_transform", "Transformation %", "Duty cycle of DianeTransformation (25s windows) - default 20%", 0, 100, 20, 5)
   ]);
 
   /* ====================== LIGHTNING GOD (OVERCHARGED) ====================== */
@@ -1109,17 +1126,18 @@
     // Electricity damage by 5% per point (cap 60 -> +300%); the meter
     // resets at 60 via Tempest Discharge -> cycle average default 30.
     "Storm Charge": function (T, ctx) {
-      var meter = N(T, "enel_meter", 30);
-      var chain = Math.min(N(T, "enel_chain_hits", 3), 5);
+      var meter = N(T, "enel_meter", 25);
+      var chain = Math.min(N(T, "enel_chain_hits", 1), 5);
       var extra = 0.15 * chain * (1 + 0.05 * meter) / ctx.spa;
       return { extra: extra, notes: ["Storm Charge: chain lightning " +
-        "0.15x x" + chain + " hits at +" + (5 * meter) +
-        "% (meter " + meter + "/60, cycle average)"] };
+        "0.15x x" + chain + " hit(s) on the primary at +" + (5 * meter) +
+        "% (meter " + meter + "/60, cycle average; chains to other " +
+        "enemies not counted)"] };
     },
     // At 25 meter: EnelCloud every 10s dealing 25% per attack (attack
     // cadence estimated at 2s).
     "Thundercloud": function (T) {
-      var u = UP(T, "enel_cloud_uptime", 60);
+      var u = UP(T, "enel_cloud_uptime", 20);
       var extra = 0.25 / 2 * u;
       return { extra: extra, notes: ["Thundercloud: cloud 25% per ~2s " +
         "attack at " + Math.round(u * 100) + "% uptime (meter >= 25)"] };
@@ -1140,9 +1158,9 @@
     }
   });
   A.registerUnitVars("Lightning God (Overcharged)", [
-    V("enel_meter", "EnelMeter average", "Average meter during the 0-60 cycle - default 30", 0, 60, 30),
-    V("enel_chain_hits", "Chain targets", "Enemies hit by chain lightning (3 base, +2 with Golden) - default 3", 1, 5, 3),
-    V("enel_cloud_uptime", "Cloud uptime %", "Share of time EnelCloud is attacking (needs 25+ meter) - default 60%", 0, 100, 60, 5),
+    V("enel_meter", "EnelMeter average", "Average meter during the 0-60 cycle (resets at 60) - default 25", 0, 60, 25),
+    V("enel_chain_hits", "Chain targets", "Electricity hits landing on the primary (3 base, +2 with Golden; chains to other enemies not counted) - default 1", 1, 5, 1),
+    V("enel_cloud_uptime", "Cloud uptime %", "Share of time EnelCloud is attacking the primary (needs 25+ meter) - default 20%", 0, 100, 20, 5),
     V("enel_discharge_ppm", "Discharges / min", "Tempest Discharge strikes per minute - default 1 (estimated)", 0, 10, 1)
   ]);
 
@@ -1208,7 +1226,7 @@
     // unit's damage (cap 20, attack cadence estimated like Small Ghost).
     "Mysterious Four's Princess": function (T) {
       var n = Math.min(N(T, "perona_possessed", 2), 20);
-      var u = UP(T, "perona_possession_uptime", 60);
+      var u = UP(T, "perona_possession_uptime", 40);
       var extra = n * 0.15 / 7.5 * u;
       return { extra: extra, notes: ["Possession: " + n +
         " revived ghost(s) at 15% / ~7.5s, " + Math.round(u * 100) +
@@ -1217,7 +1235,7 @@
     // Every 30s: SpecialGhost explodes for 100% (+20% per Gloom death
     // this cycle, cap +200%).
     "Ghost Masquerade: Final Act": function (T) {
-      var bonus = N(T, "perona_kill_bonus", 100) / 100;
+      var bonus = N(T, "perona_kill_bonus", 20) / 100;
       var extra = (1.00 * (1 + bonus)) / 30;
       return { extra: extra, notes: ["Ghost Masquerade: " +
         Math.round(100 * (1 + bonus)) + "% explosion every 30s (" +
@@ -1234,8 +1252,8 @@
   });
   A.registerUnitVars("Princess (Misery)", [
     V("perona_possessed", "Possessed summons", "Friendly ghosts from Possession (cap 20) - default 2 (estimated)", 0, 20, 2),
-    V("perona_possession_uptime", "Possession uptime %", "Share of time revived ghosts are attacking - default 60% (estimated)", 0, 100, 60, 5),
-    V("perona_kill_bonus", "Kill bonus %", "Gloom deaths per ghost cycle (+20% each, cap 200%) - default 100%", 0, 200, 100, 5),
+    V("perona_possession_uptime", "Possession uptime %", "Share of time revived ghosts are attacking - default 40% (estimated)", 0, 100, 40, 5),
+    V("perona_kill_bonus", "Kill bonus %", "Gloom deaths per ghost cycle (+20% each, cap 200%) - default 20%", 0, 200, 20, 5),
     V("perona_small_ghosts", "Small Ghosts placed", "PeronaSmallGhosts on the map - default 1", 0, 5, 1)
   ]);
 
@@ -1250,7 +1268,7 @@
     // +10% damage per StatusEffect stack on the target (cap +100%);
     // also seizes DoTs (refresh + source steal). Bonus as a variable.
     "Unyielding Spirit": function (T) {
-      var u = UP(T, "prodigy_status", 30);
+      var u = UP(T, "prodigy_status", 20);
       return { dmg: u, notes: ["Unyielding Spirit: +" +
         Math.round(u * 100) + "% from StatusEffect stacks (cap +100%; " +
         "DoT source steal adds this unit's credit on foreign DoTs)"] };
@@ -1267,17 +1285,17 @@
     // 10s channel: 75% per second inside the area, this unit does not
     // attack while active -> duty cycle, attacks paused.
     "Father and Son Spirit Energy": function (T) {
-      var u = UP(T, "prodigy_ability", 30);
+      var u = UP(T, "prodigy_ability", 15);
       var extra = 0.75 * u;
-      return { extra: extra, spa: u / Math.max(0.01, 1 - u),
+      return { extra: extra, spa: 1 / Math.max(0.01, 1 - u),
         notes: ["Father and Son: 75% dmg/s field at " + Math.round(u * 100) +
         "% uptime, attacks paused while active"] };
     }
   });
   A.registerUnitVars("Prodigy (Rage)", [
-    V("prodigy_status", "Status bonus %", "Unyielding Spirit damage bonus from StatusEffect stacks (cap 100) - default 30", 0, 100, 30, 5),
+    V("prodigy_status", "Status bonus %", "Unyielding Spirit damage bonus from StatusEffect stacks (cap 100) - default 20", 0, 100, 20, 5),
     V("prodigy_transform2", "Transformation2 %", "Duty cycle of GohanTransformation2 (100 meter = 20 attacks) - default 30%", 0, 100, 30, 5),
-    V("prodigy_ability", "Ability uptime %", "Share of time channeling Father and Son - default 30%", 0, 100, 30, 5)
+    V("prodigy_ability", "Ability uptime %", "Share of time channeling Father and Son - default 15% (estimated cadence)", 0, 100, 15, 5)
   ]);
 
   /* ====================== PUPPET (TELEKINETIC) ====================== */
@@ -1355,14 +1373,14 @@
   A.registerPassives("Reaper (Frenzied)", {
     // Enemy leaves range: Skill1 for 200% (8s CD) + slow.
     "Crush The World Down": function (T) {
-      var ppm = N(T, "ichigo_leaves_ppm", 4);
+      var ppm = N(T, "ichigo_leaves_ppm", 1);
       var extra = 2.00 * ppm / 60;
       return { extra: extra, notes: ["Crush The World Down: 200% on " +
         "range exits, " + ppm + "/min (8s CD, estimated)"] };
     },
     // Self StatusEffect: cleanse + Skill4 for 150% AoE in range (5s CD).
     "Higher Than The Moon": function (T) {
-      var ppm = N(T, "ichigo_cleanse_ppm", 3);
+      var ppm = N(T, "ichigo_cleanse_ppm", 1);
       var extra = 1.50 * ppm / 60;
       return { extra: extra, notes: ["Higher Than The Moon: 150% AoE " +
         "self-cleanse, " + ppm + "/min (needs debuffs, estimated)"] };
@@ -1370,8 +1388,8 @@
     // Boss leaves range: drag along the path - 200% grab (guaranteed
     // crit, not folded into extra) + 150% per enemy hit (global 30s CD).
     "Go For The Heart": function (T) {
-      var u = UP(T, "ichigo_boss_uptime", 30);
-      var n = N(T, "ichigo_drag_targets", 3);
+      var u = UP(T, "ichigo_boss_uptime", 7);
+      var n = N(T, "ichigo_drag_targets", 1);
       var extra = (2.00 + 1.50 * n) / 30 * u;
       return { extra: extra, notes: ["Go For The Heart: (200% grab + " +
         "150% x" + n + " dragged) every 30s at " + Math.round(u * 100) +
@@ -1379,18 +1397,18 @@
     },
     // Ability: Skill2 for 300% to all in range + 8s stun.
     "Annihilation Zero": function (T) {
-      var ppm = N(T, "ichigo_ability_ppm", 3);
+      var ppm = N(T, "ichigo_ability_ppm", 1);
       var extra = 3.00 * ppm / 60;
       return { extra: extra, notes: ["Annihilation Zero: 300% AoE, " +
         ppm + "/min (estimated cadence)"] };
     }
   });
   A.registerUnitVars("Reaper (Frenzied)", [
-    V("ichigo_leaves_ppm", "Range exits / min", "Enemies leaving range per minute - default 4 (estimated)", 0, 30, 4),
-    V("ichigo_cleanse_ppm", "Self-cleanses / min", "Self-cleanse procs per minute - default 3 (estimated)", 0, 20, 3),
-    V("ichigo_boss_uptime", "Boss uptime %", "Share of time a Boss can be dragged (30s global CD) - default 30%", 0, 100, 30, 5),
-    V("ichigo_drag_targets", "Dragged enemies", "Enemies hit while dragging the Boss - default 3 (estimated)", 0, 10, 3),
-    V("ichigo_ability_ppm", "Ability uses / min", "Annihilation Zero activations per minute - default 3 (estimated)", 0, 20, 3)
+    V("ichigo_leaves_ppm", "Range exits / min", "Range exits hitting the primary per minute - default 1 (estimated)", 0, 30, 1),
+    V("ichigo_cleanse_ppm", "Self-cleanses / min", "Self-cleanse procs per minute - default 1 (needs debuffs, estimated)", 0, 20, 1),
+    V("ichigo_boss_uptime", "Boss uptime %", "Share of time a Boss can be dragged (30s global CD) - default 7% (boss share of play time)", 0, 100, 7, 5),
+    V("ichigo_drag_targets", "Dragged enemies", "Enemies hit while dragging the Boss - default 1 (single-target view)", 0, 10, 1),
+    V("ichigo_ability_ppm", "Ability uses / min", "Annihilation Zero activations per minute - default 1 (estimated)", 0, 20, 1)
   ]);
 
   /* ====================== SAND (ALLIGATOR) ====================== */
@@ -1448,18 +1466,16 @@
         "% uptime (30s per activation, estimated cadence)"] };
     },
     // Ability: summons DivineSpirit at 100% of base damage while this
-    // unit is stunned for 15s - the spirit replaces its attacks.
-    "Divine Spirit": function (T, ctx) {
-      var u = UP(T, "obito_spirit_uptime", 30);
-      var extra = 1.00 / ctx.spa * u;
-      return { extra: extra, notes: ["Divine Spirit: substitute spirit " +
-        "at 100% base damage, " + Math.round(u * 100) +
-        "% uptime (this unit is stunned 15s per use)"] };
+    // unit is stunned for 15s - the spirit REPLACES this unit's attacks
+    // (same stats, so net DPS is unchanged: no separate damage).
+    "Divine Spirit": function (T) {
+      return { notes: ["Divine Spirit: the substitute spirit attacks at " +
+        "this unit's stats while it is stunned (replaces its attacks - no " +
+        "separate damage counted)"] };
     }
   });
   A.registerUnitVars("Shadow (Divine)", [
-    V("obito_ability_uptime", "Shadow Realm %", "Share of time under the 30s ShadowRealm buff - default 30%", 0, 100, 30, 5),
-    V("obito_spirit_uptime", "Divine Spirit %", "Share of time the substitute spirit is active - default 30%", 0, 100, 30, 5)
+    V("obito_ability_uptime", "Shadow Realm %", "Share of time under the 30s ShadowRealm buff - default 30%", 0, 100, 30, 5)
   ]);
 
   /* ====================== SHARKFANG (ABYSSAL) ====================== */
@@ -1476,7 +1492,7 @@
     // Wave/ability despawn leaves a 5s vapor cloud: 15% per second while
     // inside plus stackable Fire (0.5x / 4s modeled as one stack).
     "Boiling Waters": function (T) {
-      var u = UP(T, "harribel_vapor", 40);
+      var u = UP(T, "harribel_vapor", 30);
       var n = N(T, "harribel_vapor_targets", 1);
       var extra = (0.15 + 0.5 / 4) * n * u;
       return { extra: extra, notes: ["Boiling Waters: cloud 15%/s + Fire " +
@@ -1485,7 +1501,7 @@
     },
     // Ability: 2 waves from range end dealing 50% each (+Rewind).
     "Tidal Wave": function (T) {
-      var ppm = N(T, "harribel_ability_ppm", 2);
+      var ppm = N(T, "harribel_ability_ppm", 1);
       var extra = 1.00 * ppm / 60;
       return { extra: extra, notes: ["Tidal Wave: 2 x 50% per activation, " +
         ppm + "/min (estimated, 1 target per wave)"] };
@@ -1494,9 +1510,9 @@
   A.registerUnitVars("Sharkfang (Abyssal)", [
     V("harribel_waves_min", "Waves / min", "Waterfall waves per minute (every 12s = 5) - default 5", 0, 20, 5),
     V("harribel_wave_hits", "Wave hits", "Enemies hit per wave - default 2 (estimated)", 0, 10, 2),
-    V("harribel_vapor", "Vapor uptime %", "Share of time the vapor cloud ticks - default 40%", 0, 100, 40, 5),
+    V("harribel_vapor", "Vapor uptime %", "Share of time the vapor cloud ticks - default 30%", 0, 100, 30, 5),
     V("harribel_vapor_targets", "Vapor targets", "Enemies inside the cloud - default 1 (estimated)", 0, 10, 1),
-    V("harribel_ability_ppm", "Ability uses / min", "Tidal Wave activations per minute - default 2 (estimated)", 0, 10, 2)
+    V("harribel_ability_ppm", "Ability uses / min", "Tidal Wave activations per minute - default 1 (estimated)", 0, 10, 1)
   ]);
 
   /* ====================== SILVER FALCON ====================== */
@@ -1517,7 +1533,7 @@
     // Every 20s: allies get +15% range for 10s; each unit buffed by BOTH
     // passives gives this unit +5% cc / +5% cd / +5% range (cap 10).
     "The Falcon's Pawn": function (T) {
-      var n = Math.min(N(T, "griffith_double_buffed", 5), 10);
+      var n = Math.min(N(T, "griffith_double_buffed", 1), 10);
       return { cc: 5 * n, cd: 5 * n,
         notes: ["The Falcon's Pawn: " + n + "/10 doubly-buffed units " +
         "(+5% crit chance and +5% crit dmg each)"] };
@@ -1526,36 +1542,36 @@
   A.registerNoDps("Silver Falcon", ["War Chest"]);
   A.registerUnitVars("Silver Falcon", [
     V("griffith_top_archetype", "Most-equipped archetype %", "Whether the player's most equipped archetype matches this unit (adds +10%) - default 0%", 0, 100, 0, 10),
-    V("griffith_double_buffed", "Doubly-buffed units", "Units buffed by both passives at once (cap 10, +5% cc/cd each) - default 5 (estimated)", 0, 10, 5)
+    V("griffith_double_buffed", "Doubly-buffed units", "Units buffed by both passives at once (cap 10, +5% cc/cd each) - default 1 (estimated)", 0, 10, 1)
   ]);
 
   /* ====================== SOVEREIGN (DJINN) ====================== */
   A.registerNoDps("Sovereign (Djinn)", ["Djinn Combination"]);
   A.registerPassives("Sovereign (Djinn)", {
     // Lightning Djinn (passive when no Boss / stays on with Boss): every
-    // attack creates 5 chains of 25% each; with a single enemy all 5 hit
-    // the same target.
+    // attack creates 5 chains of 25% each. Single target: only the chains
+    // that land on the primary count -> default 1 chain.
     "Lightning Djinn": function (T, ctx) {
-      var chains = Math.min(N(T, "sinbad_chains", 5), 5);
+      var chains = Math.min(N(T, "sinbad_chains", 1), 5);
       var extra = 0.25 * chains / ctx.spa;
       return { extra: extra, notes: ["Lightning Djinn: 5 x 25% chains " +
-        "per attack (all hit one target when alone)"] };
+        "per attack, " + chains + " landing on the primary (single target)"] };
     },
     // Nine Tailed Fox Djinn (Boss in range): +50% damage and Freeze
-    // attacks - conditional on a Boss being present.
+    // attacks - conditional on a Boss being present (default 7% of play).
     "Nine Tailed Fox Djinn": function (T) {
-      var u = UP(T, "sinbad_boss_uptime", 30);
+      var u = UP(T, "sinbad_boss_uptime", 7);
       return { dmg: 0.50 * u, notes: ["Nine Tailed Fox Djinn: +50% dmg " +
-        "with a Boss in range at " + Math.round(u * 100) + "% uptime"] };
+        "with a Boss in range at " + Math.round(u * 100) + "% of play time"] };
     },
     // Every 7s: LightningStrike for 75% on the strongest + 3 chains of
-    // 20% (chains hit the same target when alone) + Freeze.
+    // 20% (chains spread on one target when alone). Single-target: 1 chain.
     "Djinn's Judgment": function (T) {
-      var ppm = N(T, "sinbad_judgment_ppm", 8);
-      var chains = N(T, "sinbad_judgment_chains", 3);
+      var ppm = N(T, "sinbad_judgment_ppm", 4);
+      var chains = N(T, "sinbad_judgment_chains", 1);
       var extra = (0.75 + 0.20 * chains) * ppm / 60;
       return { extra: extra, notes: ["Djinn's Judgment: 75% + " + chains +
-        " x 20% chains, " + ppm + "/min (7s cycle)"] };
+        " x 20% chain on the primary, " + ppm + "/min (estimated cadence)"] };
     }
   });
   A.registerUnitVars("Sovereign (Djinn)", [
@@ -1570,7 +1586,7 @@
     // Every 6 attacks: cocoon on hit enemies; if broken after 10 hits it
     // deals 100% (otherwise just stalls - CC).
     "Cocoon of Carnage": function (T, ctx) {
-      var u = UP(T, "doflamingo_cocoon_break", 70);
+      var u = UP(T, "doflamingo_cocoon_break", 50);
       var extra = 1.00 * u / (6 * ctx.spa);
       return { extra: extra, notes: ["Cocoon of Carnage: 100% per broken " +
         "cocoon (every 6 attacks), " + Math.round(u * 100) +
@@ -1580,15 +1596,15 @@
     // all attached units fire a 100% follow-up; reattach lockout 15s per
     // unit -> up to 3 x 100% per 15s.
     "String Sync": function (T) {
-      var u = UP(T, "doflamingo_strings", 60);
+      var u = UP(T, "doflamingo_strings", 40);
       var extra = 3 * 1.00 / 15 * u;
       return { extra: extra, notes: ["String Sync: 3 strings x 100% per " +
         "~15s at " + Math.round(u * 100) + "% uptime (needs ally attacks)"] };
     }
   });
   A.registerUnitVars("String Demon (Awakened)", [
-    V("doflamingo_cocoon_break", "Cocoon break %", "Share of cocoons broken within 10 hits - default 70% (estimated)", 0, 100, 70, 5),
-    V("doflamingo_strings", "String uptime %", "Share of time 3 strings are attached - default 60%", 0, 100, 60, 5)
+    V("doflamingo_cocoon_break", "Cocoon break %", "Share of cocoons broken within 10 hits - default 50% (estimated)", 0, 100, 50, 5),
+    V("doflamingo_strings", "String uptime %", "Share of time 3 strings are attached - default 40%", 0, 100, 40, 5)
   ]);
 
   /* ====================== SUBJECT 8 (MONSTER) ====================== */
@@ -1597,8 +1613,8 @@
     // at 75: -15% SPA. Cycle: fill (~7 attacks) then Unbound burst (20s)
     // then reset -> threshold uptimes as variables.
     "Losing Control": function (T, ctx) {
-      var u25 = UP(T, "kafka_meter25", 70);
-      var u75 = UP(T, "kafka_meter75", 50);
+      var u25 = UP(T, "kafka_meter25", 35);
+      var u75 = UP(T, "kafka_meter75", 30);
       var extra = 0.30 * u25 / ctx.spa;
       return { spa: -0.15 * u75, extra: extra,
         notes: ["Losing Control: +30% instance per attack at " +
@@ -1608,7 +1624,7 @@
     // Unbound (meter full): 20s burst of +50% damage, -15% SPA and a 100%
     // hit over 5 enemies per strike; resets the meter afterwards.
     "Unbound": function (T) {
-      var u = UP(T, "kafka_burst", 35);
+      var u = UP(T, "kafka_burst", 15);
       var n = N(T, "kafka_burst_targets", 1);
       var extra = 1.00 * n * u / 20;   // 100% per enemy per 20s window
       return { dmg: 0.50 * u, spa: -0.15 * u, extra: extra,
@@ -1619,18 +1635,18 @@
     // Enemy within 50% range: Full AoE for 75% over 5 hits + Dismember
     // (15s CD) + 10% Physical to allies (others only).
     "Colossal Roar": function (T) {
-      var ppm = N(T, "kafka_roar_ppm", 4);
+      var ppm = N(T, "kafka_roar_ppm", 2);
       var extra = 0.75 * ppm / 60;
       return { extra: extra, notes: ["Colossal Roar: 75% over 5 hits, " +
         ppm + "/min (15s CD, estimated); team buff not counted"] };
     }
   });
   A.registerUnitVars("Subject 8 (Monster)", [
-    V("kafka_meter25", "Meter>=25 uptime %", "Share of attacks with the +30% instance - default 70%", 0, 100, 70, 5),
-    V("kafka_meter75", "Meter>=75 uptime %", "Share of time the -15% SPA threshold is active - default 50%", 0, 100, 50, 5),
-    V("kafka_burst", "Unbound burst %", "Duty cycle of the 20s Unbound burst - default 35%", 0, 100, 35, 5),
+    V("kafka_meter25", "Meter>=25 uptime %", "Share of attacks with the +30% instance - default 35%", 0, 100, 35, 5),
+    V("kafka_meter75", "Meter>=75 uptime %", "Share of time the -15% SPA threshold is active - default 30%", 0, 100, 30, 5),
+    V("kafka_burst", "Unbound burst %", "Duty cycle of the 20s Unbound burst - default 15%", 0, 100, 15, 5),
     V("kafka_burst_targets", "Burst targets", "Enemies hit by the Unbound 100% strike - default 1 (single-target view)", 0, 10, 1),
-    V("kafka_roar_ppm", "Roars / min", "Colossal Roar procs per minute - default 4 (estimated)", 0, 10, 4)
+    V("kafka_roar_ppm", "Roars / min", "Colossal Roar procs per minute - default 2 (estimated)", 0, 10, 2)
   ]);
 
   /* ====================== THE DRINK (JUICEBOX) ====================== */
@@ -1644,7 +1660,7 @@
     // Follow-up happens in range (8s CD): this unit fires a 150%
     // follow-up (x1.10 from the mark; +15% while transformed).
     "Quick Assist": function (T, ctx) {
-      var u = UP(T, "trunks_assist", 70);
+      var u = UP(T, "trunks_assist", 50);
       var tr = UP(T, "trunks_transform", 30);
       var extra = 1.50 / 8 * u * 1.10 * (1 + 0.15 * tr);
       return { extra: extra, notes: ["Quick Assist: 150% per ~8s x1.10 " +
@@ -1669,7 +1685,7 @@
     }
   });
   A.registerUnitVars("The Drink (Juicebox)", [
-    V("trunks_assist", "Quick Assist %", "Share of time follow-ups trigger the 150% counter (8s CD) - default 70%", 0, 100, 70, 5),
+    V("trunks_assist", "Quick Assist %", "Share of time follow-ups trigger the 150% counter (8s CD) - default 50%", 0, 100, 50, 5),
     V("trunks_transform", "Transformation %", "Duty cycle of Golden Ascension (60s windows) - default 30%", 0, 100, 30, 5)
   ]);
 
@@ -1754,7 +1770,7 @@
   A.registerPassives("Vegetable (Prince)", {
     // Enemies leaving range take 10% of current damage (proc per exit).
     "Prince's Pursuit": function (T) {
-      var ppm = N(T, "vegeta_exits", 4);
+      var ppm = N(T, "vegeta_exits", 2);
       var extra = 0.10 * ppm / 60;
       return { extra: extra, notes: ["Prince's Pursuit: 10% per range " +
         "exit, " + ppm + "/min (estimated)"] };
@@ -1763,7 +1779,7 @@
     // ally follow-ups +5% cd (cap 15%) - progress toward caps as one
     // variable.
     "Royal Rivalry": function (T) {
-      var u = UP(T, "vegeta_royal", 60);
+      var u = UP(T, "vegeta_royal", 40);
       return { dmg: 0.25 * u, cc: 25 * u, cd: 15 * u,
         notes: ["Royal Rivalry: " + Math.round(u * 100) +
         "% of the caps (+25% dmg / +25% crit / +15% crit dmg) from ally " +
@@ -1773,7 +1789,7 @@
     // transform empties it) -> VegetaTransformation: +15% damage,
     // +35% crit damage, +20% crit chance. Duty-cycle variable.
     "Awakened Pride": function (T) {
-      var u = UP(T, "vegeta_transform", 60);
+      var u = UP(T, "vegeta_transform", 40);
       return { dmg: 0.15 * u, cd: 35 * u, cc: 20 * u,
         notes: ["Awakened Pride: VegetaTransformation (+15% dmg, +35% " +
         "crit dmg, +20% crit) at " + Math.round(u * 100) +
@@ -1781,9 +1797,9 @@
     }
   });
   A.registerUnitVars("Vegetable (Prince)", [
-    V("vegeta_exits", "Range exits / min", "Enemies leaving range per minute - default 4 (estimated)", 0, 30, 4),
-    V("vegeta_royal", "Royal progress %", "Progress toward the Royal Rivalry caps - default 60%", 0, 100, 60, 5),
-    V("vegeta_transform", "Transformation %", "Duty cycle of VegetaTransformation - default 60%", 0, 100, 60, 5)
+    V("vegeta_exits", "Range exits / min", "Enemies leaving range per minute - default 2 (estimated)", 0, 30, 2),
+    V("vegeta_royal", "Royal progress %", "Progress toward the Royal Rivalry caps - default 40%", 0, 100, 40, 5),
+    V("vegeta_transform", "Transformation %", "Duty cycle of VegetaTransformation - default 40%", 0, 100, 40, 5)
   ]);
 
   /* ====================== WATER MAGE (SCHOLAR) ====================== */
@@ -1819,16 +1835,17 @@
     // Every attack of this unit and its clones gains a 120% follow-up;
     // clones attack on their own cadence (variable).
     "Thunder God": function (T, ctx) {
-      var c = N(T, "ukitake_clone_fups", 6);
+      var c = N(T, "ukitake_clone_fups", 2);
       var extra = 1.20 / ctx.spa + 1.20 * c / 60;
       return { extra: extra, notes: ["Thunder God: 120% follow-up on " +
-        "every attack + " + c + " clone follow-up(s)/min (estimated)"] };
+        "every attack + " + c + " clone follow-up(s)/min hitting the " +
+        "primary (single-target share; clones mostly strike other enemies)"] };
     },
     // Bomb traps from any follow-up in range (cap 5): 25% per hit and
     // -1% SPA per hit for this unit (cap -5%).
     "Bomb Tags Master": function (T) {
       var u = UP(T, "ukitake_bombs", 70);
-      var ppm = N(T, "ukitake_bomb_hits", 8);
+      var ppm = N(T, "ukitake_bomb_hits", 5);
       var extra = 0.25 * ppm / 60;
       return { spa: -0.05 * u, extra: extra,
         notes: ["Bomb Tags: 25% per trap hit (" + ppm + "/min, estimated); " +
@@ -1837,9 +1854,9 @@
   });
   A.registerUnitVars("Water Sage (Founder)", [
     V("ukitake_clones", "Clone cap progress %", "Toward 3 clones on the map - default 70%", 0, 100, 70, 5),
-    V("ukitake_clone_fups", "Clone follow-ups / min", "MirrorClone follow-ups per minute - default 6 (estimated)", 0, 30, 6),
+    V("ukitake_clone_fups", "Clone follow-ups / min", "MirrorClone follow-ups hitting the primary per minute - default 2 (single-target share)", 0, 30, 2),
     V("ukitake_bombs", "Bomb trap uptime %", "Toward 5 live BombTags (-1% SPA each) - default 70%", 0, 100, 70, 5),
-    V("ukitake_bomb_hits", "Bomb hits / min", "BombTag hits per minute - default 8 (estimated)", 0, 60, 8)
+    V("ukitake_bomb_hits", "Bomb hits / min", "BombTag hits on the primary per minute - default 5 (estimated)", 0, 60, 5)
   ]);
 
   /* ====================== WILD CARD (ACE) ====================== */
@@ -1857,10 +1874,11 @@
     "Royal Suit": function (T, ctx) {
       var amp = 1 + N(T, "joker_fire_amp", 25) / 100;
       var n = N(T, "joker_fire_targets", 1);
-      var extra = 0.75 / (4 * ctx.spa) + 0.6 / 6 * n * amp;
+      var dotU = UP(T, "joker_dot_uptime", 50);
+      var extra = 0.75 / (4 * ctx.spa) + 0.6 / 6 * n * amp * dotU;
       return { extra: extra, notes: ["Royal Suit (rotation averaged): " +
         "75% King hit / 4 attacks + Fire 0.6x/6s on " + n + " enemy x" +
-        amp.toFixed(2) + " (Queen/King fire, Jack amp; scaling estimated)"] };
+        amp.toFixed(2) + " at " + Math.round(dotU * 100) + "% DoT uptime"] };
     },
     // Every 5 attacks: double-efficiency proc (does not advance the
     // rotation) and +5% Fire damage per activation (cap +50%) - the amp
@@ -1873,7 +1891,8 @@
   });
   A.registerUnitVars("Wild Card (Ace)", [
     V("joker_fire_amp", "Fire amp %", "FireDoT damage bonus (Jack procs + Fifty-Two Bluff, cap 50) - default 25", 0, 50, 25, 5),
-    V("joker_fire_targets", "Fire targets", "Enemies carrying this unit's FireDoT - default 1 (estimated)", 0, 10, 1)
+    V("joker_fire_targets", "Fire targets", "Enemies carrying this unit's FireDoT - default 1 (single-target view)", 0, 10, 1),
+    V("joker_dot_uptime", "FireDoT uptime %", "Share of time the primary target carries this unit's FireDoT - default 50%", 0, 100, 50, 5)
   ]);
 
   /* ====================== WOLF (REVIVED) ====================== */
