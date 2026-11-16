@@ -95,5 +95,6 @@
    "description": "In Imperfect form:\n- Copy 50% base damage of the strongest unit in range\nIn Semiperfect form:\n- This unit gains BioGel on attack\n- Unlock CellAbility1\nBioGel will:\n- Slow enemies by 60% for 5 seconds\n- Stun enemies for 3 seconds on expiry\nIn Perfect form:\nUnlock CellAbility2\nOn Takedown of an enemy inflicted with BioGel:\n- Increase this unit's range by 0.2% (Capacity: 30%)\n- Increase this unit's AoE size by 0.4% (Capacity: 20%)"
   }
  ],
- "abilities": []
+ "abilities": [],
+ "calculated": true
 }

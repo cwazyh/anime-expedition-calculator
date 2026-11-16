@@ -226,6 +226,14 @@
     var upg = unit.upgrades[unit.upgrades.length - 1];
     var BASE_DMG = upg.damage, BASE_SPA = upg.spa, BASE_RNG = upg.range;
     var BASE_CC = upg.crit_chance, BASE_CD = upg.crit_damage;
+    // Leech units (Bioinsect "Genetic Code": copy a % of the strongest
+    // unit's base damage) ship with 0 base damage in the game data, so the
+    // caller passes the copied damage here. It is applied only while the
+    // leech passive is enabled (toggling it off zeroes the unit again).
+    if (ctx.leechDamage != null &&
+        (!T.passive_state || T.passive_state["Genetic Code"] !== false)) {
+      BASE_DMG = ctx.leechDamage;
+    }
     var ARCHETYPE = unit.archetype;
     var RARITY = unit.rarity;
     var UNIT_NAME = unit.unit_name;
@@ -392,29 +400,52 @@
       };
     }
 
-    // best distinct-equipment combo for one trait
-    // (0..SLOTS general slots plus the unit-bound equipment, like the Python version)
-    function bestCombo(traitName, opts) {
+    // ================= bound equipment rounds =================
+    // Game data (UnitEquipmentSlots: Exclusive/Mythic/Secret = 1) allows
+    // exactly ONE unit-bound equipment at a time, so each trait is
+    // evaluated once per bound candidate (one "round" each) and the best
+    // round wins. Units without a bound equipment get a single round with
+    // no bound slot.
+    function boundChoices() { return BOUND.length ? BOUND.slice() : [null]; }
+
+    // best general-equipment combo for one trait with one fixed bound slot
+    function bestWithBound(traitName, bound, opts) {
+      var base = bound ? [bound] : [];
       var best = null;
       var maxK = Math.min(SLOTS, POOL.length);
       for (var k = 0; k <= maxK; k++) {
         var cs = combinations(POOL, k);
         for (var i = 0; i < cs.length; i++) {
-          var c = cs[i];
-          var res = calc(traitName, BOUND.concat(c), opts);
-          if (!best || res.dps > best.res.dps) best = { res: res, combo: c };
+          var res = calc(traitName, base.concat(cs[i]), opts);
+          if (!best || res.dps > best.res.dps) best = { res: res, combo: cs[i] };
         }
+      }
+      return { bound: bound, combo: best.combo, res: best.res };
+    }
+
+    // best distinct-equipment combo for one trait (best round wins)
+    function bestCombo(traitName, opts) {
+      var choices = boundChoices(), best = null;
+      for (var i = 0; i < choices.length; i++) {
+        var r = bestWithBound(traitName, choices[i], opts);
+        if (!best || r.res.dps > best.res.dps) best = r;
       }
       return best;
     }
 
-    // full per-trait table, sorted by DPS descending
+    // full per-trait table, sorted by DPS descending. Every row carries
+    // its bound rounds (one per unit-equipment candidate, best first) so
+    // the UI can show each configuration exactly once.
     function traitTable(opts) {
       var rows = [];
       var tns = Object.keys(traits).sort();
+      var choices = boundChoices();
       for (var i = 0; i < tns.length; i++) {
-        var b = bestCombo(tns[i], opts);
-        rows.push({ trait: tns[i], combo: b.combo, res: b.res });
+        var rounds = [];
+        for (var j = 0; j < choices.length; j++) rounds.push(bestWithBound(tns[i], choices[j], opts));
+        rounds.sort(function (a, b) { return b.res.dps - a.res.dps; });
+        rows.push({ trait: tns[i], rounds: rounds,
+          bound: rounds[0].bound, combo: rounds[0].combo, res: rounds[0].res });
       }
       rows.sort(function (a, b) {
         if (b.res.dps !== a.res.dps) return b.res.dps - a.res.dps;

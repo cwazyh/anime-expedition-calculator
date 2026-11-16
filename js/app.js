@@ -233,10 +233,13 @@
     }
     var c = calcCache[u.unit_name];
     if (u.calculated && c) {
+      // the card shows the winning configuration only: ONE unit-bound
+      // equipment (the round's bound slot) + its general combo
+      var b = c.best.bound ? [c.best.bound] : [];
       return {
         tdps: c.best.res.dps,
         traits: c.table.slice(0, 2).map(function (r) { return r.trait; }),
-        equips: c.calc.info.bound.concat(c.best.combo).map(function (n) { return { name: n }; })
+        equips: b.concat(c.best.combo).map(function (n) { return { name: n }; })
       };
     }
     return {
@@ -588,7 +591,10 @@
         // first renders with no TDPS, then must take its place by DPS)
         applyAndRender();
         // an already open detail modal gains its rarity colors here too
-        if (currentDetail) { var cu = currentUnit(); if (cu) refreshDetail(cu); }
+        if (currentDetail) {
+          var cu = currentUnit();
+          if (cu) { fillVars(cu); refreshDetail(cu); }   // vars gain live options
+        }
         return true;
       });
     }
@@ -610,22 +616,18 @@
    * "Theoretic max" turns every variable to its cap (share 100%).
    * Placements are NOT a variable (always max placements) and equipment
    * passives stay at MAX (Shinigami Sword 15/15).
-   * The choice is stored in localStorage so it survives a reload.
+   * Settings are SESSION-ONLY: a reload always restores every default
+   * (the stale localStorage key from older builds is removed on boot).
    */
   var SETTINGS_KEY = "aec.unitSettings.v1";
   var HYPNOSIS_PASSIVE = "Collapse, Mirror Flower";
+  var LEECH_UNIT = "Bioinsect (Final Form)";
   var unitSettings = {};
   var poolLoaded = false;
 
-  function loadUnitSettings() {
-    try {
-      var raw = window.localStorage.getItem(SETTINGS_KEY);
-      if (raw) unitSettings = JSON.parse(raw) || {};
-    } catch (e) { unitSettings = {}; }
-  }
-  function saveUnitSettings() {
-    try { window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(unitSettings)); }
-    catch (e) { /* private mode: settings stay for this session only */ }
+  function clearLegacySettings() {
+    try { window.localStorage.removeItem(SETTINGS_KEY); }
+    catch (e) { /* private mode: nothing to clear */ }
   }
   function unitSetting(name) {
     var s = unitSettings[name];
@@ -649,6 +651,58 @@
     if (s.passives[HYPNOSIS_PASSIVE] === false) return 0;
     if (s.hypnotized <= 0) return 0;
     return Math.min(1, s.hypnotized / Math.max(1, s.enemiesInRange));
+  }
+  function hasHypnosis(u) {
+    return (u.passives || []).some(function (p) {
+      return (p.display_name || p.name) === HYPNOSIS_PASSIVE;
+    });
+  }
+
+  /* ====================== LEECH SOURCE (BIOINSECT) ======================
+   * Bioinsect ships 0 base damage: "Genetic Code" copies a % of the
+   * strongest unit's base damage. The user picks the source (portraits +
+   * best-build DPS); default = auto, the top-DPS unit on the roster.
+   * Toggling Genetic Code off in the description card zeroes the unit.
+   */
+  function isLeechUnit(u) { return u.unit_name === LEECH_UNIT; }
+
+  function leechUnits() {
+    return units.filter(function (u) { return u.calculated && isLeechUnit(u); });
+  }
+
+  // explicit choice first, otherwise the strongest (top-DPS) other unit
+  function leechSourceUnit(u) {
+    var s = unitSetting(u.unit_name);
+    if (s.leechSource) {
+      for (var i = 0; i < units.length; i++) {
+        if (units[i].unit_name === s.leechSource && !isLeechUnit(units[i]) &&
+            !isFarm(units[i])) return units[i];
+      }
+    }
+    var best = null, bestV = -1;
+    for (var j = 0; j < units.length; j++) {
+      var x = units[j];
+      if (isLeechUnit(x) || isFarm(x) || x.placeholder) continue;
+      var v = resolveCardData(x).tdps;
+      if (v != null && v > bestV) { bestV = v; best = x; }
+    }
+    return best;
+  }
+
+  // copied damage = source max-upgrade base damage x leech %
+  function leechDamageFor(u) {
+    var src = leechSourceUnit(u);
+    if (!src || !src.upgrades || !src.upgrades.length) return 0;
+    var s = unitSetting(u.unit_name);
+    var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
+    var pct = 50;
+    for (var i = 0; i < defs.length; i++) {
+      if (defs[i].key === "bioinsect_leech") {
+        pct = typeof s.vars[defs[i].key] === "number" ? s.vars[defs[i].key] : defs[i].def;
+      }
+    }
+    var upg = src.upgrades[src.upgrades.length - 1];
+    return (upg.damage || 0) * pct / 100;
   }
 
   // calculator overrides built from the unit's Variables
@@ -678,18 +732,36 @@
 
   function computeCalculated() {
     if (!window.AECalc) return;
+    var leech = [];
     units.forEach(function (u) {
       if (!u.calculated || calcCache[u.unit_name] || isFarm(u)) return;
+      // leech units depend on everyone else's DPS -> build them last
+      if (isLeechUnit(u)) { leech.push(u); return; }
+      try { buildCalc(u); }
+      catch (e) { console.error("DPS calculation failed for " + u.unit_name, e); }
+    });
+    leech.forEach(function (u) {
       try { buildCalc(u); }
       catch (e) { console.error("DPS calculation failed for " + u.unit_name, e); }
     });
     poolLoaded = true;
   }
 
-  function buildCalc(u) {
-    var calc = window.AECalc.createCalculator({
-      unit: u, traits: traitData, equipments: equipData, T: unitT(u)
+  // rebuild the leech unit(s) whenever any other unit's DPS may have moved
+  // (its copied damage follows the current top unit / explicit choice)
+  function rebuildLeech() {
+    leechUnits().forEach(function (u) {
+      try { buildCalc(u); }
+      catch (e) { console.error("Leech recalculation failed for " + u.unit_name, e); }
     });
+  }
+
+  function buildCalc(u) {
+    var opts = {
+      unit: u, traits: traitData, equipments: equipData, T: unitT(u)
+    };
+    if (isLeechUnit(u)) opts.leechDamage = leechDamageFor(u);
+    var calc = window.AECalc.createCalculator(opts);
     var table = calc.traitTable();
     if (!table.length) return false;
     calcCache[u.unit_name] = { calc: calc, table: table, best: table[0] };
@@ -705,6 +777,7 @@
     if (!poolLoaded) { dataReady().then(function () { recomputeUnit(u); }); return; }
     try {
       if (buildCalc(u)) scheduleIdle(applyAndRender);
+      if (!isLeechUnit(u)) rebuildLeech();   // the leech copies this number
     } catch (e) { console.error("DPS recalculation failed for " + u.unit_name, e); }
   }
 
@@ -736,79 +809,49 @@
   function fillPassives(u) {
     var all = (u.passives || []).concat(u.abilities || []);
     $("blkPassives").hidden = all.length === 0;
+    var A = window.AECalc;
+    var farm = isFarm(u);
+    var st = unitSetting(u.unit_name);
     $("detailPassives").innerHTML = all.map(function (p) {
-      return '<div class="passive-item"><div class="pname">' +
-        esc(p.display_name || p.name || "") + '</div><div class="pdesc">' +
-        esc(cleanText(fillPlaceholders(p.description, p.effects))) + "</div></div>";
-    }).join("");
-  }
-
-  function fillSummons(u) {
-    var list = u.summons || [];
-    $("blkSummons").hidden = list.length === 0;
-    $("detailSummons").innerHTML = list.map(function (s) {
-      var meta = [s.rarity, s.archetype, s.element].filter(Boolean).join(" · ");
-      return '<span class="data-chip" title="' + esc(meta) + '">' +
-        esc(s.display_name || s.key) + "</span>";
-    }).join("");
-  }
-
-  function fillStatus(u) {
-    var fx = u.status_effects || {};
-    var keys = Object.keys(fx);
-    $("blkStatus").hidden = keys.length === 0;
-    $("detailStatus").innerHTML = keys.map(function (k) {
-      var v = fx[k];
-      return '<span class="data-chip" title="' + esc(cleanText(v.description)) + '">' +
-        esc(v.display_name || k) + "</span>";
+      var name = p.display_name || p.name || "";
+      var on = st.passives[name] !== false;
+      // impact label: anything that does not feed this unit's live number
+      var impact = "";
+      if (farm) impact = '<div class="pimpact">* Does not affect Yen income</div>';
+      else if (A && A.hasNoDps(u.unit_name, name)) {
+        impact = '<div class="pimpact">* Does not affect DPS</div>';
+      } else if (name === HYPNOSIS_PASSIVE || (A && A.hasPassiveModel(u.unit_name, name))) {
+        impact = "";   // feeds the live DPS
+      } else if (!u.calculated) {
+        impact = '<div class="pimpact">* Applied when this unit is calculated</div>';
+      } else {
+        impact = '<div class="pimpact">* Does not affect DPS</div>';
+      }
+      return '<div class="passive-item">' +
+        '<div class="pname">' + esc(name) + "</div>" +
+        '<label class="switch passive-toggle"><input type="checkbox" data-pass="' +
+        esc(name) + '"' + (on ? " checked" : "") +
+        '><span class="slider"></span></label>' +
+        '<div class="pdesc">' +
+        esc(cleanText(fillPlaceholders(p.description, p.effects))) + "</div>" +
+        impact + "</div>";
     }).join("");
   }
 
   function fillVars(u) {
     var box = $("detailVars");
     var s = unitSetting(u.unit_name);
-    var passives = u.passives || [];
-    var abilities = u.abilities || [];
     var html = "";
     var A = window.AECalc;
     var farm = isFarm(u);
     var modeled = !!(A && A.hasAnyModel(u.unit_name));
-    var hyp = passives.some(function (p) {
-      return (p.display_name || p.name) === HYPNOSIS_PASSIVE;
-    });
+    var hyp = hasHypnosis(u);
+    var leech = isLeechUnit(u);
     var defs = A ? A.unitVars(u.unit_name) : [];
 
-    $("blkVars").hidden = !u.calculated && passives.length === 0 && abilities.length === 0;
-
-    // sub-label for one passive/ability row
-    function subFor(name) {
-      if (!u.calculated) return "Applied as soon as this unit's DPS is calculated";
-      if (name === HYPNOSIS_PASSIVE) return "Hypnosis buff - feeds the live DPS";
-      if (A && A.hasNoDps(u.unit_name, name)) return "Doesn't affect dps";
-      if (A && A.hasPassiveModel(u.unit_name, name)) return "Feeds the live DPS";
-      if (farm) return "No effect on Yen income";
-      return "No DPS effect modeled";
-    }
-    function rowFor(name) {
-      var on = s.passives[name] !== false;
-      return '<label class="var-row"><span class="var-info">' +
-        '<span class="var-label">' + esc(name) + "</span>" +
-        '<span class="var-sub">' + subFor(name) + "</span></span>" +
-        '<span class="switch"><input type="checkbox" data-pass="' + esc(name) + '"' +
-        (on ? " checked" : "") + '><span class="slider"></span></span></label>';
-    }
-
-    html += '<div class="var-group">Passives</div>';
-    if (!passives.length) {
-      html += '<div class="ph-note">This unit has no passives.</div>';
-    } else {
-      html += passives.map(function (p) { return rowFor(p.display_name || p.name || ""); }).join("");
-    }
-    if (abilities.length) {
-      html += '<div class="var-group">Abilities</div>';
-      html += abilities.map(function (a) { return rowFor(a.display_name || a.name || ""); }).join("");
-    }
-
+    // NOTE: passives/abilities are NOT listed here anymore - each one has
+    // its toggle on the description card (detailPassives). This block only
+    // carries the numeric Variables of the live models.
     if (u.calculated && farm) {
       html += '<div class="var-group">Variables</div>';
       html += '<div class="var-note">Farm unit: this unit generates <b>Yen every wave</b> ' +
@@ -824,7 +867,7 @@
           '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
           s.hypnotized + '"></div>';
       }
-      if (hyp || modeled) {
+      if (!leech && (hyp || modeled)) {
         html += '<div class="var-row"><span class="var-info">' +
           '<span class="var-label">Enemies in range</span>' +
           '<span class="var-sub">' +
@@ -833,6 +876,7 @@
           '</span></span><input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
           s.enemiesInRange + '"></div>';
       }
+      if (leech) html += leechRow(u, s);
       html += defs.map(function (d) {
         var v = typeof s.vars[d.key] === "number" ? s.vars[d.key] : d.def;
         return '<div class="var-row"><span class="var-info">' +
@@ -841,8 +885,12 @@
           '<input class="var-input" data-var="' + esc(d.key) + '" type="number" min="' + d.min +
           '" max="' + d.max + '" step="' + (d.step || 1) + '" value="' + v + '"></div>';
       }).join("");
+      // ascension buffs exist for Mythic units only
+      var ascTxt = String(u.rarity).toLowerCase() === "mythic"
+        ? "Ascension 3"
+        : "Ascension n/a (Mythic only)";
       html += '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
-        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; Ascension 3 &middot; Potential Z</div>";
+        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; " + ascTxt + " &middot; Potential Z</div>";
       html += '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>';
@@ -853,13 +901,53 @@
                 " hypnotized / " + s.enemiesInRange + " in range)."
               : "Hypnosis buff OFF (" + s.hypnotized + " hypnotized enemies).")
           : "Passives run at steady state (full stacks / typical uptime).") +
-        " Toggle the passives to include or exclude them from the DPS table.</div>";
+        " Flip a switch on a description card to include or exclude that passive " +
+        "from the DPS table.</div>";
     } else if (!u.calculated) {
+      html += '<div class="var-group">Variables</div>';
       html += '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
         "saved and applied as soon as its calculation is available.</div>";
     }
 
     box.innerHTML = html;
+    $("blkVars").hidden = html === "";
+  }
+
+  // leech source picker: portrait + name + best-build DPS per row
+  function leechRow(u, s) {
+    var cur = leechSourceUnit(u);
+    var auto = !s.leechSource;
+    function face(x) {
+      return '<img class="leech-face" src="' + unitImg(x.unit_name) + '" alt="" ' +
+        'loading="lazy" decoding="async" onerror="this.style.display=\'none\'">';
+    }
+    function dpsTxt(x) {
+      var v = resolveCardData(x).tdps;
+      return v == null ? "-" : fmtDps(v);
+    }
+    var opts = [];
+    opts.push('<div class="leech-opt' + (auto ? " sel" : "") + '" data-src="">' +
+      '<span class="leech-face leech-auto">TOP</span>' +
+      '<span class="leech-name">Auto (strongest unit)</span>' +
+      '<span class="leech-dps">' + (cur ? dpsTxt(cur) : "-") + "</span></div>");
+    units.forEach(function (x) {
+      if (isLeechUnit(x) || isFarm(x) || x.placeholder) return;
+      if (resolveCardData(x).tdps == null) return;
+      opts.push('<div class="leech-opt' + (!auto && s.leechSource === x.unit_name ? " sel" : "") +
+        '" data-src="' + esc(x.unit_name) + '">' + face(x) +
+        '<span class="leech-name">' + esc(x.unit_name) + "</span>" +
+        '<span class="leech-dps">' + dpsTxt(x) + "</span></div>");
+    });
+    return '<div class="var-row"><span class="var-info">' +
+      '<span class="var-label">Leech source</span>' +
+      '<span class="var-sub">Unit whose base damage Genetic Code copies - ' +
+      "default Auto (strongest unit)</span></span>" +
+      '<div class="leech-dd">' +
+      '<button type="button" class="leech-btn" id="leechBtn">' +
+      (cur ? face(cur) : '<span class="leech-face leech-auto">TOP</span>') +
+      '<span class="leech-name">' + esc(cur ? cur.unit_name : "None") + "</span>" +
+      '<span class="leech-dps">' + (cur ? dpsTxt(cur) : "-") + "</span></button>" +
+      '<div class="leech-menu" id="leechMenu" hidden>' + opts.join("") + "</div></div></div>";
   }
 
   function fillDps(u) {
@@ -897,39 +985,91 @@
     }
 
     var T = c.calc.T;
-    var bound = c.calc.info.bound;
     var st = unitSetting(u.unit_name);
-    var share = hypShare(u);
-    var hypTxt = share > 0
-      ? "hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
-        "/" + st.enemiesInRange + " hypnotized)"
-      : "hypnosis OFF (" + st.hypnotized + " hypnotized enemies)";
-    var rows = c.table.map(function (r, i) {
-      var combo = bound.concat(r.combo).join(" + ");
+    var table = c.table;
+
+    // trait selector: default = this unit's best trait, one row per bound
+    // round of the selected trait (never the whole trait list at once)
+    var selTrait = st.dpsTrait;
+    var row = null;
+    for (var ti = 0; ti < table.length; ti++) {
+      if (table[ti].trait === selTrait) { row = table[ti]; break; }
+    }
+    if (!row) { row = table[0]; selTrait = st.dpsTrait = row.trait; }
+
+    var hypTxt = "";
+    if (hasHypnosis(u)) {
+      var share = hypShare(u);
+      hypTxt = (share > 0
+        ? "hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
+          "/" + st.enemiesInRange + " hypnotized)"
+        : "hypnosis OFF (" + st.hypnotized + " hypnotized enemies)") + " &middot; ";
+    }
+
+    var rows = row.rounds.map(function (rd, i) {
+      var eq = (rd.bound ? [rd.bound] : []).concat(rd.combo);
+      var eqCell = eq.map(function (n) {
+        return '<span class="eq-chip" title="' + esc(n) + '">' +
+          '<img src="' + equipImg(n) + '" alt="' + esc(n) +
+          '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
+          '<span class="eq-chip-name">' + esc(n) + "</span></span>";
+      }).join("");
       return '<tr class="' + (i === 0 ? "top" : "") + '">' +
-        "<td>" + esc(r.trait) + "</td>" +
-        '<td class="eq-names">' + esc(combo) + "</td>" +
-        '<td class="num">' + fmt(r.res.dmg) + "</td>" +
-        '<td class="num">' + fmt(r.res.spa) + "</td>" +
-        '<td class="num">' + fmtDps(r.res.dps) + "</td></tr>";
+        '<td><span class="tr-cell">' +
+        '<img src="' + traitImg(traitFile(selTrait)) + '" alt="' + esc(selTrait) +
+        '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
+        esc(selTrait) + (row.rounds.length > 1 ? " (round " + (i + 1) + ")" : "") +
+        "</span></td>" +
+        '<td class="eq-logos">' + eqCell + "</td>" +
+        '<td class="num">' + fmt(rd.res.dmg) + "</td>" +
+        '<td class="num">' + fmt(rd.res.spa) + "</td>" +
+        '<td class="num">' + fmtDps(rd.res.dps) + "</td></tr>";
     }).join("");
 
-    // assumptions / estimated values behind the live models (best row)
-    var notes = (c.best && c.best.res && c.best.res.notes) || [];
+    // trait options (the trait list of this unit, best first)
+    var traitOpts = table.map(function (r) {
+      return '<option value="' + esc(r.trait) + '"' +
+        (r.trait === selTrait ? " selected" : "") + ">" + esc(r.trait) + "</option>";
+    }).join("");
+
+    // assumptions / estimated values behind the live models (top round)
+    var notes = (row.rounds[0].res && row.rounds[0].res.notes) || [];
     var notesHTML = notes.length
       ? '<div class="dps-notes"><span class="dps-notes-title">Model notes</span><ul>' +
         notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") +
         "</ul></div>"
       : "";
 
+    var boundTxt = "";
+    var nBound = c.calc.info.bound.length;
+    if (nBound === 1) boundTxt = "Combo includes the unit-bound equipment.";
+    else if (nBound > 1) boundTxt = "Only <b>one</b> unit-bound equipment can be equipped " +
+      "at a time: each row is a separate round with a different bound equipment.";
+
+    var ascTxt = String(u.rarity).toLowerCase() === "mythic"
+      ? "Ascension " + T.ascension
+      : "Ascension n/a (Mythic only)";
+
+    var leechTxt = "";
+    if (isLeechUnit(u)) {
+      var src = leechSourceUnit(u);
+      var explicit = st.leechSource && src && src.unit_name === st.leechSource;
+      var srcName = explicit
+        ? esc(src.unit_name)
+        : (src ? "Auto &rarr; " + esc(src.unit_name) : "none");
+      leechTxt = "Leech source: <b>" + srcName + "</b> (base damage copied by Genetic Code) &middot; ";
+    }
+
     box.innerHTML =
+      '<div class="dps-trait-row"><label for="dpsTrait">Trait</label>' +
+      '<select id="dpsTrait">' + traitOpts + "</select></div>" +
       '<div class="dps-note">Calculated live by <b>js/calculator.js</b> from the unit, trait and ' +
-      "equipment JSONs: Level " + T.level + " &middot; Ascension " + T.ascension +
+      "equipment JSONs: Level " + T.level + " &middot; " + ascTxt +
       " &middot; Potential Z &middot; equipment rolls MAX (incl. passives) &middot; expected crit &middot; " +
-      hypTxt + " &middot; Shinigami Sword 15/15 &middot; placements MAX. " +
-      "Combo includes the unit-bound equipment.</div>" +
+      hypTxt + "Shinigami Sword 15/15 &middot; placements MAX. " +
+      leechTxt + boundTxt + "</div>" +
       '<table class="dps-table"><thead><tr><th>Trait</th><th>Best equipment</th>' +
-      "<th>D</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>" +
+      "<th>Dmg</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>" +
       notesHTML;
   }
 
@@ -969,8 +1109,6 @@
     fillTraits(u);
     fillEquips(u);
     fillPassives(u);
-    fillSummons(u);
-    fillStatus(u);
     fillVars(u);
     fillDps(u);
 
@@ -1090,7 +1228,6 @@
 
   /* ====================== VARIABLES PANEL EVENTS ====================== */
   function applyVars(u) {
-    saveUnitSettings();
     fillVars(u);
     recomputeUnit(u);
   }
@@ -1098,15 +1235,34 @@
   function bindVars() {
     var box = $("detailVars");
 
-    // passive toggles + variable inputs
+    // passive toggles live on the description cards (detailPassives)
+    $("detailPassives").addEventListener("change", function (e) {
+      var u = currentUnit();
+      if (!u) return;
+      var t = e.target;
+      if (t && t.hasAttribute && t.hasAttribute("data-pass")) {
+        unitSetting(u.unit_name).passives[t.getAttribute("data-pass")] = !!t.checked;
+        applyVars(u);
+      }
+    });
+
+    // trait selector of the DPS table
+    $("detailDps").addEventListener("change", function (e) {
+      var u = currentUnit();
+      if (!u) return;
+      if (e.target && e.target.id === "dpsTrait") {
+        unitSetting(u.unit_name).dpsTrait = e.target.value;
+        fillDps(u);
+      }
+    });
+
+    // variable inputs
     box.addEventListener("change", function (e) {
       var u = currentUnit();
       if (!u) return;
       var t = e.target;
       var s = unitSetting(u.unit_name);
-      if (t && t.hasAttribute && t.hasAttribute("data-pass")) {
-        s.passives[t.getAttribute("data-pass")] = !!t.checked;
-      } else if (t && t.id === "varHyp") {
+      if (t && t.id === "varHyp") {
         s.hypnotized = clampInt(t.value, 0, 10, 0);
       } else if (t && t.id === "varRange") {
         s.enemiesInRange = clampInt(t.value, 1, 10, 4);
@@ -1123,13 +1279,27 @@
       applyVars(u);
     });
 
-    // Theoretic max buff / Reset
+    // leech source dropdown + Theoretic max buff / Reset
     box.addEventListener("click", function (e) {
       var u = currentUnit();
       if (!u) return;
+      var s = unitSetting(u.unit_name);
+      var btn = e.target.closest ? e.target.closest("#leechBtn") : null;
+      if (btn) {
+        var m = $("leechMenu");
+        if (m) m.hidden = !m.hidden;
+        return;
+      }
+      var opt = e.target.closest ? e.target.closest(".leech-opt") : null;
+      if (opt) {
+        s.leechSource = opt.getAttribute("data-src") || null;
+        applyVars(u);
+        return;
+      }
+      var mm = $("leechMenu");   // any other click closes the picker
+      if (mm && !mm.hidden) mm.hidden = true;
       var id = e.target && e.target.id;
       if (id !== "varMax" && id !== "varReset") return;
-      var s = unitSetting(u.unit_name);
       var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
       if (id === "varMax") {
         s.passives = {};                                       // every passive ON
@@ -1140,6 +1310,8 @@
         s.passives = {};                                       // every passive ON
         s.hypnotized = 0;                                      // hypnosis buff OFF
         s.enemiesInRange = 4;
+        s.leechSource = null;                                  // leech: auto (top DPS)
+        s.dpsTrait = null;                                     // DPS table: best trait
         for (var j = 0; j < defs.length; j++) s.vars[defs[j].key] = defs[j].def;
       }
       applyVars(u);
@@ -1171,7 +1343,7 @@
   }
 
   function init() {
-    loadUnitSettings();
+    clearLegacySettings();   // settings are session-only: reload = defaults
     bindTooltip();
     bindFilters();
     bindVars();

@@ -242,6 +242,27 @@
     V("atom_ability_cd", "Ability cooldown s", "Seconds between Complete Nuclear casts - default 300 (estimated)", 10, 600, 300, 10)
   ]);
 
+  /* ====================== BIOINSECT (FINAL FORM) ====================== */
+  // The game data ships 0 base damage at every level: all of this unit's
+  // damage comes from Genetic Code copying a % of the strongest unit in
+  // range. The app resolves the source (portrait picker, default = top-DPS
+  // unit) and injects source max-upgrade damage x % as ctx.leechDamage;
+  // toggling Genetic Code off removes the copied damage (DPS 0 again).
+  A.registerNoDps("Bioinsect (Final Form)", ["Passive Absorption"]);
+  A.registerPassives("Bioinsect (Final Form)", {
+    // Damage layer is handled through ctx.leechDamage (see calculator.js):
+    // this model only documents the assumption in the notes.
+    "Genetic Code": function (T) {
+      var pct = N(T, "bioinsect_leech", 50);
+      return { notes: ["Genetic Code: copies " + pct + "% of the strongest " +
+        "unit's base damage (source picked in Variables; this unit's own " +
+        "damage is 0 in the game data). Turn the passive off to drop it."] };
+    }
+  });
+  A.registerUnitVars("Bioinsect (Final Form)", [
+    V("bioinsect_leech", "Leech %", "Share of the source unit's base damage copied by Genetic Code - default 50", 0, 100, 50, 5)
+  ]);
+
   /* ====================== BLACK HEART (REVIVED) ====================== */
   A.registerNoDps("Black Heart (Revived)", ["Accustomed View", "Rise From The Ash"]);
   A.registerPassives("Black Heart (Revived)", {
