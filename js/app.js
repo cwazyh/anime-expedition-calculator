@@ -768,6 +768,7 @@
     var box = $("detailVars");
     var s = unitSetting(u.unit_name);
     var passives = u.passives || [];
+    var abilities = u.abilities || [];
     var html = "";
     var A = window.AECalc;
     var farm = isFarm(u);
@@ -777,27 +778,35 @@
     });
     var defs = A ? A.unitVars(u.unit_name) : [];
 
-    $("blkVars").hidden = !u.calculated && passives.length === 0;
+    $("blkVars").hidden = !u.calculated && passives.length === 0 && abilities.length === 0;
+
+    // sub-label for one passive/ability row
+    function subFor(name) {
+      if (!u.calculated) return "Applied as soon as this unit's DPS is calculated";
+      if (name === HYPNOSIS_PASSIVE) return "Hypnosis buff - feeds the live DPS";
+      if (A && A.hasNoDps(u.unit_name, name)) return "Doesn't affect dps";
+      if (A && A.hasPassiveModel(u.unit_name, name)) return "Feeds the live DPS";
+      if (farm) return "No effect on Yen income";
+      return "No DPS effect modeled";
+    }
+    function rowFor(name) {
+      var on = s.passives[name] !== false;
+      return '<label class="var-row"><span class="var-info">' +
+        '<span class="var-label">' + esc(name) + "</span>" +
+        '<span class="var-sub">' + subFor(name) + "</span></span>" +
+        '<span class="switch"><input type="checkbox" data-pass="' + esc(name) + '"' +
+        (on ? " checked" : "") + '><span class="slider"></span></span></label>';
+    }
 
     html += '<div class="var-group">Passives</div>';
     if (!passives.length) {
       html += '<div class="ph-note">This unit has no passives.</div>';
     } else {
-      html += passives.map(function (p) {
-        var name = p.display_name || p.name || "";
-        var on = s.passives[name] !== false;
-        var sub;
-        if (!u.calculated) sub = "Applied as soon as this unit's DPS is calculated";
-        else if (name === HYPNOSIS_PASSIVE) sub = "Hypnosis buff - feeds the live DPS";
-        else if (A && A.hasPassiveModel(u.unit_name, name)) sub = "Feeds the live DPS";
-        else if (farm) sub = "No effect on Yen income";
-        else sub = "No DPS effect modeled";
-        return '<label class="var-row"><span class="var-info">' +
-          '<span class="var-label">' + esc(name) + "</span>" +
-          '<span class="var-sub">' + sub + "</span></span>" +
-          '<span class="switch"><input type="checkbox" data-pass="' + esc(name) + '"' +
-          (on ? " checked" : "") + '><span class="slider"></span></span></label>';
-      }).join("");
+      html += passives.map(function (p) { return rowFor(p.display_name || p.name || ""); }).join("");
+    }
+    if (abilities.length) {
+      html += '<div class="var-group">Abilities</div>';
+      html += abilities.map(function (a) { return rowFor(a.display_name || a.name || ""); }).join("");
     }
 
     if (u.calculated && farm) {
@@ -905,6 +914,14 @@
         '<td class="num">' + fmtDps(r.res.dps) + "</td></tr>";
     }).join("");
 
+    // assumptions / estimated values behind the live models (best row)
+    var notes = (c.best && c.best.res && c.best.res.notes) || [];
+    var notesHTML = notes.length
+      ? '<div class="dps-notes"><span class="dps-notes-title">Model notes</span><ul>' +
+        notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") +
+        "</ul></div>"
+      : "";
+
     box.innerHTML =
       '<div class="dps-note">Calculated live by <b>js/calculator.js</b> from the unit, trait and ' +
       "equipment JSONs: Level " + T.level + " &middot; Ascension " + T.ascension +
@@ -912,7 +929,8 @@
       hypTxt + " &middot; Shinigami Sword 15/15 &middot; placements MAX. " +
       "Combo includes the unit-bound equipment.</div>" +
       '<table class="dps-table"><thead><tr><th>Trait</th><th>Best equipment</th>' +
-      "<th>D</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      "<th>D</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>" +
+      notesHTML;
   }
 
   function refreshDetail(u) {

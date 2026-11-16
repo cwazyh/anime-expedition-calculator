@@ -1263,6 +1263,28 @@
     .dps-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .dps-table tr.top td { color: var(--ochre); font-weight: 700; }
     .dps-table .eq-names { color: #9a9ab0; font-size: 10.5px; line-height: 1.4; }
+
+    /* Per-unit model notes (assumptions / estimated values) */
+    .dps-notes {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #262636;
+      font-family: var(--font-body);
+      font-size: 10.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .dps-notes-title {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .dps-notes ul { margin: 0; padding-left: 16px; }
+    .dps-notes li { margin-bottom: 2px; }
     .dps-pending {
       font-family: var(--font-body);
       font-size: 12px;
@@ -1490,6 +1512,7 @@
   </div>
 
   <script src="js/calculator.js" defer></script>
+  <script src="js/passives.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>

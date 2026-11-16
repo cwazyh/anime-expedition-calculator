@@ -159,24 +159,46 @@
   }
   function unitVars(unitName) { return UNIT_VARS[unitName] || []; }
 
-  var PM_ZERO = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1 };
+  // Passives that only buff other units (or the team) never change this
+  // unit's own DPS: they are listed with a "Doesn't affect dps" tag and
+  // their toggle is informational only.
+  var NO_DPS = {};          // unit name -> { display name -> true }
 
-  function applyPassiveModels(unitName, T, notes) {
+  function registerNoDps(unitName, names) {
+    var m = NO_DPS[unitName] || (NO_DPS[unitName] = {});
+    for (var i = 0; i < names.length; i++) m[names[i]] = true;
+  }
+  function hasNoDps(unitName, name) {
+    var m = NO_DPS[unitName];
+    return !!(m && m[name]);
+  }
+
+  var PM_ZERO = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1, extra: 0 };
+
+  // ctx = { dmg, spa } of the current level (pre-passive layers): models for
+  // damage-over-time passives convert "X% of damage every N seconds" into an
+  // equivalent mult (extra_dps / base_dps = X/100 * spa / N * targets).
+  // r.extra = extra damage per second as a fraction of this unit's damage
+  // (not a percentage layer: 0.1 = 0.1 * dmg damage every second, added
+  // after the crit/passive multiplication because such instances are not
+  // part of the regular attack).
+  function applyPassiveModels(unitName, T, notes, ctx) {
     var models = PASSIVE_MODELS[unitName];
     if (!models) return PM_ZERO;
-    var out = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1 };
+    var out = { dmg: 1, spa: 1, cc: 0, cd: 0, mult: 1, extra: 0 };
     for (var name in models) {
       if (!Object.prototype.hasOwnProperty.call(models, name)) continue;
       if (T.passive_state && T.passive_state[name] === false) {
         notes.push(name + ": OFF (Variables)");
         continue;
       }
-      var r = models[name](T) || {};
+      var r = models[name](T, ctx) || {};
       out.dmg *= (1 + (r.dmg || 0));
       out.spa *= (1 + (r.spa || 0));
       out.cc += r.cc || 0;
       out.cd += r.cd || 0;
       out.mult *= r.mult || 1;
+      out.extra += r.extra || 0;
       if (r.notes) for (var i = 0; i < r.notes.length; i++) notes.push(r.notes[i]);
     }
     return out;
@@ -307,8 +329,16 @@
       }
 
       // per-unit passive models (dmg/spa/crit layers + extra-damage mult)
+      // ctx carries the pre-passive values so models can reason on them
+      // (e.g. guaranteed-crit passives recompute from the base crit chance)
       var notes = [];
-      var pm = withPassives ? applyPassiveModels(UNIT_NAME, T, notes) : PM_ZERO;
+      var pm = withPassives
+        ? applyPassiveModels(UNIT_NAME, T, notes, {
+            dmg: dmg, spa: spa,
+            cc: BASE_CC + 100 * t_cc + e_cc,
+            cd: BASE_CD + 100 * t_cd + e_cd
+          })
+        : PM_ZERO;
 
       dmg = r1(dmg * type_mult * pm.dmg);
       spa = Math.max(r1(spa * pm.spa), 0.1);
@@ -344,7 +374,9 @@
         passive_mult *= pm.mult;
       }
 
-      var dps = r2(dmg / spa * crit_mult * passive_mult);
+      // extra damage instances (DoT/explosions/summons): r.extra is damage
+      // per second as a fraction of this unit's damage, so extra_dps = extra * dmg
+      var dps = r2(dmg / spa * crit_mult * passive_mult + pm.extra * dmg);
       var rng = r1(BASE_RNG * asc_r * pot_rng * (1 + (t.Range || 0)) *
                    (1 + (withEquipment && combo && combo.length ? e_rng / 100 : 0)));
       return {
@@ -409,6 +441,8 @@
     r2: r2,
     registerPassives: registerPassives,
     registerUnitVars: registerUnitVars,
+    registerNoDps: registerNoDps,
+    hasNoDps: hasNoDps,
     hasPassiveModel: hasPassiveModel,
     hasAnyModel: hasAnyModel,
     unitVars: unitVars
