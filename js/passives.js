@@ -198,7 +198,7 @@
     // (defaults: basic 68% / elite 25% / boss 7%).
     "Archetype Nuclear": function (T) {
       var ub = UP(T, "atom_basic_uptime", 68);
-      var ue = UP(T, "atom_elite_uptime", 25);
+      var ue = UP(T, "atom_elite_uptime", 22);
       var uboss = UP(T, "atom_boss_uptime", 7);
       return { dmg: 0.15 * ub, cc: 40 * ue, cd: 20 * uboss,
         notes: ["Archetype Nuclear: +15% vs Basic at " + Math.round(ub * 100) +
@@ -236,7 +236,7 @@
   });
   A.registerUnitVars("Atom (Totality)", [
     V("atom_basic_uptime", "Basic uptime %", "Share of play time vs Basic enemies (+15% dmg) - default 68%", 0, 100, 68, 5),
-    V("atom_elite_uptime", "Elite uptime %", "Share of play time vs Elite enemies (+40% crit) - default 25%", 0, 100, 25, 5),
+    V("atom_elite_uptime", "Elite uptime %", "Share of play time vs Elite enemies (+40% crit) - default 22%", 0, 100, 22, 5),
     V("atom_boss_uptime", "Boss uptime %", "Share of play time vs a Boss (+20% crit dmg, Phantom Nuclear) - default 7%", 0, 100, 7, 5),
     V("atom_radiation_targets", "Radiation targets", "Enemies kept Irradiated - default 1 (estimated)", 0, 10, 1),
     V("atom_ability_cd", "Ability cooldown s", "Seconds between Complete Nuclear casts - default 300 (estimated)", 10, 600, 300, 10)
@@ -368,12 +368,12 @@
   A.registerPassives("Greed", {
     // +20% damage vs Boss: conditional -> uptime variable.
     "Fox Hunt": function (T) {
-      var u = UP(T, "ban_boss_uptime", 30);
+      var u = UP(T, "ban_boss_uptime", 7);
       return { dmg: 0.20 * u, notes: ["Fox Hunt: +20% vs Boss at " + Math.round(u * 100) + "% uptime"] };
     }
   });
   A.registerUnitVars("Greed", [
-    V("ban_boss_uptime", "Boss uptime %", "Share of time fighting a Boss - default 30%", 0, 100, 30, 5)
+    V("ban_boss_uptime", "Boss uptime %", "Share of time fighting a Boss - default 7%", 0, 100, 7, 5)
   ]);
 
   /* ====================== ICE QUEEN ====================== */
@@ -1597,7 +1597,7 @@
   });
   A.registerUnitVars("Sovereign (Djinn)", [
     V("sinbad_chains", "Chains per attack", "Lightning Djinn chains hitting the main target - default 5", 1, 5, 5),
-    V("sinbad_boss_uptime", "Boss uptime %", "Share of time a Boss is in range - default 30%", 0, 100, 30, 5),
+    V("sinbad_boss_uptime", "Boss uptime %", "Share of time a Boss is in range - default 7%", 0, 100, 7, 5),
     V("sinbad_judgment_ppm", "Strikes / min", "Djinn's Judgment strikes per minute (7s CD) - default 8", 0, 10, 8),
     V("sinbad_judgment_chains", "Strike chains", "Chains from Djinn's Judgment hitting the main target - default 3", 0, 5, 3)
   ]);

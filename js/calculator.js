@@ -164,6 +164,62 @@
     return out;
   }
 
+  /* Which Variables does each passive model read? The site renders every
+   * input inside the passive description card that consumes it, so it needs
+   * the passive -> keys mapping. Each model is executed with a recording
+   * Proxy over T (default / max / min values, both trait branches, all
+   * passives on and off) to catch conditional reads; results are cached
+   * per unit. "enemies_in_range" is kept as a marker key (the site shows
+   * the shared "Enemies in range" row in the first card that reads it). */
+  var PASSIVE_VAR_CACHE = {};   // unit name -> { passive name -> [key, ...] }
+
+  function passiveVarKeys(unitName) {
+    if (PASSIVE_VAR_CACHE[unitName]) return PASSIVE_VAR_CACHE[unitName];
+    var models = PASSIVE_MODELS[unitName];
+    var defs = UNIT_VARS[unitName] || [];
+    var out = {};
+    if (models) {
+      var known = { enemies_in_range: true };
+      for (var i = 0; i < defs.length; i++) known[defs[i].key] = true;
+      var passes = [
+        { trait: "Unbound", val: function (d) { return d.def; }, off: false },
+        { trait: "Unbound", val: function (d) { return d.max; }, off: false },
+        { trait: "Primordial", val: function (d) { return d.min; }, off: false },
+        { trait: "Unbound", val: function (d) { return d.def; }, off: true }
+      ];
+      for (var name in models) {
+        if (!Object.prototype.hasOwnProperty.call(models, name)) continue;
+        var reads = {};
+        var modelFn = models[name];
+        for (var p = 0; p < passes.length; p++) {
+          var base = { passive_state: {}, enemies_in_range: 4 };
+          if (passes[p].off) {
+            var mn = passiveModelNames(unitName);
+            for (var q = 0; q < mn.length; q++) base.passive_state[mn[q]] = false;
+          }
+          for (var j = 0; j < defs.length; j++) base[defs[j].key] = passes[p].val(defs[j]);
+          var proxy = new Proxy(base, {
+            get: function (t, k) {
+              if (typeof k === "string") reads[k] = true;
+              return t[k];
+            }
+          });
+          try {
+            modelFn(proxy, { dmg: 1, spa: 1, cc: 10, cd: 100, mult: 1,
+                             trait: passes[p].trait });
+          } catch (e) { /* introspection only: keep the reads collected so far */ }
+        }
+        var list = [];
+        for (var k in reads) {
+          if (Object.prototype.hasOwnProperty.call(reads, k) && known[k]) list.push(k);
+        }
+        out[name] = list;
+      }
+    }
+    PASSIVE_VAR_CACHE[unitName] = out;
+    return out;
+  }
+
   // Passives that only buff other units (or the team) never change this
   // unit's own DPS: they are listed with a "Doesn't affect dps" tag and
   // their toggle is informational only.
@@ -483,6 +539,7 @@
     hasPassiveModel: hasPassiveModel,
     hasAnyModel: hasAnyModel,
     unitVars: unitVars,
-    passiveModelNames: passiveModelNames
+    passiveModelNames: passiveModelNames,
+    passiveVarKeys: passiveVarKeys
   };
 });

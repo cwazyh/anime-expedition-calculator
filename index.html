@@ -1089,13 +1089,15 @@
       color: #aaa;
       white-space: pre-line;
     }
-    /* on/off toggle pinned to the top-right of the card */
-    .passive-toggle {
+    /* on/off toggle pinned to the top-right of the card
+     * (higher specificity than .switch's position:relative) */
+    .passive-item .passive-toggle {
       position: absolute;
       top: 12px;
       right: 14px;
       margin: 0;
       cursor: pointer;
+      z-index: 1;
     }
     /* impact label: this entry never changes the displayed number */
     .passive-item .pimpact {
@@ -1106,17 +1108,25 @@
       margin-top: 8px;
     }
 
-    /* Variables panel: per-unit passive toggles + calculation variables */
-    .var-group {
-      font-family: var(--font-card);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 16px 0 8px;
+    /* numeric Variables consumed by this passive, inside its card */
+    .passive-item .pvars {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #262636;
     }
-    .var-group:first-child { margin-top: 0; }
+    .passive-item .pvars .var-row {
+      background: #14141e;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+    }
+    .passive-item .pvars .var-row:last-child { margin-bottom: 0; }
+    .passive-item .pvars .var-label { font-size: 12px; }
+    .passive-item .pvars .var-sub { font-size: 10px; }
+    .passive-item .pvars .var-input { max-width: 84px; }
+    /* trailing card for variables no model reads (no toggle on it) */
+    .passive-item.no-toggle { padding-right: 14px; }
+
+    /* Variables panel: per-unit calculation variables (inside the cards) */
     .var-row {
       display: flex;
       align-items: center;
@@ -1358,38 +1368,41 @@
     }
     .dps-table td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .dps-table tr.top td { color: var(--ochre); font-weight: 700; }
+    /* no divider under the last row (header + notes lines are enough) */
+    .dps-table tbody tr:last-child td { border-bottom: 0; }
     .dps-table .eq-names { color: #9a9ab0; font-size: 10.5px; line-height: 1.4; }
 
-    /* trait selector above the DPS table */
-    .dps-trait-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .dps-trait-row label {
-      font-family: var(--font-card);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .dps-trait-row select {
-      flex: 1;
-      min-width: 0;
+    /* trait selector inside the DPS table header */
+    .dps-table .th-trait { padding: 4px 8px; }
+    .dps-table .th-select {
+      width: 100%;
+      min-width: 110px;
       background: #0d0d14;
       border: 1px solid #262636;
-      border-radius: 8px;
+      border-radius: 6px;
       color: #ddd;
       font-family: var(--font-body);
-      font-size: 12px;
-      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: none;
+      padding: 4px 6px;
       outline: none;
       cursor: pointer;
+      transition: border-color .15s ease;
     }
-    .dps-trait-row select:focus { border-color: var(--ochre); }
-    .dps-trait-row select option { background: #191919; color: #fff; }
+    .dps-table .th-select:hover, .dps-table .th-select:focus { border-color: var(--ochre); }
+    .dps-table .th-select option { background: #191919; color: #fff; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     /* trait + equipment logo cells of the DPS table */
     .dps-table .tr-cell {
@@ -1658,10 +1671,6 @@
         <div class="detail-block" id="blkPassives">
           <div class="detail-section-title">Passives</div>
           <div id="detailPassives"></div>
-        </div>
-        <div class="detail-block" id="blkVars">
-          <div class="detail-section-title">Variables</div>
-          <div id="detailVars"></div>
         </div>
         <div class="detail-block" id="blkDps" hidden>
           <div class="detail-section-title">DPS Calculation</div>

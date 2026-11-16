@@ -593,7 +593,7 @@
         // an already open detail modal gains its rarity colors here too
         if (currentDetail) {
           var cu = currentUnit();
-          if (cu) { fillVars(cu); refreshDetail(cu); }   // vars gain live options
+          if (cu) { fillPassives(cu); refreshDetail(cu); }   // vars gain live options
         }
         return true;
       });
@@ -808,11 +808,53 @@
 
   function fillPassives(u) {
     var all = (u.passives || []).concat(u.abilities || []);
-    $("blkPassives").hidden = all.length === 0;
     var A = window.AECalc;
     var farm = isFarm(u);
     var st = unitSetting(u.unit_name);
-    $("detailPassives").innerHTML = all.map(function (p) {
+    var hyp = hasHypnosis(u);
+    var leech = isLeechUnit(u);
+    var modeled = !!(A && A.hasAnyModel(u.unit_name));
+    var defs = A ? A.unitVars(u.unit_name) : [];
+    var varMap = (A && A.passiveVarKeys) ? A.passiveVarKeys(u.unit_name) : {};
+    var claimed = {};            // variable keys already rendered in a card
+    var rangeDone = hyp;         // hypnosis card owns the range row when present
+    var share = hypShare(u);
+
+    function defRow(d) {
+      var v = typeof st.vars[d.key] === "number" ? st.vars[d.key] : d.def;
+      return '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">' + esc(d.label) + "</span>" +
+        '<span class="var-sub">' + esc(d.sub || "") + "</span></span>" +
+        '<input class="var-input" data-var="' + esc(d.key) + '" type="number" min="' + d.min +
+        '" max="' + d.max + '" step="' + (d.step || 1) + '" value="' + v + '"></div>';
+    }
+
+    function rangeRow() {
+      rangeDone = true;
+      return '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Enemies in range</span>' +
+        '<span class="var-sub">' +
+        (hyp ? "Denominator of the hypnosis share - default 4"
+             : "Enemies assumed in range for stack-based passives - default 4") +
+        "</span></span>" +
+        '<input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
+        st.enemiesInRange + '"></div>';
+    }
+
+    function hypRows() {
+      return '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Hypnotized enemies</span>' +
+        '<span class="var-sub">Enemies taking extra damage from Hypnosis - default 0 (buff off)</span>' +
+        '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
+        st.hypnotized + '"></div>' + rangeRow();
+    }
+
+    function defByKey(key) {
+      for (var i = 0; i < defs.length; i++) if (defs[i].key === key) return defs[i];
+      return null;
+    }
+
+    var cards = all.map(function (p) {
       var name = p.display_name || p.name || "";
       var on = st.passives[name] !== false;
       // impact label: anything that does not feed this unit's live number
@@ -827,6 +869,24 @@
       } else {
         impact = '<div class="pimpact">* Does not affect DPS</div>';
       }
+      // numeric Variables consumed by THIS model, rendered inside its card
+      var rows = [];
+      if (hyp && name === HYPNOSIS_PASSIVE) rows.push(hypRows());
+      if (leech && name === "Genetic Code") rows.push(leechRow(u, st));
+      var keys = varMap[name] || [];
+      for (var ki = 0; ki < keys.length; ki++) {
+        var k = keys[ki];
+        if (k === "enemies_in_range") {
+          if (!rangeDone) rows.push(rangeRow());
+          continue;
+        }
+        if (claimed[k]) continue;
+        var d = defByKey(k);
+        if (!d) continue;
+        claimed[k] = true;
+        rows.push(defRow(d));
+      }
+      var pvars = rows.length ? '<div class="pvars">' + rows.join("") + "</div>" : "";
       return '<div class="passive-item">' +
         '<div class="pname">' + esc(name) + "</div>" +
         '<label class="switch passive-toggle"><input type="checkbox" data-pass="' +
@@ -834,83 +894,52 @@
         '><span class="slider"></span></label>' +
         '<div class="pdesc">' +
         esc(cleanText(fillPlaceholders(p.description, p.effects))) + "</div>" +
-        impact + "</div>";
+        pvars + impact + "</div>";
     }).join("");
-  }
 
-  function fillVars(u) {
-    var box = $("detailVars");
-    var s = unitSetting(u.unit_name);
-    var html = "";
-    var A = window.AECalc;
-    var farm = isFarm(u);
-    var modeled = !!(A && A.hasAnyModel(u.unit_name));
-    var hyp = hasHypnosis(u);
-    var leech = isLeechUnit(u);
-    var defs = A ? A.unitVars(u.unit_name) : [];
+    // variables no model reads (or leftover) get their own trailing card
+    var others = [];
+    for (var di = 0; di < defs.length; di++) {
+      if (!claimed[defs[di].key]) others.push(defRow(defs[di]));
+    }
+    if (others.length) {
+      cards += '<div class="passive-item no-toggle">' +
+        '<div class="pname">Other variables</div>' +
+        '<div class="pvars">' + others.join("") + "</div></div>";
+    }
 
-    // NOTE: passives/abilities are NOT listed here anymore - each one has
-    // its toggle on the description card (detailPassives). This block only
-    // carries the numeric Variables of the live models.
+    // fixed assumptions + Theoretic max / Reset, right under the cards
+    var tail = "";
     if (u.calculated && farm) {
-      html += '<div class="var-group">Variables</div>';
-      html += '<div class="var-note">Farm unit: this unit generates <b>Yen every wave</b> ' +
+      tail = '<div class="var-note">Farm unit: this unit generates <b>Yen every wave</b> ' +
         "instead of dealing damage, so passives never change its income. Best equipment: " +
         "Economist&rsquo;s Coin (returns 10% of the Yen spent during a wave, max roll).</div>";
     } else if (u.calculated && (hyp || modeled || defs.length)) {
-      var share = hypShare(u);
-      html += '<div class="var-group">Variables</div>';
-      if (hyp) {
-        html += '<div class="var-row"><span class="var-info">' +
-          '<span class="var-label">Hypnotized enemies</span>' +
-          '<span class="var-sub">Enemies taking extra damage from Hypnosis - default 0 (buff off)</span>' +
-          '</span><input class="var-input" id="varHyp" type="number" min="0" max="10" step="1" value="' +
-          s.hypnotized + '"></div>';
-      }
-      if (!leech && (hyp || modeled)) {
-        html += '<div class="var-row"><span class="var-info">' +
-          '<span class="var-label">Enemies in range</span>' +
-          '<span class="var-sub">' +
-          (hyp ? "Denominator of the hypnosis share - default 4"
-               : "Enemies assumed in range for stack-based passives - default 4") +
-          '</span></span><input class="var-input" id="varRange" type="number" min="1" max="10" step="1" value="' +
-          s.enemiesInRange + '"></div>';
-      }
-      if (leech) html += leechRow(u, s);
-      html += defs.map(function (d) {
-        var v = typeof s.vars[d.key] === "number" ? s.vars[d.key] : d.def;
-        return '<div class="var-row"><span class="var-info">' +
-          '<span class="var-label">' + esc(d.label) + "</span>" +
-          '<span class="var-sub">' + esc(d.sub || "") + "</span></span>" +
-          '<input class="var-input" data-var="' + esc(d.key) + '" type="number" min="' + d.min +
-          '" max="' + d.max + '" step="' + (d.step || 1) + '" value="' + v + '"></div>';
-      }).join("");
-      // ascension buffs exist for Mythic units only
       var ascTxt = String(u.rarity).toLowerCase() === "mythic"
         ? "Ascension 3"
         : "Ascension n/a (Mythic only)";
-      html += '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
-        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; " + ascTxt + " &middot; Potential Z</div>";
-      html += '<div class="var-actions">' +
+      tail = '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
+        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; " + ascTxt + " &middot; Potential Z</div>" +
+        '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
-        '<button type="button" class="var-btn" id="varReset">Reset</button></div>';
-      html += '<div class="var-note">' +
+        '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
+        '<div class="var-note">' +
         (hyp
           ? (share > 0
-              ? "Hypnosis share " + Math.round(share * 100) + "% (" + s.hypnotized +
-                " hypnotized / " + s.enemiesInRange + " in range)."
-              : "Hypnosis buff OFF (" + s.hypnotized + " hypnotized enemies).")
+              ? "Hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
+                " hypnotized / " + st.enemiesInRange + " in range)."
+              : "Hypnosis buff OFF (" + st.hypnotized + " hypnotized enemies).")
           : "Passives run at steady state (full stacks / typical uptime).") +
         " Flip a switch on a description card to include or exclude that passive " +
         "from the DPS table.</div>";
     } else if (!u.calculated) {
-      html += '<div class="var-group">Variables</div>';
-      html += '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
+      tail = '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
         "saved and applied as soon as its calculation is available.</div>";
     }
 
-    box.innerHTML = html;
-    $("blkVars").hidden = html === "";
+    var html = cards + tail;
+    $("detailPassives").innerHTML = html;
+    $("blkPassives").hidden = html === "";
   }
 
   // leech source picker: portrait + name + best-build DPS per row
@@ -1061,14 +1090,15 @@
     }
 
     box.innerHTML =
-      '<div class="dps-trait-row"><label for="dpsTrait">Trait</label>' +
-      '<select id="dpsTrait">' + traitOpts + "</select></div>" +
       '<div class="dps-note">Calculated live by <b>js/calculator.js</b> from the unit, trait and ' +
       "equipment JSONs: Level " + T.level + " &middot; " + ascTxt +
       " &middot; Potential Z &middot; equipment rolls MAX (incl. passives) &middot; expected crit &middot; " +
       hypTxt + "Shinigami Sword 15/15 &middot; placements MAX. " +
       leechTxt + boundTxt + "</div>" +
-      '<table class="dps-table"><thead><tr><th>Trait</th><th>Best equipment</th>' +
+      '<table class="dps-table"><thead><tr>' +
+      '<th class="th-trait"><label class="sr-only" for="dpsTrait">Trait</label>' +
+      '<select id="dpsTrait" class="th-select">' + traitOpts + "</select></th>" +
+      "<th>Best equipment</th>" +
       "<th>Dmg</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>" +
       notesHTML;
   }
@@ -1109,7 +1139,6 @@
     fillTraits(u);
     fillEquips(u);
     fillPassives(u);
-    fillVars(u);
     fillDps(u);
 
     $("detailOverlay").classList.add("open");
@@ -1228,12 +1257,13 @@
 
   /* ====================== VARIABLES PANEL EVENTS ====================== */
   function applyVars(u) {
-    fillVars(u);
+    fillPassives(u);
     recomputeUnit(u);
   }
 
   function bindVars() {
-    var box = $("detailVars");
+    // variables now live inside the passive description cards
+    var box = $("detailPassives");
 
     // passive toggles live on the description cards (detailPassives)
     $("detailPassives").addEventListener("change", function (e) {
