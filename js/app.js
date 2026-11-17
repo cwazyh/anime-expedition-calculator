@@ -953,18 +953,18 @@
         "instead of dealing damage, so passives never change its income. Best equipment: " +
         "Economist&rsquo;s Coin (returns 10% of the Yen spent during a wave, max roll).</div>";
     } else if (u.calculated && (hyp || modeled || defs.length)) {
+      // only the live hypnosis share readout survives here (a variable
+      // value, not an explanatory note)
+      var hypNote = hyp
+        ? (share > 0
+            ? "Hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
+              " hypnotized / " + st.enemiesInRange + " in range)."
+            : "Hypnosis buff OFF (" + st.hypnotized + " hypnotized enemies).")
+        : "";
       tail = '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
-        '<div class="var-note">' +
-        (hyp
-          ? (share > 0
-              ? "Hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
-                " hypnotized / " + st.enemiesInRange + " in range)."
-              : "Hypnosis buff OFF (" + st.hypnotized + " hypnotized enemies).")
-          : "Passives run at steady state (full stacks / typical uptime).") +
-        " Flip a switch on a description card to include or exclude that passive " +
-        "from the live DPS.</div>";
+        (hypNote ? '<div class="var-note">' + hypNote + "</div>" : "");
     } else if (!u.calculated) {
       tail = '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
         "saved and applied as soon as its calculation is available.</div>";
