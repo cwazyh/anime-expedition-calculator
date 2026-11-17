@@ -1018,6 +1018,7 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      margin-bottom: 14px;   /* spacing to the equipment row below */
     }
     .detail-trait {
       display: flex;
@@ -1114,10 +1115,15 @@
       padding-top: 10px;
       border-top: 1px dashed #262636;
     }
+    /* the card's 62px right padding is only reserved for the top-right
+     * toggle: bleed the variable rows back into it so they span the full
+     * card width left -> right instead of being cut short */
+    .passive-item:not(.no-toggle) .pvars { margin-right: -48px; }
     .passive-item .pvars .var-row {
       background: #14141e;
       padding: 8px 12px;
       margin-bottom: 6px;
+      min-width: 0;
     }
     .passive-item .pvars .var-row:last-child { margin-bottom: 0; }
     .passive-item .pvars .var-label { font-size: 12px; }
@@ -1247,17 +1253,6 @@
     .leech-opt:hover { background: #1b1b28; }
     .leech-opt.sel { background: rgba(255, 170, 45, .12); }
     .leech-opt.sel .leech-name { color: var(--ochre); font-weight: 600; }
-    .var-fixed {
-      font-family: var(--font-body);
-      font-size: 11px;
-      color: var(--muted);
-      background: #0d0d14;
-      border: 1px dashed #262636;
-      border-radius: 10px;
-      padding: 9px 14px;
-      margin: 10px 0;
-      line-height: 1.6;
-    }
     .var-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
     .var-btn {
       font-family: var(--font-card);
@@ -1336,14 +1331,7 @@
       cursor: default;
     }
 
-    /* Live DPS calculation table (calculated units) */
-    .dps-note {
-      font-family: var(--font-body);
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.55;
-      margin-bottom: 10px;
-    }
+    /* Upgrade economics table (farm units only) */
     .dps-table {
       width: 100%;
       border-collapse: collapse;
@@ -1370,29 +1358,41 @@
     .dps-table tr.top td { color: var(--ochre); font-weight: 700; }
     /* no divider under the last row (header + notes lines are enough) */
     .dps-table tbody tr:last-child td { border-bottom: 0; }
-    .dps-table .eq-names { color: #9a9ab0; font-size: 10.5px; line-height: 1.4; }
 
-    /* trait selector inside the DPS table header */
-    .dps-table .th-trait { padding: 4px 8px; }
-    .dps-table .th-select {
-      width: 100%;
-      min-width: 110px;
+    /* trait selector of the Best build block */
+    .build-sel {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .build-sel[hidden] { display: none; }
+    .build-sel-label {
+      font-family: var(--font-card);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .th-select {
+      flex: 0 1 320px;
+      min-width: 170px;
       background: #0d0d14;
       border: 1px solid #262636;
       border-radius: 6px;
       color: #ddd;
       font-family: var(--font-body);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.3px;
-      text-transform: none;
-      padding: 4px 6px;
+      padding: 7px 8px;
       outline: none;
       cursor: pointer;
       transition: border-color .15s ease;
     }
-    .dps-table .th-select:hover, .dps-table .th-select:focus { border-color: var(--ochre); }
-    .dps-table .th-select option { background: #191919; color: #fff; }
+    .th-select:hover, .th-select:focus { border-color: var(--ochre); }
+    .th-select option { background: #191919; color: #fff; }
 
     .sr-only {
       position: absolute;
@@ -1402,75 +1402,6 @@
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border: 0;
-    }
-
-    /* trait + equipment logo cells of the DPS table */
-    .dps-table .tr-cell {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      white-space: nowrap;
-    }
-    .dps-table .tr-cell img {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      object-fit: contain;
-    }
-    .dps-table .eq-logos { display: flex; flex-wrap: wrap; gap: 6px; }
-    .dps-table .eq-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: #14141e;
-      border: 1px solid #262636;
-      border-radius: 6px;
-      padding: 2px 7px 2px 4px;
-      max-width: 160px;
-    }
-    .dps-table .eq-chip img {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-    .dps-table .eq-chip-name {
-      color: #9a9ab0;
-      font-size: 10px;
-      line-height: 1.3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .dps-table tr.top .eq-chip-name { color: #c9c9d8; }
-
-    /* Per-unit model notes (assumptions / estimated values) */
-    .dps-notes {
-      margin-top: 12px;
-      padding-top: 10px;
-      border-top: 1px solid #262636;
-      font-family: var(--font-body);
-      font-size: 10.5px;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-    .dps-notes-title {
-      display: block;
-      font-size: 9.5px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
-    .dps-notes ul { margin: 0; padding-left: 16px; }
-    .dps-notes li { margin-bottom: 2px; }
-    .dps-pending {
-      font-family: var(--font-body);
-      font-size: 12px;
-      color: var(--muted);
-      padding: 10px 0;
     }
 
     .detail-close {
@@ -1660,12 +1591,13 @@
         </div>
       </div>
       <div class="detail-bottom">
-        <div class="detail-block" id="blkTraits">
-          <div class="detail-section-title">Suggested Traits</div>
+        <div class="detail-block" id="blkBuild">
+          <div class="detail-section-title">Best build</div>
+          <div class="build-sel" id="buildSel" hidden>
+            <label class="build-sel-label" for="dpsTrait">Trait</label>
+            <select id="dpsTrait" class="th-select"></select>
+          </div>
           <div class="detail-traits" id="detailTraits"></div>
-        </div>
-        <div class="detail-block" id="blkEquips">
-          <div class="detail-section-title">Equipment</div>
           <div class="detail-equips" id="detailEquips"></div>
         </div>
         <div class="detail-block" id="blkPassives">
@@ -1673,7 +1605,7 @@
           <div id="detailPassives"></div>
         </div>
         <div class="detail-block" id="blkDps" hidden>
-          <div class="detail-section-title">DPS Calculation</div>
+          <div class="detail-section-title">Upgrades</div>
           <div id="detailDps"></div>
         </div>
       </div>

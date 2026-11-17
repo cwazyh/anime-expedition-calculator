@@ -782,28 +782,66 @@
   }
 
   /* ============================== DETAIL MODAL ============================== */
-  function fillTraits(u) {
+  /* "Best build" block: ONE trait (the selected one, default = best) with
+   * its winning equipment combo, plus the trait selector listing every
+   * trait of the unit numbered best -> worst. Picking a trait re-renders
+   * the block with that trait's own build. */
+  function fillBuild(u) {
+    var c = calcCache[u.unit_name];
+    var st = unitSetting(u.unit_name);
     var cd = resolveCardData(u);
-    $("detailTraits").innerHTML = cd.traits.length === 0
-      ? '<div class="ph-note">Traits TBD</div>'
-      : cd.traits.map(function (t, i) {
-          var accent = traitColorHex(t);
+    var traitName = null, rank = 1, equips = null;
+
+    if (c && c.table && c.table.length) {
+      var row = null, idx = 0;
+      for (var i = 0; i < c.table.length; i++) {
+        if (c.table[i].trait === st.dpsTrait) { row = c.table[i]; idx = i; break; }
+      }
+      if (!row) { row = c.table[0]; idx = 0; st.dpsTrait = row.trait; }
+      traitName = row.trait;
+      rank = idx + 1;
+      equips = (row.bound ? [row.bound] : []).concat(row.combo).map(function (n) {
+        return { name: n };
+      });
+      $("buildSel").hidden = false;
+      $("dpsTrait").innerHTML = c.table.map(function (r, ti) {
+        return '<option value="' + esc(r.trait) + '"' +
+          (r.trait === row.trait ? " selected" : "") + ">#" + (ti + 1) + " " +
+          esc(r.trait) + "</option>";
+      }).join("");
+    } else {
+      // no calculator yet (placeholder / farm / pool still loading)
+      $("buildSel").hidden = true;
+      $("dpsTrait").innerHTML = "";
+      traitName = cd.traits[0] || null;
+      equips = cd.equips;
+    }
+
+    $("detailTraits").innerHTML = traitName
+      ? (function () {
+          var accent = traitColorHex(traitName);
           return '<div class="detail-trait"' +
             (accent ? ' style="--tr-c:' + accent + '"' : "") +
-            '><span class="trait-wrap" data-trait="' + esc(t) + '">' +
-            '<div class="' + traitIconCls(t) + '"><img src="' + traitImg(traitFile(t)) +
-            '" alt="' + esc(t) +
+            '><span class="trait-wrap" data-trait="' + esc(traitName) + '">' +
+            '<div class="' + traitIconCls(traitName) + '"><img src="' +
+            traitImg(traitFile(traitName)) + '" alt="' + esc(traitName) +
             '" onerror="this.style.display=\'none\'"></div>' +
-            '<span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>' +
-            '<span class="tname">' + esc(t) + (i === 0 ? " (Best)" : " (2nd)") + "</span></div>";
-        }).join("");
-  }
+            '<span class="trait-rank rank-' + (rank === 1 ? 1 : 2) + '">#' + rank +
+            '</span></span><span class="tname">' + esc(traitName) + "</span></div>";
+        })()
+      : '<div class="ph-note">Traits TBD</div>';
 
-  function fillEquips(u) {
-    var cd = resolveCardData(u);
-    $("detailEquips").innerHTML = cd.equips.length === 0
-      ? '<div class="ph-note">Equipment TBD</div>'
-      : equipsHTML(cd);
+    $("detailEquips").innerHTML = (equips && equips.length)
+      ? equipsHTML({ equips: equips })
+      : '<div class="ph-note">Equipment TBD</div>';
+
+    // calculator not built yet (pool still loading): fill once it lands
+    // (!poolLoaded guards against retrying forever if the build failed)
+    if (u.calculated && !isFarm(u) && !c && !poolLoaded) {
+      ensureCalc(u).then(function () {
+        if (currentDetail === u.unit_name) refreshDetail(u);
+      });
+    }
   }
 
   function fillPassives(u) {
@@ -915,12 +953,7 @@
         "instead of dealing damage, so passives never change its income. Best equipment: " +
         "Economist&rsquo;s Coin (returns 10% of the Yen spent during a wave, max roll).</div>";
     } else if (u.calculated && (hyp || modeled || defs.length)) {
-      var ascTxt = String(u.rarity).toLowerCase() === "mythic"
-        ? "Ascension 3"
-        : "Ascension n/a (Mythic only)";
-      tail = '<div class="var-fixed">Placements: MAX (not a variable) &middot; Equipment passives: ' +
-        "MAX (Shinigami Sword 15/15) &middot; Level 50 &middot; " + ascTxt + " &middot; Potential Z</div>" +
-        '<div class="var-actions">' +
+      tail = '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
         '<div class="var-note">' +
@@ -931,7 +964,7 @@
               : "Hypnosis buff OFF (" + st.hypnotized + " hypnotized enemies).")
           : "Passives run at steady state (full stacks / typical uptime).") +
         " Flip a switch on a description card to include or exclude that passive " +
-        "from the DPS table.</div>";
+        "from the live DPS.</div>";
     } else if (!u.calculated) {
       tail = '<div class="var-note">This unit has no live DPS yet: the settings above are ' +
         "saved and applied as soon as its calculation is available.</div>";
@@ -979,136 +1012,33 @@
       '<div class="leech-menu" id="leechMenu" hidden>' + opts.join("") + "</div></div></div>";
   }
 
+  /* Only farm units keep a block here: their per-level upgrade economics
+   * (Level / Cost / Yen per wave). Normal units show NO DPS table, no
+   * "calculated live" paragraph and no model notes anymore - the
+   * "Best build" block carries the summary instead. */
   function fillDps(u) {
     var box = $("detailDps");
-    if (!u.calculated) { $("blkDps").hidden = true; return; }
+    if (!u.calculated || !isFarm(u)) { $("blkDps").hidden = true; return; }
     $("blkDps").hidden = false;
 
-    if (isFarm(u)) {
-      var ups = u.upgrades || [];
-      var rows = ups.map(function (x, i) {
-        var last = i === ups.length - 1;
-        return '<tr class="' + (last ? "top" : "") + '">' +
-          "<td>" + (i === 0 ? "Deploy" : "Upgrade " + i) + "</td>" +
-          '<td class="num">' + yen(x.cost) + "</td>" +
-          '<td class="num">' + yen(x.farm) + "</td></tr>";
-      }).join("");
-      box.innerHTML =
-        '<div class="dps-note">Farm unit: generates <b>Yen every wave</b> (game data ' +
-        "UpgradeInfo.Farm) instead of dealing damage &middot; no DPS table. Best equipment: " +
-        "<b>Economist&rsquo;s Coin</b> &mdash; returns 10% of the Yen spent during a wave " +
-        "(max roll, Per Player, does not stack). Final income and total cost are shown on " +
-        "the card.</div>" +
-        '<table class="dps-table"><thead><tr><th>Level</th><th>Cost</th>' +
-        "<th>Yen / wave</th></tr></thead><tbody>" + rows + "</tbody></table>";
-      return;
-    }
-
-    var c = calcCache[u.unit_name];
-    if (!c) {
-      box.innerHTML = '<div class="dps-pending">Calculating live DPS from the loaded data...</div>';
-      ensureCalc(u).then(function () {
-        if (currentDetail === u.unit_name) refreshDetail(u);
-      });
-      return;
-    }
-
-    var T = c.calc.T;
-    var st = unitSetting(u.unit_name);
-    var table = c.table;
-
-    // trait selector: default = this unit's best trait, one row per bound
-    // round of the selected trait (never the whole trait list at once)
-    var selTrait = st.dpsTrait;
-    var row = null;
-    for (var ti = 0; ti < table.length; ti++) {
-      if (table[ti].trait === selTrait) { row = table[ti]; break; }
-    }
-    if (!row) { row = table[0]; selTrait = st.dpsTrait = row.trait; }
-
-    var hypTxt = "";
-    if (hasHypnosis(u)) {
-      var share = hypShare(u);
-      hypTxt = (share > 0
-        ? "hypnosis share " + Math.round(share * 100) + "% (" + st.hypnotized +
-          "/" + st.enemiesInRange + " hypnotized)"
-        : "hypnosis OFF (" + st.hypnotized + " hypnotized enemies)") + " &middot; ";
-    }
-
-    var rows = row.rounds.map(function (rd, i) {
-      var eq = (rd.bound ? [rd.bound] : []).concat(rd.combo);
-      var eqCell = eq.map(function (n) {
-        return '<span class="eq-chip" title="' + esc(n) + '">' +
-          '<img src="' + equipImg(n) + '" alt="' + esc(n) +
-          '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
-          '<span class="eq-chip-name">' + esc(n) + "</span></span>";
-      }).join("");
-      return '<tr class="' + (i === 0 ? "top" : "") + '">' +
-        '<td><span class="tr-cell">' +
-        '<img src="' + traitImg(traitFile(selTrait)) + '" alt="' + esc(selTrait) +
-        '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
-        esc(selTrait) + (row.rounds.length > 1 ? " (round " + (i + 1) + ")" : "") +
-        "</span></td>" +
-        '<td class="eq-logos">' + eqCell + "</td>" +
-        '<td class="num">' + fmt(rd.res.dmg) + "</td>" +
-        '<td class="num">' + fmt(rd.res.spa) + "</td>" +
-        '<td class="num">' + fmtDps(rd.res.dps) + "</td></tr>";
+    var ups = u.upgrades || [];
+    var rows = ups.map(function (x, i) {
+      var last = i === ups.length - 1;
+      return '<tr class="' + (last ? "top" : "") + '">' +
+        "<td>" + (i === 0 ? "Deploy" : "Upgrade " + i) + "</td>" +
+        '<td class="num">' + yen(x.cost) + "</td>" +
+        '<td class="num">' + yen(x.farm) + "</td></tr>";
     }).join("");
-
-    // trait options (the trait list of this unit, best first)
-    var traitOpts = table.map(function (r) {
-      return '<option value="' + esc(r.trait) + '"' +
-        (r.trait === selTrait ? " selected" : "") + ">" + esc(r.trait) + "</option>";
-    }).join("");
-
-    // assumptions / estimated values behind the live models (top round)
-    var notes = (row.rounds[0].res && row.rounds[0].res.notes) || [];
-    var notesHTML = notes.length
-      ? '<div class="dps-notes"><span class="dps-notes-title">Model notes</span><ul>' +
-        notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") +
-        "</ul></div>"
-      : "";
-
-    var boundTxt = "";
-    var nBound = c.calc.info.bound.length;
-    if (nBound === 1) boundTxt = "Combo includes the unit-bound equipment.";
-    else if (nBound > 1) boundTxt = "Only <b>one</b> unit-bound equipment can be equipped " +
-      "at a time: each row is a separate round with a different bound equipment.";
-
-    var ascTxt = String(u.rarity).toLowerCase() === "mythic"
-      ? "Ascension " + T.ascension
-      : "Ascension n/a (Mythic only)";
-
-    var leechTxt = "";
-    if (isLeechUnit(u)) {
-      var src = leechSourceUnit(u);
-      var explicit = st.leechSource && src && src.unit_name === st.leechSource;
-      var srcName = explicit
-        ? esc(src.unit_name)
-        : (src ? "Auto &rarr; " + esc(src.unit_name) : "none");
-      leechTxt = "Leech source: <b>" + srcName + "</b> (base damage copied by Genetic Code) &middot; ";
-    }
-
     box.innerHTML =
-      '<div class="dps-note">Calculated live by <b>js/calculator.js</b> from the unit, trait and ' +
-      "equipment JSONs: Level " + T.level + " &middot; " + ascTxt +
-      " &middot; Potential Z &middot; equipment rolls MAX (incl. passives) &middot; expected crit &middot; " +
-      hypTxt + "Shinigami Sword 15/15 &middot; placements MAX. " +
-      leechTxt + boundTxt + "</div>" +
-      '<table class="dps-table"><thead><tr>' +
-      '<th class="th-trait"><label class="sr-only" for="dpsTrait">Trait</label>' +
-      '<select id="dpsTrait" class="th-select">' + traitOpts + "</select></th>" +
-      "<th>Best equipment</th>" +
-      "<th>Dmg</th><th>SPA</th><th>DPS</th></tr></thead><tbody>" + rows + "</tbody></table>" +
-      notesHTML;
+      '<table class="dps-table"><thead><tr><th>Level</th><th>Cost</th>' +
+      "<th>Yen / wave</th></tr></thead><tbody>" + rows + "</tbody></table>";
   }
 
   function refreshDetail(u) {
     if (currentDetail !== u.unit_name) return;
     var cd = resolveCardData(u);
     $("dTdps").textContent = isFarm(u) ? yen(cd.tdps) : fmtDps(cd.tdps);
-    fillTraits(u);
-    fillEquips(u);
+    fillBuild(u);
     fillDps(u);
   }
 
@@ -1136,8 +1066,7 @@
     $("dDeploy").textContent = yen(deployOf(u));
     $("dCost").textContent = isFarm(u) ? yen(farmTotalCost(u)) : yen(costOf(u));
 
-    fillTraits(u);
-    fillEquips(u);
+    fillBuild(u);
     fillPassives(u);
     fillDps(u);
 
@@ -1276,13 +1205,13 @@
       }
     });
 
-    // trait selector of the DPS table
-    $("detailDps").addEventListener("change", function (e) {
+    // trait selector of the "Best build" block
+    $("blkBuild").addEventListener("change", function (e) {
       var u = currentUnit();
       if (!u) return;
       if (e.target && e.target.id === "dpsTrait") {
         unitSetting(u.unit_name).dpsTrait = e.target.value;
-        fillDps(u);
+        refreshDetail(u);
       }
     });
 
