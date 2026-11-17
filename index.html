@@ -1002,7 +1002,13 @@
     }
 
     .detail-bottom {
-      padding: 24px 28px 28px;
+      /* flex gap instead of per-block margins: a hidden block (the retired
+         DPS table) would otherwise leave a phantom margin at the very end,
+         and gap only ever applies between rendered children */
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 28px;   /* same inset as .detail-top -> symmetric ends */
     }
     .detail-section-title {
       font-family: var(--font-display);
@@ -1012,8 +1018,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .detail-block { margin-bottom: 24px; }
-    .detail-block:last-child { margin-bottom: 0; }
     .detail-traits {
       display: flex;
       gap: 14px;
@@ -1253,7 +1257,9 @@
     .leech-opt:hover { background: #1b1b28; }
     .leech-opt.sel { background: rgba(255, 170, 45, .12); }
     .leech-opt.sel .leech-name { color: var(--ochre); font-weight: 600; }
-    .var-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .var-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    /* spacing to a following note only - never trailing space at the end */
+    .var-actions + .var-note { margin-top: 10px; }
     .var-btn {
       font-family: var(--font-card);
       font-size: 12px;
