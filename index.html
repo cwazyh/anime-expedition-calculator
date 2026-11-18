@@ -395,6 +395,9 @@
       transform: translateY(-3px);
       border-color: #3a3a4a;
     }
+    /* trait dropdown open: the card must stack above its grid siblings
+       (the menu overflows the card box downwards) */
+    .unit-card.tr-open { z-index: 30; }
 
     .ebox-gradient {
       position: relative;
@@ -536,13 +539,134 @@
     }
 
     /* Trait icons: static, no hover popup - badges show #1 best / #2 */
-    .card-traits {
+    /* ONE row: the best trait + its equipment combo (four equal containers) */
+    .card-build {
       display: flex;
       gap: 10px;
       margin-top: 13px;
       justify-content: center;
+      flex-wrap: wrap;
       width: 100%;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.07);
     }
+    .card-build > * {
+      flex: 1 1 0;
+      min-width: 64px;
+      max-width: 96px;
+    }
+    .card-build:empty::after {
+      content: 'TBD';
+      font-family: var(--font-card);
+      font-size: 11px;
+      color: #666;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 42px;
+    }
+
+    /* best-trait container: same box as an equipment slot, so the build row
+       reads as one line of equal containers (trait + its winning combo) */
+    .build-trait {
+      position: relative;
+      background: linear-gradient(160deg, #26262f 0%, #131318 100%);
+      border: 1.5px solid #3a3a48;
+      border-radius: 10px;
+      padding: 9px 6px 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .build-trait:hover {
+      border-color: var(--ochre);
+      transform: translateY(-3px);
+    }
+    .build-trait .trait-icon { width: 46px; height: 46px; }
+    .build-trait .trait-icon img { width: 34px; height: 34px; }
+    .build-trait .tr-name {
+      font-family: var(--font-card);
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--tr-c, #ddd);
+      text-align: center;
+      line-height: 1.2;
+      word-break: break-word;
+      -webkit-text-stroke: 3px black;
+      paint-order: stroke fill;
+    }
+
+    /* trait name + its custom selector, side by side (replaces the native
+       <select>): dark pill, ochre border + glow on hover, like the equips */
+    .tr-pick {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+      min-width: 0;
+      cursor: pointer;
+    }
+    .tr-pick .tr-name {
+      flex: 1 1 auto;
+      min-width: 0;
+      text-align: center;
+    }
+    .tr-dd-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 18px;
+      padding: 0;
+      background: #14141e;
+      border: 1px solid #2e2e40;
+      border-radius: 5px;
+      color: #9a9ab0;
+      cursor: pointer;
+      transition: border-color .15s ease, color .15s ease, box-shadow .15s ease;
+    }
+    .tr-pick:hover .tr-dd-btn,
+    .tr-dd-btn[aria-expanded="true"] {
+      border-color: var(--ochre);
+      color: var(--ochre);
+      box-shadow: 0 0 8px rgba(255,170,45,0.35);
+    }
+    .tr-dd-menu {
+      position: absolute;
+      z-index: 40;
+      top: calc(100% - 4px);
+      left: 0;
+      min-width: 175px;
+      max-height: 250px;
+      overflow-y: auto;
+      background: #12121c;
+      border: 1px solid #2e2e40;
+      border-radius: 10px;
+      padding: 4px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.55);
+    }
+    .tr-dd-menu[hidden] { display: none; }
+    .tr-dd-opt {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      width: 100%;
+      padding: 6px 8px;
+      border: 0;
+      background: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 12px;
+      color: #ddd;
+      text-align: left;
+      transition: background .12s ease;
+    }
+    .tr-dd-opt:hover { background: #1b1b28; }
+    .tr-dd-opt.sel { background: rgba(255,170,45,.12); color: var(--ochre); font-weight: 600; }
     .trait-icon {
       width: 42px;
       height: 42px;
@@ -730,15 +854,6 @@
     }
 
     /* ===== EQUIPMENT SLOTS (background + image + name) ===== */
-    .card-equips {
-      display: flex;
-      gap: 10px;
-      margin-top: 13px;
-      justify-content: center;
-      width: 100%;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
     .equip-slot {
       flex: 1;
       max-width: 96px;
@@ -908,6 +1023,8 @@
       animation: popIn 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
     }
+    /* trait dropdown open: stop clipping it at the modal's rounded corner */
+    .detail-modal.tr-open { overflow: visible; }
 
     .detail-top {
       display: flex;
@@ -916,6 +1033,9 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
       border-bottom: 1px solid #262636;
       align-items: flex-start;
+      /* keep the modal's rounded top while .detail-modal.tr-open drops
+         overflow:hidden to let the trait dropdown escape */
+      border-radius: 16px 16px 0 0;
     }
 
     .detail-ebox {
@@ -1018,27 +1138,33 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .detail-traits {
+    /* ONE row: [trait box] [equip] [equip] [equip] - every container the
+       same size, so the trait reads as a peer of the equipment slots.
+       Both wrappers are display:contents -> their children become the
+       direct flex items of .build-row. */
+    .detail-traits, .detail-equips { display: contents; }
+    .build-row {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 14px;   /* spacing to the equipment row below */
+      align-items: stretch;
+      justify-content: center;
     }
-    .detail-trait {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
+    /* .detail-traits / .detail-equips are display:contents, so the real
+       boxes (.build-trait, .equip-slot) become the flex items of .build-row
+       - they must be targeted as descendants, not as direct children.
+       min-width keeps them usable on narrow viewports: the row wraps
+       2x2 instead of squeezing four ~70px boxes. */
+    .build-row .build-trait,
+    .build-row .equip-slot {
+      flex: 1 1 0;
+      min-width: 104px;
+      max-width: 140px;
     }
-    .detail-trait .trait-icon { width: 56px; height: 56px; }
-    .detail-trait .trait-icon img { width: 40px; height: 40px; }
-    .detail-trait .tname {
-      font-family: var(--font-card);
-      font-size: 11px;
-      color: var(--tr-c, #bbb);
-      font-weight: 600;
-      text-shadow: 0 0 8px color-mix(in srgb, var(--tr-c, #888) 35%, transparent);
-    }
+    .build-row .build-trait { padding: 14px 8px 10px; gap: 7px; }
+    .build-row .build-trait .trait-icon { width: 56px; height: 56px; }
+    .build-row .build-trait .trait-icon img { width: 40px; height: 40px; }
+    .build-row .build-trait .tr-name { font-size: 11px; }
     .ph-note {
       font-family: var(--font-card);
       font-size: 12px;
@@ -1047,28 +1173,12 @@
       letter-spacing: 0.5px;
       align-self: center;
     }
-    .card-traits:empty::after,
-    .card-equips:empty::after {
-      content: 'TBD';
-      font-family: var(--font-card);
-      font-size: 11px;
-      color: #666;
-      font-weight: 600;
-      letter-spacing: 1px;
-      line-height: 42px;
-    }
 
-    .detail-equips {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .detail-equips .equip-slot {
-      max-width: 120px;
+    .build-row .equip-slot {
       padding: 14px 8px 10px;
     }
-    .detail-equips .equip-slot img { width: 60px; height: 60px; }
-    .detail-equips .equip-slot .equip-name { font-size: 11px; }
+    .build-row .equip-slot img { width: 60px; height: 60px; }
+    .build-row .equip-slot .equip-name { font-size: 11px; }
 
     /* Passives / abilities / data blocks inside the modal */
     .passive-item {
@@ -1176,6 +1286,15 @@
       padding: 7px 8px;
       text-align: center;
       flex: 0 0 auto;
+      /* the native +/- spinners sit on the right and push the value off
+         centre - hide them so the number is optically centred */
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+    .var-input::-webkit-outer-spin-button,
+    .var-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
     .var-input:focus { outline: none; border-color: var(--ochre); }
 
@@ -1365,41 +1484,6 @@
     /* no divider under the last row (header + notes lines are enough) */
     .dps-table tbody tr:last-child td { border-bottom: 0; }
 
-    /* trait selector of the Best build block */
-    .build-sel {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .build-sel[hidden] { display: none; }
-    .build-sel-label {
-      font-family: var(--font-card);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .th-select {
-      flex: 0 1 320px;
-      min-width: 170px;
-      background: #0d0d14;
-      border: 1px solid #262636;
-      border-radius: 6px;
-      color: #ddd;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      padding: 7px 8px;
-      outline: none;
-      cursor: pointer;
-      transition: border-color .15s ease;
-    }
-    .th-select:hover, .th-select:focus { border-color: var(--ochre); }
-    .th-select option { background: #191919; color: #fff; }
-
     .sr-only {
       position: absolute;
       width: 1px; height: 1px;
@@ -1478,7 +1562,9 @@
       .nav-search { width: 160px; }
       .detail-top { flex-direction: column; align-items: center; text-align: center; }
       .detail-stats-grid { grid-template-columns: repeat(3, 1fr); }
-      .detail-equips { flex-wrap: wrap; justify-content: center; }
+      .build-row { justify-content: center; }
+      .build-row .build-trait,
+      .build-row .equip-slot { max-width: 132px; }
       .detail-rarity { justify-content: center; }
     }
   </style>
@@ -1599,12 +1685,10 @@
       <div class="detail-bottom">
         <div class="detail-block" id="blkBuild">
           <div class="detail-section-title">Best build</div>
-          <div class="build-sel" id="buildSel" hidden>
-            <label class="build-sel-label" for="dpsTrait">Trait</label>
-            <select id="dpsTrait" class="th-select"></select>
+          <div class="build-row">
+            <div class="detail-traits" id="detailTraits"></div>
+            <div class="detail-equips" id="detailEquips"></div>
           </div>
-          <div class="detail-traits" id="detailTraits"></div>
-          <div class="detail-equips" id="detailEquips"></div>
         </div>
         <div class="detail-block" id="blkPassives">
           <div class="detail-section-title">Passives</div>

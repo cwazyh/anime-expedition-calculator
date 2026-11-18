@@ -278,14 +278,111 @@
     );
   }
 
-  function traitsHTML(cd) {
-    return cd.traits.map(function (t, i) {
-      return '<span class="trait-wrap" data-trait="' + esc(t) + '"><div class="' +
-        traitIconCls(t) + '">' +
-        '<img src="' + traitImg(traitFile(t)) + '" alt="' + esc(t) +
-        '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
-        '</div><span class="trait-rank rank-' + (i + 1) + '">#' + (i + 1) + '</span></span>';
-    }).join("");
+  /* Best-trait container: framed icon with its rank badge at the top-right,
+   * the trait name below, and the trait selector (a chevron button right
+   * next to the name) when the full trait table is known. Same box as an
+   * equipment slot, so all containers share one row. Class-based (no ids):
+   * the grid renders one container per card, the modal one more. */
+  function traitBoxHTML(name, rank, table, selTrait) {
+    if (!name) return "";
+    var accent = traitColorHex(name);
+    var box = '<div class="build-trait"' +
+      (accent ? ' style="--tr-c:' + accent + '"' : "") + ">" +
+      '<span class="trait-wrap" data-trait="' + esc(name) + '">' +
+      '<div class="' + traitIconCls(name) + '"><img src="' + traitImg(traitFile(name)) +
+      '" alt="' + esc(name) + '" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">' +
+      '</div><span class="trait-rank rank-' + (rank === 1 ? 1 : 2) + '">#' + rank +
+      "</span></span>";
+
+    if (!table || !table.length) {
+      return box + '<span class="tr-name">' + esc(name) + "</span></div>";
+    }
+
+    box += '<div class="tr-pick">' +
+      '<span class="tr-name">' + esc(name) + "</span>" +
+      '<button type="button" class="tr-dd-btn" aria-haspopup="listbox" ' +
+      'aria-expanded="false" aria-label="Change trait">' +
+      '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">' +
+      '<path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" ' +
+      'stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>';
+
+    box += '<div class="tr-dd-menu" role="listbox" hidden>' +
+      table.map(function (r, ti) {
+        return '<button type="button" class="tr-dd-opt' +
+          (r.trait === selTrait ? " sel" : "") + '" data-trait="' + esc(r.trait) +
+          '" role="option">#' + (ti + 1) + " " + esc(r.trait) + "</button>";
+      }).join("") + "</div>";
+
+    return box + "</div>";
+  }
+
+  /* The row a card (or the modal) shows for a unit: the selected trait
+   * (st.dpsTrait, snapping to the best row) + that row's winning combo.
+   * Static JSON data for farms / not-yet-calculated units. */
+  function cardBuild(u) {
+    var cd = resolveCardData(u);
+    var c = calcCache[u.unit_name];
+    if (!isFarm(u) && c && c.table && c.table.length) {
+      var st = unitSetting(u.unit_name);
+      var row = null, idx = 0;
+      for (var i = 0; i < c.table.length; i++) {
+        if (c.table[i].trait === st.dpsTrait) { row = c.table[i]; idx = i; break; }
+      }
+      if (!row) { row = c.table[0]; idx = 0; st.dpsTrait = row.trait; }
+      var b = row.bound ? [row.bound] : [];
+      return {
+        trait: row.trait, rank: idx + 1, table: c.table, sel: row.trait,
+        equips: b.concat(row.combo).map(function (n) { return { name: n }; })
+      };
+    }
+    return {
+      trait: cd.traits[0] || null, rank: 1, table: null, sel: null,
+      equips: cd.equips
+    };
+  }
+
+  function buildRowHTML(u) {
+    var b = cardBuild(u);
+    return traitBoxHTML(b.trait, b.rank, b.table, b.sel) + equipsHTML({ equips: b.equips });
+  }
+
+  /* trait dropdown: exactly one menu open at a time, anywhere on the page.
+   * The host (.unit-card / .detail-modal) gets .tr-open while its menu is
+   * up: the card must stack above its siblings (its dropdown overflows the
+   * card box) and the modal must stop clipping it at the rounded corner. */
+  function setHostOpen(menu, open) {
+    var host = menu.closest(".unit-card") || menu.closest(".detail-modal");
+    if (host) host.classList.toggle("tr-open", open);
+  }
+  function closeTraitMenus(except) {
+    var ms = document.querySelectorAll(".tr-dd-menu");
+    for (var i = 0; i < ms.length; i++) {
+      if (ms[i] === except || ms[i].hidden) continue;
+      ms[i].hidden = true;
+      setHostOpen(ms[i], false);
+      var box = ms[i].closest(".build-trait");
+      var btn = box && box.querySelector(".tr-dd-btn");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    }
+  }
+  function toggleTraitMenu(root) {
+    var box = root && root.closest ? root.closest(".build-trait") : null;
+    var menu = box && box.querySelector(".tr-dd-menu");
+    if (!menu) return;
+    var willOpen = menu.hidden;
+    closeTraitMenus(willOpen ? menu : null);
+    menu.hidden = !willOpen;
+    setHostOpen(menu, willOpen);
+    var btn = box.querySelector(".tr-dd-btn");
+    if (btn) btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  }
+  // a re-render replaces the menu node, so the host flag must be dropped too
+  function clearTraitHosts() {
+    var hosts = document.querySelectorAll(".unit-card.tr-open, .detail-modal.tr-open");
+    for (var i = 0; i < hosts.length; i++) {
+      var m = hosts[i].querySelector(".tr-dd-menu");
+      if (!m || m.hidden) hosts[i].classList.remove("tr-open");
+    }
   }
 
   function equipsHTML(cd) {
@@ -316,8 +413,7 @@
       '<div class="ebox-title">' + esc(u.unit_name) + '</div>' +
       '<div class="rarity-chip c-' + rarity + '">' + esc(rarity) + '</div>' +
       '<div class="card-stats">' + statsHTML(u, cd) + '</div>' +
-      '<div class="card-traits">' + traitsHTML(cd) + '</div>' +
-      '<div class="card-equips">' + equipsHTML(cd) + '</div>' +
+      '<div class="card-build">' + buildRowHTML(u) + '</div>' +
       '<div class="obtain-tag">' + obtainHTML(u) + '</div>'
     );
   }
@@ -362,6 +458,17 @@
       card.innerHTML = cardHTML(u);
       card.addEventListener("click", function (ev) {
         if (ev.target.closest(".equip-slot")) return;   // clicks on slots only hover
+        // trait dropdown inside the card: toggle / pick without opening the modal
+        var pick = ev.target.closest ? ev.target.closest(".tr-pick") : null;
+        if (pick) { toggleTraitMenu(pick); return; }
+        var opt = ev.target.closest ? ev.target.closest(".tr-dd-opt") : null;
+        if (opt) {
+          unitSetting(u.unit_name).dpsTrait = opt.getAttribute("data-trait");
+          patchCard(u);
+          if (currentDetail === u.unit_name) refreshDetail(u);
+          return;
+        }
+        if (ev.target.closest(".tr-dd-menu")) return;
         openDetail(u);
       });
       cardEls[u.unit_name] = card;
@@ -377,8 +484,8 @@
     if (!card) return;
     var cd = resolveCardData(u);
     card.querySelector(".card-stats").innerHTML = statsHTML(u, cd);
-    card.querySelector(".card-traits").innerHTML = traitsHTML(cd);
-    card.querySelector(".card-equips").innerHTML = equipsHTML(cd);
+    card.querySelector(".card-build").innerHTML = buildRowHTML(u);
+    clearTraitHosts();
   }
 
   /* ====================== EQUIPMENT HOVER TOOLTIP ======================
@@ -782,58 +889,22 @@
   }
 
   /* ============================== DETAIL MODAL ============================== */
-  /* "Best build" block: ONE trait (the selected one, default = best) with
-   * its winning equipment combo, plus the trait selector listing every
-   * trait of the unit numbered best -> worst. Picking a trait re-renders
-   * the block with that trait's own build. */
+  /* "Best build" block: ONE row of equal containers -
+   *   [trait box] [equip] [equip] [equip]
+   * Same builder as the grid cards (cardBuild), so the selected trait
+   * (st.dpsTrait) is shared between the card and the modal. */
   function fillBuild(u) {
     var c = calcCache[u.unit_name];
-    var st = unitSetting(u.unit_name);
-    var cd = resolveCardData(u);
-    var traitName = null, rank = 1, equips = null;
+    var b = cardBuild(u);
 
-    if (c && c.table && c.table.length) {
-      var row = null, idx = 0;
-      for (var i = 0; i < c.table.length; i++) {
-        if (c.table[i].trait === st.dpsTrait) { row = c.table[i]; idx = i; break; }
-      }
-      if (!row) { row = c.table[0]; idx = 0; st.dpsTrait = row.trait; }
-      traitName = row.trait;
-      rank = idx + 1;
-      equips = (row.bound ? [row.bound] : []).concat(row.combo).map(function (n) {
-        return { name: n };
-      });
-      $("buildSel").hidden = false;
-      $("dpsTrait").innerHTML = c.table.map(function (r, ti) {
-        return '<option value="' + esc(r.trait) + '"' +
-          (r.trait === row.trait ? " selected" : "") + ">#" + (ti + 1) + " " +
-          esc(r.trait) + "</option>";
-      }).join("");
-    } else {
-      // no calculator yet (placeholder / farm / pool still loading)
-      $("buildSel").hidden = true;
-      $("dpsTrait").innerHTML = "";
-      traitName = cd.traits[0] || null;
-      equips = cd.equips;
-    }
-
-    $("detailTraits").innerHTML = traitName
-      ? (function () {
-          var accent = traitColorHex(traitName);
-          return '<div class="detail-trait"' +
-            (accent ? ' style="--tr-c:' + accent + '"' : "") +
-            '><span class="trait-wrap" data-trait="' + esc(traitName) + '">' +
-            '<div class="' + traitIconCls(traitName) + '"><img src="' +
-            traitImg(traitFile(traitName)) + '" alt="' + esc(traitName) +
-            '" onerror="this.style.display=\'none\'"></div>' +
-            '<span class="trait-rank rank-' + (rank === 1 ? 1 : 2) + '">#' + rank +
-            '</span></span><span class="tname">' + esc(traitName) + "</span></div>";
-        })()
+    $("detailTraits").innerHTML = b.trait
+      ? traitBoxHTML(b.trait, b.rank, b.table, b.sel)
       : '<div class="ph-note">Traits TBD</div>';
 
-    $("detailEquips").innerHTML = (equips && equips.length)
-      ? equipsHTML({ equips: equips })
+    $("detailEquips").innerHTML = (b.equips && b.equips.length)
+      ? equipsHTML({ equips: b.equips })
       : '<div class="ph-note">Equipment TBD</div>';
+    clearTraitHosts();
 
     // calculator not built yet (pool still loading): fill once it lands
     // (!poolLoaded guards against retrying forever if the build failed)
@@ -1205,14 +1276,26 @@
       }
     });
 
-    // trait selector of the "Best build" block
-    $("blkBuild").addEventListener("change", function (e) {
+    // trait selector of the "Best build" block (custom dropdown: the button
+    // sits right next to the trait name, options are ".tr-dd-opt" rows)
+    $("blkBuild").addEventListener("click", function (e) {
       var u = currentUnit();
       if (!u) return;
-      if (e.target && e.target.id === "dpsTrait") {
-        unitSetting(u.unit_name).dpsTrait = e.target.value;
-        refreshDetail(u);
+      var pick = e.target.closest ? e.target.closest(".tr-pick") : null;
+      if (pick) { toggleTraitMenu(pick); return; }
+      var opt = e.target.closest ? e.target.closest(".tr-dd-opt") : null;
+      if (opt) {
+        unitSetting(u.unit_name).dpsTrait = opt.getAttribute("data-trait");
+        refreshDetail(u);   // re-renders the row -> menu closes with it
+        patchCard(u);       // the grid card shares the same selection
+        return;
       }
+      closeTraitMenus();    // any other click inside the block closes it
+    });
+    // ...and a click anywhere outside any trait container closes it too
+    document.addEventListener("click", function (e) {
+      if (e.target && e.target.closest && e.target.closest(".build-trait")) return;
+      closeTraitMenus();
     });
 
     // variable inputs
