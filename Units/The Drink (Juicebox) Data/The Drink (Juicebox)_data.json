@@ -6,7 +6,7 @@
  "limited": false,
  "placement_limit": 3,
  "update": 1,
- "obtainable": false,
+ "obtainable": true,
  "desc": "Mythic unit from the wiki.",
  "traits": [],
  "equipment": [],
