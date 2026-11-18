@@ -6,7 +6,7 @@
  "limited": false,
  "placement_limit": 3,
  "update": 2,
- "obtainable": true,
+ "obtainable": false,
  "desc": "Secret unit from the wiki.",
  "traits": [],
  "equipment": [],
