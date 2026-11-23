@@ -50,6 +50,9 @@
     enemy_hp: null,                   // per-target HP of the current mode; null = spacing-only fallback
     shinigami_per_enemy: 1.0,         // passive roll 0.5..1 % per enemy -> max 1.0
     shinigami_capacity: 15,
+    sacrificial_mark_share: 1.0,      // fraction of range where bleed/marked enemies sit
+    sacrificial_mark_per_enemy: 1.0,  // 1% per marked enemy (roll 1..1)
+    sacrificial_mark_capacity: 25,    // cap roll 15..25 -> max 25
     hypnosis_uptime: 10 / 15,         // Aizen: 10s every 15s on 5 strongest
     hypnosis_damage_bonus: 0.25,      // +25% damage taken
     hypnosis_target_share: 0,         // default 0: Variables panel raises it (0..1)
@@ -80,6 +83,15 @@
     var tKill = hp / dps;
     var n = Math.floor(SPAWN_RATE * Math.min(tCross, tKill) + 1e-9);
     return Math.max(0, Math.min(capacity != null ? capacity : 15, WAVE_SIZE, n));
+  }
+
+  // Shared enemy-count entry point for per-unit passive models. Uses the
+  // mortality-aware count when HP and a DPS estimate are available, else the
+  // spacing-only fallback. Mirrors the Shinigami Sword selection logic.
+  function enemyCount(range, hp, dps, capacity) {
+    return hp > 0 && dps > 0
+      ? enemiesInRangeWithHp(range, hp, dps, capacity)
+      : enemiesInRange(range, capacity);
   }
 
   function cloneT(overrides) {
@@ -132,7 +144,7 @@
   }
 
   var ZERO_PASSIVES = [
-    "Sacrificial Mark", "Cursed Finger", "Critter", "Warrior Pole",
+    "Cursed Finger", "Critter", "Warrior Pole",
     "Reaper's Glove", "Bamboo Bottle", "Economists Coin"
   ];
 
@@ -365,6 +377,19 @@
             mult *= (1 + gain);
             notes.push("ShinigamiSword +" + (gain * 100).toFixed(1) + "% (" +
                        count + " enemies, range " + range.toFixed(1) + ")");
+          } else if (nm === "Sacrificial Mark") {
+            var sr = range * T.sacrificial_mark_share;
+            var sCount;
+            if (T.enemy_hp != null && preDps > 0)
+              sCount = enemiesInRangeWithHp(sr, T.enemy_hp, preDps,
+                                             T.sacrificial_mark_capacity);
+            else sCount = enemiesInRange(sr, T.sacrificial_mark_capacity);
+            var sGain = Math.min(sCount * T.sacrificial_mark_per_enemy,
+                                 T.sacrificial_mark_capacity) / 100;
+            mult *= (1 + sGain);
+            notes.push("SacrificialMark +" + (sGain * 100).toFixed(1) +
+                       "% (" + sCount + " marked enemies of range " +
+                       sr.toFixed(1) + ")");
           } else if (ZERO_PASSIVES.indexOf(nm) !== -1) {
             notes.push(nm + ": 0 (unit does not meet condition)");
           } else {
@@ -423,15 +448,28 @@
         spa = BASE_SPA * (1 + t_spa + e_spa / 100);
       }
 
+      // Final range after all layers. Enemy-count passives (Shinigami Sword,
+      // aura/bat/scorch counts) depend on it, so resolve it before every model.
+      var rng = r1(BASE_RNG * asc_r * pot_rng * (1 + (t.Range || 0)) *
+                   (1 + (withEquipment && combo && combo.length ? e_rng / 100 : 0)));
+
+      // Pre-passive crit and DPS so enemy-count models can estimate how long
+      // a target survives inside the range (Little's law mortality model).
+      var cc0 = BASE_CC + 100 * t_cc + e_cc;
+      var cd0 = BASE_CD + 100 * t_cd + e_cd;
+      var baseCrit = !T.expected_crit ? 1
+        : T.crit_mode === "bonus" ? (1 + (cc0 / 100) * (cd0 / 100))
+        : (1 + (cc0 / 100) * ((cd0 - 100) / 100));
+      var preCtxDps = dmg / spa * baseCrit;
+
       // per-unit passive models (dmg/spa/crit layers + extra-damage mult)
       // ctx carries the pre-passive values so models can reason on them
       // (e.g. guaranteed-crit passives recompute from the base crit chance)
       var notes = [];
       var pm = withPassives
         ? applyPassiveModels(UNIT_NAME, T, notes, {
-            dmg: dmg, spa: spa,
-            cc: BASE_CC + 100 * t_cc + e_cc,
-            cd: BASE_CD + 100 * t_cd + e_cd,
+            dmg: dmg, spa: spa, rng: rng, preDps: preCtxDps,
+            cc: cc0, cd: cd0,
             trait: traitName,
             bound: combo && combo.filter(function (n) { return BOUND.indexOf(n) !== -1; })
           })
@@ -451,11 +489,6 @@
       if (!T.expected_crit) crit_mult = 1.0;
       else if (T.crit_mode === "bonus") crit_mult = 1 + (cc / 100) * (cd / 100);
       else crit_mult = 1 + (cc / 100) * ((cd - 100) / 100);   // legacy/total
-
-      // Final range after all layers; passive models (e.g. Shinigami enemy
-      // count) depend on it, so resolve it before evaluating them.
-      var rng = r1(BASE_RNG * asc_r * pot_rng * (1 + (t.Range || 0)) *
-                   (1 + (withEquipment && combo && combo.length ? e_rng / 100 : 0)));
 
       // passives
       var passive_mult = 1.0;
@@ -562,6 +595,7 @@
     createCalculator: createCalculator,
     r1: r1,
     r2: r2,
+    enemyCount: enemyCount,
     registerPassives: registerPassives,
     registerUnitVars: registerUnitVars,
     registerNoDps: registerNoDps,

@@ -73,6 +73,15 @@
     return typeof T.enemies_in_range === "number" ? T.enemies_in_range : 4;
   }
 
+  // Enemy count inside a fraction of the final buffed range, using the same
+  // mortality model as Shinigami Sword (Little's law with measured spawn rate).
+  // Auto mode is selected by a -1 variable default; EN(T) is the Node fallback.
+  function RCOUNT(T, ctx, fraction, cap) {
+    if (!ctx || !ctx.rng) return EN(T);
+    return A.enemyCount(ctx.rng * (fraction == null ? 1 : fraction),
+                        T.enemy_hp, ctx.preDps, cap);
+  }
+
   // passive is enabled (its toggle is not OFF in the Variables panel)
   function on(T, name) {
     return !(T.passive_state && T.passive_state[name] === false);
@@ -116,14 +125,18 @@
 
   /* ====================== 8TH SWORD (BERSERK) ====================== */
   A.registerPassives("8th Sword (Berserk)", {
-    // Enemies within 40% of range take 5% of this unit's damage every 1s.
-    "Demonic Presence": function (T) {
-      var n = N(T, "kenpachi_aura_targets", 1);
+    // Enemies within 50% of range take 15% of this unit's damage every 1s.
+    // Target count is derived from the mortality model (Shinigami template)
+    // when the variable is set to auto (-1), else uses the manual estimate.
+    "Demonic Presence": function (T, ctx) {
+      var n = N(T, "kenpachi_aura_targets", -1);
+      var auto = n < 0;
+      if (auto) n = RCOUNT(T, ctx, 0.5, 10);
       var u = UP(T, "kenpachi_aura_uptime", 60);
-      var extra = 0.05 * n * u;
-      return { extra: extra, notes: ["Demonic Presence: 5% dmg/s on " + n +
-        " enemy(s) inside 40% of range at " + Math.round(u * 100) +
-        "% uptime (single-target view)"] };
+      var extra = 0.15 * n * u;
+      return { extra: extra, notes: ["Demonic Presence: 15% dmg/s on " + n +
+        " enemy(s) inside 50% of range at " + Math.round(u * 100) +
+        "% uptime (" + (auto ? "auto from enemies in range" : "manual") + ")"] };
     },
     // Self-stun cleanse + 100% follow-up: reactive, proc-based.
     "Savage Rebound": function (T) {
@@ -148,7 +161,7 @@
     }
   });
   A.registerUnitVars("8th Sword (Berserk)", [
-    V("kenpachi_aura_targets", "Aura targets", "Enemies inside 40% of range taking Demonic Presence damage - default 1 (single-target view)", 0, 10, 1),
+    V("kenpachi_aura_targets", "Aura targets", "Enemies inside 50% of range taking Demonic Presence damage - -1 = auto from enemies in range (mortality)", -1, 10, -1),
     V("kenpachi_aura_uptime", "Aura uptime %", "Share of time the primary sits inside 40% of range - default 60%", 0, 100, 60, 5),
     V("kenpachi_stun_ppm", "Stun reflects / min", "Savage Rebound procs per minute - default 1 (estimated)", 0, 60, 1),
     V("kenpachi_execute_ppm", "Executes / min", "Dismemberer's Rush procs per minute - default 1 (estimated)", 0, 60, 1),
@@ -408,18 +421,26 @@
   A.registerPassives("Crimson Captain (Moon)", {
     // +10% dmg from FireElement units vs Scorched enemies (this unit is
     // Flame) + up to +25% per FireElement unit / unique FireDoT stack.
-    "Scorched Earth": function (T) {
+    "Scorched Earth": function (T, ctx) {
       var u = UP(T, "rei_scorched_uptime", 25);
       var stacks = Math.min(N(T, "rei_fire_sources", 2), 5);
+      // No enemies in range -> no Scorched stacks can be maintained.
+      if (RCOUNT(T, ctx, 1, 17) === 0) { u = 0; stacks = 0; }
       return { dmg: 0.10 * u + 0.05 * stacks,
         notes: ["Scorched Earth: +10% vs Scorched at " + Math.round(u * 100) +
         "% uptime; " + stacks + "/5 Fire sources (+25% cap)"] };
     },
-    // Per max-Scorched enemy in range: +5% crit damage (cap 50%).
-    "Absolute Flames": function (T) {
-      var n = Math.min(N(T, "rei_max_scorched", 5), 10);
+    // Per max-Scorched enemy in range: +5% crit damage (cap 50%). Count is
+    // derived from the mortality-based enemies in range in auto mode (-1).
+    "Absolute Flames": function (T, ctx) {
+      var n = N(T, "rei_max_scorched", -1);
+      var auto = n < 0;
+      if (auto) n = Math.floor(RCOUNT(T, ctx, 1, 17) *
+                               UP(T, "rei_scorched_fraction", 50));
+      n = Math.min(Math.max(n, 0), 10);
       return { cd: 5 * n, notes: ["Absolute Flames: " + n +
-        " enemy(s) at max Scorched stacks (+5% crit dmg each, cap 50%)"] };
+        " enemy(s) at max Scorched stacks (+5% crit dmg each, cap 50%; " +
+        (auto ? "auto from enemies in range" : "manual") + ")"] };
     },
     // Banner every 10s (cap 5, permanent): each deals 15% dmg / SPA 5 and
     // applies its own FireDoT; after 5, base summons deal 20% on pass-by.
@@ -449,7 +470,8 @@
   A.registerUnitVars("Crimson Captain (Moon)", [
     V("rei_scorched_uptime", "Scorched uptime %", "Share of time enemies are Scorched - default 25%", 0, 100, 25, 5),
     V("rei_fire_sources", "Fire sources", "FireElement units / unique FireDoTs in range (cap 5) - default 2", 0, 5, 2),
-    V("rei_max_scorched", "Max-Scorched enemies", "Enemies at 10 stacks in range (+5% crit dmg each) - default 2", 0, 10, 2),
+    V("rei_max_scorched", "Max-Scorched enemies", "Enemies at 10 stacks in range (+5% crit dmg each) - -1 = auto from enemies in range", -1, 10, -1),
+    V("rei_scorched_fraction", "Max-Scorched share %", "Share of in-range enemies that reach 10 Scorched stacks in auto mode - default 50", 0, 100, 50, 5),
     V("rei_banners", "Banners on primary", "FireBanners striking the primary target (cap 5) - default 1 (estimated)", 0, 5, 1),
     V("rei_banner_dot_targets", "Banner FireDoT targets", "Enemies burning from banner Fire - default 1 (estimated)", 0, 10, 1),
     V("rei_banner_dot_uptime", "Banner Fire uptime %", "Share of time the primary burns from banner Fire - default 15%", 0, 100, 15, 5),
@@ -564,20 +586,30 @@
         ally * 100 + "% of own damage)"] };
     },
     // Every 20 Bleed stacks in range -> YutaBatSpirit (cap 3), 15% of this
-    // unit's damage per attack, SPA 10, despawns after 3 attacks.
-    "Spirit Bats": function (T) {
-      var bats = Math.min(N(T, "yuuta_bats", 2), 3);
+    // unit's damage per attack, SPA 10, despawns after 3 attacks. Bat count
+    // is derived from the mortality-based enemy count in auto mode (-1).
+    "Spirit Bats": function (T, ctx) {
+      var bats = N(T, "yuuta_bats", -1);
+      var auto = bats < 0;
+      if (auto) {
+        var enemies = RCOUNT(T, ctx, 1, 17);
+        var perEnemy = N(T, "yuuta_bleed_per_enemy", 10);
+        bats = Math.floor(enemies * perEnemy / 20);
+      }
+      bats = Math.min(Math.max(bats, 0), 3);
       var u = UP(T, "yuuta_bat_uptime", 40);
       var extra = bats * 0.15 / 10 * u;
       return { extra: extra, notes: ["Spirit Bats: " + bats +
         " bat(s) x15% / 10s at " + Math.round(u * 100) +
-        "% uptime (needs 20 Bleed stacks, estimated)"] };
+        "% uptime (1 per 20 Bleed stacks; " +
+        (auto ? "auto from enemies in range" : "manual") + ")"] };
     }
   });
   A.registerUnitVars("Cursed Student (True Love)", [
     V("yuuta_ally_dmg", "Closest unit damage %", "Closest unit's damage as % of this unit's - default 100", 0, 300, 100, 10),
     V("yuuta_mimic_bonus", "Mimicry bonus %", "Follow-up share of the ally's damage (desc: +20% per new attack) - default 40", 0, 200, 40, 10),
-    V("yuuta_bats", "Bat Spirits active", "Bats summoned (cap 3, 1 per 20 Bleed stacks) - default 2", 0, 3, 2),
+    V("yuuta_bats", "Bat Spirits active", "Bats summoned (cap 3) - -1 = auto from Bleed stacks on enemies in range", -1, 3, -1),
+    V("yuuta_bleed_per_enemy", "Bleed stacks / enemy", "Bleed stacks carried per in-range enemy (auto bat count: 1 bat / 20 stacks) - default 10", 0, 30, 10),
     V("yuuta_bat_uptime", "Bat uptime %", "Share of time bats are attacking - default 40% (estimated)", 0, 100, 40, 5)
   ]);
 
