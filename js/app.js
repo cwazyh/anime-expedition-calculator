@@ -746,16 +746,32 @@
   var HP_MODS = { "Boss": 20, "Soldier": 20, "Sprinter": -20, "Tank": 20, "Zombify": 100 };
   var enemyHpProfile = "hardest_map";
   var enemyType = "Basic 1";
+  var wave = 15;
+
+  // Per-wave HP grows quadratically in the live game. The two absolute curves
+  // below are fitted to captured in-game HP at successive waves; the exact
+  // server combination is not client-readable, so validation is empirical.
+  var WAVE_CURVES = {
+    weekly_tournament: { a: 315, b: 1224, c: 3779 }
+  };
+  var GROWTH = { a: 4, b: 14, c: 8 };
+  var GROWTH_REF = GROWTH.a * 225 + GROWTH.b * 15 + GROWTH.c;
 
   function effectiveHp() {
     var pr = HP_PROFILES[enemyHpProfile];
     if (!pr || !pr.hp) return null;
-    var base = pr.hp[enemyType];
-    if (!base) return null;
+    var base1 = pr.hp["Basic 1"];
+    if (!base1) return null;
+    var w = Math.max(1, Math.min(30, Number(wave) || 15));
+    var curve = WAVE_CURVES[enemyHpProfile];
+    var hp1 = curve
+      ? curve.a * w * w + curve.b * w + curve.c
+      : base1 * ((GROWTH.a * w * w + GROWTH.b * w + GROWTH.c) / GROWTH_REF);
+    var typeRatio = (pr.hp[enemyType] || base1) / base1;
     var mods = pr.modifiers || [];
     var pct = 0;
     for (var i = 0; i < mods.length; i++) pct += (HP_MODS[mods[i]] || 0);
-    return Math.round(base * (1 + pct / 100));
+    return Math.round(hp1 * typeRatio * (1 + pct / 100));
   }
 
   function clearLegacySettings() {
@@ -1082,6 +1098,12 @@
         '<span class="var-label">Enemy type</span>' +
         '<span class="var-sub">Target HP used by the mortality model above.</span>' +
         '</span><select class="var-input" id="enemyType">' + typeOpts + '</select></div>' +
+        '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Wave</span>' +
+        '<span class="var-sub">Enemy HP grows with the wave. Validated curves ' +
+        'scale HP from captured in-game data.</span>' +
+        '</span><input class="var-input" id="wave" type="number" min="1" max="30" ' +
+        'step="1" value="' + wave + '"></div>' +
         '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
@@ -1367,6 +1389,13 @@
         return;
       } else if (t && t.id === "enemyType") {
         enemyType = t.value;
+        units.forEach(function (uu) {
+          if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
+        });
+        rebuildLeech();
+        return;
+      } else if (t && t.id === "wave") {
+        wave = clampInt(t.value, 1, 30, 15);
         units.forEach(function (uu) {
           if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
         });
