@@ -1937,18 +1937,26 @@
     // Each 5th attack spawns 2 StarrkWolves (cap 3): 15% of this unit's
     // damage per hit (they delete themselves after attacking) + ManaBurn.
     "Soul Pack": function (T, ctx) {
-      var extra = 2 * 0.15 / (10 * ctx.spa);
-      return { extra: extra, notes: ["Soul Pack: 2 wolves x15% per cycle " +
-        "(~10 x SPA seconds; ManaBurn not counted)"] };
+      // Each wolf deals 15% of unit damage and adds ManaBurn for 15% of its
+      // own hit (2.25% of unit damage per wolf).
+      var extra = (2 * 0.15 + 2 * 0.15 * 0.15) / (10 * ctx.spa);
+      return { extra: extra, notes: ["Soul Pack: 2 wolves x15% + ManaBurn " +
+        "15% of wolf damage per cycle (~10 x SPA seconds)"] };
     },
     // Ability: 5s pause then 8s of constant fire at 65% damage per
     // second (+100% ManaBurn over 6s, always crits).
-    "Zero Machine Gun": function (T) {
+    "Zero Machine Gun": function (T, ctx) {
       var ppm = N(T, "starrk_ability_ppm", 1);
-      var extra = (0.65 * 8 + 1.00) * ppm / 60;
-      return { extra: extra, notes: ["Zero Machine Gun: ~6.2x damage per " +
-        "13s window (65%/s for 8s + ManaBurn 100%), " + ppm +
-        "/min (estimated; replaces normal attacks meanwhile)"] };
+      var penalty = N(T, "starrk_spa_penalty", 100) / 100;
+      var effSpa = (ctx.spa || 1) * (1 + penalty);
+      // The 5s windup + 8s firing replace normal attacks: only the net gain
+      // over those attacks is extra damage.
+      var replaced = 13 / effSpa * 1.20;
+      var ability = 0.65 * 8 + 1.00;
+      var extra = Math.max(0, ability - replaced) * ppm / 60;
+      return { extra: extra, notes: ["Zero Machine Gun: net " +
+        ability.toFixed(2) + "x ability - " + replaced.toFixed(2) +
+        "x replaced attacks per 13s window, " + ppm + "/min"] };
     }
   });
   A.registerUnitVars("Wolf (Revived)", [
