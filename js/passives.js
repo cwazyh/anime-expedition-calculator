@@ -113,12 +113,22 @@
     },
     // +2.5% damage & +1% range per marked enemy in range; marked take +5%.
     // A mark is only applied when an enemy SURVIVES the Distortion hit (50% of
-    // this unit's damage) and lasts 5s. Live sandbox observation showed 0-2
-    // marked enemies, not the full in-range count, so the count is a Variable.
-    "Causality": function (T) {
-      var n = Math.min(N(T, "femto_marked_count", 1), 17);
+    // this unit's damage) and lasts 5s. In auto mode (-1) the marked count is
+    // derived from the same mortality-based in-range count used by Shinigami
+    // Sword, scaled by the share of enemies that survive the 50% hit.
+    "Causality": function (T, ctx) {
+      var n = N(T, "femto_marked_count", -1);
+      var auto = n < 0;
+      if (auto) {
+        var inRange = RCOUNT(T, ctx, 1, 17);
+        var survival = Math.max(0, Math.min(1, N(T, "femto_mark_survival", 10) / 100));
+        n = Math.floor(inRange * survival + 1e-9);
+      }
+      n = Math.min(Math.max(0, n), 17);
       return { dmg: 0.025 * n, mult: 1.05,
-        notes: ["Causality: " + n + " marked enemies in range (+2.5% each, marked take +5%)"] };
+        notes: ["Causality: " + n + " marked enemies in range (+2.5% each, marked take +5%)" +
+          (auto ? " [auto: " + N(T, "femto_mark_survival", 10) +
+          "% of mortality in-range survive the 50% hit]" : "")] };
     },
     // At 35 stacks: enemies in range take 100% of this unit's damage per
     // second for 5s, then the meter resets. Single-target counted; duty
@@ -132,7 +142,8 @@
   });
   A.registerUnitVars("5th God Hand", [
     V("femto_distortion_hits", "Distortion hits", "Enemies walking into each Distortion - default 1 (estimated)", 0, 10, 1),
-    V("femto_marked_count", "Marked enemies", "Enemies carrying GriffithFemtoMark in range (live sandbox showed 0-2) - default 1", 0, 17, 1),
+    V("femto_marked_count", "Marked enemies", "-1 = auto from mortality-based in-range count x survival share; set 0-17 for manual override (live sandbox showed 0-2)", -1, 17, -1),
+    V("femto_mark_survival", "Mark survival %", "Share of in-range enemies that survive the 50% Distortion hit and get marked - default 10% (live sandbox showed 0-2 marked of ~11 in range)", 0, 100, 10, 5),
     V("femto_eclipse_uptime", "Eclipse uptime %", "Duty cycle of the 5s Eclipse burst - default 2% (~5s per 250s)", 0, 100, 2, 1)
   ]);
 
