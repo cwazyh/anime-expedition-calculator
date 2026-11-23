@@ -1,0 +1,2439 @@
+[
+ {
+  "name": "Bounty Hunter",
+  "rarity": "Epic",
+  "archetype": "Physical",
+  "element": "Neutral",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Corps Captain",
+  "rarity": "Epic",
+  "archetype": "Physical",
+  "element": "Neutral",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Curly Brow",
+  "rarity": "Rare",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Ice Mage",
+  "rarity": "Epic",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Kid Assassin",
+  "rarity": "Rare",
+  "archetype": "Magical",
+  "element": "Storm",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Little Carrot",
+  "rarity": "Rare",
+  "archetype": "Physical",
+  "element": "Gale",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Nen Hunter",
+  "rarity": "Epic",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Reishi Archer",
+  "rarity": "Rare",
+  "archetype": "Magical",
+  "element": "Light",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Rubber Boy",
+  "rarity": "Rare",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Stone Alchemist",
+  "rarity": "Epic",
+  "archetype": "Physical",
+  "element": "Farm",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Thunder Shinobi",
+  "rarity": "Rare",
+  "archetype": "Magical",
+  "element": "Storm",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Demon Cyborg",
+  "rarity": "Epic",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 0,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": null
+ },
+ {
+  "name": "Forbidden Teacher",
+  "rarity": "Legendary",
+  "archetype": "Magical",
+  "element": "Buff",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "UtahimePassive",
+    "display": "Teacher Blessing",
+    "desc": "Apply Damage Buff to all Magical units within range Increased by 5% each upgrade"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +5% damage buff to all Magical units in range per level. This unit\n    // is Magical and stands in its own range (self included). 6 levels\n    // (deploy + 5 upgrades) -> +30%.\n    \"Teacher Blessing\": function () {\n      return { dmg: 0.30, notes: [\"Teacher Blessing: +5% x 6 levels to Magical units in range (self included)\"] };\n    }"
+ },
+ {
+  "name": "Greed",
+  "rarity": "Legendary",
+  "archetype": "Physical",
+  "element": "Dark",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "BanPassive",
+    "display": "Fox Hunt",
+    "desc": "Deal 20% more damage to Boss enemy type."
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +20% damage vs Boss: conditional -> uptime variable.\n    \"Fox Hunt\": function (T) {\n      var u = UP(T, \"ban_boss_uptime\", 7);\n      return { dmg: 0.20 * u, notes: [\"Fox Hunt: +20% vs Boss at \" + Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Ice Queen",
+  "rarity": "Legendary",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "RukiaPassive",
+    "display": "Soul Rend",
+    "desc": "Deal 20% more damage to enemies below 20% health."
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +20% damage to enemies below 20% health: execute window -> uptime.\n    \"Soul Rend\": function (T) {\n      var u = UP(T, \"rukia_execute_uptime\", 30);\n      return { dmg: 0.20 * u, notes: [\"Soul Rend: +20% vs enemies below 20% HP at \" +\n        Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Scissor",
+  "rarity": "Legendary",
+  "archetype": "Physical",
+  "element": "Terra",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "RiyoPassive",
+    "display": "Stacking Cuts",
+    "desc": "Each consecutive RegularAttack on the same enemy increases damage dealt by 5% (Capacity: 20%)"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +5% per consecutive attack on the same enemy, cap +20%: steady\n    // state assumes the cap on the primary target.\n    \"Stacking Cuts\": function () {\n      return { dmg: 0.20, notes: [\"Stacking Cuts: steady state at the +20% cap\"] };\n    }"
+ },
+ {
+  "name": "The Hero",
+  "rarity": "Legendary",
+  "archetype": "Physical",
+  "element": "Buff",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "HimmelPassive",
+    "display": "Hero Blessing",
+    "desc": "Apply Damage Buff to all Physical units within range Increased by 5% each upgrade"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +5% damage to all Physical units in range per level; this unit is\n    // Physical and stands in its own range (self included). 6 levels.\n    \"Hero Blessing\": function () {\n      return { dmg: 0.30, notes: [\"Hero Blessing: +5% x 6 levels to \" +\n        \"Physical units in range (self included)\"] };\n    }"
+ },
+ {
+  "name": "Toy Maker",
+  "rarity": "Exclusive",
+  "archetype": "Psychic",
+  "element": "Dark",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "SugarPassive",
+    "display": "Build-a-toy",
+    "desc": "This unit will summon SugarToy on all paths in this unit's range instead of attacking. - SugarToys will have 100% of this unit's current damage as health Upgrade 2: - SugarToys gain 15% movement speed Upgrade 4: - SugarToys deal 10% of their max health as AoE damage on death Upgrade 6: - Every 5th cycle of summons, SugarToy is mutated, increasing health by 150% SugarToys can spawn on all paths in this unit's range. The summons health is divided by the number of paths they spawn on."
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // This unit NEVER attacks: it spawns SugarToys on every path instead\n    // (spawn cadence = its attack cycle). Toys deal 10% of their max HP\n    // as AoE on death (upgrade 4+); max HP = 100% of this unit's damage\n    // (mutation at upgrade 6 raises it). Estimated model - contact damage\n    // is not documented, only the death burst is counted.\n    \"Build-a-toy\": function (T, ctx) {\n      var paths = N(T, \"gingy_paths\", 2);\n      var u = UP(T, \"gingy_death_uptime\", 80);\n      var extra = paths * 0.10 * u / ctx.spa;\n      return { extra: extra, notes: [\"Build-a-toy (estimated): \" + paths +\n        \" path(s), toy death burst = 10% of max HP (100% of this unit's \" +\n        \"damage) per spawn cycle at \" + Math.round(u * 100) +\n        \"% death uptime; the unit itself never attacks\"] };\n    }"
+ },
+ {
+  "name": "Water Princess",
+  "rarity": "Legendary",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 1,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "NoellePassive",
+    "display": "Sea Dragon Shield",
+    "desc": "This unit grants a shield to the nearest unit within range - Shield is destroyed after blocking a Debuff or EnemyAttack - Shield regenerates after 15 seconds"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Bioinsect (Final Form)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Terra",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "CellPassive1",
+    "display": "Passive Absorption",
+    "desc": "After this unit scores 50 takedowns in CellTransformation1: - Spawn Mecha17 as an enemy Boss - Mecha17 health is 10000 When Mecha17 is defeated: - This unit transforms from CellTransformation1 to CellTransformation2 After this unit scores 50 takedowns in CellTransformation2: - Spawn Mecha18 as an enemy Boss - Mecha18 health is 20000 When Mecha18 is defeated: - This unit transforms from CellTransformation2 to CellTransformation3"
+   },
+   {
+    "name": "CellPassive2",
+    "display": "Genetic Code",
+    "desc": "In Imperfect form: - Copy 50% base damage of the strongest unit in range In Semiperfect form: - This unit gains BioGel on attack - Unlock CellAbility1 BioGel will: - Slow enemies by 60% for 5 seconds - Stun enemies for 3 seconds on expiry In Perfect form: Unlock CellAbility2 On Takedown of an enemy inflicted with BioGel: - Increase this unit's range by 0.2% (Capacity: 30%) - Increase this unit's AoE size by 0.4% (Capacity: 20%)"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Damage layer is handled through ctx.leechDamage (see calculator.js):\n    // this model only documents the assumption in the notes.\n    \"Genetic Code\": function (T) {\n      var pct = N(T, \"bioinsect_leech\", 50);\n      return { notes: [\"Genetic Code: copies \" + pct + \"% of the strongest \" +\n        \"unit's base damage (source picked in Variables; this unit's own \" +\n        \"damage is 0 in the game data). Turn the passive off to drop it.\"] };\n    }"
+ },
+ {
+  "name": "Emerald Fist",
+  "rarity": "Exclusive",
+  "archetype": "Physical",
+  "element": "Terra",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "RockLeePassive1",
+    "display": "Ankle Weights",
+    "desc": "This unit enters the fight with heavy training weights, limiting its potential: - Increase SPA by +35%"
+   },
+   {
+    "name": "RockLeePassive2",
+    "display": "Inner Limits",
+    "desc": "This unit\u2019s SPA cannot be affected by outside sources. This unit does not gain new attacks through upgrades and can only access new attacks through RockLeePassive2.  Every 20s: - Release a new Limit  RockLeeGate1:  Every 20s: - Target the strongest enemy on the map and perform RockLee_Skill2 for 350% damage - Stun self for 5s  RockLeeGate2: - Increase Damage by +50% for 30 seconds. Every 2s: - Cleanse StatusEffects and Debuffs from self  RockLeeGate3:  - This unit will release both the third and fourth gates at the same time. - Disable RockLeePassive1 and further decrease SPA by -50% - Increase Damage by +150%  - Switch to RockLee_Skill3 Every Attack this unit performs in this state will: - Increase SPA by +2.5%  - Decrease Damage by -5% - Apply Stun on hit for 3s - Hit every enemy in range After 10 Attacks:  - Unrelease all Limits - Stuns self for 10 seconds - Re-enable RockLeePassive1"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // +35% SPA from training weights - active except during Gate 3\n    // (which disables this passive).\n    \"Ankle Weights\": function (T) {\n      var gate3 = UP(T, \"lee_gate3\", 30);\n      var spa = 0.35 * (1 - gate3);\n      return { spa: spa, notes: [\"Ankle Weights: +35% SPA outside Gate3 \" +\n        \"(\" + Math.round((1 - gate3) * 100) + \"% of the time)\"] };\n    },\n    // Gate cycle (every 20s a new limit): Gate1 = 350% nuke + 5s self-stun,\n    // Gate2 = +50% dmg / 30s, Gate3+4 = -50% SPA & +150% dmg with attack\n    // degradation, then 10s self-stun. Duty shares via variables.\n    \"Inner Limits\": function (T, ctx) {\n      var g1 = UP(T, \"lee_gate1\", 25);\n      var g2 = UP(T, \"lee_gate2\", 25);\n      var g3 = UP(T, \"lee_gate3\", 30);\n      // Gate1 nuke: 350% every 20s (5s stun halves uptime -> ~1/min)\n      var extra = 3.50 * g1 * 60 / 20 / 60;\n      // Gate2 damage layer; Gate3 damage layer (avg of 10 degrading hits:\n      // +150% decaying -5%/hit -> avg ~+127%)\n      var dmg = g2 * 0.50 + g3 * 1.27;\n      // SPA: weights off in Gate3 and Gate3 is -50% vs base\n      var spa = 0.35 * (1 - g3) + g3 * (-0.50);\n      return { dmg: dmg, spa: spa, extra: extra,\n        notes: [\"Inner Limits cycle: Gate1 \" + Math.round(g1 * 100) +\n        \"% (350% nuke/20s), Gate2 \" + Math.round(g2 * 100) + \"% (+50% dmg), \" +\n        \"Gate3 \" + Math.round(g3 * 100) + \"% (+150% dmg, -50% SPA, attack \" +\n        \"degradation); self-stuns included in shares (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Ramen Guy",
+  "rarity": "Legendary",
+  "archetype": "Physical",
+  "element": "Farm",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "IchirakuPassive",
+    "display": "Capital Lock",
+    "desc": "Selling this unit returns only 10% of its total cost."
+   },
+   {
+    "name": "IchirakuPassive2",
+    "display": "Donburi",
+    "desc": "Increase Yen earned from kills by 50%"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Razorjaw (Hunter)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Neutral",
+  "n_passives": 1,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "GrimmjowPassive1",
+    "display": "Roar",
+    "desc": "Every 10 seconds: - Unleash a Full AoE Roar attack dealing 35% of this unit's current damage and apply Stagger to enemies for 1 seconds - For each enemy hit by this attack, this unit gains 1% Critical Chance (Capacity: 25%)"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "GrimmjowAbility1",
+    "display": "Endless Slashes",
+    "desc": "On activation: This unit will teleport to base, and begin slashing down the whole path. - Each Slash attack will increase in damage by 10% Upon hitting the enemy base, this unit will return to its original position."
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Every 10s: Full AoE for 35% + Stagger; +1% crit chance per enemy\n    // hit (cap 25%), stacking over roars during a fight.\n    \"Roar\": function (T) {\n      var cc = Math.min(N(T, \"roronoa_roar_cc\", 15), 25);\n      var extra = 0.35 / 10;\n      return { cc: cc, extra: extra,\n        notes: [\"Roar: 35% every 10s; +\" + cc +\n        \"% crit chance from hits (cap 25%, grows over the fight)\"] };\n    }"
+ },
+ {
+  "name": "Salmon Sorcerer (Grade 1)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Gale",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "InumakiPassive1",
+    "display": "Crumble Away",
+    "desc": "Apply 20% Slow on all upgrades."
+   },
+   {
+    "name": "InumakiPassive2",
+    "display": "Plummet",
+    "desc": "When an enemy comes within 50% of this unit's range: - Apply Stagger for 2 seconds"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "String Demon (Awakened)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Neutral",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "DoflamingoPassive1",
+    "display": "Cocoon of Carnage",
+    "desc": "Every 6 RegularAttacks will DoflamingoCocoon the enemies hit:  - Enemies are either stunned for 10 hits, or 5 seconds If the DoflamingoCocoon is broken after 10 hits: - Deal 100% of this unit's current damage If the DoflamingoCocoon is not broken before 5 seconds: - DoflamingoCocoon despawns"
+   },
+   {
+    "name": "DoflamingoPassive2",
+    "display": "String Sync",
+    "desc": "When the nearest unit in this unit's range performs a RegularAttack: - Attach a DoflamingoString to nearest unit (Capacity: 3) On this unit RegularAttack: - Units with DoflamingoString will perform a FollowUpAttack dealing 100% of this unit's damage and breaking the DoflamingoString attachment - After DoflamingoString breaks, it cannot be reapplied for 15s"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Every 6 attacks: cocoon on hit enemies; if broken after 10 hits it\n    // deals 100% (otherwise just stalls - CC).\n    \"Cocoon of Carnage\": function (T, ctx) {\n      var u = UP(T, \"doflamingo_cocoon_break\", 50);\n      var extra = 1.00 * u / (6 * ctx.spa);\n      return { extra: extra, notes: [\"Cocoon of Carnage: 100% per broken \" +\n        \"cocoon (every 6 attacks), \" + Math.round(u * 100) +\n        \"% break rate (estimated)\"] };\n    },\n    // Ally attacks attach a string (cap 3); on this unit's next attack\n    // all attached units fire a 100% follow-up; reattach lockout 15s per\n    // unit -> up to 3 x 100% per 15s.\n    \"String Sync\": function (T) {\n      var u = UP(T, \"doflamingo_strings\", 40);\n      var extra = 3 * 1.00 / 15 * u;\n      return { extra: extra, notes: [\"String Sync: 3 strings x 100% per \" +\n        \"~15s at \" + Math.round(u * 100) + \"% uptime (needs ally attacks)\"] };\n    }"
+ },
+ {
+  "name": "True Saint (Holy)",
+  "rarity": "Exclusive",
+  "archetype": "Magical",
+  "element": "Light",
+  "n_passives": 1,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "HinataPassive1",
+    "display": "Predictive Calculation",
+    "desc": "On RegularAttack: - Inflict enemies with HinataMark (Maximum 5 enemies) On CriticalAttack: - Remove all HinataMark and deal 10% current damage to marked enemies On Upgrade: - Increase Critical Chance by 1.5%"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "HinataAbility2",
+    "display": "Seize",
+    "desc": "On activation: - Steal 20% of damage from the 3 strongest units in this unit's range for 60 seconds"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Attacks mark enemies (cap 5); each critical removes all marks and\n    // deals 10% of current damage to every marked enemy. Crit chance 10%\n    // comes from the unit's own stats (ctx.cc).\n    \"Predictive Calculation\": function (T, ctx) {\n      var n = Math.min(N(T, \"hinata_marks\", 5), 5);\n      var crit = (ctx.cc || 0) / 100;\n      var extra = 0.10 * n * crit / ctx.spa;\n      return { extra: extra, notes: [\"Predictive Calculation: \" + n +\n        \" marks x10% popped per crit (\" + Math.round(crit * 100) +\n        \"% crit chance)\"] };\n    },\n    // Ability: for 60s steals 20% of the damage of the 3 strongest units\n    // in range (modeled as +60% self damage) - cadence as uptime var.\n    \"Seize\": function (T) {\n      var u = UP(T, \"hinata_seize\", 30);\n      return { dmg: 0.60 * u, notes: [\"Seize: +60% damage (3 x 20% stolen, \" +\n        \"60s window) at \" + Math.round(u * 100) + \"% uptime (estimated)\"] };\n    }"
+ },
+ {
+  "name": "5th God Hand",
+  "rarity": "Secret",
+  "archetype": "Psychic",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": false,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "GriffithFemtoPassive1",
+    "display": "Eclipse Distortion",
+    "desc": "Every 3 RegularAttacks: - Create a Distortion on this unit's Target for 10 seconds  Enemies walking into Distortion will: - Disappear from the map for 2 seconds (12s Cooldown) - Take 50% of this unit's current damage  Enemies will not move while in Distortion."
+   },
+   {
+    "name": "GriffithFemtoPassive2",
+    "display": "Causality",
+    "desc": "This unit has GriffithFemtoMeter, starting at 0. (Capacity: 35)  If an enemy survives Distortion's damage: - Inflict enemy with GriffithFemtoMark for 5 seconds - Gain 1 GriffithFemtoMeter  For every enemy in range with GriffithFemtoMark: - Increase this unit's damage by 2.5% - Increase this unit's range by 1%  GriffithFemtoMark cannot stack. Enemies inflicted with GriffithFemtoMark will take 5% increased damage from this unit."
+   },
+   {
+    "name": "GriffithFemtoPassive3",
+    "display": "Eclipse",
+    "desc": "For every GriffithFemtoMeter stack: - Increase the damage of this unit's Distortion by 5%  At 35 GriffithFemtoMeter stacks: - All enemies in range will take 100% of this unit's current damage per second for 5 seconds - After 5 seconds reset GriffithFemtoMeter back to 0"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": null
+ },
+ {
+  "name": "Alchemy Brothers (Truth)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Terra",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "EdwardAlphonsePassive1",
+    "display": "Understand, Deconstruct, Reconstruct",
+    "desc": "This unit\u2019s attacks cycle through 3 attacks  Understand: On attack: - Apply AlchemyMark   (Capacity: 3) - AlchemyMark will not be removed through each rotation  Deconstruct: On attack: - Grants all units in range 5% Magical damage per AlchemyMark applied   (Capacity: 50% Magical damage)   For 10 seconds  Reconstruct: On attack: - Deal 120% of this unit\u2019s current damage - Apply 70% Slow for 6 seconds"
+   },
+   {
+    "name": "EdwardAlphonsePassive2",
+    "display": "Already Understood",
+    "desc": "Every enemy with max AlchemyMark will: - Skip Understand and cycle through Deconstruct and Reconstruct only When an enemy with max AlchemyMark dies: - Apply 2 AlchemyMark on next attack   5 second cooldown"
+   },
+   {
+    "name": "EdwardAlphonsePassive3",
+    "display": "Alchemist\u2019s Judgement",
+    "desc": "If the majority of your team have a damaging DoT: - Those units can apply 2 more stack of their DoT to the enemy  If the majority of your team have no damaging DoT: - This units AlchemyMark capacity is increased by 3 - Understand from EdwardAlphonsePassive1 applies an extra AlchemyMark  If there is no majority: - Deconstruct\u2019s Magical damage bonus is increased by 10% - Reconstruct\u2019s Slow is increased by 10% Excludes all Farms"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Cycle of 3 attacks: Understand (marks) / Deconstruct (all units in\n    // range +5% Magical dmg per mark, cap 50%, 10s) / Reconstruct (120%\n    // damage + slow). Self benefits from Deconstruct (emitter stands in\n    // its own range, Magical archetype matches). Reconstruct averages\n    // +20% damage over the 3-attack cycle.\n    \"Understand, Deconstruct, Reconstruct\": function (T, ctx) {\n      var marks = Math.min(N(T, \"alchemy_marks\", 10), 10);\n      var buffUptime = Math.min(1, 10 / (3 * ctx.spa));  // 10s buff / 3-attack cycle\n      var dmg = 0.05 * marks * buffUptime * 0.5 + 0.20 / 3;\n      return { dmg: dmg, notes: [\"Alchemy cycle: Reconstruct +20% on 1 of 3 attacks; \" +\n        \"Deconstruct \" + marks + \" marks x5% at \" + Math.round(buffUptime * 100) +\n        \"% uptime (self included)\"] };\n    },\n    // Max-marked enemies skip Understand -> the 120% Reconstruct lands on\n    // 2 of 3 attacks instead of 1 of 3 (steady state after ramp-up).\n    \"Already Understood\": function (T) {\n      return { dmg: 0.20 / 3,\n        notes: [\"Already Understood: max-marked enemies skip Understand, Reconstruct on 2 of 3 attacks\"] };\n    },\n    // Team-composition dependent (DoT majority / no majority). The no-DoT\n    // branch (+3 mark capacity, extra mark) is the self-buff branch we\n    // model at the standard conditional uptime.\n    \"Alchemist\u2019s Judgement\": function (T) {\n      var u = UP(T, \"alchemy_judgement_uptime\", 30);\n      var dmg = 0.15 * u;   // +3 marks x5% on the capped Deconstruct buff\n      return { dmg: dmg, notes: [\"Alchemist's Judgement: no-DoT team branch (+3 mark capacity) at \" +\n        Math.round(u * 100) + \"% uptime (team-dependent)\"] };\n    }"
+ },
+ {
+  "name": "Carrot (Unleashed)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Gale",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "GokuPassive1",
+    "display": "Battle Instinct",
+    "desc": "Every 3 non-CriticalAttacks: - Next RegularAttack will be a guaranteed CriticalAttack"
+   },
+   {
+    "name": "GokuPassive2",
+    "display": "Limitless Warrior",
+    "desc": "This unit has GokuMeter, starting at 0. On CriticalAttack: - Increase GokuMeter by 10 If this unit is Debuffed or Stun: - Increase GokuMeter by 20 At 30 GokuMeter stacks: - Transform this unit into GokuTransformation In GokuTransformation form: - Apply Stagger to all enemies in range - This unit becomes immune to StatusEffects - Increase Damage by 15% - Increase Crit Damage by 20% - GokuMeter will decrease by 1 every 2 seconds When GokuMeter is depleted: - Transform back into base"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "GokuAbility1",
+    "display": "Instant Relocation",
+    "desc": "Select a unit on the map or a position within this unit's range to Relocate to for 15 seconds.\r On Relocate to a unit:\r - Immediately perform a FollowUpAttack dealing 75% of this unit's current damage\r - Trigger the selected unit to perform the same FollowUpAttack dealing 75% of the selected unit's current damage\r On Relocate to a position:\r - Immediately perform a FollowUpAttack dealing 75% of this unit's current damage\r - Increase this unit's Damage by 50% for 15 seconds"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Every 3 non-crits -> next attack guaranteed crit: over a cycle of 4\n    // attacks (3 normal + 1 forced) the expected crit count is 1 + the\n    // natural crits on the first 3. With base cc this is modeled as a\n    // flat cc increase to reach ~25%+ effective crits.\n    \"Battle Instinct\": function (T, ctx) {\n      var forced = 0.25;   // 1 guaranteed crit per 4 attacks\n      var eff = Math.max(0, forced * 100 - ctx.cc);\n      return { cc: eff, notes: [\"Battle Instinct: 1 forced crit / 4 attacks (effective ~25%)\"] };\n    },\n    // Meter: +10 per crit, +20 when debuffed; at 30 -> transformation\n    // (+15% dmg, +20% crit dmg), meter drains 1/2s while transformed.\n    // Cycle average via duty-cycle variable.\n    \"Limitless Warrior\": function (T) {\n      var u = UP(T, \"goku_transform_uptime\", 30);\n      return { dmg: 0.15 * u, cd: 20 * u,\n        notes: [\"Limitless Warrior: transformation at \" + Math.round(u * 100) +\n        \"% duty cycle (+15% dmg, +20% crit dmg)\"] };\n    },\n    // Relocate: 75% follow-up; to a position: +50% damage for 15s.\n    \"Instant Relocation\": function (T) {\n      var u = UP(T, \"goku_ability_uptime\", 30);\n      var extra = 0.75 * N(T, \"goku_ability_ppm\", 2) / 60;\n      return { dmg: 0.50 * u, extra: extra,\n        notes: [\"Instant Relocation: +50% dmg / 15s at \" + Math.round(u * 100) +\n        \"% uptime, 75% follow-up \" + N(T, \"goku_ability_ppm\", 2) + \"/min (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Crimson (Brother)",
+  "rarity": "Exclusive",
+  "archetype": "Magical",
+  "element": "Dark",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "ChosoPassive1",
+    "display": "Crimson Explosion",
+    "desc": "On RegularAttack: - Inflict enemies with ChosoMark keywordChosoMarked enemies will ChosoExplode after 5 seconds dealing 15% of this unit's current damage."
+   },
+   {
+    "name": "ChosoPassive2",
+    "display": "Crimson Pool",
+    "desc": "When ChosoExplode activates: - Leave a ChosoCrimsonPool on the ground for 6 seconds (Capacity: 3) - Enemies walking on ChosoCrimsonPool will take 10% of this unit's current damage every 2 seconds"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "ChosoAbility1",
+    "display": "Piercing Crimson",
+    "desc": "On activation: - Select a point within this unit's range to fire ChosoAbility1 at for 10 seconds Enemies in ChosoAbility1 will: - Take 75% of this unit's damage every 1 seconds - Be inflicted with ChosoMark This unit will not Attack whilst this ability is active."
+   }
+  ],
+  "dots": [],
+  "model": "\n    // On attack: mark explodes after 5s for 15% of this unit's damage.\n    // Single target: the attacked enemy carries the mark.\n    \"Crimson Explosion\": function (T, ctx) {\n      var extra = 0.15 / 5;\n      return { extra: extra, notes: [\"Crimson Explosion: 15% on the \" +\n        \"attacked enemy / 5s (single target)\"] };\n    },\n    // Each explosion leaves a pool (cap 3) burning enemies for 10% / 2s.\n    \"Crimson Pool\": function (T) {\n      var n = N(T, \"choso_pool_targets\", 1);\n      var extra = 0.10 * n / 2;\n      return { extra: extra, notes: [\"Crimson Pool: 10% / 2s on \" + n +\n        \" enemy standing in a pool (cap 3, estimated)\"] };\n    },\n    // Ability: 10s field, 75% damage per 1s; this unit does not attack\n    // while active (duty cycle variable, attacks replaced by the field).\n    \"Piercing Crimson\": function (T, ctx) {\n      var u = UP(T, \"choso_ability_uptime\", 10);\n      var extra = 0.75 * u;\n      return { extra: extra, spa: 1 / Math.max(0.01, 1 - u),   // attacks lost while channeling\n        notes: [\"Piercing Crimson: 75% dmg/s field at \" + Math.round(u * 100) +\n        \"% uptime (~10s field per ~100s, estimated), attacks paused while active\"] };\n    }"
+ },
+ {
+  "name": "Cursed Immortal (Black Sun)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "ZerefPassive1",
+    "display": "Wandering Death",
+    "desc": "This unit does not deal or receive damage when passing through enemies. Instead, it deals damage every tick to all enemies within its aura."
+   },
+   {
+    "name": "ZerefPassive2",
+    "display": "Reckless Control",
+    "desc": "This unit has ZerefBlackMagic meter, starting at 0. - When ZerefBlackMagic Meter is increasing this unit will be in \"Caring State\" - When ZerefBlackMagic Meter is decreasing this unit will be in \"Cold state\" Caring state: - Every 1 seconds this unit walks increases this meter by 5 - Deal 50% of this unit's current damage in 50% of his range Cold State: - Every 1 seconds this unit walks decreases this meter by 2 - Deal 125% of this unit's current damage in 25% of his range"
+   },
+   {
+    "name": "ZerefPassive3",
+    "display": "State of Critical Mass",
+    "desc": "If this unit changes State: - Increase Critical Chance by 5% (Capacity: 30%)"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Walking aura unit: no projectile attack - deals aura tick damage\n    // instead. Damage comes from the Reckless Control states; estimated.\n    \"Wandering Death\": function (T, ctx) {\n      // baseline = the unit's own attack loop (SPA 2.05) hitting the aura\n      var extra = 0;\n      return { extra: extra, notes: [\"Wandering Death: aura damage modeled \" +\n        \"through Reckless Control states (estimated)\"] };\n    },\n    // Caring state: 50% dmg in 50% range; Cold state: 125% dmg in 25%\n    // range. State shares averaged over the walk cycle (estimated).\n    \"Reckless Control\": function (T) {\n      var cold = UP(T, \"zeref_cold_share\", 50);\n      var caring = 1 - cold;\n      // smaller range in Cold state -> fewer targets hit\n      var dmg = caring * 0.50 + cold * 1.25;\n      var rangeShare = caring * 0.50 + cold * 0.25;\n      var targets = Math.max(1, Math.round(EN(T) * rangeShare));\n      return { dmg: dmg - 1,   // multiplicative layer (can be negative)\n        notes: [\"Reckless Control: \" + Math.round(cold * 100) +\n        \"% Cold (125% dmg, 25% range) / \" + Math.round(caring * 100) +\n        \"% Caring (50% dmg, 50% range), ~\" + targets + \" target(s) hit (estimated)\"] };\n    },\n    // +5% crit chance per state change (cap 30%) - changes are frequent\n    // in sustained combat, modeled at a configurable share of the cap.\n    \"State of Critical Mass\": function (T) {\n      var u = UP(T, \"zeref_critmass\", 60);\n      return { cc: 30 * u, notes: [\"State of Critical Mass: \" +\n        Math.round(u * 100) + \"% of the +30% crit cap (state changes)\"] };\n    }"
+ },
+ {
+  "name": "Cursed Student (True Love)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Dark",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "YutaPassive1",
+    "display": "Cursed Mimicry",
+    "desc": "Every 3 RegularAttack: - FollowUp with a copy of an attack of the closest unit in range The FollowUpAttack will deal: - 100% of this unit's current damage, plus 40% of the closest unit's current damage On New Attack: - FollowUpAttack percentage of closest unit is increased by 20%"
+   },
+   {
+    "name": "YutaPassive2",
+    "display": "Spirit Bats",
+    "desc": "Every 20 total stacks of Bleed in this unit's range: - Summon a YutaBatSpirit at this unit's position (Capacity: 3) - YutaBatSpirits will deal 15% of this unit's current damage per attack - YutaBatSpirits despawn after 3 attacks"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Bleed",
+    "display": "Bleed",
+    "scaling": 0.65,
+    "ticks": 6,
+    "duration": 6,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Every 3rd attack: follow-up at 100% of this unit's damage + 40% of\n    // the closest unit's (increases +20% per \"New Attack\" - modeled at\n    // the base value, stacking capped by a variable).\n    \"Cursed Mimicry\": function (T, ctx) {\n      var ally = N(T, \"yuuta_ally_dmg\", 100) / 100;   // ally dmg as % of own\n      var bonus = N(T, \"yuuta_mimic_bonus\", 40) / 100;\n      var extra = (1.00 + ally * bonus) / (3 * ctx.spa);\n      return { extra: extra, notes: [\"Cursed Mimicry: follow-up every 3 \" +\n        \"attacks (100% own + \" + Math.round(bonus * 100) + \"% of closest unit at \" +\n        ally * 100 + \"% of own damage)\"] };\n    },\n    // Every 20 Bleed stacks in range -> YutaBatSpirit (cap 3), 15% of this\n    // unit's damage per attack, SPA 10, despawns after 3 attacks. Bat count\n    // is derived from the mortality-based enemy count in auto mode (-1).\n    \"Spirit Bats\": function (T, ctx) {\n      var bats = N(T, \"yuuta_bats\", -1);\n      var auto = bats < 0;\n      if (auto) {\n        var enemies = RCOUNT(T, ctx, 1, 17);\n        var perEnemy = N(T, \"yuuta_bleed_per_enemy\", 10);\n        bats = Math.floor(enemies * perEnemy / 20);\n      }\n      bats = Math.min(Math.max(bats, 0), 3);\n      var u = UP(T, \"yuuta_bat_uptime\", 40);\n      var extra = bats * 0.15 / 10 * u;\n      return { extra: extra, notes: [\"Spirit Bats: \" + bats +\n        \" bat(s) x15% / 10s at \" + Math.round(u * 100) +\n        \"% uptime (1 per 20 Bleed stacks; \" +\n        (auto ? \"auto from enemies in range\" : \"manual\") + \")\"] };\n    }"
+ },
+ {
+  "name": "Dark Mage (Sovereign)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "JudarPassive1",
+    "display": "Magic Cycle",
+    "desc": "After 8 RegularAttacks, this unit will cycle: - Attack 1 (Ice Magic) - Circle AoE (Size: 12) - Attack 2 (Lightning Magic) - Cone AoE (Size: 55)"
+   },
+   {
+    "name": "JudarPassive2",
+    "display": "Lightning Orbs",
+    "desc": "On switching to Lightning Magic: - Summon an Arc of Lightning on the path inside of this unit's range - Enemies that are touching Arc of Lightning will take 25% of this unit's current damage every 1 second"
+   },
+   {
+    "name": "JudarPassive3",
+    "display": "Ice Barrage",
+    "desc": "On switching to Ice Magic: - This unit gains Freeze on attack On RegularAttack: - Gain 1 stack of JudarMeter per enemy hit (Capacity: 20) At 20 JudarMeter stacks: - This unit's next attack against enemies inflicted with Freeze will shatter, unfreezing them and dealing 10% additional damage in a small AoE (5 range)"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // On switching to Lightning (every ~10 attacks): Arc of Lightning on\n    // the path; touching enemies take 25% per second while it is up.\n    \"Lightning Orbs\": function (T) {\n      var u = UP(T, \"darkmage_arc_uptime\", 30);\n      var n = N(T, \"darkmage_arc_targets\", 1);\n      var extra = 0.25 * n * u;\n      return { extra: extra, notes: [\"Lightning Orbs: Arc 25% dmg/s on \" +\n        n + \" enemy(s) at \" + Math.round(u * 100) + \"% uptime (estimated)\"] };\n    },\n    // At 20 JudarMeter stacks: next attack shatters for +10% AoE. Meter\n    // fills 1 stack per enemy hit on Ice attacks.\n    \"Ice Barrage\": function (T, ctx) {\n      var ppm = N(T, \"darkmage_shatter_ppm\", 3);\n      var extra = 0.10 * ppm / 60;\n      return { extra: extra, notes: [\"Ice Barrage: +10% shatter AoE, \" +\n        ppm + \"/min (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Dead Melody (Solo)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Storm",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "BrookPassive1",
+    "display": "Seafarer Quintet",
+    "desc": "To units in range with the Unbound trait: - +15% Damage - +5% Range To units in range without the Unbound trait: - +30% Damage - +10% Range  The first OnePieceCategory unit placed in this unit's range is designated as the BrookCaptain The BrookCaptain gains: - +20% Critical Chance - +25% Critical Damage If the BrookCaptain is removed from the map: - Designate the closest OnePieceCategory unit as the BrookCaptain  Summoned units and clones do not receive these buffs directly and cannot become the BrookCaptain."
+   },
+   {
+    "name": "BrookPassive2",
+    "display": "Ever-Travelling Superstar",
+    "desc": "This unit can switch between two melodies.  If the closest unit is a OnePieceCategory unit, switch to the BrookMelody1: For this unit: - +35% Damage - +100% Critical Chance - +15% Critical Damage - Inflict DeepFreeze on attack - DeepFreeze: Immobilizes enemies for 3s. OnePieceCategory units deal +20% damage to enemies afflicted with DeepFreeze  If the closest unit is not a OnePieceCategory unit, switch to BrookMelody2: - This unit stops attacking For all units in range: - +20% Damage - +5% Range - +10% Critical Chance  Summoned units and clones are ignored when choosing a melody and do not receive Brew's Melody's buffs directly."
+   },
+   {
+    "name": "BrookPassive3",
+    "display": "Afterlife Channeling",
+    "desc": "On attack: - FollowUpAttack with BrookEVO_Skill2  On FollowUpAttack: - Creates an area within the AoE that lingers for 8s. Any enemy that enters this area is afflicted with DeepFreeze for 3s. When this unit attacks an enemy within this area: - Extend DeepFreeze duration by 1s (Extension Cap: 1)  If this unit attacks an enemy afflicted with DeepFreeze: - Deals an additional instance of 30% damage to hit enemies"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Buff aura: +15% dmg/+5% range to units WITH the Unbound trait in\n    // range, +30%/+10% to units WITHOUT it (this unit's own trait decides\n    // its share when the emitter is assumed inside its own range).\n    // BrookCaptain (+20% cc / +25% cd) is assumed to be another unit by\n    // default (toggle in Variables).\n    \"Seafarer Quintet\": function (T, ctx) {\n      var selfUnbound = (ctx && ctx.trait === \"Unbound\");\n      var dmg = selfUnbound ? 0.15 : 0.30;\n      var cc = 0, cd = 0;\n      if (N(T, \"brook_captain_self\", 0) >= 50) { cc = 20; cd = 25; }\n      return { dmg: dmg, cc: cc, cd: cd,\n        notes: [\"Seafarer Quintet: \" + (selfUnbound ? \"+15% (Unbound trait)\" : \"+30%\") +\n        \" to units in range (self included); BrookCaptain \" +\n        (cc ? \"self (assumed)\" : \"another unit (assumed)\")] };\n    },\n    // Melody choice (variable): Melody1 = self +35% dmg / +100% cc /\n    // +15% cd + DeepFreeze (best own DPS, default); Melody2 = stops\n    // attacking and only buffs others (own DPS = 0).\n    \"Ever-Travelling Superstar\": function (T) {\n      var m = N(T, \"brook_melody\", 1);\n      if (m !== 1) {\n        return { dmg: 0, spa: 999, notes: [\"Melody2 selected: this unit \" +\n          \"stops attacking (own DPS 0, buffs others only)\"] };\n      }\n      return { dmg: 0.35, cc: 100, cd: 15,\n        notes: [\"Melody1 selected (best own DPS): +35% dmg, +100% crit \" +\n        \"chance, +15% crit dmg, DeepFreeze on attack\"] };\n    },\n    // On attack: follow-up area (lingers 8s, DeepFreeze). Attacking a\n    // DeepFreeze enemy (guaranteed under Melody1) adds a 30% instance.\n    \"Afterlife Channeling\": function (T, ctx) {\n      var m = N(T, \"brook_melody\", 1);\n      if (m !== 1) return { mult: 1, notes: [\"Afterlife: no attack under Melody2\"] };\n      return { mult: 1.30, notes: [\"Afterlife Channeling: +30% instance \" +\n        \"per attack vs DeepFreeze targets (steady state under Melody1)\"] };\n    }"
+ },
+ {
+  "name": "Eclipse Hunter (Savior)",
+  "rarity": "Mythic",
+  "archetype": "Psychic",
+  "element": "Neutral",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "SkullKnightPassive1",
+    "display": "Sacrificial Brand Denier",
+    "desc": "When placing a unit (excluding Farms), this unit is placed alongside them. The other unit placed will be SkullKnightSelected.  If a stage has a Resistance Debuff that matches the SkullKnightSelected's Archetype or Element: - Reduce the Resistance by 10% (GlobalCap: 30%)"
+   },
+   {
+    "name": "SkullKnightPassive2",
+    "display": "Savior",
+    "desc": "If the SkullKnightSelected unit has less damage than this unit: - Increase this unit's damage by 15%  If the SkullKnightSelected unit has more damage than this unit: - Increase the SkullKnightSelected unit's range by 5% - Increase the SkullKnightSelected unit's AoE Size by 10%  If the SkullKnightSelected unit is Iron Wolf (Struggler) or Silver Falcon: - Increase the SkullKnightSelected unit's damage by 15% - Increase the SkullKnightSelected unit's range by 5% - Increase the SkullKnightSelected unit's AoE Size by 10%"
+   },
+   {
+    "name": "SkullKnightPassive3",
+    "display": "The King",
+    "desc": "Every 3 upgrades on the SkullKnightSelected unit will: - Upgrade this unit for free  Every upgrade on this unit: - Reduce the cost of all of your placed Eclipse Hunter (Savior)'s upgrades by 5%"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // If the selected unit is weaker -> this unit +15% dmg; otherwise the\n    // selected unit is buffed (no effect here). Conditional -> uptime var.\n    \"Savior\": function (T) {\n      var u = UP(T, \"eclipse_savior_self\", 30);\n      return { dmg: 0.15 * u, notes: [\"Savior: self-buff branch (+15%) at \" +\n        Math.round(u * 100) + \"% of placements (else the ally is buffed)\"] };\n    }"
+ },
+ {
+  "name": "First Blade (Strongest)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Hydro",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "UnohanaPassive1",
+    "display": "Can't Fear Your Own Sword",
+    "desc": "If a unit in range is afflicted with a StatusEffect or Debuff: - Cleanse that unit  When this unit performs a Cleanse, for all allies in range: - +20% Damage for 30 seconds - This buff is doubled for BleachCategory units  At the same time, for this unit: - +25% Damage for 45 seconds - This buff is doubled if cleansing KenpachiEVO  Local Cooldown: 2s"
+   },
+   {
+    "name": "UnohanaPassive2",
+    "display": "Killers Not Dead",
+    "desc": "If KenpachiEVO is in range, for this unit: - Switch to Unohana_Skill3 - +10% Damage - +5% Range  When this unit performs Unohana_Skill3, for any KenpachiEVO in range: - Stun that unit for 2s, bypassing any immunities - Enhance that unit's next attack for x15% damage dealt - Enable that unit's next attack to stun this unit and all enemies in range for 3s"
+   },
+   {
+    "name": "UnohanaPassive3",
+    "display": "Eliminate From Heaven",
+    "desc": "If this unit is afflicted with a StatusEffect or Debuff, for the next attack: - Switch to Unohana_Skill3 - +25% Damage  When performing Unohana_Skill3, inflict Liquefy. Liquefy: - Deals 50% of this unit's damage over 2 seconds - On expiry: Enemy heals equal to the damage that the initial application dealt, then Liquefy is reapplied at double the damage factor"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // On cleanse: self +25% dmg / 45s (50% if cleansing KenpachiEVO);\n    // allies +20% (others only). Local CD 2s - conditional on debuffs\n    // being present -> uptime variable.\n    \"Can't Fear Your Own Sword\": function (T) {\n      var u = UP(T, \"unohana_cleanse_uptime\", 30);\n      var kenp = N(T, \"unohana_kenpachi\", 0) >= 50;\n      var self = (kenp ? 0.50 : 0.25) * u;\n      return { dmg: self, notes: [\"Cleanse buff: +\" +\n        Math.round((kenp ? 50 : 25)) + \"% self / 45s at \" +\n        Math.round(u * 100) + \"% uptime (needs debuffed allies; the +20% \" +\n        \"team buff does not affect this unit)\"] };\n    },\n    // With KenpachiEVO in range: switch skill, +10% dmg / +5% range.\n    \"Killers Not Dead\": function (T) {\n      var u = UP(T, \"unohana_kenpachi_uptime\", 20);\n      return { dmg: 0.10 * u, notes: [\"Killers Not Dead: +10% dmg with \" +\n        \"KenpachiEVO in range at \" + Math.round(u * 100) + \"% uptime\"] };\n    },\n    // When self is debuffed: next attack +25% and inflicts Liquefy\n    // (50% of damage over 2s). Conditional -> uptime variable.\n    \"Eliminate From Heaven\": function (T, ctx) {\n      var u = UP(T, \"unohana_liquefy_uptime\", 20);\n      var extra = 0.50 / 2 * u;\n      return { dmg: 0.25 * u, extra: extra,\n        notes: [\"Eliminate From Heaven: +25% next attack and Liquefy \" +\n        \"(50% / 2s) at \" + Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Flame Emperor (Reincarnate)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Flame",
+  "n_passives": 1,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "SaboPassive1",
+    "display": "Wildfire",
+    "desc": "On applying Fire: - Spread to the 3 nearest enemies, that do not have Fire applied"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "SaboAbility1",
+    "display": "Wall of Fire",
+    "desc": "On activation: - Summon a SaboSummon on any path within this unit's range - Enemies that pass through SaboSummon are inflicted with Fire"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // On applying Fire: spreads to more enemies without Fire. Single\n    // target: only the spread instance that re-lands on the primary counts\n    // (default 30% uptime share).\n    \"Wildfire\": function (T) {\n      var u = UP(T, \"sabo_spread_uptime\", 30);\n      var extra = 0.5 / 4 * u;\n      return { extra: extra, notes: [\"Wildfire: Fire spread re-hits the \" +\n        \"primary at \" + Math.round(u * 100) + \"% uptime (0.5x / 4s, status data)\"] };\n    },\n    // Ability: summon SaboSummon on a path for a duration; enemies\n    // passing through get Fire. Cadence variable (single target share).\n    \"Wall of Fire\": function (T) {\n      var u = UP(T, \"sabo_wall_uptime\", 30);\n      var extra = 0.5 / 4 * u;\n      return { extra: extra, notes: [\"Wall of Fire: primary passes the \" +\n        \"wall at \" + Math.round(u * 100) + \"% uptime (0.5x / 4s)\"] };\n    }"
+ },
+ {
+  "name": "Lady Giant (Envy)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Terra",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "DianePassive1",
+    "display": "Stone Wall",
+    "desc": "Summon a DianeStoneWall every 15 seconds. (Capacity: 2) - DianeStoneWall will have 75% of this unit's current damage as health - In DianeTransformation: DianeStoneWall will have 50% of this unit's current damage as health"
+   },
+   {
+    "name": "DianePassive2",
+    "display": "Rock Storm",
+    "desc": "On RegularAttack: - Gain 1 DianeRockChunk At 4 DianeRockChunks: - Unleash a FollowUpAttack throwing a DianeRock at the closest enemy in range - DianeRock will deal 100% of this unit's current damage In DianeTransformation: - DianeRock will deal 125% of this unit's current damage"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "DianeAbility1",
+    "display": "Size Control: Giant",
+    "desc": "On activation: - Lady Giant alters her size to DianeTransformation for the next 25s: - Damage is increased by 125% - SPA is increased by 25% - Range is increased by 50%"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Every 4 attacks: follow-up DianeRock at 100% (125% while\n    // transformed). Rock Storm is attack-driven, always on.\n    \"Rock Storm\": function (T, ctx) {\n      var g = UP(T, \"diane_transform\", 20);\n      var dmg = 1.00 * (1 + 0.25 * g);\n      var extra = dmg / (4 * ctx.spa);\n      return { extra: extra, notes: [\"Rock Storm: 100% follow-up every \" +\n        \"4 attacks (125% at \" + Math.round(g * 100) + \"% transformation)\"] };\n    },\n    // Ability: DianeTransformation for 25s: +125% damage, +25% SPA\n    // (slower), +50% range - averaged over the cycle (duty variable).\n    \"Size Control: Giant\": function (T) {\n      var g = UP(T, \"diane_transform\", 20);\n      return { dmg: 1.25 * g, spa: 0.25 * g,\n        notes: [\"Size Control: +125% dmg / +25% SPA at \" +\n        Math.round(g * 100) + \"% duty cycle (25s per activation)\"] };\n    }"
+ },
+ {
+  "name": "Princess (Misery)",
+  "rarity": "Mythic",
+  "archetype": "Psychic",
+  "element": "Gale",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "PeronaPassive1",
+    "display": "Mysterious Four's Princess",
+    "desc": "When a OnePieceCategory unit attacks an enemy within this unit's range: - Enemies hit are inflicted with Gloom for 6s - Gloom: Enemies afflicted are immobilized for 3s and cannot inflict StatusEffects on units for the effect's duration  On attack against enemies afflicted with Gloom, inflict Possession - Possession: Upon death, revive as friendly summon for 15% of this unit's damage  (Summon Cap: 20)"
+   },
+   {
+    "name": "PeronaPassive2",
+    "display": "Ghost Masquerade: Final Act",
+    "desc": "Every 30s: - Spawn a PeronaSpecialGhost at the end of this unit's range When this PeronaSpecialGhost hits an enemy: - Instantly explodes in a 12 radius for 100% of this unit's damage  For every enemy that died in this unit's range while afflicted with Gloom: - Increase this explosion's damage dealt by +20% and its radius by +15% (Total Cap: 200% and 150%) - Counter resets every cycle and only counts enemies within each cycle"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "PeronaAbility1",
+    "display": "Lover of Company",
+    "desc": "On activation: - Select a spot within this unit's range to place a PeronaSmallGhost - PeronaSmallGhost has 30% of this unit's damage and 60% of this unit's range - Sell a PeronaSmallGhost to gain a use of this ability - PeronaSmallGhost counts as a OnePieceCategory unit  For the purposes of this unit's passives: - The range of PeronaSmallGhost is counted as part of this unit's range - PeronaSmallGhost counts as this unit"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Gloom (CC, from OnePiece allies' attacks) + Possession: enemies\n    // killed while possessed revive as friendly summons at 15% of this\n    // unit's damage (cap 20, attack cadence estimated like Small Ghost).\n    \"Mysterious Four's Princess\": function (T) {\n      var n = Math.min(N(T, \"perona_possessed\", 2), 20);\n      var u = UP(T, \"perona_possession_uptime\", 40);\n      var extra = n * 0.15 / 7.5 * u;\n      return { extra: extra, notes: [\"Possession: \" + n +\n        \" revived ghost(s) at 15% / ~7.5s, \" + Math.round(u * 100) +\n        \"% uptime (needs Gloom kills; Gloom itself is CC only)\"] };\n    },\n    // Every 30s: SpecialGhost explodes for 100% (+20% per Gloom death\n    // this cycle, cap +200%).\n    \"Ghost Masquerade: Final Act\": function (T) {\n      var bonus = N(T, \"perona_kill_bonus\", 20) / 100;\n      var extra = (1.00 * (1 + bonus)) / 30;\n      return { extra: extra, notes: [\"Ghost Masquerade: \" +\n        Math.round(100 * (1 + bonus)) + \"% explosion every 30s (\" +\n        Math.round(bonus * 100) + \"% kill bonus, cap +200%)\"] };\n    },\n    // Small Ghost (30% of this unit's damage, SPA 7.5) placed at a spot;\n    // it also counts as this unit for the other passives.\n    \"Lover of Company\": function (T) {\n      var n = N(T, \"perona_small_ghosts\", 1);\n      var extra = n * 0.30 / 7.5;\n      return { extra: extra, notes: [\"Lover of Company: \" + n +\n        \" PeronaSmallGhost(s) at 30% / 7.5s\"] };\n    }"
+ },
+ {
+  "name": "Puppet (Telekinetic)",
+  "rarity": "Mythic",
+  "archetype": "Psychic",
+  "element": "Light",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "GowtherPassive1",
+    "display": "Marionette\u2019s Gaze",
+    "desc": "Every 15 seconds: - Inflict GowtherMark on the strongest enemy in this unit's range without GowtherMark applied for 15 seconds GowtherMarked enemies receive 20% increased incoming damage"
+   },
+   {
+    "name": "GowtherPassive2",
+    "display": "Puppet Creation",
+    "desc": "When an enemy with GowtherMark from this unit dies: - Summon a GowtherDoll in front of the killed enemy (Capacity: 1) - GowtherDolls will have 150% of this unit's current damage as health"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "GowtherAbility1",
+    "display": "Complete Control",
+    "desc": "On activation: - Rewind all enemies in range for 2 seconds"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Strongest enemy is marked 15s every 15s (near-permanent on a single\n    // target): marked enemies take +20% incoming damage - includes this\n    // unit's own hits.\n    \"Marionette\\u2019s Gaze\": function (T) {\n      var u = UP(T, \"gowther_mark_uptime\", 70);\n      return { dmg: 0.20 * u, notes: [\"Marionette's Gaze: +20% damage \" +\n        \"taken by the marked target at \" + Math.round(u * 100) +\n        \"% mark uptime (default 70%, reapplied every 15s)\"] };\n    }"
+ },
+ {
+  "name": "Silver Falcon",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Light",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "GriffithSilverPassive1",
+    "display": "The Captain",
+    "desc": "On Placement: - Increase all players' units' base damage by 10% (+1% per upgrade) - Increase all players' Physical Archetype units' damage by 5% (+1% per upgrade) - Increase all players' Magical Archetype units' damage by 5% (+1% per upgrade)  The player's most equipped Archetype gains an additional 10% damage. Buffs from GriffithSilverPassive1 do not stack."
+   },
+   {
+    "name": "GriffithSilverPassive2",
+    "display": "The Falcon's Pawn",
+    "desc": "Every 20 seconds, any unit within this unit's range will have its Range increased by 15% for 10 seconds.  For every unit buffed by both GriffithSilverPassive1 and GriffithSilverPassive2 at the same time (Capacity: 10): - Increase this unit's Critical Chance by 5% - Increase this unit's Critical Damage by 5% - Increase this unit's Range by 5%"
+   },
+   {
+    "name": "GriffithSilverPassive3",
+    "display": "War Chest",
+    "desc": "This unit has a GriffithSilverMeter, starting at 0. (Capacity: 50)  Every 5 Kills (from any source): - Increase GriffithSilverMeter by 1  Everytime GriffithSilverMeter increases: - The next enemy Kill will drop 15% more yen  Every stack of GriffithSilverMeter will: - Increase the dropped yen by 5%  This meter does not reset unless this unit is sold."
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Global damage aura: +10% base (+1%/upgrade) to all units including\n    // this one, +5% (+1%/upgrade) to its own archetype (Magical - self\n    // included), plus +10% if Magical is the player's most equipped\n    // archetype. 9 levels (deploy + 8 upgrades).\n    \"The Captain\": function (T) {\n      var base = 0.10 + 0.01 * 8;             // 18%\n      var arch = 0.05 + 0.01 * 8;              // 13% (Magical, self)\n      var top = UP(T, \"griffith_top_archetype\", 0);\n      return { dmg: base + arch + 0.10 * top,\n        notes: [\"The Captain: +18% base, +13% Magical (self included), \" +\n        \"+\" + Math.round(top * 100) + \"% most-equipped archetype (others' \" +\n        \"buffs not counted)\"] };\n    },\n    // Every 20s: allies get +15% range for 10s; each unit buffed by BOTH\n    // passives gives this unit +5% cc / +5% cd / +5% range (cap 10).\n    \"The Falcon's Pawn\": function (T) {\n      var n = Math.min(N(T, \"griffith_double_buffed\", 1), 10);\n      return { cc: 5 * n, cd: 5 * n,\n        notes: [\"The Falcon's Pawn: \" + n + \"/10 doubly-buffed units \" +\n        \"(+5% crit chance and +5% crit dmg each)\"] };\n    }"
+ },
+ {
+  "name": "Subject 8 (Monster)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Storm",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "KafkaPassive1",
+    "display": "Losing Control",
+    "desc": "This unit has a ControlMeter, starting at 0 (Capacity : 100): - Every Attack adds +15 - Every Takedown adds +1 At 25 stacks: - Attack deals an additional instance of 30% of this unit's current damage At 50 stacks: - Increase AoE Size by 30% - Immune to all status effect debuff At 75 stacks: - Decrease SPA by 15% - Increase Range by 20% At 100 stacks: - Unlock KafkaPassive2"
+   },
+   {
+    "name": "KafkaPassive2",
+    "display": "Unbound",
+    "desc": "At full ControlMeter stacks, unlock this passive For 20 seconds: - Increase damage by 50% - Decrease SPA by 15% - Increase AoE Size by 20% Enemies hit by KafkaPassive3: - Deals 100% of this units current damage over 5 hits - Grants all units in range 20% Physical damage Once timer runs out, reset ControlMeter to 0"
+   },
+   {
+    "name": "KafkaPassive3",
+    "display": "Colossal Roar",
+    "desc": "Any enemy within 50% of this units current range triggers a Full AoE attack which: - Applies Dismember to all enemies in range - Deals 75% of this units current damage over 5 hits - Grants all units in range 10% Physical damage 15 second cooldown"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // ControlMeter: +15/attack (100 cap). At 25: +30% instance per hit;\n    // at 75: -15% SPA. Cycle: fill (~7 attacks) then Unbound burst (20s)\n    // then reset -> threshold uptimes as variables.\n    \"Losing Control\": function (T, ctx) {\n      var u25 = UP(T, \"kafka_meter25\", 35);\n      var u75 = UP(T, \"kafka_meter75\", 30);\n      var extra = 0.30 * u25 / ctx.spa;\n      return { spa: -0.15 * u75, extra: extra,\n        notes: [\"Losing Control: +30% instance per attack at \" +\n        Math.round(u25 * 100) + \"% uptime (meter >= 25); -15% SPA at \" +\n        Math.round(u75 * 100) + \"% (meter >= 75)\"] };\n    },\n    // Unbound (meter full): 20s burst of +50% damage, -15% SPA and a 100%\n    // hit over 5 enemies per strike; resets the meter afterwards.\n    \"Unbound\": function (T) {\n      var u = UP(T, \"kafka_burst\", 15);\n      var n = N(T, \"kafka_burst_targets\", 1);\n      var extra = 1.00 * n * u / 20;   // 100% per enemy per 20s window\n      return { dmg: 0.50 * u, spa: -0.15 * u, extra: extra,\n        notes: [\"Unbound: burst at \" + Math.round(u * 100) +\n        \"% duty cycle (+50% dmg, -15% SPA, 100% over \" + n +\n        \" enemy / 20s)\"] };\n    },\n    // Enemy within 50% range: Full AoE for 75% over 5 hits + Dismember\n    // (15s CD) + 10% Physical to allies (others only).\n    \"Colossal Roar\": function (T) {\n      var ppm = N(T, \"kafka_roar_ppm\", 2);\n      var extra = 0.75 * ppm / 60;\n      return { extra: extra, notes: [\"Colossal Roar: 75% over 5 hits, \" +\n        ppm + \"/min (15s CD, estimated); team buff not counted\"] };\n    }"
+ },
+ {
+  "name": "Traitor (Illusion)",
+  "rarity": "Mythic",
+  "archetype": "Psychic",
+  "element": "Light",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "AizenPassive1",
+    "display": "Everpresent Deception",
+    "desc": "This unit is unsellable until Upgrade 2.  If this unit is not currently placed on the map: - The next placed unit is immediately replaced with this unit for free (Excludes Farm units) - If that unit is a BleachCategory unit, this unit places itself next to them instead (Affects each player\u2019s units independently)  For only the first placement of this unit, pair with the closest IchigoVasto. When this unit is upgraded to a higher level than its pair: - Upgrade the paired unit  If the paired unit is removed from the map: - Pair with the next closest IchigoVasto"
+   },
+   {
+    "name": "AizenPassive2",
+    "display": "Collapse, Mirror Flower",
+    "desc": "When this unit is inflicted with a StatusEffect or Debuff: - Reflect the attempt back to the source and follow-up with Aizen_Skill1 for 70% of this unit\u2019s damage on the targeted enemy, inflicting Hypnosis - Hypnosis: Stays active for 10 seconds. On expiry, teleport enemy back to the original spot where they received Hypnosis - Enemies inflicted with Hypnosis will take 20% more damage from BleachCategory units.  Every 15s: - Inflict the 5 strongest enemies on the map with Hypnosis"
+   },
+   {
+    "name": "AizenPassive3",
+    "display": "The Ideal World",
+    "desc": "If an enemy activates a Modifier within this unit\u2019s range: - The Modifier\u2019s effect is immediately cancelled - That Modifier can\u2019t be reactivated again so long as the enemy remains within this unit\u2019s range - That enemy cannot have its Modifier disabled again by this passive after it exits the range of the placement that disabled it"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Reflect on debuff attempts: 70% follow-up; every 15s hypnotizes the\n    // 5 strongest (Hypnosis itself is handled by the dedicated Variables:\n    // hypnotized targets / enemies in range). This model covers the\n    // reflect follow-up only.\n    \"Collapse, Mirror Flower\": function (T) {\n      var ppm = N(T, \"aizen_reflect_ppm\", 3);\n      var extra = 0.70 * ppm / 60;\n      return { extra: extra, notes: [\"Reflect follow-up: 70% per debuff \" +\n        \"reflect, \" + ppm + \"/min (estimated); the Hypnosis damage bonus \" +\n        \"uses the Hypnosis / enemies-in-range Variables\"] };\n    }"
+ },
+ {
+  "name": "Vegetable (Prince)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Light",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "VegetaPassive1",
+    "display": "Prince's Pursuit",
+    "desc": "Enemies that leave this unit's range will take 10% of its current damage."
+   },
+   {
+    "name": "VegetaPassive2",
+    "display": "Royal Rivalry",
+    "desc": "For every RegularAttack from another unit in this unit's range: - Increase this unit's damage by 5% (Capacity: 25%) For every CriticalAttack from another unit in this unit's range: - Increase this unit's critical chance by 5% (Capacity: 25%) For every FollowUpAttack from another unit in this unit's range: - Increase this unit's critical damage by 5% (Capacity: 15%)"
+   },
+   {
+    "name": "VegetaPassive3",
+    "display": "Awakened Pride",
+    "desc": "This unit has VegetaMeter, starting at 100. On Takedowns within this unit's range: - Decrease VegetaMeter by 5 If another unit Transforms within this unit's range: - Instantly empty VegetaMeter - Increase the transformed unit's damage by 15% When VegetaMeter is emptied: - Transform this unit into VegetaTransformation - Increase Damage by 15% - Increase Critical Damage by 35% - Increase Critical Chance by 20%"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Enemies leaving range take 10% of current damage (proc per exit).\n    \"Prince's Pursuit\": function (T) {\n      var ppm = N(T, \"vegeta_exits\", 2);\n      var extra = 0.10 * ppm / 60;\n      return { extra: extra, notes: [\"Prince's Pursuit: 10% per range \" +\n        \"exit, \" + ppm + \"/min (estimated)\"] };\n    },\n    // Ally attacks feed +5% dmg (cap 25%), ally crits +5% cc (cap 25%),\n    // ally follow-ups +5% cd (cap 15%) - progress toward caps as one\n    // variable.\n    \"Royal Rivalry\": function (T) {\n      var u = UP(T, \"vegeta_royal\", 40);\n      return { dmg: 0.25 * u, cc: 25 * u, cd: 15 * u,\n        notes: [\"Royal Rivalry: \" + Math.round(u * 100) +\n        \"% of the caps (+25% dmg / +25% crit / +15% crit dmg) from ally \" +\n        \"attacks in range\"] };\n    },\n    // VegetaMeter starts full (100): takedowns drain it (or an ally\n    // transform empties it) -> VegetaTransformation: +15% damage,\n    // +35% crit damage, +20% crit chance. Duty-cycle variable.\n    \"Awakened Pride\": function (T) {\n      var u = UP(T, \"vegeta_transform\", 40);\n      return { dmg: 0.15 * u, cd: 35 * u, cc: 20 * u,\n        notes: [\"Awakened Pride: VegetaTransformation (+15% dmg, +35% \" +\n        \"crit dmg, +20% crit) at \" + Math.round(u * 100) +\n        \"% duty cycle (needs ~20 takedowns or an ally transform)\"] };\n    }"
+ },
+ {
+  "name": "Water Mage (Scholar)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "WaterMagicianPassive1",
+    "display": "Frost Bind",
+    "desc": "Every 15 seconds: - Strongest enemy in range will Freeze  - Enemy are either inflicted with Freeze for 10 hits, or 5 seconds"
+   },
+   {
+    "name": "WaterMagicianPassive2",
+    "display": "Shatter",
+    "desc": "Anytime this unit hits an enemy with Freeze:  - Deal 10% of this unit's current damage around the enemy  When Freeze expires from an enemy:  - Slow enemy by 35%  If an enemy dies with Freeze:  - 3 nearest enemies will take 25% of this unit's current damage"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "WaterMagicianAbility1",
+    "display": "Wall of Ice",
+    "desc": "On activation:  - Select a point on the path to spawn an WaterMageIceTrap (Capacity: 3)  - WaterMageIceTrap has 100% of this unit's current damage  Once placed: - WaterMageIceTrap will gain 20% HP per second (Capacity: 500%)"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Hitting a Frozen enemy: 10% around it; a Frozen enemy dying makes\n    // the 3 nearest take 25% each; expiry applies a slow (utility).\n    \"Shatter\": function (T, ctx) {\n      var u = UP(T, \"urahara_frozen\", 30);\n      var ppm = N(T, \"urahara_frozen_deaths\", 3);\n      var extra = 0.10 * u / ctx.spa + 0.25 * 3 * ppm / 60;\n      return { extra: extra, notes: [\"Shatter: 10% splash per hit on \" +\n        \"Frozen targets at \" + Math.round(u * 100) +\n        \"% uptime + 25% x3 on frozen deaths (\" + ppm + \"/min, estimated)\"] };\n    }"
+ },
+ {
+  "name": "8th Sword (Berserk)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Neutral",
+  "n_passives": 4,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "KenpachiPassive1",
+    "display": "Demonic Presence",
+    "desc": "Enemies within 40% of this unit's range will take 5% of this unit's current damage every 1 seconds."
+   },
+   {
+    "name": "KenpachiPassive2",
+    "display": "Savage Rebound",
+    "desc": "When this unit is stunned: - Immediately Cleanse the stun - FollowUpAttack (Kenpachi_Skill1) at 100% of this unit's current damage All of this unit's FollowUpAttacks apply Dismember to enemies"
+   },
+   {
+    "name": "KenpachiPassive3",
+    "display": "Dismemberer's Rush",
+    "desc": "When an enemy in range goes below 10% health: - FollowUpAttack (Kenpachi_Skill2) at 100% of this unit's current damage"
+   },
+   {
+    "name": "KenpachiPassive4",
+    "display": "The Nameless Demon",
+    "desc": "After 25 Takedowns this unit will enter KenpachiTransformation for 15 seconds: - Increase DMG by 20% - Decrease SPA by 10% - Apply Dismember on every Attack"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Enemies within 50% of range take 15% of this unit's damage every 1s.\n    // Target count is derived from the mortality model (Shinigami template)\n    // when the variable is set to auto (-1), else uses the manual estimate.\n    \"Demonic Presence\": function (T, ctx) {\n      var n = N(T, \"kenpachi_aura_targets\", -1);\n      var auto = n < 0;\n      if (auto) n = RCOUNT(T, ctx, 0.5, 10);\n      var u = UP(T, \"kenpachi_aura_uptime\", 60);\n      var extra = 0.15 * n * u;\n      return { extra: extra, notes: [\"Demonic Presence: 15% dmg/s on \" + n +\n        \" enemy(s) inside 50% of range at \" + Math.round(u * 100) +\n        \"% uptime (\" + (auto ? \"auto from enemies in range\" : \"manual\") + \")\"] };\n    },\n    // Self-stun cleanse + 100% follow-up: reactive, proc-based.\n    \"Savage Rebound\": function (T) {\n      var ppm = N(T, \"kenpachi_stun_ppm\", 1);\n      var extra = 1.00 * ppm / 60;\n      return { extra: extra, notes: [\"Savage Rebound: \" + ppm +\n        \" stun reflect(s) per minute (estimated)\"] };\n    },\n    // Enemy below 10% HP -> 100% follow-up: execute-window proc.\n    \"Dismemberer's Rush\": function (T) {\n      var ppm = N(T, \"kenpachi_execute_ppm\", 1);\n      var extra = 1.00 * ppm / 60;\n      return { extra: extra, notes: [\"Dismemberer's Rush: \" + ppm +\n        \" execute follow-up(s) per minute (estimated)\"] };\n    },\n    // After 25 takedowns: 15s transformation, +20% dmg / -10% SPA.\n    \"The Nameless Demon\": function (T) {\n      var u = UP(T, \"kenpachi_transform_uptime\", 30);\n      return { dmg: 0.20 * u, spa: -0.10 * u,\n        notes: [\"The Nameless Demon: \" + Math.round(u * 100) +\n        \"% transformation uptime (+20% dmg, -10% SPA)\"] };\n    }"
+ },
+ {
+  "name": "Black Heart (Revived)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Gale",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "UlquiorraPassive1",
+    "display": "Accustomed View",
+    "desc": "This unit ignores Elemental Resistance applied through Modifiers.  On Attack: - Removes the enemy\u2019s ability to regenerate health - Applies Knockback at 6 distance"
+   },
+   {
+    "name": "UlquiorraPassive2",
+    "display": "Way Without Enemies",
+    "desc": "On Attack: - Also performs UlquiorraEVO_Skill3 for 50% of this unit\u2019s damage, targeting the enemy in Last (Cooldown: 5s)   When this unit hits an enemy outside its range with any attack: - Inflict Oppression for 5 seconds - Enemies afflicted with Oppression take 10% more damage"
+   },
+   {
+    "name": "UlquiorraPassive3",
+    "display": "Rise From The Ash",
+    "desc": "If IchigoVasto is on the map: - UlquiorraPassive2 will instead target IchigoVasto, stunning that unit - Enemies in the radius of the attack are still hit normally"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "UlquiorraAbility1",
+    "display": "Second Stage",
+    "desc": "- Transforms into UlquiorraTransformation - Increase Damage by +65% and set Range to 0 - Oppression applied by this unit now lasts permanently and increases its potency by +10% - This unit can now target outside its range"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // On attack: extra Skill3 hit at 50% damage (5s CD); Oppression makes\n    // enemies take +10% damage (applied when hitting out of range - the\n    // steady-state assumption is that the marked target is in the loop).\n    \"Way Without Enemies\": function (T) {\n      var extra = 0.50 / 5;\n      var u = UP(T, \"ulquiorra_oppression_uptime\", 30);\n      return { extra: extra, dmg: 0.10 * u,\n        notes: [\"Way Without Enemies: 50% follow-up every 5s; Oppression +10% at \" +\n        Math.round(u * 100) + \"% uptime\"] };\n    },\n    // Transforms: +65% damage, permanent after activation (no timer given).\n    \"Second Stage\": function (T) {\n      var u = UP(T, \"ulquiorra_ability_uptime\", 100);\n      return { dmg: 0.65 * u,\n        notes: [\"Second Stage transformation: +65% damage at \" + Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Cubert",
+  "rarity": "Exclusive",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "KhunPassive1",
+    "display": "Cubes",
+    "desc": "Every 10 seconds: - Gain 1 ability charge (Capacity: 2) KhunCubes will deal 35% of this unit's current damage per attack"
+   },
+   {
+    "name": "KhunPassive2",
+    "display": "Cube Link",
+    "desc": "Attached KhunCubes will: - Increase Damage by 5% - Increase Range by 2.5% Bonuses stack (additively) if KhunCubes are within range of eachother"
+   },
+   {
+    "name": "KhunPassive3",
+    "display": "Cube Overload",
+    "desc": "KhunCube has KhunMeter, starting at 0. On attached unit's RegularAttack: - Increase KhunMeter by 1 At 3 KhunMeter stacks: - KhunCube will explode applying Stun and dealing 15% of this unit's current damage"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "KhunAbility1",
+    "display": "Cube Summon",
+    "desc": "On activation: - Select another unit on the map to summon a KhunCube - Decrease KhunMeter by 1 - Only 2 KhunCubes can be active at once (per unit). - Only 6 KhunCubes can be active at once (globally)."
+   }
+  ],
+  "dots": [],
+  "model": "\n    // KhunCubes (cap 2) deal 35% of this unit's damage per attack; charge\n    // gained every 10s (capacity 2) gates cube strikes, so across both\n    // cubes that is one 35% strike per charge cycle.\n    \"Cubes\": function (T) {\n      var cubes = Math.min(N(T, \"khun_cubes\", 2), 2);\n      var extra = cubes * 0.35 / 20 * UP(T, \"khun_cube_uptime\", 100);\n      return { extra: extra, notes: [\"Cubes: \" + cubes +\n        \" KhunCube(s), 35% strike each ~20s (1 charge / 10s shared)\"] };\n    },\n    // Attached cubes: +5% damage / +2.5% range each (assumed to buff this\n    // unit; description is ambiguous about the target).\n    \"Cube Link\": function (T) {\n      var n = Math.min(N(T, \"khun_attached\", 2), 2);\n      return { dmg: 0.05 * n, notes: [\"Cube Link: \" + n +\n        \" attached cube(s) x+5% damage (assumed self-included)\"] };\n    },\n    // Every 3 of this unit's attacks: cube explodes for 15% + stun.\n    \"Cube Overload\": function (T, ctx) {\n      var extra = 0.15 / (3 * ctx.spa);\n      return { extra: extra, notes: [\"Cube Overload: 15% explosion every 3 attacks\"] };\n    }"
+ },
+ {
+  "name": "Elf Mage (Unleashed)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Storm",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "FrierenPassive1",
+    "display": "Arcane Magic",
+    "desc": "On RegularAttack: - Gain 1 Arcane Charge (Capacity: 7) - Charges reset after reaching capacity"
+   },
+   {
+    "name": "FrierenPassive2",
+    "display": "Overcharge",
+    "desc": "On Charge Reset: - Increase FrierenPassive3 damage by 5% (Capacity: 5)"
+   },
+   {
+    "name": "FrierenPassive3",
+    "display": "Arcane Spells",
+    "desc": "FrierenPassive3 are considered FollowUpAttacks At 3 Charges, cast Voltraak - Line AoE at 100% current damage At 5 Charges, cast Vhalzanbel - Circle AoE at 100% current damage, and inflict ManaBurn At 7 Charges, cast Jundrathym - Full AoE at 100% current damage"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "ManaBurn",
+    "display": "Mana Burn",
+    "scaling": 0.5,
+    "ticks": 8,
+    "duration": 8,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // On each charge reset: +5% damage on the spell casts (cap 5 = +25%).\n    \"Overcharge\": function (T) {\n      var n = Math.min(N(T, \"frieren_overcharge\", 5), 5);\n      return { notes: [\"Overcharge: spells +\" + (5 * n) +\n        \"% after \" + n + \" resets (affects the Arcane Spells casts)\"] };\n    },\n    // At 3 / 5 / 7 charges: follow-up cast at 100% damage (3 casts per\n    // 7-attack cycle), +25% from Overcharge at the cap.\n    \"Arcane Spells\": function (T, ctx) {\n      var bonus = 1 + 0.05 * Math.min(N(T, \"frieren_overcharge\", 5), 5);\n      var extra = 3 * 1.00 * bonus / (7 * ctx.spa);\n      return { extra: extra, notes: [\"Arcane Spells: 3 casts / 7 attacks \" +\n        \"x100% x\" + bonus.toFixed(2) + \" (Voltraak / Vhalzanbel / Jundrathym)\"] };\n    }"
+ },
+ {
+  "name": "Fallen Angel (Holy)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Light",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "ShoPassive1",
+    "display": "Frozen Flames",
+    "desc": "Every 30 seconds: - TimeStop all enemies in range for 10 seconds (Maximum 3 times per enemy) During TimeStop: - This unit applies Fire on attack - Fire deals 2% increased damage per tick (Capacity: 20%) - All currently applied DoT have their durations paused until TimeStop ends (Enemies can be afflicted by additional DoT during this)"
+   },
+   {
+    "name": "ShoPassive2",
+    "display": "Flame Bonded",
+    "desc": "During TimeStop, enemies inflicted by this unit's Fire     - Spread an instance of Fire to 3 of the closest enemies When TimeStop ends, enemies which had Fire spread onto them    - Take damage equal to 15% of the damage dealt by this unit during TimeStop"
+   },
+   {
+    "name": "ShoPassive3",
+    "display": "Idle Flames",
+    "desc": "For every enemy killed with TimeStop applied: - Increases TimeStop duration by 1 second - Gain a stack of FlameFeather (Capacity: 10) On next TimeStop activation: - Consume all FlameFeather stacks For each stack consumed, this unit\u2019s next attack: - Applies an instance of Fire per consumed stack"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // TimeStop every 30s for 10s (1/3 uptime): during it this unit's\n    // attacks apply Fire (0.5x total over 4s, +20% at full stacks).\n    \"Frozen Flames\": function (T) {\n      var u = UP(T, \"mari_timestop_uptime\", 33);\n      var n = N(T, \"mari_fire_targets\", 1);\n      var extra = 0.5 / 4 * 1.2 * n * u;\n      return { extra: extra, notes: [\"Frozen Flames: TimeStop \" +\n        Math.round(u * 100) + \"% uptime (10s / 30s), Fire 0.5x/4s x1.2 on \" +\n        n + \" enemy (status data)\"] };\n    },\n    // Fire spreads to 3 enemies during TimeStop; when it ends they take\n    // 15% of the damage dealt during TimeStop.\n    \"Flame Bonded\": function (T, ctx) {\n      var u = UP(T, \"mari_timestop_uptime\", 33);\n      // 15% of the damage dealt during the 10s TimeStop, per 30s cycle\n      var extra = 0.15 * 10 / 30 * u;\n      return { extra: extra, notes: [\"Flame Bonded: 15% of TimeStop \" +\n        \"damage released on spread targets (estimated)\"] };\n    },\n    // Kills during TimeStop -> FlameFeather stacks; next attack applies\n    // that many Fire instances (0.5x each over 4s).\n    \"Idle Flames\": function (T) {\n      var f = N(T, \"mari_feathers\", 3);\n      var extra = f * 0.5 / 4 * 4 / 30;   // burst every ~30s cycle\n      return { extra: extra, notes: [\"Idle Flames: \" + f +\n        \" feather burst applying Fire every cycle (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Hollow (Blaze)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 2,
+  "n_abilities": 0,
+  "n_dots": 2,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "GabimaruPassive1",
+    "display": "Radial Flames",
+    "desc": "If an enemy with Fire stops ticking within this unit's range: - Convert 1 Fire application into AustereFlames dealing 65% of this unit's current damage - Instance of AustereFlames from GabimaruPassive1 do not stack"
+   },
+   {
+    "name": "GabimaruPassive2",
+    "display": "Attack Flames",
+    "desc": "If this unit Attacks an enemy that currently has Fire applied: - Convert 1 Fire application into AustereFlames dealing 65% of this unit's current damage - Instance of AustereFlames from GabimaruPassive2 do not stack"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "AustereFlames",
+    "display": "Austere Flames",
+    "scaling": 0.65,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   },
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // Fire that stops ticking converts into one AustereFlames hit (65%,\n    // non-stacking). Fire lasts 4s (status data).\n    \"Radial Flames\": function (T) {\n      var n = N(T, \"gabimaru_fire_targets\", 1);\n      var u = UP(T, \"gabimaru_austere\", 50);\n      var extra = 0.65 / 4 * n * u;\n      return { extra: extra, notes: [\"Radial Flames: 65% per Fire expiry \" +\n        \"on \" + n + \" enemy at \" + Math.round(u * 100) +\n        \"% share (AustereFlames does not stack - estimated)\"] };\n    },\n    // Attacking an enemy that has Fire converts it into AustereFlames\n    // (65%, non-stacking with the expiry trigger).\n    \"Attack Flames\": function () {\n      return { notes: [\"Attack Flames: folded into the \" +\n        \"AustereFlames share (single non-stacking 65% instance; toggle \" +\n        \"the share variable in Radial Flames)\"] };\n    }"
+ },
+ {
+  "name": "Ignition Commander (Betrayal)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "BurnsPassive1",
+    "display": "Immovable",
+    "desc": "Whenever an enemy is within 60% of this unit's range, they enter BurnsZone1 Enemies within BurnsZone1: - Gain 1 HeatStack per second until they leave this unit's range (Capacity: 10 Stacks) Whenever an enemy is within 30% of this unit's range, they enter BurnsZone2 - Enemies within BurnsZone2 are given: - Stun for 2 seconds After Stun expires: - Apply Rewind for 7 distance - Can only happen once per enemy If the same enemy enters BurnsZone2 again: - Gain 2 HeatStack per second until they leave BurnsZone2 If Rewind takes an enemy outside this unit's range: - The enemy does not lose their current HeatStack"
+   },
+   {
+    "name": "BurnsPassive2",
+    "display": "Human Furnace",
+    "desc": "For each HeatStack applied to an enemy, this unit deals: - 3% increased damage to that enemy per HeatStack  When an enemy reaches 10 HeatStack: - This unit applies Fire to that enemy"
+   },
+   {
+    "name": "BurnsPassive3",
+    "display": "Ignition Release",
+    "desc": "When Rewind is applied from BurnsPassive1: - Deal 75% damage to all enemies within BurnsZone1   15 second cooldown When an enemy reaches the HeatStack capacity from BurnsPassive1: - BurnsPassive3 deals 15% increase damage to them"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // +3% damage per HeatStack (cap 10 = +30%) on enemies in range; at\n    // 10 stacks the enemy also catches Fire (0.5x / 4s).\n    \"Human Furnace\": function (T) {\n      var u = UP(T, \"burns_heat_uptime\", 20);\n      var n = N(T, \"burns_fire_targets\", 1);\n      return { dmg: 0.30 * u, extra: 0.5 / 4 * n * u,\n        notes: [\"Human Furnace: +30% (10 HeatStacks) at \" +\n        Math.round(u * 100) + \"% uptime; Fire on \" + n + \" enemy(s)\"] };\n    },\n    // Rewind proc: 75% to all in BurnsZone1 (15s CD); enemies at the heat\n    // cap take +15% extra damage from this unit.\n    \"Ignition Release\": function (T) {\n      var u = UP(T, \"burns_heat_uptime\", 20);\n      var ppm = N(T, \"burns_release_ppm\", 2);\n      var extra = 0.75 * ppm / 60;\n      return { dmg: 0.15 * u, extra: extra,\n        notes: [\"Ignition Release: 75% zone hit \" + ppm +\n        \"/min; +15% vs heat-capped enemies at \" + Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Iron Wolf (Struggler)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "GutsPassive1",
+    "display": "Sacrificial Brand",
+    "desc": "Each hit of an attack from this unit will apply Bleed  Every hit from a RegularAttack from this unit will: - Deal the remaining total damage of all Bleed stacks on the enemy instantly as TrueDamage - Remove all Bleed stacks on the enemy"
+   },
+   {
+    "name": "GutsPassive2",
+    "display": "Crimson Spill",
+    "desc": "When an enemy that have been inflicted with Bleed at least 1 time dies: - Leave 1 GutsSpill on the ground for 6 seconds  GutsSpill will apply 1 stack of Bleed every 5 seconds. Only 2 non-permanent GutsSpill may exist at a time."
+   },
+   {
+    "name": "GutsPassive3",
+    "display": "Feeding Ground",
+    "desc": "If 2 GutsSpill overlap, they will combine into 1 GutsSpill.  Each time GutsSpill combines: - Add 4 seconds to its despawn timer - Increase its radius by 15%  When a GutsSpill combines 10 times: - The GutsSpill becomes permanent  Permanent GutsSpill's cannot combine. Only 2 permanent GutsSpill may exist at a time."
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Bleed",
+    "display": "Bleed",
+    "scaling": 0.65,
+    "ticks": 6,
+    "duration": 6,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Every hit applies Bleed then instantly deals all remaining Bleed\n    // damage as True Damage: net +Bleed factor per hit (status data\n    // Bleed = 65% total over 6s; factor adjustable).\n    \"Sacrificial Brand\": function (T, ctx) {\n      var f = N(T, \"guts_bleed_factor\", 65) / 100;\n      var extra = f / ctx.spa;\n      return { extra: extra, notes: [\"Sacrificial Brand: each hit deals \" +\n        Math.round(f * 100) + \"% instantly (Bleed applied then consumed)\"] };\n    },\n    // Bleeding enemy dies -> GutsSpill (cap 2, 6s): 1 Bleed / 5s each\n    // (0.65 over 6s per stack, steady ~1.2 stacks alive per spill).\n    \"Crimson Spill\": function (T) {\n      var u = UP(T, \"guts_spill_uptime\", 20);\n      var extra = 2 * 0.65 * 1.2 / 6 * u;\n      return { extra: extra, notes: [\"Crimson Spill: 2 spills x ~1.2 \" +\n        \"Bleed stacks at \" + Math.round(u * 100) + \"% uptime (needs kills)\"] };\n    },\n    // Spill combining only extends radius / lifetime of Crimson Spill.\n    \"Feeding Ground\": function (T) {\n      return { notes: [\"Feeding Ground: merges and extends GutsSpill \" +\n        \"lifetime (supports Crimson Spill, no separate damage)\"] };\n    }"
+ },
+ {
+  "name": "Kitsune",
+  "rarity": "Exclusive",
+  "archetype": "Magical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "SparklePassive1",
+    "display": "Red Herring",
+    "desc": "This unit has SkillPoints, starting at 0. On RegularAttack: - Gain 1 SkillPoint (Capacity: 3)"
+   },
+   {
+    "name": "SparklePassive2",
+    "display": "Dreamdiver",
+    "desc": "When this unit has a SkillPoint, instead of attacking, the strongest unit in range: - Decrease SPA by 15% for 10 seconds - Increase Attack Speed by 15% for 10 seconds If SparklePassive2 is already applied to selected unit: - Apply to the next strongest unit instead"
+   },
+   {
+    "name": "SparklePassive3",
+    "display": "Monodrama",
+    "desc": "This unit has SparkleMeter, starting at 0. On RegularAttack or when buffing a unit: - Increase SparkleMeter by 20 (Capacity: 100) At SparkleMeter reaching capacity: - Unlock SparkleAbility1"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "SparkleAbility1",
+    "display": "The Hero with a Thousand Faces",
+    "desc": "On activation: - Set SkillPoints to max capacity - Decrease this unit's SPA by 15% until SkillPoints are at 0 - Increase every unit's damage in range by 35% for 30 seconds"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // SkillPoint meter (cap 3): feeds the Dreamdiver buff action and A1.\n    // With a SkillPoint this unit buffs instead of attacking (action\n    // replaced), so its own attacks are lost while the buff lands on the\n    // strongest ally (others only - no self damage gain).\n    \"Dreamdiver\": function (T) {\n      var u = UP(T, \"sparkle_buff_actions\", 50);\n      var spa = 1 / Math.max(0.01, 1 - u);   // share of actions = buffs (attacks lost)\n      return { spa: spa, notes: [\"Dreamdiver: \" + Math.round(u * 100) +\n        \"% of actions are ally buffs instead of attacks (own attacks \" +\n        \"lost; the -15% SPA / +15% speed buff targets other units)\"] };\n    },\n    // Ability: max SkillPoints (3 buff actions), -15% SPA until they are\n    // spent, and +35% damage to every unit in range for 30s (others only).\n    \"The Hero with a Thousand Faces\": function (T) {\n      var u = UP(T, \"sparkle_ability_uptime\", 30);\n      return { spa: -0.15 * u, notes: [\"Thousand Faces: -15% SPA while \" +\n        \"SkillPoints last at \" + Math.round(u * 100) +\n        \"% uptime (the +35% team buff does not affect this unit)\"] };\n    }"
+ },
+ {
+  "name": "Noble Captain (Vibrant)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Light",
+  "n_passives": 2,
+  "n_abilities": 2,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "ByakuyaPassive1",
+    "display": "Broken Coda",
+    "desc": "This unit deals +25% more damage to enemies with Movespeed-related Modifiers.  When an enemy is inflicted with HardCC, this unit will: - FollowUpAttack on that enemy with Byakuya_Skill2 for 25% of this unit's damage (Local Cooldown: 7s)"
+   },
+   {
+    "name": "ByakuyaPassive2",
+    "display": "Precipice Flower",
+    "desc": "When this unit attacks an enemy afflicted with Dismember, gains: - +15% Damage - +5% Range If Dismember was applied by a BleachCategory unit, instead gains: - +30% Damage - +10% Range"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "ByakuyaAbility2",
+    "display": "Flash Blossom",
+    "desc": "On activation: - Select a spot within this unit's range to Relocate to - Immediately FollowUpAttack with Byakuya_Skill2, targeting the Fastest enemy, inflicting Stagger for 2s"
+   },
+   {
+    "name": "ByakuyaAbility1",
+    "display": "Full Release",
+    "desc": "On activation: - This unit lets go of its sword and switches into ByakuyaTransformation  ByakuyaTransformation: - Gains ByakuyaPassive3 - Gains ByakuyaAbility3 - Loses Physical & gains Magical - Switches to Byakuya_Skill3 - Becomes unsellable"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // +25% vs enemies with movespeed modifiers; HardCC follow-up for 25%\n    // (7s local CD). Both conditional -> uptime / cadence variables.\n    \"Broken Coda\": function (T) {\n      var u = UP(T, \"byakuya_slowed\", 30);\n      var ppm = N(T, \"byakuya_hardcc_ppm\", 4);\n      var extra = 0.25 * ppm / 60;\n      return { dmg: 0.25 * u, extra: extra,\n        notes: [\"Broken Coda: +25% vs slowed enemies at \" +\n        Math.round(u * 100) + \"% uptime; HardCC follow-up 25%, \" +\n        ppm + \"/min (estimated)\"] };\n    },\n    // +15% damage while attacking Dismembered enemies (+30% if the\n    // Dismember came from a BleachCategory unit).\n    \"Precipice Flower\": function (T) {\n      var u = UP(T, \"byakuya_dismember\", 30);\n      var bleach = N(T, \"byakuya_bleach_source\", 0) >= 50;\n      var bonus = bleach ? 0.30 : 0.15;\n      return { dmg: bonus * u, notes: [\"Precipice Flower: +\" +\n        Math.round(bonus * 100) + \"% vs Dismembered at \" +\n        Math.round(u * 100) + \"% uptime\" +\n        (bleach ? \" (BleachCategory source)\" : \"\")] };\n    },\n    // Relocate + immediate Skill2 follow-up on the fastest enemy\n    // (follow-up damage estimated at 100% of this unit's damage).\n    \"Flash Blossom\": function (T) {\n      var ppm = N(T, \"byakuya_flash_ppm\", 2);\n      var extra = 1.00 * ppm / 60;\n      return { extra: extra, notes: [\"Flash Blossom: Skill2 follow-up \" +\n        \"estimated 100%, \" + ppm + \"/min (estimated cadence)\"] };\n    },\n    // Transformation switches to Skill3 (Blossoming Slash), gains a hidden\n    // passive and changes archetype. Damage/SPA change is not present in\n    // the available data -> uptime x damage-ratio variables, default OFF\n    // (0% uptime) so the base number is unaffected.\n    \"Full Release\": function (T) {\n      var u = UP(T, \"byakuya_trans_uptime\", 0);\n      var ratio = N(T, \"byakuya_trans_ratio\", 100) / 100;\n      return { dmg: (ratio - 1) * u,\n        notes: [\"Full Release: ByakuyaTransformation at \" +\n        Math.round(u * 100) + \"% uptime, damage ratio x\" + ratio.toFixed(2) +\n        \" (estimated - Skill3 numbers unavailable; default 0% = excluded)\"] };\n    }"
+ },
+ {
+  "name": "Prodigy (Rage)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Light",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "GohanPassive1",
+    "display": "Hidden Potential",
+    "desc": "On Upgrade 3: - Transform into GohanTransformation - Every 4 RegularAttacks will deal 25% of this unit's damage to all enemies within its range On Upgrade 5: - Unlock GohanPassive3"
+   },
+   {
+    "name": "GohanPassive2",
+    "display": "Unyielding Spirit",
+    "desc": "On RegularAttack against an enemy with a StatusEffect: - Deal 10% increased damage per stack of each StatusEffect (Cap: 100%) If the StatusEffect is a DoT: - Refresh the duration - Change the source to this unit - This can only trigger once per DoT type per enemy"
+   },
+   {
+    "name": "GohanPassive3",
+    "display": "Rage Unleashed",
+    "desc": "This unit has GohanMeter, starting at 0. On RegularAttack: - Increase GohanMeter by 5 When enemies leave this unit's range: - Increase GohanMeter by 1 At 100 GohanMeter stacks: - Remove GohanMeter - Transform this unit into GohanTransformation2 In GohanTransformation2 form: - Increase this unit's damage by 25% - Every 3 RegularAttacks will deal 75% of this unit's damage to all enemies within its range"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "GohanAbility1",
+    "display": "Father and Son Spirit Energy",
+    "desc": "On activation: - Select a point within this unit's range to fire GohanAbility1 at for 10 seconds Enemies in GohanAbility1 will: - Take 75% of this unit's damage every 1 seconds This unit will not Attack whilst this ability is active."
+   }
+  ],
+  "dots": [],
+  "model": "\n    // From upgrade 3: every 4 attacks deal 25% to ALL enemies in range\n    // (includes the main target); upgrade 5 unlocks Rage Unleashed.\n    \"Hidden Potential\": function (T, ctx) {\n      var extra = 0.25 / (4 * ctx.spa);\n      return { extra: extra, notes: [\"Hidden Potential: 25% AoE every 4 attacks\"] };\n    },\n    // +10% damage per StatusEffect stack on the target (cap +100%);\n    // also seizes DoTs (refresh + source steal). Bonus as a variable.\n    \"Unyielding Spirit\": function (T) {\n      var u = UP(T, \"prodigy_status\", 20);\n      return { dmg: u, notes: [\"Unyielding Spirit: +\" +\n        Math.round(u * 100) + \"% from StatusEffect stacks (cap +100%; \" +\n        \"DoT source steal adds this unit's credit on foreign DoTs)\"] };\n    },\n    // At 100 GohanMeter -> GohanTransformation2: +25% damage and 75% AoE\n    // every 3 attacks. Duty-cycle variable (meter fills every 20 attacks).\n    \"Rage Unleashed\": function (T, ctx) {\n      var g = UP(T, \"prodigy_transform2\", 30);\n      var extra = 0.75 / (3 * ctx.spa) * g;\n      return { dmg: 0.25 * g, extra: extra,\n        notes: [\"Rage Unleashed: GohanTransformation2 at \" +\n        Math.round(g * 100) + \"% duty cycle (+25% dmg, 75% AoE / 3 attacks)\"] };\n    },\n    // 10s channel: 75% per second inside the area, this unit does not\n    // attack while active -> duty cycle, attacks paused.\n    \"Father and Son Spirit Energy\": function (T) {\n      var u = UP(T, \"prodigy_ability\", 15);\n      var extra = 0.75 * u;\n      return { extra: extra, spa: 1 / Math.max(0.01, 1 - u),\n        notes: [\"Father and Son: 75% dmg/s field at \" + Math.round(u * 100) +\n        \"% uptime, attacks paused while active\"] };\n    }"
+ },
+ {
+  "name": "Reaper (Frenzied)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "IchigoVastoPassive1",
+    "display": "Crush The World Down",
+    "desc": "When an enemy leaves this unit\u2019s range: - Perform IchigoVasto_Skill1 on that enemy for 200% damage (Cooldown: 8s) If the enemy survives that attack: - Apply 50% Slow to that enemy for 10 seconds"
+   },
+   {
+    "name": "IchigoVastoPassive2",
+    "display": "Higher Than The Moon",
+    "desc": "When this unit is afflicted with a StatusEffect: - Cleanses itself & perform IchigoVasto_Skill4 for 150% of its damage - This attack hits all enemies in range & applies Stun for 3s Cooldown: 5s"
+   },
+   {
+    "name": "IchigoVastoPassive3",
+    "display": "Go For The Heart",
+    "desc": "When a Boss leaves this unit\u2019s range: - This unit stops attacking and becomes a PathSummon, grabbing the Boss and dragging them along the path back to the closest spot on the track near this unit\u2019s position (Global Cooldown: 30s) - The Boss takes 200% of this unit\u2019s damage from the initial grab, guaranteed to crit - Every enemy hit by the PathSummon takes 150% of this unit\u2019s damage Max application per Boss: 1"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "IchigoVastoAbility1",
+    "display": "Annihilation Zero",
+    "desc": "Select a unit within this unit\u2019s range. On activation: - This unit pins that unit to the ground and performs IchigoVasto_Skill2 aimed at the unit - Stuns that unit for 8 seconds - All enemies in range of the attack are hit for 300% damage"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Enemy leaves range: Skill1 for 200% (8s CD) + slow.\n    \"Crush The World Down\": function (T) {\n      var ppm = N(T, \"ichigo_leaves_ppm\", 1);\n      var extra = 2.00 * ppm / 60;\n      return { extra: extra, notes: [\"Crush The World Down: 200% on \" +\n        \"range exits, \" + ppm + \"/min (8s CD, estimated)\"] };\n    },\n    // Self StatusEffect: cleanse + Skill4 for 150% AoE in range (5s CD).\n    \"Higher Than The Moon\": function (T) {\n      var ppm = N(T, \"ichigo_cleanse_ppm\", 1);\n      var extra = 1.50 * ppm / 60;\n      return { extra: extra, notes: [\"Higher Than The Moon: 150% AoE \" +\n        \"self-cleanse, \" + ppm + \"/min (needs debuffs, estimated)\"] };\n    },\n    // Boss leaves range: drag along the path - 200% grab (guaranteed\n    // crit, not folded into extra) + 150% per enemy hit (global 30s CD).\n    \"Go For The Heart\": function (T) {\n      var u = UP(T, \"ichigo_boss_uptime\", 7);\n      var n = N(T, \"ichigo_drag_targets\", 1);\n      var extra = (2.00 + 1.50 * n) / 30 * u;\n      return { extra: extra, notes: [\"Go For The Heart: (200% grab + \" +\n        \"150% x\" + n + \" dragged) every 30s at \" + Math.round(u * 100) +\n        \"% boss uptime; grab always crits (not in extra)\"] };\n    },\n    // Ability: Skill2 for 300% to all in range + 8s stun.\n    \"Annihilation Zero\": function (T) {\n      var ppm = N(T, \"ichigo_ability_ppm\", 1);\n      var extra = 3.00 * ppm / 60;\n      return { extra: extra, notes: [\"Annihilation Zero: 300% AoE, \" +\n        ppm + \"/min (estimated cadence)\"] };\n    }"
+ },
+ {
+  "name": "Sand (Alligator)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Terra",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "CrocodilePassive1",
+    "display": "Desert Storm",
+    "desc": "CrocodilePassive1 appears at this unit's location CrocodilePassive1 will: - Increase 5% in size every 1 seconds (Capacity: 100%) - Apply Sandstorm to enemies inside After CrocodilePassive1 has been at 100% for 7 seconds: - Reset CrocodilePassive1 size to 10%"
+   },
+   {
+    "name": "CrocodilePassive2",
+    "display": "Golden Hook",
+    "desc": "This unit's Poison will: - Deal 15% increased damage per tick If an enemy is inside CrocodilePassive1 or CrocodileAbility1: - Poison will deal 25% increased damage per tick (Capacity: 150%) When CrocodilePassive1 reaches 20% range: - Apply extra stack of Poison while the enemy remains inside"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "CrocodileAbility1",
+    "display": "Ground Eruption",
+    "desc": "On activation: - CrocodilePassive1 will increase 10% in size every 1 seconds (Capacity: 100%) This unit will not Attack whilst this ability is active. If CrocodileAbility1 is re-triggered before 100% range is reached: - Slow enemies in CrocodileAbility1 by 65% - Deal 125% of this unit's current damage to all enemies in range If CrocodileAbility1 reaches 100% range: - Stun enemies in CrocodileAbility1 for 5 seconds - Deal 200% of this unit's current damage to all enemies in range"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Poison",
+    "display": "Poison",
+    "scaling": 0.3,
+    "ticks": 6,
+    "duration": 6,
+    "update": 2,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Sandstorm zone: movement-speed reduction (utility) that also marks\n    // the zone Golden Hook checks - no damage of its own.\n    \"Desert Storm\": function (T) {\n      return { notes: [\"Desert Storm: Sandstorm movement-speed zone \" +\n        \"(utility; enables Golden Hook's damage bonus while inside)\"] };\n    },\n    // Poison (status data: 0.3x total over 6s) with Golden Hook amps:\n    // +15% flat, +25% per tick while inside the storm (cap +150%), extra\n    // stack past 20% zone size. Assumes this unit's attacks apply Poison.\n    \"Golden Hook\": function (T) {\n      var amp = Math.min(N(T, \"crocodile_poison_amp\", 90), 150) / 100;\n      var n = N(T, \"crocodile_poison_targets\", 1);\n      var extra = 0.3 / 6 * (1 + amp) * n;\n      return { extra: extra, notes: [\"Golden Hook: Poison 0.3x/6s x\" +\n        (1 + amp).toFixed(2) + \" on \" + n + \" enemy (\" +\n        Math.round(amp * 100) + \"% amp: flat +15% + storm bonus, cap 150%; \" +\n        \"Poison-on-attack assumed - estimated)\"] };\n    },\n    // Ability: zone grows twice as fast, this unit stops attacking; a\n    // re-trigger before 100% hits 125% (with slow), at 100% hits 200%\n    // (with 5s stun). Average nuke per activation estimated at 160%.\n    \"Ground Eruption\": function (T) {\n      var ppm = N(T, \"crocodile_ability_ppm\", 2);\n      var extra = 1.60 * ppm / 60;\n      return { extra: extra, notes: [\"Ground Eruption: 125-200% AoE per \" +\n        \"activation, \" + ppm + \"/min (estimated; attacks paused during it)\"] };\n    }"
+ },
+ {
+  "name": "Shadow (Divine)",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Dark",
+  "n_passives": 2,
+  "n_abilities": 2,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "MegumiPassive1",
+    "display": "Winged Spirit",
+    "desc": "On Upgrade 3: - Summon a WingedSpirit at this unit's position that will circle at 50% of this unit's range - WingedSpirit will deal 50% of this unit's current damage every 8 seconds in its current location and apply Stun"
+   },
+   {
+    "name": "MegumiPassive2",
+    "display": "Wolf Spirit",
+    "desc": "On Upgrade 5: - Summon a WolfSpirit at this unit's position - WolfSpirit can be upgraded independently"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "MegumiAbility1",
+    "display": "Shadow Realm",
+    "desc": "On activation: - Transform the whole map into ShadowRealm ShadowRealm will: - ShadowRewind all enemies in range for 50% of this unit's range - Apply 25% Damage Buff to all Magical units for 30 seconds ShadowRewind can be applied to an enemy a maximum of 2 times."
+   },
+   {
+    "name": "MegumiAbility2",
+    "display": "Divine Spirit",
+    "desc": "On activation: - Summon DivineSpirit - Stun this unit for 15 seconds  - DivineSpirit's damage will be equal to 100% of this unit's base damage DivineSpirit cannot despawn, be killed or stunned."
+   }
+  ],
+  "dots": [],
+  "model": "\n    // WingedSpirit circles at 50% range and hits for 50% of this unit's\n    // damage every 8 seconds (from upgrade 3, always on at max level).\n    \"Winged Spirit\": function (T) {\n      var extra = 0.50 / 8;\n      return { extra: extra, notes: [\"Winged Spirit: 50% every 8s \" +\n        \"(permanent from upgrade 3)\"] };\n    },\n    // Ability: 30s map transform; +25% damage to all Magical units in\n    // range - this unit is Magical and is included (self). Cadence var.\n    \"Shadow Realm\": function (T) {\n      var u = UP(T, \"obito_ability_uptime\", 30);\n      return { dmg: 0.25 * u, notes: [\"Shadow Realm: +25% to Magical \" +\n        \"units in range (self included) at \" + Math.round(u * 100) +\n        \"% uptime (30s per activation, estimated cadence)\"] };\n    },\n    // Ability: summons DivineSpirit at 100% of base damage while this\n    // unit is stunned for 15s - the spirit REPLACES this unit's attacks\n    // (same stats, so net DPS is unchanged: no separate damage).\n    \"Divine Spirit\": function (T) {\n      return { notes: [\"Divine Spirit: the substitute spirit attacks at \" +\n        \"this unit's stats while it is stunned (replaces its attacks - no \" +\n        \"separate damage counted)\"] };\n    }"
+ },
+ {
+  "name": "Sharkfang (Abyssal)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Hydro",
+  "n_passives": 2,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "HarribelPassive1",
+    "display": "Waterfall",
+    "desc": "Every 12 seconds: - Summon HarribelPassive1 at the end of this unit's range moving towards spawn HarribelPassive1 will: - Slow enemies hit by 35% - Deal 15% of this unit's current damage"
+   },
+   {
+    "name": "HarribelPassive2",
+    "display": "Boiling Waters",
+    "desc": "When HarribelPassive1 or HarribelAbility1 despawn: - Summon HarribelVaporCloud at that location for 5 seconds While an enemy is inside of HarribelVaporCloud: - Apply Fire - Fire from HarribelVaporCloud can stack - Deal 15% of this unit's current damage every 1 seconds"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "HarribelAbility1",
+    "display": "Tidal Wave",
+    "desc": "On activation: - Summon 2 instances of HarribelAbility1 from the end of this unit's range moving towards enemy spawn HarribelAbility1 will: - Apply Rewind to enemies hit for 10 distance - Deal 50% of this unit's current damage"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // Every 12s: wave travels to spawn dealing 15% per enemy hit\n    // (hits estimated at 2 per wave).\n    \"Waterfall\": function (T) {\n      var ppm = N(T, \"harribel_waves_min\", 5);\n      var hits = N(T, \"harribel_wave_hits\", 2);\n      var extra = 0.15 * hits * ppm / 60;\n      return { extra: extra, notes: [\"Waterfall: 15% x\" + hits +\n        \" hits per wave, \" + ppm + \"/min (estimated)\"] };\n    },\n    // Wave/ability despawn leaves a 5s vapor cloud: 15% per second while\n    // inside plus stackable Fire (0.5x / 4s modeled as one stack).\n    \"Boiling Waters\": function (T) {\n      var u = UP(T, \"harribel_vapor\", 30);\n      var n = N(T, \"harribel_vapor_targets\", 1);\n      var extra = (0.15 + 0.5 / 4) * n * u;\n      return { extra: extra, notes: [\"Boiling Waters: cloud 15%/s + Fire \" +\n        \"0.5x/4s on \" + n + \" enemy at \" + Math.round(u * 100) +\n        \"% uptime (5s per wave despawn, estimated)\"] };\n    },\n    // Ability: 2 waves from range end dealing 50% each (+Rewind).\n    \"Tidal Wave\": function (T) {\n      var ppm = N(T, \"harribel_ability_ppm\", 1);\n      var extra = 1.00 * ppm / 60;\n      return { extra: extra, notes: [\"Tidal Wave: 2 x 50% per activation, \" +\n        ppm + \"/min (estimated, 1 target per wave)\"] };\n    }"
+ },
+ {
+  "name": "Sovereign (Djinn)",
+  "rarity": "Secret",
+  "archetype": "Physical",
+  "element": "Storm",
+  "n_passives": 4,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "SinbadPassive1",
+    "display": "Djinn Combination",
+    "desc": "When no Boss is in this unit's range: - SinbadPassive2 is active When a Boss is in this unit's range: - SinbadPassive3 is active - Does not deactivate SinbadPassive2"
+   },
+   {
+    "name": "SinbadPassive2",
+    "display": "Lightning Djinn",
+    "desc": "While active: - Each attack creates 5 chains - Each chain deals 25% of this unit's current damage - Chains bounce between enemies If there are fewer than 5 enemies: - Chains bounce between the existing enemies If there's only 1 enemy: - All chains hit the same enemy"
+   },
+   {
+    "name": "SinbadPassive3",
+    "display": "Nine Tailed Fox Djinn",
+    "desc": "While active: - Increase Damage by 50% - Attacks apply Freeze - This unit auto targets the boss After Freeze effect wears off: - Permanently slow the enemy by 15% (Can\u2019t stack)"
+   },
+   {
+    "name": "SinbadPassive4",
+    "display": "Djinn's Judgment",
+    "desc": "Every 7 seconds summon a LightningStrike on the strongest enemy in this unit's range: - LightningStrike deals 75% of this unit's damage - LightningStrike will chain between 3 enemies - Each chain deals 20% of this unit's current damage - Each chain will also apply Freeze"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // Lightning Djinn (passive when no Boss / stays on with Boss): every\n    // attack creates 5 chains of 25% each. Single target: only the chains\n    // that land on the primary count -> default 1 chain.\n    \"Lightning Djinn\": function (T, ctx) {\n      var chains = Math.min(N(T, \"sinbad_chains\", 1), 5);\n      var extra = 0.25 * chains / ctx.spa;\n      return { extra: extra, notes: [\"Lightning Djinn: 5 x 25% chains \" +\n        \"per attack, \" + chains + \" landing on the primary (single target)\"] };\n    },\n    // Nine Tailed Fox Djinn (Boss in range): +50% damage and Freeze\n    // attacks - conditional on a Boss being present (default 7% of play).\n    \"Nine Tailed Fox Djinn\": function (T) {\n      var u = UP(T, \"sinbad_boss_uptime\", 7);\n      return { dmg: 0.50 * u, notes: [\"Nine Tailed Fox Djinn: +50% dmg \" +\n        \"with a Boss in range at \" + Math.round(u * 100) + \"% of play time\"] };\n    },\n    // Every 7s: LightningStrike for 75% on the strongest + 3 chains of\n    // 20% (chains spread on one target when alone). Single-target: 1 chain.\n    \"Djinn's Judgment\": function (T) {\n      var ppm = N(T, \"sinbad_judgment_ppm\", 4);\n      var chains = N(T, \"sinbad_judgment_chains\", 1);\n      var extra = (0.75 + 0.20 * chains) * ppm / 60;\n      return { extra: extra, notes: [\"Djinn's Judgment: 75% + \" + chains +\n        \" x 20% chain on the primary, \" + ppm + \"/min (estimated cadence)\"] };\n    }"
+ },
+ {
+  "name": "The Drink (Juicebox)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Hydro",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "TrunksPassive1",
+    "display": "Precision Slash",
+    "desc": "Every 6 RegularAttacks: - Inflict enemies with TrunksMark for 15 seconds TrunksMark will: - Increase all FollowUpAttack damage by 10% - Apply a Physical weakness at 10%"
+   },
+   {
+    "name": "TrunksPassive2",
+    "display": "Quick Assist",
+    "desc": "When a FollowUpAttack happens in this unit's range (Cooldown: 8s): - FollowUpAttack at 150% of this unit's current damage - Apply TrunksPassive1"
+   },
+   {
+    "name": "TrunksPassive3",
+    "display": "Perfected Strikes",
+    "desc": "On applying TrunksMark during TrunksTransformation: - All FollowUpAttacks from this unit will critically strike and deal 15% increased critical damage"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "TrunksAbility1",
+    "display": "Golden Ascension",
+    "desc": "On activation: - This unit will transform into TrunksTransformation for 60 seconds - Decreases TrunksPassive1 attacks required by 1 - Increases TrunksPassive2 FollowUpAttack damage by 15% - Decrease SPA by 10% - Increase RNG by 10%"
+   }
+  ],
+  "dots": [],
+  "model": "\n    // Every 6 attacks: 15s mark; the mark raises ALL follow-up damage by\n    // 10% (including this unit's own) - folded into Quick Assist.\n    \"Precision Slash\": function (T) {\n      return { notes: [\"Precision Slash: TrunksMark (every 6 attacks, \" +\n        \"15s) grants +10% follow-up damage - folded into Quick Assist\"] };\n    },\n    // Follow-up happens in range (8s CD): this unit fires a 150%\n    // follow-up (x1.10 from the mark; +15% while transformed).\n    \"Quick Assist\": function (T, ctx) {\n      var u = UP(T, \"trunks_assist\", 50);\n      var tr = UP(T, \"trunks_transform\", 30);\n      var extra = 1.50 / 8 * u * 1.10 * (1 + 0.15 * tr);\n      return { extra: extra, notes: [\"Quick Assist: 150% per ~8s x1.10 \" +\n        \"(mark) x\" + (1 + 0.15 * tr).toFixed(2) + \" (transformation) at \" +\n        Math.round(u * 100) + \"% uptime (estimated)\"] };\n    },\n    // In transformation the follow-ups crit for +15% crit damage - noted,\n    // the numeric part rides on Quick Assist's window.\n    \"Perfected Strikes\": function (T) {\n      var tr = UP(T, \"trunks_transform\", 30);\n      return { cd: 15 * tr, notes: [\"Perfected Strikes: follow-ups crit \" +\n        \"+15% crit dmg during Golden Ascension (\" + Math.round(tr * 100) +\n        \"% duty cycle)\"] };\n    },\n    // Ability: 60s transformation - 10% faster SPA, mark needs one less\n    // attack and follow-ups gain +15% (folded into Quick Assist).\n    \"Golden Ascension\": function (T) {\n      var tr = UP(T, \"trunks_transform\", 30);\n      return { spa: -0.10 * tr, notes: [\"Golden Ascension: -10% SPA at \" +\n        Math.round(tr * 100) + \"% duty cycle (60s windows; mark cadence \" +\n        \"and follow-up bonus folded into the other passives)\"] };\n    }"
+ },
+ {
+  "name": "Water Sage (Founder)",
+  "rarity": "Exclusive",
+  "archetype": "Physical",
+  "element": "Hydro",
+  "n_passives": 4,
+  "n_abilities": 0,
+  "n_dots": 0,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "TobiramaPassive1",
+    "display": "Creator of Mirror Clones",
+    "desc": "Every 15 seconds: - Spawn a MirrorClone within this unit's range (Capacity: 3) MirrorClone: - Has 10% of this unit's current damage - Disappears after 3 attacks For each MirrorClone spawned by this unit that is currently on the map: - Increase this unit's damage by 10% - Increase this unit's range by 10%"
+   },
+   {
+    "name": "TobiramaPassive2",
+    "display": "Thunder God",
+    "desc": "The attacks of this unit and its MirrorClone both always do a FollowUpAttack respectively.  FollowUpAttacks from this unit and its MirrorClone will : - Deal 120% of this unit's current damage"
+   },
+   {
+    "name": "TobiramaPassive3",
+    "display": "Flash Mastery",
+    "desc": "This unit has a StormFlashMeter, starting at 0. (Capacity : 3) Every 5 FollowUpAttacks from this unit or a MirrorClone will : - Increase StormFlashMeter by 1. When the closest allied unit in this unit's range is stunned : - Consume 1 StormFlashMeter stacks - Cleanse the Stun"
+   },
+   {
+    "name": "TobiramaPassive4",
+    "display": "Bomb Tags Master",
+    "desc": "Whenever a FollowUpAttack happens in this unit's range: - Place a BombTag where this enemy was hit (Capacity : 5) BombTag : - Acts as a PathTrap When an enemy is hit by BombTag : - Deal 25% of this unit's current damage to that enemy. - Decrease this unit's SPA by 1% (Capacity : 5%)"
+   }
+  ],
+  "abilities": [],
+  "dots": [],
+  "model": "\n    // A MirrorClone every 15s (cap 3); each clone on the map grants this\n    // unit +10% damage and +10% range.\n    \"Creator of Mirror Clones\": function (T) {\n      var u = UP(T, \"ukitake_clones\", 70);\n      return { dmg: 0.30 * u, notes: [\"Mirror Clones: +10% dmg and +10% \" +\n        \"range per clone (cap 3) at \" + Math.round(u * 100) +\n        \"% of the cap (spawn 1/15s)\"] };\n    },\n    // Every attack of this unit and its clones gains a 120% follow-up;\n    // clones attack on their own cadence (variable).\n    \"Thunder God\": function (T, ctx) {\n      var c = N(T, \"ukitake_clone_fups\", 2);\n      var extra = 1.20 / ctx.spa + 1.20 * c / 60;\n      return { extra: extra, notes: [\"Thunder God: 120% follow-up on \" +\n        \"every attack + \" + c + \" clone follow-up(s)/min hitting the \" +\n        \"primary (single-target share; clones mostly strike other enemies)\"] };\n    },\n    // Bomb traps from any follow-up in range (cap 5): 25% per hit and\n    // -1% SPA per hit for this unit (cap -5%).\n    \"Bomb Tags Master\": function (T) {\n      var u = UP(T, \"ukitake_bombs\", 70);\n      var ppm = N(T, \"ukitake_bomb_hits\", 5);\n      var extra = 0.25 * ppm / 60;\n      return { spa: -0.05 * u, extra: extra,\n        notes: [\"Bomb Tags: 25% per trap hit (\" + ppm + \"/min, estimated); \" +\n        \"-1% SPA per live trap at \" + Math.round(u * 100) + \"% (cap -5%)\"] };\n    }"
+ },
+ {
+  "name": "Wild Card (Ace)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "JokerPassive1",
+    "display": "Two-Five's Presence",
+    "desc": "When this unit is placed: - All FireDoT gain 2 ticks over 2 seconds When a unit hits an enemy affected by their own FireDoT: - Refresh 1 of that unit's FireDoT on that enemy - Each FireDoT can only be refreshed once by JokerPassive1"
+   },
+   {
+    "name": "JokerPassive2",
+    "display": "Royal Suit",
+    "desc": "Every attack rotates between JokerPassive2 effects:  Jack: - The enemy's FireDoT deals 15% increased damage for 5 seconds  Queen: - Reapply 1 FireDoT on the enemy based on 60% of this unit's damage  King: - Apply Fire for 6 ticks over 6 seconds - Deal 75% of this unit's current damage  Joker: - Apply Jack, Queen, and King  Queen and King cannot create more than 1 FireDoT from this unit on the same enemy."
+   },
+   {
+    "name": "JokerPassive3",
+    "display": "Fifty-Two Bluff",
+    "desc": "Every 5 attacks: - Apply all JokerPassive2 effects at double efficiency - Does not advance the JokerPassive2 rotation Each time this effect activates: - Increase this unit's Fire damage by 5%   (Capacity: 50%)"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // Adds +2 ticks to every FireDoT this unit owns (feeds the Royal\n    // Suit Fire damage - folded into that model's numbers).\n    \"Two-Five's Presence\": function (T) {\n      return { notes: [\"Two-Five's Presence: +2 ticks on this unit's \" +\n        \"FireDoT (folded into Royal Suit)\"] };\n    },\n    // Attack rotation Jack / Queen / King / Joker, averaged over the\n    // 4-attack cycle: King lands 1 instant 75% hit every 4 attacks; a\n    // Fire DoT (modeled as 0.6x over 6s) is refreshed most rotations;\n    // Jack's +15% Fire amp rides on the amp variable.\n    \"Royal Suit\": function (T, ctx) {\n      var amp = 1 + N(T, \"joker_fire_amp\", 25) / 100;\n      var n = N(T, \"joker_fire_targets\", 1);\n      var dotU = UP(T, \"joker_dot_uptime\", 50);\n      var extra = 0.75 / (4 * ctx.spa) + 0.6 / 6 * n * amp * dotU;\n      return { extra: extra, notes: [\"Royal Suit (rotation averaged): \" +\n        \"75% King hit / 4 attacks + Fire 0.6x/6s on \" + n + \" enemy x\" +\n        amp.toFixed(2) + \" at \" + Math.round(dotU * 100) + \"% DoT uptime\"] };\n    },\n    // Every 5 attacks: double-efficiency proc (does not advance the\n    // rotation) and +5% Fire damage per activation (cap +50%) - the amp\n    // variable feeds Royal Suit.\n    \"Fifty-Two Bluff\": function (T) {\n      return { notes: [\"Fifty-Two Bluff: double-efficiency proc every 5 \" +\n        \"attacks; +5% Fire damage per proc (cap 50%) - set the Fire amp \" +\n        \"variable of Royal Suit accordingly\"] };\n    }"
+ },
+ {
+  "name": "Atom (Totality)",
+  "rarity": "Exclusive",
+  "archetype": "Magical",
+  "element": "Plasma",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "CidPassive1",
+    "display": "Archetype Nuclear",
+    "desc": "All buffs applied from this passive last 15 seconds and do not stack. When this unit attacks a Basic enemy: - +15% Damage When this unit attacks an Elite: - +40% Critical Chance When this unit attacks a Boss: - Counts as attacking a Basic and an Elite - +10% Range - +20% Critical Damage"
+   },
+   {
+    "name": "CidPassive2",
+    "display": "Phantom Nuclear",
+    "desc": "When Boss enters range: - That Boss receives +100% Damage Dealt for 10s After 10s have passed: - That Boss is dealt an instance of damage for 300% of this unit's damage - All enemies in range are dealt an instance of damage for 100% of this unit's damage  Per-Player Cooldown: 60s"
+   },
+   {
+    "name": "CidPassive3",
+    "display": "Rising Nuclear",
+    "desc": "After attacking the same enemy 3 times with basic attacks, inflict that enemy with Radiation: - Radiation: Deals 10% of this unit's damage in 7 ticks over 14s - Non-Boss enemies afflicted with Radiation will be executed at or below 5% health  On basic attack against an enemy afflicted with Radiation: - Increase the damage factor of existing Radiation on that enemy by +20% (Up to +100%) If this unit is the source of the Radiation: - Refresh the duration of Radiation on that enemy"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "CidAbility1",
+    "display": "Complete Nuclear",
+    "desc": "On activation: - Remove any existing Radiation stacks from enemies - Starting at 500% of this unit's damage, each stack of Radiation removed will increase this ability's damage by +10% (Bonus Cap: 500%) - Charges for 8s before firing - This ability will hit every enemy on the map and bypass all mechanics"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Radiation",
+    "display": "Radiation",
+    "scaling": 0.1,
+    "ticks": 7,
+    "duration": 14,
+    "update": 5,
+    "stack": false,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // +15% dmg vs Basic, +40% crit vs Elite, +10% range/+20% crit dmg vs\n    // Boss. Conditional on enemy type -> share of play time per archetype\n    // (defaults: basic 68% / elite 25% / boss 7%).\n    \"Archetype Nuclear\": function (T) {\n      var ub = UP(T, \"atom_basic_uptime\", 68);\n      var ue = UP(T, \"atom_elite_uptime\", 22);\n      var uboss = UP(T, \"atom_boss_uptime\", 7);\n      return { dmg: 0.15 * ub, cc: 40 * ue, cd: 20 * uboss,\n        notes: [\"Archetype Nuclear: +15% vs Basic at \" + Math.round(ub * 100) +\n        \"%, +40% crit vs Elite at \" + Math.round(ue * 100) + \"%, +20% crit dmg vs Boss at \" +\n        Math.round(uboss * 100) + \"% of play time\"] };\n    },\n    // Boss in range: +100% damage dealt to it for 10s, then a 300% nuke\n    // on the Boss (60s per-player CD) - single-target counted.\n    \"Phantom Nuclear\": function (T) {\n      var u = UP(T, \"atom_boss_uptime\", 7);\n      var dmg = 1.00 * u;\n      var extra = 3.00 / 60 * u;\n      return { dmg: dmg, extra: extra,\n        notes: [\"Phantom Nuclear: +100% vs Boss at \" + Math.round(u * 100) +\n        \"% uptime (default 7% = boss share of play time), 300% nuke / 60s\"] };\n    },\n    // Radiation DoT: 10% of damage, 7 ticks / 14s (= 0.5%/s per target),\n    // refreshed and +20% factor per basic attack on the same enemy\n    // (cap +100%). Steady state assumes the cap on the main target.\n    \"Rising Nuclear\": function (T) {\n      var n = N(T, \"atom_radiation_targets\", 1);\n      var extra = 0.10 / 14 * 2 * n;   // 10% over 14s, x2 at +100% factor\n      return { extra: extra, notes: [\"Radiation: 10% dmg / 14s x2 (max factor) on \" +\n        n + \" enemy(s) (estimated)\"] };\n    },\n    // Ability: charges 8s, hits every enemy on the map for 500% + 10% per\n    // removed Radiation stack (cap +500%) -> avg ~750% per cast, single\n    // target counted. extra = power / cooldown seconds.\n    \"Complete Nuclear\": function (T) {\n      var cd = Math.max(N(T, \"atom_ability_cd\", 300), 10);\n      var extra = 7.50 / cd;\n      return { extra: extra, notes: [\"Complete Nuclear: ~750% map-wide nuke every ~\" +\n        cd + \"s (estimated cadence, single-target counted)\"] };\n    }"
+ },
+ {
+  "name": "Crimson Captain (Moon)",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "BenimaruPassive1",
+    "display": "Scorched Earth",
+    "desc": "If an enemy is within this unit's range: - Gain 1 Scorched stack every 3 seconds (Capacity : 10) Enemies afflicted with Scorched will : - Take 10% increased damage from FireElement units - Take 20% increased damage from any FireDoT For every FireElement unit placed or unique stack of FireDoT on an enemy in this unit's range: - Increase damage by 5% (Capacity : 25%) - Increase buffs from Scorched by 2% (Capacity : 10%)"
+   },
+   {
+    "name": "BenimaruPassive2",
+    "display": "Absolute Flames",
+    "desc": "When an enemy has the maximum amount of Scorched stacks currently applied to them: - This unit's FireDoT will always critically strike on that enemy Each enemy with max Scorched stacks in this unit's range will: - Increase this unit's critical damage by 5% (Capacity: 50%)"
+   },
+   {
+    "name": "BenimaruPassive3",
+    "display": "Fiery Banner",
+    "desc": "Every 10 seconds: - Spawn a FireBanner next to this unit (Capacity: 5) FireBanner will : - Deal 15% of this unit's current damage - Have a fixed SPA of 5 - Have 75% of this unit's current range - Apply their own instance of FireDoT Once 5 FireBanner have been spawned by this unit : - Spawn FireBanner from the base as summons FireBanner Summons will : - Deal 20% of this unit's current damage when passing through an enemy - Summons do not lose HP when passing through enemies"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "BenimaruAbility1",
+    "display": "Seventh Form, Wheel of the Sun",
+    "desc": "On activation: - Deal 250% damage to all enemies in range - Apply Fire dealing 100% Damage per tick to all enemies in range"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // +10% dmg from FireElement units vs Scorched enemies (this unit is\n    // Flame) + up to +25% per FireElement unit / unique FireDoT stack.\n    \"Scorched Earth\": function (T, ctx) {\n      var u = UP(T, \"rei_scorched_uptime\", 25);\n      var stacks = Math.min(N(T, \"rei_fire_sources\", 2), 5);\n      // No enemies in range -> no Scorched stacks can be maintained.\n      if (RCOUNT(T, ctx, 1, 17) === 0) { u = 0; stacks = 0; }\n      return { dmg: 0.10 * u + 0.05 * stacks,\n        notes: [\"Scorched Earth: +10% vs Scorched at \" + Math.round(u * 100) +\n        \"% uptime; \" + stacks + \"/5 Fire sources (+25% cap)\"] };\n    },\n    // Per max-Scorched enemy in range: +5% crit damage (cap 50%). Count is\n    // derived from the mortality-based enemies in range in auto mode (-1).\n    \"Absolute Flames\": function (T, ctx) {\n      var n = N(T, \"rei_max_scorched\", -1);\n      var auto = n < 0;\n      if (auto) n = Math.floor(RCOUNT(T, ctx, 1, 17) *\n                               UP(T, \"rei_scorched_fraction\", 50));\n      n = Math.min(Math.max(n, 0), 10);\n      return { cd: 5 * n, notes: [\"Absolute Flames: \" + n +\n        \" enemy(s) at max Scorched stacks (+5% crit dmg each, cap 50%; \" +\n        (auto ? \"auto from enemies in range\" : \"manual\") + \")\"] };\n    },\n    // Banner every 10s (cap 5, permanent): each deals 15% dmg / SPA 5 and\n    // applies its own FireDoT; after 5, base summons deal 20% on pass-by.\n    // Single-target: banners mostly strike other enemies -> 1 banner and\n    // 1 FireDoT on the primary at the standard uptime share.\n    \"Fiery Banner\": function (T) {\n      var banners = Math.min(N(T, \"rei_banners\", 1), 5);\n      var dots = N(T, \"rei_banner_dot_targets\", 1);\n      var dotU = UP(T, \"rei_banner_dot_uptime\", 15);\n      var pass = N(T, \"rei_summon_pass\", 0);\n      // Banner attacks strike a random enemy in its (75%) range: 50%\n      // primary share, single-target convention.\n      var extra = banners * 0.15 / 5 * 0.5 + dots * 0.5 / 4 * dotU + pass * 0.20 / 6;\n      return { extra: extra, notes: [\"Fiery Banner: \" + banners +\n        \" banner x15%/5s on the primary, FireDoT on \" + dots + \" enemy at \" +\n        Math.round(dotU * 100) + \"% uptime, base summons \" +\n        pass + \" pass-through hits/min (estimated)\"] };\n    },\n    // Ability: 250% nuke to the target + Fire (100% total) on it.\n    \"Seventh Form, Wheel of the Sun\": function (T) {\n      var cd = Math.max(N(T, \"rei_ability_cd\", 150), 10);\n      var extra = (2.50 + 1.00) / cd;\n      return { extra: extra, notes: [\"Seventh Form: 250% + Fire100%, \" +\n        \"every ~\" + cd + \"s (estimated cadence, single target)\"] };\n    }"
+ },
+ {
+  "name": "Crow (Black Fire)",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 2,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "ItachiPassive1",
+    "display": "Crow's Illusion",
+    "desc": "On RegularAttack:\r Apply Illusion for 12 seconds"
+   },
+   {
+    "name": "ItachiPassive2",
+    "display": "Broken Mind",
+    "desc": "While an enemy is in Illusion state: - Store all damage taken from this unit When Illusion expires: - Deal stored damage at 25% effectiveness in a small AoE (2 range)"
+   },
+   {
+    "name": "ItachiPassive3",
+    "display": "Searing Flames",
+    "desc": "- BlackFire damage shields every tick - Enemies with shields within this unit's range gain a stack of BlackFire"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "BlackFire",
+    "display": "Black Fire",
+    "scaling": 2,
+    "ticks": 12,
+    "duration": 12,
+    "update": 0.5,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   },
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // Stored damage on an illusioned enemy is released at 25% on expiry\n    // (12s cycle): 25% x (damage dealt to it over 12s) / 12s. Single\n    // target: only the illusion on the attacked enemy counts.\n    \"Broken Mind\": function (T, ctx) {\n      var extra = 0.25 / ctx.spa;\n      return { extra: extra, notes: [\"Broken Mind: 25% of stored damage \" +\n        \"released per cycle on the attacked enemy (single target)\"] };\n    },\n    // BlackFire DoT (status data: 2x damage total over 12s per stack),\n    // applied by this unit's attacks - uptime variable (refresh window\n    // vs attack cadence, default 30% per site convention).\n    \"Searing Flames\": function (T) {\n      var u = UP(T, \"itachi_blackfire_uptime\", 30);\n      var extra = 2.0 / 12 * u;\n      return { extra: extra, notes: [\"BlackFire: 2x damage / 12s at \" +\n        Math.round(u * 100) + \"% uptime on the attacked enemy (status data)\"] };\n    }"
+ },
+ {
+  "name": "Devil (Hero)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 0,
+  "n_dots": 2,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "ShinraPassive1",
+    "display": "Horned Fire Ball",
+    "desc": "Every 20 seconds: - This unit's next attack applies a DemonHead radius on an enemy for 10 seconds Enemies inside DemonHead's radius: - Take 10% increased damage from this unit DemonHead: - When this unit attacks an enemy inside its radius, apply 1 instance of EnhancedBurn - EnhancedBurn deals 75% damage in 4 ticks over 4 seconds - Stores all EnhancedBurn damage dealt while active"
+   },
+   {
+    "name": "ShinraPassive2",
+    "display": "Horns Fire Charge",
+    "desc": "This unit has DemonMeter, starting at 0. (Capacity: 20) While an enemy is affected by DemonHead: - Gain 1 DemonMeter every second For each DemonMeter: - Decrease SPA by 1% - Increase Attack Speed by 1%"
+   },
+   {
+    "name": "ShinraPassive3",
+    "display": "Horned Fire Bite",
+    "desc": "When DemonHead expires: - Detonate in a small radius - Apply Fire - Deal 50% of all stored EnhancedBurn damage When DemonMeter is full: - Deal 15% of this unit's current damage as extra damage - Reset DemonMeter"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "EnhancedBurn",
+    "display": "Enhanced Burn",
+    "scaling": 0.75,
+    "ticks": 4,
+    "duration": 4,
+    "update": 3,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   },
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // DemonHead every 20s for 10s: +10% damage to enemies inside and\n    // attacks apply EnhancedBurn (75% total over 4s while active).\n    \"Horned Fire Ball\": function (T) {\n      var u = UP(T, \"shinra_head_uptime\", 50);\n      var n = N(T, \"shinra_head_targets\", 1);\n      var extra = 0.75 / 4 * n * u;\n      return { dmg: 0.10 * u, extra: extra,\n        notes: [\"Horned Fire Ball: DemonHead \" + Math.round(u * 100) +\n        \"% uptime (+10% dmg, EnhancedBurn 75%/4s on \" + n + \" enemy)\"] };\n    },\n    // +1% SPA reduction per DemonMeter stack (cap 20) while a head is\n    // active -> up to -20% SPA at the cap.\n    \"Horns Fire Charge\": function (T) {\n      var u = UP(T, \"shinra_meter_uptime\", 20);\n      return { spa: -0.20 * u, notes: [\"Horns Fire Charge: meter at cap \" +\n        \"(-20% SPA) for \" + Math.round(u * 100) + \"% of the time (estimated)\"] };\n    },\n    // On head expiry: detonate 50% of stored EnhancedBurn; at meter cap:\n    // +15% extra hit and reset.\n    \"Horned Fire Bite\": function (T, ctx) {\n      var u = UP(T, \"shinra_head_uptime\", 50);\n      var n = N(T, \"shinra_head_targets\", 1);\n      var extra = 0.50 * (0.75 * (10 / ctx.spa)) * n / 20 + 0.15 / 20;\n      return { extra: extra, notes: [\"Horned Fire Bite: detonation of \" +\n        \"stored burn each head expiry + 15% hit per meter cap (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Head Captain (Char)",
+  "rarity": "Mythic",
+  "archetype": "Physical",
+  "element": "Flame",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "YamamotoPassive2",
+    "display": "West",
+    "desc": "Fire applied by this unit can stack infinitely. Fire deals 5% more damage for each stack of Fire on enemies within this unit's range (Capacity: 150%)"
+   },
+   {
+    "name": "YamamotoPassive1",
+    "display": "East",
+    "desc": "When an enemy enters this unit's range: - Apply Fire If the enemy entering this unit's range has a Shield: - Apply an additional stack of Fire that can Pierce"
+   },
+   {
+    "name": "YamamotoPassive3",
+    "display": "South",
+    "desc": "On Takedown within this unit's range: - Transform the enemy into a YamamotoSkeleton (Capacity: 3) Each YamamotoSkeleton will act as a PathTrap: - When touched by an enemy, deal 25% of this unit's current damage - Explode and apply Fire to enemies within 3 range Each YamamotoSkeleton summoned will: - Increase this unit's damage by 5%"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "YamamotoAbility1",
+    "display": "North",
+    "desc": "On activation: - Deal 200% of this unit's current damage to all enemies in range - Deal an additional 100% damage divided among all enemies in range"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Fire",
+    "display": "Burn",
+    "scaling": 0.5,
+    "ticks": 4,
+    "duration": 4,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage",
+     "Burn"
+    ]
+   }
+  ],
+  "model": "\n    // Fire stacks infinitely; each stack +5% Fire damage (cap +150%) on\n    // the primary. Fire = 0.5x total over 4s (status data). Single target\n    // with the standard DoT uptime share.\n    \"West\": function (T) {\n      var amp = N(T, \"yama_fire_amp\", 75) / 100;    // +75% by default\n      var u = UP(T, \"yama_fire_uptime\", 20);\n      var extra = 0.5 / 4 * (1 + amp) * u;\n      return { extra: extra, notes: [\"West: Fire 0.5x/4s x\" +\n        (1 + amp).toFixed(2) + \" on the primary at \" + Math.round(u * 100) +\n        \"% uptime (\" + Math.round(amp * 100) + \"% stacks, cap +150%)\"] };\n    },\n    // Enemies entering range catch Fire (0.5x over 4s).\n    \"East\": function (T) {\n      var u = UP(T, \"yama_enter_uptime\", 15);\n      var extra = 0.5 / 4 * u;\n      return { extra: extra, notes: [\"East: Fire on the primary when \" +\n        \"entering at \" + Math.round(u * 100) + \"% uptime (estimated)\"] };\n    },\n    // Takedown -> YamamotoSkeleton PathTrap (cap 3): 25% when touched,\n    // explodes with Fire, and each skeleton gives +5% damage to this unit.\n    \"South\": function (T) {\n      var s = Math.min(N(T, \"yama_skeletons\", 1), 3);\n      var touch = N(T, \"yama_skeleton_touches\", 1);\n      return { dmg: 0.05 * s, extra: touch * 0.25 / 10,\n        notes: [\"South: \" + s + \"/3 skeletons (+5% dmg each), \" +\n        touch + \" trap hit(s)/min on the primary (estimated); each hit also applies Fire\"] };\n    },\n    // Ability: 200% to all in range + 100% split among them. Single\n    // target: the 200% hit lands, split portion counted on the primary.\n    \"North\": function (T) {\n      var cd = Math.max(N(T, \"yama_ability_cd\", 150), 10);\n      var extra = 2.50 / cd;\n      return { extra: extra, notes: [\"North: 200% + ~50% of the split \" +\n        \"portion on the primary, every ~\" + cd + \"s (estimated cadence)\"] };\n    }"
+ },
+ {
+  "name": "Impaler (Ultimate)",
+  "rarity": "Secret",
+  "archetype": "Psychic",
+  "element": "Dark",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "AlucardPassive1",
+    "display": "Piety & Obliteration",
+    "desc": "This unit has two attack modes to switch between. Select a mode at the top of this unit's Upgrade UI.  Custom Arms \"Piety\": - -35% SPA - +50% Damage - On attack: Inflicts Bleed for 50% damage over 6 seconds to any enemy type except Boss  Anti-Freak \"Obliteration\": - +35% SPA - +100% Damage - +20% Range - On attack: Inflicts Bleed for 100% damage over 12 seconds to any enemy type except Basic, and deal 50% more damage"
+   },
+   {
+    "name": "AlucardPassive2",
+    "display": "The Bird of Hermes",
+    "desc": "All Bleed and Bleed\u200b-related PathTraps that exist in this unit's range have their source changed to this unit. All Bleed that is sourced from this unit is enhanced, increasing its damage factor by 10%, and cannot be affected by other units.  All Bleed\u200b-related PathTraps in this unit's range have their properties enhanced: - Radius increased by 100% - Duration increased by 10s - Damage increased by 100%  On attacking an enemy afflicted with Bleed: - This unit will consume all Bleed stacks, increasing their tick rate to instantly complete - If this unit consumes Bleed stacks, for both this unit and the unit whom originally applied the stack, +25% Damage"
+   },
+   {
+    "name": "AlucardPassive3",
+    "display": "Humanity's Trump Card",
+    "desc": "This unit can regenerate from any StatusEffect and Debuff, decreasing their duration by 99%. This unit has built-in access to Relocation. On usage: - Transform into mist, instantly relocating to the selected position - Disable Unit Moving for 30 seconds  For PathSummons created by this unit, spawn at the end of its range. When this unit gets a kill: - Summon a AlucardVampire for 15% of this unit's damage (Cap: 3) If this unit gets a takedown instead: - Summon a AlucardGhoul for 5% of this unit's damage (Cap: 6)"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "AlucardAbility1",
+    "display": "Total Release: Level Zero",
+    "desc": "You are the Commander.   On activation: - Speak the command: Search & Destroy - Opens this unit's Cadaver Domain for 10s - Performs AlucardEVO_Skill3 for 1000% damage  Cadaver Domain: All enemies on the map are afflicted with Burdened for the duration of the ability - Burdened immobilizes enemies and bypasses all lockouts without applying a lockout of its own"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Bleed",
+    "display": "Bleed",
+    "scaling": 0.65,
+    "ticks": 6,
+    "duration": 6,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Player-selected mode (variable, default = best own DPS: Piety).\n    // Piety: -35% SPA, +50% dmg, Bleed 50%/6s (not Boss).\n    // Obliteration: +35% SPA, +100% dmg, +20% range, Bleed 100%/12s\n    // (not Basic) and a +50% damage clause vs applicable enemies.\n    \"Piety & Obliteration\": function (T) {\n      var mode = N(T, \"alucard_mode\", 1);\n      var bleedU = UP(T, \"alucard_bleed_uptime\", 50);\n      // The Bird of Hermes enhances own-sourced Bleed by +10%\n      if (mode === 1) {\n        var bleed = 0.50 / 6 * 1.10 * bleedU;\n        return { dmg: 0.50, spa: -0.35, extra: bleed,\n          notes: [\"Piety mode (best DPS default): +50% dmg, -35% SPA, \" +\n          \"Bleed 50%/6s x1.10 (enhanced) at \" + Math.round(bleedU * 100) +\n          \"% uptime (not vs Boss)\"] };\n      }\n      var extra = 1.00 / 12 * 1.10 * bleedU;\n      var dmg = 1.00 + 0.50 * bleedU;   // +50% clause vs applicable types\n      return { dmg: dmg, spa: 0.35, extra: extra,\n        notes: [\"Obliteration mode: +100% dmg (+50% vs applicable enemy \" +\n        \"types at \" + Math.round(bleedU * 100) + \"%), +35% SPA, Bleed \" +\n        \"100%/12s x1.10 (not vs Basic)\"] };\n    },\n    // Bleed source is taken over and enhanced (+10%, folded into the\n    // mode model); consuming stacks grants +25% damage (uptime var).\n    \"The Bird of Hermes\": function (T) {\n      var u = UP(T, \"alucard_consume_uptime\", 30);\n      return { dmg: 0.25 * u, notes: [\"The Bird of Hermes: +25% damage \" +\n        \"after consuming Bleed stacks at \" + Math.round(u * 100) +\n        \"% uptime; Bleed +10% folded into the mode model\"] };\n    },\n    // On kill: AlucardVampire 15% (cap 3); on takedown: AlucardGhoul 5%\n    // (cap 6). Estimated SPA ~5s.\n    \"Humanity's Trump Card\": function (T) {\n      var u = UP(T, \"alucard_summons\", 30);\n      var extra = (3 * 0.15 + 6 * 0.05) / 5 * u;\n      return { extra: extra, notes: [\"Humanity's Trump Card: 3 vampires \" +\n        \"15% + 6 ghouls 5% (est. SPA 5) at \" + Math.round(u * 100) +\n        \"% uptime (needs kills)\"] };\n    },\n    // Ability: AlucardEVO_Skill3 for 1000% damage + map-wide Burdened.\n    \"Total Release: Level Zero\": function (T) {\n      var ppm = N(T, \"alucard_ability_ppm\", 1);\n      var extra = 10.00 * ppm / 60;\n      return { extra: extra, notes: [\"Total Release: 1000% nuke, \" +\n        ppm + \"/min (estimated cadence)\"] };\n    }"
+ },
+ {
+  "name": "Rainman (Forecast)",
+  "rarity": "Mythic",
+  "archetype": "Magical",
+  "element": "Gale",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "WeatherPassive1",
+    "display": "Heavy Rain",
+    "desc": "This unit has WeatherMeter, starting at 0. Every hit from WeatherAbility1: - Increase WeatherMeter by 5 When WeatherMeter is at 100: - WeatherAbility1 turns into WeatherPassive2"
+   },
+   {
+    "name": "WeatherPassive2",
+    "display": "Frog Storm",
+    "desc": "Every 1 seconds: - Decrease WeatherMeter by 20 When an enemy comes within 5 range of WeatherPassive2: - Enemy will stop moving for 5 seconds If an enemy dies in WeatherPassive2: - Enemy is converted into a WeatherFrog When WeatherMeter is emptied: - WeatherPassive2  turns into WeatherAbility1"
+   },
+   {
+    "name": "WeatherPassive3",
+    "display": "Poison Frog",
+    "desc": "WeatherFrogs are a stationary path summon. If an enemy walks over WeatherFrog: - WeatherFrog will explode for 100% of this unit's current damage and apply Poison in 3 range"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "WeatherAbility1",
+    "display": "Rain Cloud",
+    "desc": "Select a position within this unit's range to summon WeatherAbility1 Enemies within WeatherAbility1 will: - Take damage equal to 15% of this unit's damage every 1 seconds"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Poison",
+    "display": "Poison",
+    "scaling": 0.3,
+    "ticks": 6,
+    "duration": 6,
+    "update": 2,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Meter cycle + Frog Storm CC: the conversion of dying enemies into\n    // WeatherFrogs feeds Poison Frog (this model carries no number).\n    \"Frog Storm\": function (T) {\n      return { notes: [\"Frog Storm: CC and frog conversion (feeds \" +\n        \"Poison Frog; no separate damage)\"] };\n    },\n    // Walked-over WeatherFrog explodes for 100% and applies Poison\n    // (0.3x over 6s in 3 range).\n    \"Poison Frog\": function (T) {\n      var ppm = N(T, \"weather_frog_ppm\", 3);\n      var poisonU = Math.min(1, ppm * 6 / 60);\n      var extra = 1.00 * ppm / 60 + poisonU * 0.3 / 6;\n      return { extra: extra, notes: [\"Poison Frog: \" + ppm +\n        \" detonation(s)/min x100% + Poison 0.3x/6s (est. 1 target)\"] };\n    },\n    // Ability: Rain Cloud field dealing 15% of this unit's damage every\n    // 1 second to enemies inside.\n    \"Rain Cloud\": function (T) {\n      var u = UP(T, \"weather_cloud_uptime\", 30);\n      var n = N(T, \"weather_cloud_targets\", 1);\n      var extra = 0.15 * n * u;\n      return { extra: extra, notes: [\"Rain Cloud: 15% dmg/s on \" + n +\n        \" enemy(s) at \" + Math.round(u * 100) + \"% uptime\"] };\n    }"
+ },
+ {
+  "name": "Wolf (Revived)",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Hydro",
+  "n_passives": 3,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": false,
+  "passives": [
+   {
+    "name": "StarrkPassive1",
+    "display": "Rhythm of the Wolf",
+    "desc": "This unit\u2019s base SPA cannot go lower than 1s. This unit\u2019s attacks ignore animation lock.  On Attack: - Forcibly performs StarrkEVO_Skill1 - Increase SPA by +50% for every attack performed in the cycle  On 5th Attack: - Perform current attack instead of StarrkEVO_Skill1 - Reset SPA to 0%"
+   },
+   {
+    "name": "StarrkPassive2",
+    "display": "Howling Tempest",
+    "desc": "On the 5th Attack of StarrkPassive1 and for that attack only: - Increase AOE Size by +50%  - Increase Damage by +100% - This attack has infinite range."
+   },
+   {
+    "name": "StarrkPassive3",
+    "display": "Soul Pack",
+    "desc": "On the 5th Attack of each cycle performed through StarrkPassive1: - Spawn 2 StarrkWolves (Capacity: 3)  StarrkWolf: - Spawns next to this unit\u2019s position - Has 15% of this unit\u2019s damage  - Applies ManaBurn for 15% of its damage  On Attack: - StarrkWolf deletes itself"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "StarrkAbility1",
+    "display": "Zero Machine Gun",
+    "desc": "This unit stops attacking for 5s. After 5s: - Performs a modified version of StarrkEVO_Skill3 that fires constantly for 8s, dealing 65% of this unit\u2019s damage per second - Inflicts ManaBurn for 100% at 6 ticks over 6 seconds - This ability always crits and is treated with the same effects as the 5th attack of StarrkPassive1"
+   }
+  ],
+  "dots": [
+   {
+    "key": "ManaBurn",
+    "display": "Mana Burn",
+    "scaling": 0.5,
+    "ticks": 8,
+    "duration": 8,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Attacks 1-4 fire StarrkEVO_Skill1 with a cumulative +50% SPA per\n    // attack in the cycle; the 5th resets it. Cycle intervals:\n    // 1.0 + 1.5 + 2.0 + 2.5 + 3.0 = 10x base for 5 attacks -> average\n    // 2x SPA (the penalty variable exposes this arithmetic).\n    \"Rhythm of the Wolf\": function (T) {\n      var p = N(T, \"starrk_spa_penalty\", 100) / 100;\n      return { spa: p, notes: [\"Rhythm of the Wolf: cycle SPA penalty +\" +\n        Math.round(p * 100) + \"% average (1+1.5+2+2.5+3 over 5 attacks); \" +\n        \"Skill1 multi-hit is not counted - adjust if needed\"] };\n    },\n    // The 5th attack deals +100% (and has infinite range): averaged over\n    // the 5-attack cycle that is +20% damage.\n    \"Howling Tempest\": function () {\n      return { dmg: 0.20, notes: [\"Howling Tempest: 5th attack +100% \" +\n        \"(cycle average +20% damage)\"] };\n    },\n    // Each 5th attack spawns StarrkWolves that delete themselves on attack.\n    // Demonic Pistols overrides the base passive: 3 wolves at 25% with 50%\n    // ManaBurn instead of 2 wolves at 15% with 15% ManaBurn.\n    \"Soul Pack\": function (T, ctx) {\n      var upgraded = ctx.bound && ctx.bound.indexOf(\"Demonic Pistols\") !== -1;\n      var count = upgraded ? 3 : 2;\n      var share = upgraded ? 0.25 : 0.15;\n      var burn = upgraded ? 0.50 : 0.15;\n      var extra = (count * share + count * share * burn) / (10 * ctx.spa);\n      return { extra: extra, notes: [\"Soul Pack: \" + count + \" wolves x\" +\n        Math.round(share * 100) + \"% + ManaBurn \" + Math.round(burn * 100) +\n        \"% per cycle (~10 x SPA seconds)\"] };\n    },\n    // One-use ability: 5s pause, 8s fire at 65%/s, ManaBurn 100%, always\n    // crits. All effects are temporary and there is no lasting buff, so it\n    // does not contribute to sustained TDPS.\n    \"Zero Machine Gun\": function () {\n      return { notes: [\"Zero Machine Gun: one-use temporary burst \" +\n        \"(5s windup + 8s fire + ManaBurn), no permanent buff - excluded from TDPS\"] };\n    }"
+ },
+ {
+  "name": "Jester",
+  "rarity": "Exclusive",
+  "archetype": "Physical",
+  "element": "Neutral",
+  "n_passives": 5,
+  "n_abilities": 0,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "KitePassive1",
+    "display": "Jester Roll",
+    "desc": "At the start of a wave or after 20 seconds swap to random weapon: - KitePassive2 - KitePassive3 - KitePassive4"
+   },
+   {
+    "name": "KitePassive2",
+    "display": "Scythe",
+    "desc": "When swapped to: - Release a Full AoE attack - Increase Damage by 25% On normal attack: - Release a slash in a Cone that continues travelling beyond this unit's range"
+   },
+   {
+    "name": "KitePassive3",
+    "display": "Rifle",
+    "desc": "When swapped to: - Continuously shoot in a Line for 3 seconds - Apply Bleed - Decrease SPA by 25% On normal attack: - Release a Line AoE attack - Apply Bleed"
+   },
+   {
+    "name": "KitePassive4",
+    "display": "Mace",
+    "desc": "When swapped to: - Spawn a clone of this unit for 15 seconds - The clone will roll between Scythe and Rifle - Instantly roll again Roll 3 has a 30 second cooldown"
+   },
+   {
+    "name": "KitePassive5",
+    "display": "Bored Jester",
+    "desc": "If the same weapon is rolled 2 times in a row: - Activate Bored Jester Bored Jester: - Reduce the Jester Roll timer by 5 seconds - Increase the current weapon's damage by 25% - Prevent the current weapon from being rolled again"
+   }
+  ],
+  "abilities": [],
+  "dots": [
+   {
+    "key": "Bleed",
+    "display": "Bleed",
+    "scaling": 0.65,
+    "ticks": 6,
+    "duration": 6,
+    "update": 0,
+    "stack": true,
+    "tags": [
+     "Damage"
+    ]
+   }
+  ],
+  "model": "\n    // Scythe window: +25% damage and a travelling cone slash (AoE shape,\n    // no extra single-target damage).\n    \"Scythe\": function (T) {\n      var u = UP(T, \"kite_scythe\", 30);\n      return { dmg: 0.25 * u, notes: [\"Scythe: +25% dmg at \" +\n        Math.round(u * 100) + \"% of the weapon cycle (default share)\"] };\n    },\n    // Rifle window: -25% SPA and Bleed on every attack (0.65 / 6s).\n    \"Rifle\": function (T) {\n      var u = UP(T, \"kite_rifle\", 30);\n      return { spa: -0.25 * u, extra: 0.65 / 6 * u,\n        notes: [\"Rifle: -25% SPA and Bleed 0.65/6s at \" +\n        Math.round(u * 100) + \"% of the weapon cycle (default share)\"] };\n    },\n    // Mace window: spawns a full clone for 15s (clone attacks at this\n    // unit's stats) and instantly rerolls.\n    \"Mace\": function (T, ctx) {\n      var u = UP(T, \"kite_mace\", 15);\n      var extra = 0.75 * u / ctx.spa;   // clone up 15s of the ~20s window\n      return { extra: extra, notes: [\"Mace: clone for 15s at \" +\n        Math.round(u * 100) + \"% of the weapon cycle (estimated share)\"] };\n    },\n    // Rolling the same weapon twice: +25% on it for the window.\n    \"Bored Jester\": function (T) {\n      var u = UP(T, \"kite_bored\", 10);\n      return { dmg: 0.25 * u, notes: [\"Bored Jester: +25% weapon damage \" +\n        \"at \" + Math.round(u * 100) + \"% uptime (estimated)\"] };\n    }"
+ },
+ {
+  "name": "Lightning God (Overcharged)",
+  "rarity": "Secret",
+  "archetype": "Magical",
+  "element": "Storm",
+  "n_passives": 4,
+  "n_abilities": 1,
+  "n_dots": 1,
+  "has_model": true,
+  "no_dps": true,
+  "passives": [
+   {
+    "name": "EnelPassive1",
+    "display": "Storm Charge",
+    "desc": "This unit has EnelMeter, starting at 0. Applies Electricity on hit to the 10 strongest enemies. Every time a Stun is activated from Electricity: - Increase EnelMeter by 1 (Capacity: 60) For each point in the meter: - Increase this units Electricity damage dealt by 5%"
+   },
+   {
+    "name": "EnelPassive2",
+    "display": "Thundercloud",
+    "desc": "At 25 EnelMeter stacks: - Summon EnelCloud within this unit's range every 10 seconds EnelCloud will: - Target a random enemy within this unit's range - Deal 25% of this unit's damage in 5 range If EnelCloud attacks an enemy without Electricity applied: - Apply an additional stack of Electricity"
+   },
+   {
+    "name": "EnelPassive3",
+    "display": "Tempest Discharge",
+    "desc": "At 60 EnelMeter stacks: - Summon a LightningStrike at this unit's position - Reset EnelMeter On LightningStrike: - Deal 100% of this unit's current damage and apply Electricity to all enemies in this unit's range - Leave ElectricResidue on the ground that will despawn after 8 seconds ElectricResidue will: - Keep Electricity permanently active on enemy until enemy has left range or it has despawned"
+   },
+   {
+    "name": "EnelPassive4",
+    "display": "Molten Gold",
+    "desc": "Every 10 seconds: - Apply Golden to 2 enemies in range Golden will: - Stun an enemy for 3 seconds - Increase chain lightning hits from Electricity to an additional 2 enemies"
+   }
+  ],
+  "abilities": [
+   {
+    "name": "EnelAbility1",
+    "display": "Stormseeker",
+    "desc": "On activation: - Select position in this unit's range for EnelCloud to target"
+   }
+  ],
+  "dots": [
+   {
+    "key": "Electricity",
+    "display": "Electricity",
+    "scaling": 0.15,
+    "ticks": 1,
+    "duration": 5,
+    "update": 2,
+    "stack": false,
+    "tags": [
+     "Damage",
+     "HardCrowdControl"
+    ]
+   }
+  ],
+  "model": "\n    // Electricity (status data): stun 1s on application, chain lightning\n    // hits up to 3 enemies for 0.15x damage each. EnelMeter boosts\n    // Electricity damage by 5% per point (cap 60 -> +300%); the meter\n    // resets at 60 via Tempest Discharge -> cycle average default 30.\n    \"Storm Charge\": function (T, ctx) {\n      var meter = N(T, \"enel_meter\", 25);\n      var chain = Math.min(N(T, \"enel_chain_hits\", 1), 5);\n      var extra = 0.15 * chain * (1 + 0.05 * meter) / ctx.spa;\n      return { extra: extra, notes: [\"Storm Charge: chain lightning \" +\n        \"0.15x x\" + chain + \" hit(s) on the primary at +\" + (5 * meter) +\n        \"% (meter \" + meter + \"/60, cycle average; chains to other \" +\n        \"enemies not counted)\"] };\n    },\n    // At 25 meter: EnelCloud every 10s dealing 25% per attack (attack\n    // cadence estimated at 2s).\n    \"Thundercloud\": function (T) {\n      var u = UP(T, \"enel_cloud_uptime\", 20);\n      var extra = 0.25 / 2 * u;\n      return { extra: extra, notes: [\"Thundercloud: cloud 25% per ~2s \" +\n        \"attack at \" + Math.round(u * 100) + \"% uptime (meter >= 25)\"] };\n    },\n    // At 60 meter: LightningStrike for 100% to all in range, resets the\n    // meter; the residue keeps Electricity permanently on enemies.\n    \"Tempest Discharge\": function (T) {\n      var ppm = N(T, \"enel_discharge_ppm\", 1);\n      var extra = 1.00 * ppm / 60;\n      return { extra: extra, notes: [\"Tempest Discharge: 100% map strike, \" +\n        ppm + \"/min (meter cycle; residue keeps Electricity rolling)\"] };\n    },\n    // Golden: stuns and makes Electricity chain +2 enemies (folded into\n    // the Chain targets variable of Storm Charge) - no separate number.\n    \"Molten Gold\": function (T) {\n      return { notes: [\"Molten Gold: stun utility; +2 chain targets \" +\n        \"(raise Chain targets to 5 while Golden is up)\"] };\n    }"
+ }
+]

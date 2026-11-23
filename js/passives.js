@@ -176,7 +176,10 @@
     // its own range, Magical archetype matches). Reconstruct averages
     // +20% damage over the 3-attack cycle.
     "Understand, Deconstruct, Reconstruct": function (T, ctx) {
-      var marks = Math.min(N(T, "alchemy_marks", 10), 10);
+      // AlchemyMark capacity is 3 (game data), not the 50% buff cap; Deconstruct
+      // grants 5% Magical damage per mark -> at most 15% at 3 marks. The
+      // Alchemist's Judgement branch (+3 capacity) is modeled separately.
+      var marks = Math.min(N(T, "alchemy_marks", 3), 6);
       var buffUptime = Math.min(1, 10 / (3 * ctx.spa));  // 10s buff / 3-attack cycle
       var dmg = 0.05 * marks * buffUptime * 0.5 + 0.20 / 3;
       return { dmg: dmg, notes: ["Alchemy cycle: Reconstruct +20% on 1 of 3 attacks; " +
@@ -200,7 +203,7 @@
     }
   });
   A.registerUnitVars("Alchemy Brothers (Truth)", [
-    V("alchemy_marks", "AlchemyMark stacks", "Marks on the target feeding Deconstruct - default 10 (cap)", 0, 10, 10),
+    V("alchemy_marks", "AlchemyMark stacks", "Marks on the target feeding Deconstruct - default 3 (game capacity, +3 with Judgement)", 0, 6, 3),
     V("alchemy_judgement_uptime", "Judgement uptime %", "Share of time the +3-capacity team branch is active - default 30%", 0, 100, 30, 5)
   ]);
 
