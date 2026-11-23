@@ -1,0 +1,3833 @@
+[
+  {
+    "Map": {
+      "1": 1,
+      "2": 0
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": 1,
+      "2": 0
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.5,
+      "2": 0.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 10,
+      "2": 0
+    },
+    "BaseHealth": {
+      "Basic 2": 150,
+      "Boss": 1500,
+      "Miniboss": 750,
+      "Elite 3": 500,
+      "Basic 1": 100,
+      "Elite 2": 400,
+      "Basic 3": 150,
+      "Elite 1": 300
+    }
+  },
+  {
+    "Map": 0,
+    "Act": 0,
+    "ModifiersScaling": 0,
+    "Difficulty": 0,
+    "WaveScaling": 0,
+    "Multiplayer": 0,
+    "WaveJump": 0,
+    "EnemyHP": 0,
+    "BaseHealth": 0
+  },
+  {
+    "Map": {
+      "1": 162
+    },
+    "Act": {
+      "1": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 44,
+      "Basic 1": 34,
+      "Elite 3": 84,
+      "Elite 2": 74,
+      "Boss": 100,
+      "Elite 1": 60
+    }
+  },
+  {
+    "Map": {
+      "1": 162
+    },
+    "Act": {
+      "1": 1.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 44,
+      "Basic 1": 34,
+      "Elite 3": 84,
+      "Elite 2": 74,
+      "Boss": 100,
+      "Elite 1": 60
+    }
+  },
+  {
+    "Map": {
+      "1": 18
+    },
+    "Act": {
+      "1": 2.5
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 130,
+      "Basic 1": 100,
+      "Elite 3": 260,
+      "Elite 2": 230,
+      "Boss": 350,
+      "Elite 1": 190
+    }
+  },
+  {
+    "Difficulty": {
+      "_processor": null,
+      "createdAt": 8190.874466416666,
+      "dependentSet": [],
+      "scope": {
+        "21": null,
+        "20": null,
+        "19": null,
+        "18": null,
+        "9": null,
+        "1": null,
+        "15": null,
+        "3": null,
+        "2": null,
+        "5": null,
+        "4": null,
+        "7": null,
+        "6": null,
+        "14": null,
+        "8": null,
+        "16": null,
+        "17": null,
+        "13": null,
+        "12": null,
+        "11": null,
+        "10": null
+      },
+      "oldestTask": null,
+      "validity": "invalid",
+      "dependencySet": []
+    },
+    "BaseHealth": {
+      "_processor": null,
+      "createdAt": 8190.874466666668,
+      "dependentSet": [],
+      "scope": {
+        "21": null,
+        "20": null,
+        "19": null,
+        "18": null,
+        "9": null,
+        "1": null,
+        "15": null,
+        "3": null,
+        "2": null,
+        "5": null,
+        "4": null,
+        "7": null,
+        "6": null,
+        "14": null,
+        "8": null,
+        "16": null,
+        "17": null,
+        "13": null,
+        "12": null,
+        "11": null,
+        "10": null
+      },
+      "oldestTask": null,
+      "validity": "invalid",
+      "dependencySet": []
+    }
+  },
+  {
+    "Difficulty": 0,
+    "BaseHealth": 0
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 5,
+      "Basic 1": 3,
+      "Elite 3": 10,
+      "Elite 2": 8,
+      "Boss": 21,
+      "Elite 1": 6
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 300,
+      "Basic 1": 250,
+      "Elite 3": 700,
+      "Elite 2": 550,
+      "Boss": 950,
+      "Elite 1": 450
+    }
+  },
+  {
+    "Map": {
+      "1": 35
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 10,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.45,
+      "Shielded": 1,
+      "Resistance": 1,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 33,
+      "Basic 1": 25,
+      "Elite 3": 65,
+      "Elite 2": 58,
+      "Boss": 80,
+      "Elite 1": 47
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 348,
+      "Basic 1": 196,
+      "Elite 3": 1003,
+      "Elite 2": 700,
+      "Boss": 1007,
+      "Elite 1": 449
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 773,
+      "Basic 1": 515,
+      "Elite 3": 1803,
+      "Elite 2": 1545,
+      "Boss": 2574,
+      "Elite 1": 1288
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1488,
+      "Basic 1": 840,
+      "Elite 3": 2880,
+      "Elite 2": 2300,
+      "Boss": 2999,
+      "Elite 1": 1920
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1260,
+      "Basic 1": 824,
+      "Elite 3": 2935,
+      "Elite 2": 2513,
+      "Boss": 4290,
+      "Elite 1": 2079
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1339,
+      "Basic 1": 756,
+      "Elite 3": 3672,
+      "Elite 2": 2700,
+      "Boss": 3882,
+      "Elite 1": 1728
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.25
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1,
+      "Basic 1": 1,
+      "Elite 3": 1,
+      "Elite 2": 1,
+      "Boss": 1,
+      "Elite 1": 1
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 967,
+      "Basic 1": 546,
+      "Elite 3": 2652,
+      "Elite 2": 1950,
+      "Boss": 2804,
+      "Elite 1": 1248
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 30,
+      "Elite 3": 80,
+      "Elite 1": 60,
+      "Basic 2": 35,
+      "Boss": 100,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 70,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.24
+    },
+    "Multiplayer": {
+      "1": 0.75,
+      "3": "Players",
+      "2": 0.25
+    },
+    "WaveJump": {
+      "1": 1.15,
+      "3": 3,
+      "2": 0.35
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1148,
+      "Basic 1": 647,
+      "Elite 3": 3310,
+      "Elite 2": 2310,
+      "Boss": 3323,
+      "Elite 1": 1482
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 2,
+      "4": 1,
+      "3": "Act",
+      "2": 2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.18
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1785,
+      "Basic 1": 1680,
+      "Elite 3": 2835,
+      "Elite 2": 2520,
+      "Boss": 3938,
+      "Elite 1": 2205
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1488,
+      "Basic 1": 840,
+      "Elite 3": 4080,
+      "Elite 2": 3000,
+      "Boss": 4313,
+      "Elite 1": 1920
+    }
+  },
+  {
+    "Map": {
+      "1": 3
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 1.75,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.55,
+      "Shielded": 1,
+      "Resistance": 0.85,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": []
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 438,
+      "Basic 1": 263,
+      "Elite 3": 1225,
+      "Elite 2": 875,
+      "Boss": 1650,
+      "Elite 1": 525
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 6232,
+      "Basic 1": 3518,
+      "Elite 3": 13575,
+      "Elite 2": 12564,
+      "Boss": 21123,
+      "Elite 1": 8042
+    }
+  },
+  {
+    "Map": {
+      "1": 4
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 45,
+      "Basic 1": 35,
+      "Elite 3": 125,
+      "Elite 2": 100,
+      "Boss": 200,
+      "Elite 1": 75
+    }
+  },
+  {
+    "Map": {
+      "1": 35
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 10,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.45,
+      "Shielded": 1,
+      "Resistance": 1,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 33,
+      "Basic 1": 25,
+      "Elite 3": 52,
+      "Elite 2": 48,
+      "Boss": 62,
+      "Elite 1": 42
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 300,
+      "Basic 1": 250,
+      "Elite 3": 700,
+      "Elite 2": 550,
+      "Boss": 950,
+      "Elite 1": 450
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 62,
+      "Elite 3": 126,
+      "Elite 1": 105,
+      "Basic 2": 70,
+      "Boss": 175,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 117,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 41,
+      "Elite 3": 108,
+      "Elite 1": 81,
+      "Basic 2": 48,
+      "Boss": 135,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 95,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 300,
+      "Basic 1": 250,
+      "Elite 3": 700,
+      "Elite 2": 550,
+      "Boss": 950,
+      "Elite 1": 450
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.75,
+      "3": "Players",
+      "2": 0.25
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss 1": 900000
+    },
+    "BaseHealth": {
+      "Basic 2": 438,
+      "Boss": 1650,
+      "Elite 3": 1225,
+      "Boss 1": 900000,
+      "Elite 2": 875,
+      "Basic 1": 263,
+      "Elite 1": 525
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 540,
+      "Basic 1": 480,
+      "Elite 3": 1020,
+      "Boss C1": 2500000,
+      "Elite 2": 840,
+      "Boss": 1320,
+      "Elite 1": 720
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 1620,
+      "Basic 1": 1440,
+      "Elite 3": 3060,
+      "Boss C1": 2500000,
+      "Elite 2": 2520,
+      "Boss": 3960,
+      "Elite 1": 2160
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3.5
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1.12,
+      "3": 3,
+      "2": 0.45
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 2228,
+      "Basic 1": 1980,
+      "Elite 3": 3825,
+      "Elite 2": 3150,
+      "Boss": 4550,
+      "Elite 1": 2700
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.16
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1.3,
+      "3": 3,
+      "2": 1.12
+    },
+    "EnemyHP": {
+      "Boss C1": 2750000
+    },
+    "BaseHealth": {
+      "Basic 2": 2228,
+      "Basic 1": 1980,
+      "Elite 3": 3750,
+      "Boss C1": 2750000,
+      "Elite 2": 3150,
+      "Boss": 4000,
+      "Elite 1": 2700
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.11
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1.12,
+      "3": 3,
+      "2": 0.45
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 2228,
+      "Basic 1": 1980,
+      "Elite 3": 3825,
+      "Elite 2": 3150,
+      "Boss": 4550,
+      "Elite 1": 2700
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 5832,
+      "Basic 1": 5184,
+      "Elite 3": 11016,
+      "Boss C1": 2500000,
+      "Elite 2": 9072,
+      "Boss": 14256,
+      "Elite 1": 7776
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 4
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.14
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1.12,
+      "3": 3,
+      "2": 0.45
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 2228,
+      "Basic 1": 1980,
+      "Elite 3": 3825,
+      "Elite 2": 3150,
+      "Boss": 4550,
+      "Elite 1": 2700
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 804,
+      "Basic 1": 454,
+      "Elite 3": 2204,
+      "Elite 2": 1620,
+      "Boss": 3759,
+      "Elite 1": 1037
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 893,
+      "Basic 1": 504,
+      "Elite 3": 2448,
+      "Elite 2": 1800,
+      "Boss": 4176,
+      "Elite 1": 1152
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0
+    },
+    "Act": {
+      "1": 1,
+      "2": 0
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "2": 1
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.45
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 9360,
+      "Basic 1": 7920,
+      "Elite 3": 30600,
+      "Elite 2": 23400,
+      "Boss": 55000,
+      "Elite 1": 16200
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0
+    },
+    "Act": {
+      "1": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 16.5,
+      "3": 1.8,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.15
+    },
+    "EnemyHP": {
+      "Basic 3": 810
+    },
+    "BaseHealth": {
+      "Basic 2": 810,
+      "Basic 1": 560,
+      "Elite 3": 2130,
+      "Boss": 2500,
+      "Elite 2": 1750,
+      "Basic 3": 810,
+      "Elite 1": 1250
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 844,
+      "Basic 1": 476,
+      "Elite 3": 2312,
+      "Elite 2": 1700,
+      "Boss": 3550,
+      "Elite 1": 1088
+    }
+  },
+  {
+    "Map": {
+      "1": 3
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 3,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.55,
+      "Shielded": 1,
+      "Resistance": 0.85,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 100,
+      "Basic 1": 75,
+      "Elite 3": 225,
+      "Elite 2": 200,
+      "Boss": 300,
+      "Elite 1": 125
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "2": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 13,
+      "Basic 1": 10,
+      "Elite 3": 23,
+      "Elite 2": 21,
+      "Boss": 30,
+      "Elite 1": 16
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1488,
+      "Basic 1": 840,
+      "Elite 3": 4080,
+      "Elite 2": 3000,
+      "Boss": 4313,
+      "Elite 1": 1920
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 700,
+      "Summon 3": 182,
+      "Summon 2": 154,
+      "Flying": 140,
+      "Summon 1": 126
+    },
+    "BaseHealth": {
+      "Basic 1": 30,
+      "Elite 3": 80,
+      "Elite 1": 60,
+      "Basic 2": 35,
+      "Boss": 100,
+      "Summon 3": 182,
+      "Summon 1": 126,
+      "Summon 2": 154,
+      "Elite 2": 70,
+      "Flying": 140,
+      "Boss C1": 700
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 87,
+      "Elite 3": 177,
+      "Elite 1": 147,
+      "Basic 2": 98,
+      "Boss": 245,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 164,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 4000,
+      "Basic 1": 2000,
+      "Elite 3": 8000,
+      "Elite 2": 7000,
+      "Boss": 5000,
+      "Elite 1": 5000
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 2700,
+      "Basic 1": 2400,
+      "Elite 3": 5100,
+      "Boss C1": 2500000,
+      "Elite 2": 4200,
+      "Boss": 6600,
+      "Elite 1": 3600
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 2,
+      "4": 1,
+      "3": "Act",
+      "2": 2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.18
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1100,
+      "Basic 1": 900,
+      "Elite 3": 2000,
+      "Elite 2": 1700,
+      "Boss": 3250,
+      "Elite 1": 1400
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.75,
+      "3": "Players",
+      "2": 0.25
+    },
+    "WaveJump": {
+      "1": 1.12,
+      "3": 3,
+      "2": 0.3
+    },
+    "EnemyHP": {
+      "Boss C1": 2750000
+    },
+    "BaseHealth": {
+      "Basic 2": 2228,
+      "Basic 1": 1980,
+      "Elite 3": 3825,
+      "Boss C1": 2750000,
+      "Elite 2": 3150,
+      "Boss": 4550,
+      "Elite 1": 2700
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 30,
+      "Elite 3": 80,
+      "Elite 1": 60,
+      "Basic 2": 35,
+      "Boss": 100,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 70,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 4536,
+      "Basic 1": 4032,
+      "Elite 3": 8568,
+      "Boss C1": 2500000,
+      "Elite 2": 7056,
+      "Boss": 11088,
+      "Elite 1": 6048
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 982,
+      "Basic 1": 554,
+      "Elite 3": 2693,
+      "Elite 2": 1980,
+      "Boss": 4594,
+      "Elite 1": 1267
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1191,
+      "Basic 1": 672,
+      "Elite 3": 3264,
+      "Elite 2": 2400,
+      "Boss": 3451,
+      "Elite 1": 1536
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1399,
+      "Basic 1": 1006,
+      "Elite 3": 2973,
+      "Elite 2": 2579,
+      "Boss": 4152,
+      "Elite 1": 2186
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1.35
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 17,
+      "Basic 1": 13,
+      "Elite 3": 33,
+      "Elite 2": 29,
+      "Boss": 40,
+      "Elite 1": 24
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "2": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 22,
+      "Basic 1": 17,
+      "Elite 3": 42,
+      "Elite 2": 37,
+      "Boss": 50,
+      "Elite 1": 30
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 581,
+      "Basic 1": 328,
+      "Elite 3": 1292,
+      "Elite 2": 1170,
+      "Boss": 1815,
+      "Elite 1": 749
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 1
+    },
+    "Act": {
+      "1": 2.5
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 65,
+      "Basic 1": 50,
+      "Elite 3": 130,
+      "Elite 2": 115,
+      "Boss": 175,
+      "Elite 1": 95
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1550,
+      "Basic 1": 875,
+      "Elite 3": 4246,
+      "Elite 2": 3122,
+      "Boss": 5794,
+      "Elite 1": 1999
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 12,
+      "Basic 1": 8,
+      "Elite 3": 28,
+      "Elite 2": 24,
+      "Boss": 42,
+      "Elite 1": 19
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 21410,
+      "Basic 1": 12088,
+      "Elite 3": 56750,
+      "Elite 2": 43165,
+      "Boss": 59376,
+      "Elite 1": 27633
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 263,
+      "Basic 1": 219,
+      "Elite 3": 613,
+      "Elite 2": 481,
+      "Boss": 831,
+      "Elite 1": 394
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.15
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 300,
+      "Basic 1": 250,
+      "Elite 3": 700,
+      "Elite 2": 550,
+      "Boss": 950,
+      "Elite 1": 450
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 28155,
+      "Basic 1": 15897,
+      "Elite 3": 101322,
+      "Elite 2": 95787,
+      "Boss": 365393,
+      "Elite 1": 54505
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1072,
+      "Basic 1": 715,
+      "Elite 3": 2503,
+      "Elite 2": 2145,
+      "Boss": 3575,
+      "Elite 1": 1788
+    }
+  },
+  {
+    "Map": {
+      "1": 3
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 1.75,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.55,
+      "Shielded": 1,
+      "Resistance": 0.85,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 300,
+      "Basic 1": 250,
+      "Elite 3": 450,
+      "Elite 2": 400,
+      "Boss": 800,
+      "Elite 1": 350
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 893,
+      "Basic 1": 504,
+      "Elite 3": 2448,
+      "Elite 2": 1800,
+      "Boss": 4176,
+      "Elite 1": 1152
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1191,
+      "Basic 1": 672,
+      "Elite 3": 3264,
+      "Elite 2": 2400,
+      "Boss": 3451,
+      "Elite 1": 1536
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1272,
+      "Basic 1": 915,
+      "Elite 3": 2703,
+      "Elite 2": 2345,
+      "Boss": 3775,
+      "Elite 1": 1988
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1,
+      "Basic 1": 1,
+      "Elite 3": 1,
+      "Elite 2": 1,
+      "Boss": 1,
+      "Elite 1": 1
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 2679,
+      "Basic 1": 1512,
+      "Elite 3": 7344,
+      "Elite 2": 5400,
+      "Boss": 12528,
+      "Elite 1": 3456
+    }
+  },
+  {
+    "Map": {
+      "1": 50
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "2": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 22,
+      "Basic 1": 17,
+      "Elite 3": 42,
+      "Elite 2": 37,
+      "Boss": 50,
+      "Elite 1": 30
+    }
+  },
+  {
+    "Map": {
+      "1": 50
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "2": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 241,
+      "Basic 1": 230,
+      "Elite 3": 364,
+      "Elite 2": 313,
+      "Boss": 607,
+      "Elite 1": 261
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 7128,
+      "Basic 1": 6336,
+      "Elite 3": 13464,
+      "Boss C1": 2500000,
+      "Elite 2": 11088,
+      "Boss": 17424,
+      "Elite 1": 9504
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 2,
+      "4": 1,
+      "3": "Act",
+      "2": 2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.2
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 4324,
+      "Basic 1": 2440,
+      "Elite 3": 10584,
+      "Elite 2": 9151,
+      "Boss": 11529,
+      "Elite 1": 5580
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 540,
+      "Basic 1": 480,
+      "Elite 3": 1020,
+      "Elite 2": 840,
+      "Boss": 1320,
+      "Elite 1": 720
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 967,
+      "Basic 1": 546,
+      "Elite 3": 2652,
+      "Elite 2": 1950,
+      "Boss": 2804,
+      "Elite 1": 1248
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 500,
+      "Summon 3": 130,
+      "Summon 2": 110,
+      "Flying": 90,
+      "Summon 1": 90
+    },
+    "BaseHealth": {
+      "Basic 1": 30,
+      "Elite 3": 80,
+      "Elite 1": 60,
+      "Basic 2": 35,
+      "Boss": 100,
+      "Summon 3": 130,
+      "Summon 1": 90,
+      "Summon 2": 110,
+      "Elite 2": 70,
+      "Flying": 90,
+      "Boss C1": 500
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1339,
+      "Basic 1": 756,
+      "Elite 3": 3672,
+      "Elite 2": 2700,
+      "Boss": 3882,
+      "Elite 1": 1728
+    }
+  },
+  {
+    "Map": {
+      "1": 3
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 1.75,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.55,
+      "Shielded": 1,
+      "Resistance": 0.85,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 800,
+      "Basic 1": 700,
+      "Elite 3": 1650,
+      "Elite 2": 1500,
+      "Boss": 2000,
+      "Elite 1": 1250
+    }
+  },
+  {
+    "Map": {
+      "1": 1
+    },
+    "Act": [],
+    "ModifiersScaling": {
+      "ShortRange": 0.8,
+      "BossWaves": 1,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 1,
+      "Traitless": 0.4,
+      "Shielded": 1,
+      "Resistance": 0.9,
+      "UpgradeCap": 0.8
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 330,
+      "Basic 1": 220,
+      "Elite 3": 770,
+      "Elite 2": 660,
+      "Boss": 1450,
+      "Elite 1": 550
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 10,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.45,
+      "Shielded": 1,
+      "Resistance": 1,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 22,
+      "Basic 1": 17,
+      "Elite 3": 42,
+      "Elite 2": 37,
+      "Boss": 50,
+      "Elite 1": 30
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.4,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 30,
+      "Basic 1": 25,
+      "Elite 3": 55,
+      "Elite 2": 50,
+      "Boss": 80,
+      "Elite 1": 45
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.18
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 400,
+      "Basic 1": 350,
+      "Elite 3": 900,
+      "Elite 2": 750,
+      "Boss": 1500,
+      "Elite 1": 600
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 20855,
+      "Basic 1": 11775,
+      "Elite 3": 44476,
+      "Elite 2": 42046,
+      "Boss": 53938,
+      "Elite 1": 26916
+    }
+  },
+  {
+    "Map": {
+      "1": 1.3,
+      "2": 1
+    },
+    "Act": {
+      "1": 3,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.23
+    },
+    "Multiplayer": {
+      "1": 0.75,
+      "3": "Players",
+      "2": 0.25
+    },
+    "WaveJump": {
+      "1": 1.12,
+      "3": 3,
+      "2": 0.3
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 1148,
+      "Basic 1": 647,
+      "Elite 3": 3310,
+      "Elite 2": 2310,
+      "Boss": 3323,
+      "Elite 1": 1482
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 967,
+      "Basic 1": 546,
+      "Elite 3": 2652,
+      "Elite 2": 1950,
+      "Boss": 2804,
+      "Elite 1": 1248
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 1
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.6
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 4,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 2500000
+    },
+    "BaseHealth": {
+      "Basic 2": 540,
+      "Basic 1": 480,
+      "Elite 3": 1020,
+      "Boss C1": 2500000,
+      "Elite 2": 840,
+      "Boss": 1320,
+      "Elite 1": 720
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0.35
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": "Act",
+      "2": 0.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1,
+      "3": 2,
+      "2": 1.5
+    },
+    "WaveScaling": {
+      "1": 1.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 5,
+      "2": 0.2
+    },
+    "EnemyHP": {
+      "Boss C1": 980,
+      "Summon 3": 255,
+      "Summon 2": 216,
+      "Flying": 205,
+      "Summon 1": 176
+    },
+    "BaseHealth": {
+      "Basic 1": 30,
+      "Elite 3": 80,
+      "Elite 1": 60,
+      "Basic 2": 35,
+      "Boss": 100,
+      "Summon 3": 255,
+      "Summon 1": 176,
+      "Summon 2": 216,
+      "Elite 2": 70,
+      "Flying": 205,
+      "Boss C1": 980
+    }
+  },
+  {
+    "Map": {
+      "1": 2,
+      "2": 2
+    },
+    "Act": {
+      "1": 2.2
+    },
+    "ModifiersScaling": {
+      "ShortRange": 1,
+      "BossWaves": 10,
+      "Mirror": 1,
+      "Speedy": 0.9,
+      "NoFarms": 0.75,
+      "Traitless": 0.45,
+      "Shielded": 1,
+      "Resistance": 1,
+      "UpgradeCap": 1
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.3,
+      "2": 0.5
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "3": "Players",
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 33,
+      "Basic 1": 25,
+      "Elite 3": 65,
+      "Elite 2": 58,
+      "Boss": 80,
+      "Elite 1": 47
+    }
+  },
+  {
+    "Map": {
+      "1": 1,
+      "2": 0
+    },
+    "Act": {
+      "1": 1,
+      "4": 1,
+      "3": 1,
+      "2": 0
+    },
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1,
+      "3": 1.5,
+      "2": 0.1
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 10,
+      "2": 0
+    },
+    "BaseHealth": {
+      "Basic 2": 150,
+      "Boss": 1500,
+      "Elite 1": 300,
+      "Elite 3": 500,
+      "Basic 1": 100,
+      "Elite 2": 400,
+      "Basic 3": 150,
+      "Miniboss": 750
+    }
+  },
+  {
+    "Map": {
+      "1": 18
+    },
+    "Act": {
+      "1": 2.5
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 1
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 130,
+      "Basic 1": 100,
+      "Elite 3": 260,
+      "Elite 2": 230,
+      "Boss": 350,
+      "Elite 1": 190
+    }
+  },
+  {
+    "Map": {
+      "1": 162
+    },
+    "Act": {
+      "1": 1.3
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 44,
+      "Basic 1": 34,
+      "Elite 3": 84,
+      "Elite 2": 74,
+      "Boss": 100,
+      "Elite 1": 60
+    }
+  },
+  {
+    "Map": {
+      "1": 162
+    },
+    "Act": {
+      "1": 1
+    },
+    "ModifiersScaling": [],
+    "Difficulty": {
+      "1": 2
+    },
+    "WaveScaling": {
+      "1": 1.12
+    },
+    "Multiplayer": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "WaveJump": {
+      "1": 1,
+      "3": 3,
+      "2": 0.2
+    },
+    "EnemyHP": [],
+    "BaseHealth": {
+      "Basic 2": 44,
+      "Basic 1": 34,
+      "Elite 3": 84,
+      "Elite 2": 74,
+      "Boss": 100,
+      "Elite 1": 60
+    }
+  }
+]

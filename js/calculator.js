@@ -46,7 +46,8 @@
     expected_crit: true,
     // passives / conditionals (steady-state)
     enemies_in_range: 4,              // hypnosis share / in-range conditionals
-    shinigami_enemies: null,          // null = derive from unit range via measured spawn-stream spacing (2.2856 studs)
+    shinigami_enemies: null,          // null = derive from range + enemy HP (mortality model) or spacing fallback
+    enemy_hp: null,                   // per-target HP of the current mode; null = spacing-only fallback
     shinigami_per_enemy: 1.0,         // passive roll 0.5..1 % per enemy -> max 1.0
     shinigami_capacity: 15,
     hypnosis_uptime: 10 / 15,         // Aizen: 10s every 15s on 5 strongest
@@ -65,9 +66,19 @@
   // spacing of the spawn stream (9 story maps incl. the boss-rush map, see
   // ENEMY_BENCHMARK.md). One enemy per SPACING studs => floor(R / SPACING),
   // capped by the passive capacity and by the ~17 enemies in one wave.
-  var SPACING = 2.2856, WAVE_SIZE = 17;
+  var SPACING = 2.2856, WAVE_SIZE = 17, SPAWN_RATE = 2.0, ENEMY_SPEED = 2.44;
   function enemiesInRange(range, capacity) {
     var n = Math.floor(range / SPACING + 1e-9);
+    return Math.max(0, Math.min(capacity != null ? capacity : 15, WAVE_SIZE, n));
+  }
+
+  // Steady-state count with kills (Little's law): an enemy stays until it is
+  // killed or leaves the range. t_kill = hp / single-target dps; t_cross = R/v.
+  function enemiesInRangeWithHp(range, hp, dps, capacity) {
+    if (!(hp > 0) || !(dps > 0)) return enemiesInRange(range, capacity);
+    var tCross = range / ENEMY_SPEED;
+    var tKill = hp / dps;
+    var n = Math.floor(SPAWN_RATE * Math.min(tCross, tKill) + 1e-9);
     return Math.max(0, Math.min(capacity != null ? capacity : 15, WAVE_SIZE, n));
   }
 
@@ -334,7 +345,7 @@
 
     // Passives of equipped general equipment (bound passives are handled
     // by the unit-specific model below, exactly like the Python version).
-    function evalPassives(combo, mult, notes, withEquipment, range) {
+    function evalPassives(combo, mult, notes, withEquipment, range, preDps) {
       if (!withEquipment || !combo || !combo.length) return mult;
       for (var i = 0; i < combo.length; i++) {
         var n = combo[i];
@@ -344,9 +355,11 @@
         for (var j = 0; j < ps.length; j++) {
           var nm = ps[j].display_name || "";
           if (nm === "Shinigami Sword") {
-            var count = (T.shinigami_enemies != null)
-              ? T.shinigami_enemies
-              : enemiesInRange(range, T.shinigami_capacity);
+            var count;
+            if (T.shinigami_enemies != null) count = T.shinigami_enemies;
+            else if (T.enemy_hp != null && preDps > 0)
+              count = enemiesInRangeWithHp(range, T.enemy_hp, preDps, T.shinigami_capacity);
+            else count = enemiesInRange(range, T.shinigami_capacity);
             var gain = Math.min(count * T.shinigami_per_enemy,
                                 T.shinigami_capacity) / 100;
             mult *= (1 + gain);
@@ -459,7 +472,7 @@
             notes.push("Hypnosis: OFF (0 hypnotized enemies)");
           }
         }
-        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment, rng);
+        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment, rng, dmg / spa * crit_mult);
         passive_mult *= pm.mult;
       }
 

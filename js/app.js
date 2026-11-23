@@ -732,6 +732,19 @@
   var unitSettings = {};
   var poolLoaded = false;
 
+  // Enemy HP profiles derived from game scaling entries (Game Data/map_profiles.json).
+  // basic1 HP drives the mortality model for normal waves; elite/boss are listed
+  // for upcoming enemy-type-specific selection.
+  var HP_PROFILES = {
+    none:            { label: "None (no HP model)", basic1: null },
+    easiest_map:     { label: "Easiest map", basic1: 41 },
+    average_map:     { label: "Average map", basic1: 476 },
+    event_map:       { label: "Event map", basic1: 840 },
+    hardest_map:     { label: "Hardest map", basic1: 15897 },
+    weekly_tournament: { label: "Weekly tournament", basic1: 11775 }
+  };
+  var enemyHpProfile = "none";
+
   function clearLegacySettings() {
     try { window.localStorage.removeItem(SETTINGS_KEY); }
     catch (e) { /* private mode: nothing to clear */ }
@@ -818,6 +831,7 @@
     var t = {
       hypnosis_target_share: hypShare(u),
       enemies_in_range: s.enemiesInRange,
+      enemy_hp: HP_PROFILES[enemyHpProfile] ? HP_PROFILES[enemyHpProfile].basic1 : null,
       passive_state: s.passives
     };
     var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
@@ -1032,7 +1046,19 @@
               " hypnotized / " + st.enemiesInRange + " in range)."
             : "Hypnosis buff OFF (" + st.hypnotized + " hypnotized enemies).")
         : "";
-      tail = '<div class="var-actions">' +
+      var hpOpts = "";
+      for (var pk in HP_PROFILES) {
+        if (!Object.prototype.hasOwnProperty.call(HP_PROFILES, pk)) continue;
+        hpOpts += '<option value="' + pk + '"' +
+          (pk === enemyHpProfile ? " selected" : "") + ">" +
+          esc(HP_PROFILES[pk].label) + "</option>";
+      }
+      tail = '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Enemy HP profile</span>' +
+        '<span class="var-sub">Enemy HP drives how long targets survive, which ' +
+        'sets stack-based passives (e.g. Shinigami Sword). Sandbox excluded.</span>' +
+        '</span><select class="var-input" id="hpProfile">' + hpOpts + '</select></div>' +
+        '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
         (hypNote ? '<div class="var-note">' + hypNote + "</div>" : "");
@@ -1308,6 +1334,13 @@
         s.hypnotized = clampInt(t.value, 0, 10, 0);
       } else if (t && t.id === "varRange") {
         s.enemiesInRange = clampInt(t.value, 1, 10, 4);
+      } else if (t && t.id === "hpProfile") {
+        enemyHpProfile = t.value;
+        units.forEach(function (uu) {
+          if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
+        });
+        rebuildLeech();
+        return;
       } else if (t && t.hasAttribute && t.hasAttribute("data-var")) {
         var key = t.getAttribute("data-var");
         var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];

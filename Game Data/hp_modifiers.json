@@ -1,0 +1,22 @@
+{
+  "source": "EU.GetHealth(type, {BaseHealth=NUMBER, Modifiers=ARRAY_OF_NAMES}) probed live at BaseHealth=100",
+  "combination": "additive",
+  "formula": "HP = round(BaseHealth[type] * (1 + sum(hp_mod_pct)/100))",
+  "base_health_note": "BaseHealth in scaling_entries.json is already map/act/difficulty-scaled; Map/Act/Difficulty/WaveJump/WaveScaling fields are the parameters that produced the entry, NOT further multipliers",
+  "modifiers": {
+    "Boss": 20,
+    "Soldier": 20,
+    "Sprinter": -20,
+    "Tank": 20,
+    "Zombify": 100
+  },
+  "all_other_modifiers": 0,
+  "verified_examples": {
+    "100_Boss": 120,
+    "100_Tank_Boss": 140,
+    "100_Tank_Zombify": 220,
+    "150_Boss": 180,
+    "150_Tank_Boss": 210,
+    "34_Boss": 41
+  }
+}

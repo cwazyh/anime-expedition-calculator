@@ -1,0 +1,36 @@
+{
+  "easiest_map": {
+    "desc": "Lowest-HP story / early waves",
+    "basic1": 41,
+    "elite1": 81,
+    "boss": 135
+  },
+  "average_map": {
+    "desc": "Median HP across all 97 scaling entries",
+    "basic1": 476,
+    "elite1": 1088,
+    "boss": 3550
+  },
+  "hardest_map": {
+    "desc": "Highest-HP entry (late wave / endgame)",
+    "basic1": 15897,
+    "elite1": 54505,
+    "boss": 365393
+  },
+  "weekly_tournament": {
+    "desc": "High-HP with +20% Boss/Tank modifiers",
+    "basic1": 11775,
+    "elite1": 26916,
+    "boss": 64726,
+    "modifiers": [
+      "Boss",
+      "Tank"
+    ]
+  },
+  "event_map": {
+    "desc": "Event map mid-high HP",
+    "basic1": 840,
+    "elite1": 1920,
+    "boss": 4313
+  }
+}

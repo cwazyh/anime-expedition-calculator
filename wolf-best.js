@@ -15,7 +15,9 @@ for (const n of manifest.equipments) {
 }
 
 const varDefs = A.unitVars('Wolf (Revived)') || [];
-const T = { enemies_in_range: 4, passive_state: {}, hypnosis_target_share: 0 };
+const hpArg = process.argv[2];
+const T = { enemies_in_range: 4, passive_state: {}, hypnosis_target_share: 0,
+  enemy_hp: hpArg != null ? Number(hpArg) : null };
 for (const d of varDefs) T[d.key] = d.def;
 
 const calc = A.createCalculator({ unit, traits, equipments, T });

@@ -1,0 +1,201 @@
+{
+  "source": "ReplicatedStorage.Shared.Information extracted via in-game bridge",
+  "sandbox_excluded": true,
+  "enemy_scale": {
+    "Basic": 0.5,
+    "Elite": 0.6,
+    "Boss": 0.8,
+    "Flying": 0.5
+  },
+  "enemy_speed_studs_per_s": {
+    "Basic": 2.4,
+    "Elite": 2.04,
+    "Boss": 1.68,
+    "default": 2.4
+  },
+  "enemy_types_base_health": {
+    "Basic 1": 3,
+    "Basic 2": 5,
+    "Elite 1": 6,
+    "Elite 2": 8,
+    "Elite 3": 10,
+    "Boss": 18
+  },
+  "game_modifiers": [
+    "BossWaves",
+    "ExpeditionCardsDisabled",
+    "Mirror",
+    "NoAnvils",
+    "NoFarms",
+    "NoRepair",
+    "NoResearchTree",
+    "NoTomes",
+    "Resistance",
+    "Shielded",
+    "ShortRange",
+    "Speedy",
+    "Traitless",
+    "UpgradeCap"
+  ],
+  "enemy_modifiers": [
+    "Armored",
+    "Boss",
+    "Bulwark",
+    "Burrowing",
+    "Cage",
+    "Commander",
+    "Dawn",
+    "Death",
+    "Elite",
+    "ExpeditionProject",
+    "Explosive",
+    "Fear",
+    "Greed",
+    "HealAndCleanseOnWet",
+    "Immunity",
+    "Inker",
+    "Invisible",
+    "Momentum",
+    "Regen1",
+    "Regen2",
+    "Regen3",
+    "Regen4",
+    "Reinforced",
+    "RetaliationCounter",
+    "Shield",
+    "Soldier",
+    "Splitter",
+    "Sprinter",
+    "Standby",
+    "Stationary",
+    "StatusCleanse",
+    "Stunner",
+    "Summoner",
+    "Sword",
+    "Tank",
+    "Tartaros",
+    "Transformer",
+    "Veil",
+    "Warlock",
+    "WetAura",
+    "WetGrenadier",
+    "Zombie",
+    "Zombified",
+    "Zombify",
+    "ZoneDebuff"
+  ],
+  "gamemodes": [
+    "BossRush",
+    "Challenge",
+    "CthulhuEvent",
+    "EclipseEvent",
+    "Event",
+    "Expedition",
+    "FourthGate",
+    "GoldenHourEvent",
+    "HalloweenTrick",
+    "IchigoResurrection",
+    "InfernalCult",
+    "Infinite",
+    "KaijuEvent",
+    "Mastery",
+    "Portal",
+    "Raid",
+    "Rift",
+    "SoulFurnace",
+    "Story",
+    "Tournament",
+    "TowerOfGod",
+    "Trial",
+    "VillainInvasion"
+  ],
+  "maps_by_category": {
+    "Story": [
+      "Dressrosa",
+      "FairyKingForest",
+      "FlamingMonastery",
+      "FlowerForest",
+      "HuecoMundo",
+      "KingsTomb",
+      "RedLake",
+      "SchoolGrounds",
+      "WestCity"
+    ],
+    "Infinite": [
+      "10 maps + SpiritCity"
+    ],
+    "Rift": [
+      "StarrkRift"
+    ],
+    "BossRush": [
+      "BeniBossRush"
+    ],
+    "Event": [
+      "CreatorSpotlight",
+      "CthulhuEvent",
+      "InfernalCult",
+      "KaijuEvent",
+      "Summer2026Event"
+    ],
+    "Trial": [
+      "27 maps"
+    ],
+    "Other": [
+      "Expedition",
+      "FourthGate",
+      "Mastery",
+      "Portal",
+      "SoulFurnace",
+      "VillainInvasion"
+    ]
+  },
+  "map_data_structure": {
+    "MapData.Story.SchoolGrounds": {
+      "ActProgression": "field",
+      "Acts": "Act 1..Act 5, each with ProgressionIndex and Waves[1..15]",
+      "Difficulties": [
+        "Normal",
+        "Hard"
+      ],
+      "EnemyTypes": "field",
+      "MapType": "field",
+      "ProgressionIndex": "field"
+    },
+    "Wave": "6-8 groups; each group {Count: 2-4, Modifiers: table, Type: enemy type}"
+  },
+  "benchmark": {
+    "spawn_interval_within_wave_s": [
+      0.44,
+      0.51
+    ],
+    "spawn_rate_per_s": 2.0,
+    "inter_wave_gap_s": 7,
+    "mean_spacing_studs_all_9_maps": 2.2856,
+    "enemies_in_range_formula": "min(15, 17, floor(range / 2.2856))"
+  },
+  "map_display_names": {
+    "RedLake": "Crimson Shore",
+    "SchoolGrounds": "School Grounds",
+    "StarrkRift": "Fake Hometown",
+    "Dressrosa": "Rose Kingdom",
+    "HuecoMundo": "Hollow Desert",
+    "HillOfSwords": "Snowy Castle",
+    "WestCity": "East Town",
+    "FlamingMonastery": "Flaming Monastery",
+    "Summer2026Event": "Coral Kingdom",
+    "KaijuEvent": "Fractured District",
+    "BeniBossRush": "District 7",
+    "KingsTomb": "King's Tomb",
+    "VillainInvasion": "Crow Hideout",
+    "FairyKingForest": "Fairy King Forest",
+    "FlowerForest": "Flower Forest",
+    "SpiritCity": "Spirit City",
+    "SoulFurnace": "Soul Furnace",
+    "CthulhuEvent": "Invaded Lobby",
+    "EnelPortalMap": "Ancient Temple",
+    "DressrosaExpedition": "Rose Kingdom",
+    "SchoolGroundsExpedition": "School Grounds",
+    "WestCityExpedition": "East Town",
+    "FlowerForestExpedition": "Flower Forest"
+  }
+}
