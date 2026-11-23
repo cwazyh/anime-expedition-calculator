@@ -744,7 +744,7 @@
     hardest_map: { label: "Hardest map", hp: { "Basic 1": 15897, "Basic 2": 28155, "Elite 1": 54505, "Elite 2": 95787, "Elite 3": 101322, "Boss": 365393 } }
   };
   var HP_MODS = { "Boss": 20, "Soldier": 20, "Sprinter": -20, "Tank": 20, "Zombify": 100 };
-  var enemyHpProfile = "none";
+  var enemyHpProfile = "hardest_map";
   var enemyType = "Basic 1";
 
   function effectiveHp() {
