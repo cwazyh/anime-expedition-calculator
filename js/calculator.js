@@ -46,7 +46,7 @@
     expected_crit: true,
     // passives / conditionals (steady-state)
     enemies_in_range: 4,              // hypnosis share / in-range conditionals
-    shinigami_enemies: 15,            // ALL equipment settings at MAX incl. passives
+    shinigami_enemies: null,          // null = derive from unit range via measured spawn-stream spacing (2.2856 studs)
     shinigami_per_enemy: 1.0,         // passive roll 0.5..1 % per enemy -> max 1.0
     shinigami_capacity: 15,
     hypnosis_uptime: 10 / 15,         // Aizen: 10s every 15s on 5 strongest
@@ -60,6 +60,16 @@
   /* ============================== HELPERS ============================== */
   function r1(x) { return Math.floor(x * 10 + 0.5) / 10; }
   function r2(x) { return Math.floor(x * 100 + 0.5) / 100; }
+
+  // Enemies simultaneously inside a unit's range, from the measured mean
+  // spacing of the spawn stream (9 story maps incl. the boss-rush map, see
+  // ENEMY_BENCHMARK.md). One enemy per SPACING studs => floor(R / SPACING),
+  // capped by the passive capacity and by the ~17 enemies in one wave.
+  var SPACING = 2.2856, WAVE_SIZE = 17;
+  function enemiesInRange(range, capacity) {
+    var n = Math.floor(range / SPACING + 1e-9);
+    return Math.max(0, Math.min(capacity != null ? capacity : 15, WAVE_SIZE, n));
+  }
 
   function cloneT(overrides) {
     var t = {};
@@ -334,11 +344,14 @@
         for (var j = 0; j < ps.length; j++) {
           var nm = ps[j].display_name || "";
           if (nm === "Shinigami Sword") {
-            var gain = Math.min(T.shinigami_enemies * T.shinigami_per_enemy,
+            var count = (T.shinigami_enemies != null)
+              ? T.shinigami_enemies
+              : enemiesInRange(BASE_RNG, T.shinigami_capacity);
+            var gain = Math.min(count * T.shinigami_per_enemy,
                                 T.shinigami_capacity) / 100;
             mult *= (1 + gain);
             notes.push("ShinigamiSword +" + (gain * 100).toFixed(1) + "% (" +
-                       T.shinigami_enemies + " enemies)");
+                       count + " enemies, range " + BASE_RNG + ")");
           } else if (ZERO_PASSIVES.indexOf(nm) !== -1) {
             notes.push(nm + ": 0 (unit does not meet condition)");
           } else {
@@ -406,7 +419,8 @@
             dmg: dmg, spa: spa,
             cc: BASE_CC + 100 * t_cc + e_cc,
             cd: BASE_CD + 100 * t_cd + e_cd,
-            trait: traitName
+            trait: traitName,
+            bound: combo && combo.filter(function (n) { return BOUND.indexOf(n) !== -1; })
           })
         : PM_ZERO;
 

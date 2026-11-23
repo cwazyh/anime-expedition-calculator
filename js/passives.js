@@ -1934,30 +1934,25 @@
       return { dmg: 0.20, notes: ["Howling Tempest: 5th attack +100% " +
         "(cycle average +20% damage)"] };
     },
-    // Each 5th attack spawns 2 StarrkWolves (cap 3): 15% of this unit's
-    // damage per hit (they delete themselves after attacking) + ManaBurn.
+    // Each 5th attack spawns StarrkWolves that delete themselves on attack.
+    // Demonic Pistols overrides the base passive: 3 wolves at 25% with 50%
+    // ManaBurn instead of 2 wolves at 15% with 15% ManaBurn.
     "Soul Pack": function (T, ctx) {
-      // Each wolf deals 15% of unit damage and adds ManaBurn for 15% of its
-      // own hit (2.25% of unit damage per wolf).
-      var extra = (2 * 0.15 + 2 * 0.15 * 0.15) / (10 * ctx.spa);
-      return { extra: extra, notes: ["Soul Pack: 2 wolves x15% + ManaBurn " +
-        "15% of wolf damage per cycle (~10 x SPA seconds)"] };
+      var upgraded = ctx.bound && ctx.bound.indexOf("Demonic Pistols") !== -1;
+      var count = upgraded ? 3 : 2;
+      var share = upgraded ? 0.25 : 0.15;
+      var burn = upgraded ? 0.50 : 0.15;
+      var extra = (count * share + count * share * burn) / (10 * ctx.spa);
+      return { extra: extra, notes: ["Soul Pack: " + count + " wolves x" +
+        Math.round(share * 100) + "% + ManaBurn " + Math.round(burn * 100) +
+        "% per cycle (~10 x SPA seconds)"] };
     },
-    // Ability: 5s pause then 8s of constant fire at 65% damage per
-    // second (+100% ManaBurn over 6s, always crits).
-    "Zero Machine Gun": function (T, ctx) {
-      var ppm = N(T, "starrk_ability_ppm", 1);
-      var penalty = N(T, "starrk_spa_penalty", 100) / 100;
-      var effSpa = (ctx.spa || 1) * (1 + penalty);
-      // Treated as the 5th attack: inherits Howling's +100%, while ctx.dmg
-      // already carries the +20% cycle average (divide it back out). ManaBurn
-      // is a separate DoT and does not take the Howling bonus.
-      var ability = 0.65 * 8 * 2 / 1.2 + 1.00 / 1.2;
-      var replaced = 13 / effSpa;
-      var extra = Math.max(0, ability - replaced) * ppm / 60;
-      return { extra: extra, notes: ["Zero Machine Gun: net " +
-        ability.toFixed(2) + "x ability (Howling-boosted) - " +
-        replaced.toFixed(2) + "x replaced attacks per 13s, " + ppm + "/min"] };
+    // One-use ability: 5s pause, 8s fire at 65%/s, ManaBurn 100%, always
+    // crits. All effects are temporary and there is no lasting buff, so it
+    // does not contribute to sustained TDPS.
+    "Zero Machine Gun": function () {
+      return { notes: ["Zero Machine Gun: one-use temporary burst " +
+        "(5s windup + 8s fire + ManaBurn), no permanent buff - excluded from TDPS"] };
     }
   });
   A.registerUnitVars("Wolf (Revived)", [
