@@ -740,7 +740,7 @@
     easiest_map: { label: "Easiest map", hp: { "Basic 1": 17, "Basic 2": 22, "Elite 1": 30, "Elite 2": 37, "Elite 3": 42, "Boss": 50 } },
     average_map: { label: "Average map", hp: { "Basic 1": 476, "Basic 2": 540, "Elite 1": 720, "Elite 2": 875, "Elite 3": 1225, "Boss": 1650 } },
     event_map: { label: "Event map", hp: { "Basic 1": 840, "Basic 2": 1920, "Elite 1": 1920, "Elite 2": 2400, "Elite 3": 3000, "Boss": 4313 } },
-    weekly_tournament: { label: "Weekly tournament", hp: { "Basic 1": 2400, "Basic 2": 4000, "Elite 1": 5000, "Elite 2": 7000, "Elite 3": 8000, "Boss": 11088 }, modifiers: ["Boss", "Tank"] },
+    weekly_tournament: { label: "Weekly tournament", hp: { "Basic 1": 72653, "Basic 2": 95820, "Elite 1": 108000, "Elite 2": 148000, "Elite 3": 188898, "Boss": 152132 } },
     hardest_map: { label: "Hardest map", hp: { "Basic 1": 15897, "Basic 2": 28155, "Elite 1": 54505, "Elite 2": 95787, "Elite 3": 101322, "Boss": 365393 } }
   };
   var HP_MODS = { "Boss": 20, "Soldier": 20, "Sprinter": -20, "Tank": 20, "Zombify": 100 };

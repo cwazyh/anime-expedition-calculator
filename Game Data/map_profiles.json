@@ -31,14 +31,14 @@
   },
   "weekly_tournament": {
     "label": "Weekly tournament",
-    "desc": "p90 with Boss+Tank modifiers (+40% HP applied at lookup)",
-    "Basic 1": 2400,
-    "Basic 2": 4000,
-    "Elite 1": 5000,
-    "Elite 2": 7000,
-    "Elite 3": 8000,
-    "Boss": 11088,
-    "modifiers": ["Boss", "Tank"]
+    "desc": "wave-scaled average over waves 1-22, live Duo tournament (GameID 95, MapID 97 SchoolGrounds). HP(w)=327.41*w^2+951.82*w+5227.98 (wave 8-22 fit, err <80). No active mods in this run (Shield=0, Modifiers empty).",
+    "Basic 1": 72653,
+    "Basic 2": 95820,
+    "Elite 1": 108000,
+    "Elite 2": 148000,
+    "Elite 3": 188898,
+    "Boss": 152132,
+    "waveHpFormula": { "a": 327.41, "b": 951.82, "c": 5227.98, "waveAvg": 72653, "waveMax": 184646, "fittedWaves": [8,9,10,11,12,13,14,22] }
   },
   "hardest_map": {
     "label": "Hardest map",
