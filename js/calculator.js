@@ -334,7 +334,7 @@
 
     // Passives of equipped general equipment (bound passives are handled
     // by the unit-specific model below, exactly like the Python version).
-    function evalPassives(combo, mult, notes, withEquipment) {
+    function evalPassives(combo, mult, notes, withEquipment, range) {
       if (!withEquipment || !combo || !combo.length) return mult;
       for (var i = 0; i < combo.length; i++) {
         var n = combo[i];
@@ -346,12 +346,12 @@
           if (nm === "Shinigami Sword") {
             var count = (T.shinigami_enemies != null)
               ? T.shinigami_enemies
-              : enemiesInRange(BASE_RNG, T.shinigami_capacity);
+              : enemiesInRange(range, T.shinigami_capacity);
             var gain = Math.min(count * T.shinigami_per_enemy,
                                 T.shinigami_capacity) / 100;
             mult *= (1 + gain);
             notes.push("ShinigamiSword +" + (gain * 100).toFixed(1) + "% (" +
-                       count + " enemies, range " + BASE_RNG + ")");
+                       count + " enemies, range " + range.toFixed(1) + ")");
           } else if (ZERO_PASSIVES.indexOf(nm) !== -1) {
             notes.push(nm + ": 0 (unit does not meet condition)");
           } else {
@@ -439,6 +439,11 @@
       else if (T.crit_mode === "bonus") crit_mult = 1 + (cc / 100) * (cd / 100);
       else crit_mult = 1 + (cc / 100) * ((cd - 100) / 100);   // legacy/total
 
+      // Final range after all layers; passive models (e.g. Shinigami enemy
+      // count) depend on it, so resolve it before evaluating them.
+      var rng = r1(BASE_RNG * asc_r * pot_rng * (1 + (t.Range || 0)) *
+                   (1 + (withEquipment && combo && combo.length ? e_rng / 100 : 0)));
+
       // passives
       var passive_mult = 1.0;
       if (withPassives) {
@@ -454,15 +459,13 @@
             notes.push("Hypnosis: OFF (0 hypnotized enemies)");
           }
         }
-        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment);
+        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment, rng);
         passive_mult *= pm.mult;
       }
 
       // extra damage instances (DoT/explosions/summons): r.extra is damage
       // per second as a fraction of this unit's damage, so extra_dps = extra * dmg
       var dps = r2(dmg / spa * crit_mult * passive_mult + pm.extra * dmg);
-      var rng = r1(BASE_RNG * asc_r * pot_rng * (1 + (t.Range || 0)) *
-                   (1 + (withEquipment && combo && combo.length ? e_rng / 100 : 0)));
       return {
         dmg: dmg, spa: spa, rng: rng, base_dps: dmg / spa,
         cc: cc, cd: cd, crit_mult: crit_mult, passive_mult: passive_mult,
