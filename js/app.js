@@ -733,17 +733,30 @@
   var poolLoaded = false;
 
   // Enemy HP profiles derived from game scaling entries (Game Data/map_profiles.json).
-  // basic1 HP drives the mortality model for normal waves; elite/boss are listed
-  // for upcoming enemy-type-specific selection.
+  // Per-enemy-type HP from the 94 valid scaling entries (Game Data/map_profiles.json).
+  // The selected type feeds the mortality model that caps enemies-in-range.
   var HP_PROFILES = {
-    none:            { label: "None (no HP model)", basic1: null },
-    easiest_map:     { label: "Easiest map", basic1: 41 },
-    average_map:     { label: "Average map", basic1: 476 },
-    event_map:       { label: "Event map", basic1: 840 },
-    hardest_map:     { label: "Hardest map", basic1: 15897 },
-    weekly_tournament: { label: "Weekly tournament", basic1: 11775 }
+    none: { label: "None (no HP model)", hp: null },
+    easiest_map: { label: "Easiest map", hp: { "Basic 1": 17, "Basic 2": 22, "Elite 1": 30, "Elite 2": 37, "Elite 3": 42, "Boss": 50 } },
+    average_map: { label: "Average map", hp: { "Basic 1": 476, "Basic 2": 540, "Elite 1": 720, "Elite 2": 875, "Elite 3": 1225, "Boss": 1650 } },
+    event_map: { label: "Event map", hp: { "Basic 1": 840, "Basic 2": 1920, "Elite 1": 1920, "Elite 2": 2400, "Elite 3": 3000, "Boss": 4313 } },
+    weekly_tournament: { label: "Weekly tournament", hp: { "Basic 1": 2400, "Basic 2": 4000, "Elite 1": 5000, "Elite 2": 7000, "Elite 3": 8000, "Boss": 11088 }, modifiers: ["Boss", "Tank"] },
+    hardest_map: { label: "Hardest map", hp: { "Basic 1": 15897, "Basic 2": 28155, "Elite 1": 54505, "Elite 2": 95787, "Elite 3": 101322, "Boss": 365393 } }
   };
+  var HP_MODS = { "Boss": 20, "Soldier": 20, "Sprinter": -20, "Tank": 20, "Zombify": 100 };
   var enemyHpProfile = "none";
+  var enemyType = "Basic 1";
+
+  function effectiveHp() {
+    var pr = HP_PROFILES[enemyHpProfile];
+    if (!pr || !pr.hp) return null;
+    var base = pr.hp[enemyType];
+    if (!base) return null;
+    var mods = pr.modifiers || [];
+    var pct = 0;
+    for (var i = 0; i < mods.length; i++) pct += (HP_MODS[mods[i]] || 0);
+    return Math.round(base * (1 + pct / 100));
+  }
 
   function clearLegacySettings() {
     try { window.localStorage.removeItem(SETTINGS_KEY); }
@@ -831,7 +844,7 @@
     var t = {
       hypnosis_target_share: hypShare(u),
       enemies_in_range: s.enemiesInRange,
-      enemy_hp: HP_PROFILES[enemyHpProfile] ? HP_PROFILES[enemyHpProfile].basic1 : null,
+      enemy_hp: effectiveHp(),
       passive_state: s.passives
     };
     var defs = window.AECalc ? AECalc.unitVars(u.unit_name) : [];
@@ -1053,11 +1066,22 @@
           (pk === enemyHpProfile ? " selected" : "") + ">" +
           esc(HP_PROFILES[pk].label) + "</option>";
       }
+      var typeOpts = "";
+      var enemyTypes = ["Basic 1", "Basic 2", "Elite 1", "Elite 2", "Elite 3", "Boss"];
+      for (var ti = 0; ti < enemyTypes.length; ti++) {
+        typeOpts += '<option value="' + enemyTypes[ti] + '"' +
+          (enemyTypes[ti] === enemyType ? " selected" : "") + ">" +
+          enemyTypes[ti] + "</option>";
+      }
       tail = '<div class="var-row"><span class="var-info">' +
         '<span class="var-label">Enemy HP profile</span>' +
         '<span class="var-sub">Enemy HP drives how long targets survive, which ' +
         'sets stack-based passives (e.g. Shinigami Sword). Sandbox excluded.</span>' +
         '</span><select class="var-input" id="hpProfile">' + hpOpts + '</select></div>' +
+        '<div class="var-row"><span class="var-info">' +
+        '<span class="var-label">Enemy type</span>' +
+        '<span class="var-sub">Target HP used by the mortality model above.</span>' +
+        '</span><select class="var-input" id="enemyType">' + typeOpts + '</select></div>' +
         '<div class="var-actions">' +
         '<button type="button" class="var-btn primary" id="varMax">Theoretic max buff</button>' +
         '<button type="button" class="var-btn" id="varReset">Reset</button></div>' +
@@ -1336,6 +1360,13 @@
         s.enemiesInRange = clampInt(t.value, 1, 10, 4);
       } else if (t && t.id === "hpProfile") {
         enemyHpProfile = t.value;
+        units.forEach(function (uu) {
+          if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
+        });
+        rebuildLeech();
+        return;
+      } else if (t && t.id === "enemyType") {
+        enemyType = t.value;
         units.forEach(function (uu) {
           if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
         });

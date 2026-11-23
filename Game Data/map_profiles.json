@@ -1,36 +1,53 @@
 {
   "easiest_map": {
-    "desc": "Lowest-HP story / early waves",
-    "basic1": 41,
-    "elite1": 81,
-    "boss": 135
+    "label": "Easiest map",
+    "desc": "p10 of all 94 scaling entries - weakest enemies",
+    "Basic 1": 17,
+    "Basic 2": 22,
+    "Elite 1": 30,
+    "Elite 2": 37,
+    "Elite 3": 42,
+    "Boss": 50
   },
   "average_map": {
-    "desc": "Median HP across all 97 scaling entries",
-    "basic1": 476,
-    "elite1": 1088,
-    "boss": 3550
-  },
-  "hardest_map": {
-    "desc": "Highest-HP entry (late wave / endgame)",
-    "basic1": 15897,
-    "elite1": 54505,
-    "boss": 365393
-  },
-  "weekly_tournament": {
-    "desc": "High-HP with +20% Boss/Tank modifiers",
-    "basic1": 11775,
-    "elite1": 26916,
-    "boss": 64726,
-    "modifiers": [
-      "Boss",
-      "Tank"
-    ]
+    "label": "Average map",
+    "desc": "median of all 94 scaling entries",
+    "Basic 1": 476,
+    "Basic 2": 540,
+    "Elite 1": 720,
+    "Elite 2": 875,
+    "Elite 3": 1225,
+    "Boss": 1650
   },
   "event_map": {
-    "desc": "Event map mid-high HP",
-    "basic1": 840,
-    "elite1": 1920,
-    "boss": 4313
+    "label": "Event map",
+    "desc": "event-mode mid-high HP",
+    "Basic 1": 840,
+    "Basic 2": 1920,
+    "Elite 1": 1920,
+    "Elite 2": 2400,
+    "Elite 3": 3000,
+    "Boss": 4313
+  },
+  "weekly_tournament": {
+    "label": "Weekly tournament",
+    "desc": "p90 with Boss+Tank modifiers (+40% HP applied at lookup)",
+    "Basic 1": 2400,
+    "Basic 2": 4000,
+    "Elite 1": 5000,
+    "Elite 2": 7000,
+    "Elite 3": 8000,
+    "Boss": 11088,
+    "modifiers": ["Boss", "Tank"]
+  },
+  "hardest_map": {
+    "label": "Hardest map",
+    "desc": "max of all 94 scaling entries - endgame / deepest wave",
+    "Basic 1": 15897,
+    "Basic 2": 28155,
+    "Elite 1": 54505,
+    "Elite 2": 95787,
+    "Elite 3": 101322,
+    "Boss": 365393
   }
 }
