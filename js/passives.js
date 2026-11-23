@@ -89,6 +89,17 @@
 
   function note(list, s) { list.push(s); }
 
+  /* ====================== DEMON CYBORG ====================== */
+  A.registerPassives("Demon Cyborg", {
+    // Incinerate applies Burn: 0.5x total damage in 4 ticks over 4s,
+    // refreshable/stacking. Live sandbox: top DPS 136/s = 101/s direct
+    // + ~35/s Burn; 0.125 * dmg(273) = ~34/s matches.
+    "Incinerate (Burn DoT)": function () {
+      return { extra: 0.5 / 4, notes: ["Incinerate Burn: 0.5x / 4 ticks / 4s " +
+        "stacking (= 0.125x damage/s) - live verified 136/s total vs 101/s direct"] };
+    }
+  });
+
   /* ====================== 5th GOD HAND ====================== */
   A.registerPassives("5th God Hand", {
     // Every 3 attacks: Distortion on the target; enemies entering take 50%
