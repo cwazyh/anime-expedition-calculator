@@ -1949,14 +1949,15 @@
       var ppm = N(T, "starrk_ability_ppm", 1);
       var penalty = N(T, "starrk_spa_penalty", 100) / 100;
       var effSpa = (ctx.spa || 1) * (1 + penalty);
-      // The 5s windup + 8s firing replace normal attacks: only the net gain
-      // over those attacks is extra damage.
-      var replaced = 13 / effSpa * 1.20;
-      var ability = 0.65 * 8 + 1.00;
+      // Treated as the 5th attack: inherits Howling's +100%, while ctx.dmg
+      // already carries the +20% cycle average (divide it back out). ManaBurn
+      // is a separate DoT and does not take the Howling bonus.
+      var ability = 0.65 * 8 * 2 / 1.2 + 1.00 / 1.2;
+      var replaced = 13 / effSpa;
       var extra = Math.max(0, ability - replaced) * ppm / 60;
       return { extra: extra, notes: ["Zero Machine Gun: net " +
-        ability.toFixed(2) + "x ability - " + replaced.toFixed(2) +
-        "x replaced attacks per 13s window, " + ppm + "/min"] };
+        ability.toFixed(2) + "x ability (Howling-boosted) - " +
+        replaced.toFixed(2) + "x replaced attacks per 13s, " + ppm + "/min"] };
     }
   });
   A.registerUnitVars("Wolf (Revived)", [
