@@ -1782,23 +1782,25 @@
   /* ====================== TOY MAKER ====================== */
   A.registerPassives("Toy Maker", {
     // This unit NEVER attacks: it spawns SugarToys on every path instead
-    // (spawn cadence = its attack cycle). Toys deal 10% of their max HP
-    // as AoE on death (upgrade 4+); max HP = 100% of this unit's damage
-    // (mutation at upgrade 6 raises it). Estimated model - contact damage
-    // is not documented, only the death burst is counted.
+    // (spawn cadence = its attack cycle). Each toy has 100% of this unit's
+    // damage as HP, divided by the number of paths. Path count cancels for
+    // both damage sources: on contact a toy deals its full HP (1.0 x dmg),
+    // and on death it deals 10% of max HP (mutation every 5th cycle raises
+    // the mean death burst to (4x0.10 + 1x0.25)/5 = 0.13 x dmg). The JSON
+    // documents only the death burst; the contact hit is undocumented but
+    // observed in-game (live 2285/s vs 1629 base -> ~0.40 x dmg per cycle).
+    // u is the share of toys that reach an enemy; calibrated ~35% from live.
     "Build-a-toy": function (T, ctx) {
-      var paths = N(T, "gingy_paths", 2);
-      var u = UP(T, "gingy_death_uptime", 80);
-      var extra = paths * 0.10 * u / ctx.spa;
-      return { extra: extra, notes: ["Build-a-toy (estimated): " + paths +
-        " path(s), toy death burst = 10% of max HP (100% of this unit's " +
-        "damage) per spawn cycle at " + Math.round(u * 100) +
-        "% death uptime; the unit itself never attacks"] };
+      var u = UP(T, "gingy_hit_uptime", 35);
+      var extra = 1.13 * u / ctx.spa;
+      return { extra: extra, notes: ["Build-a-toy: contact 1.0 x dmg + death " +
+        "burst 0.13 x dmg (path count cancels, mutated +150% every 5th cycle) " +
+        "= 1.13 x dmg per cycle at " + Math.round(u * 100) + "% hit uptime; " +
+        "the unit itself never attacks"] };
     }
   });
   A.registerUnitVars("Toy Maker", [
-    V("gingy_paths", "Paths in range", "Paths SugarToys spawn on (spawn per cycle each) - default 2", 1, 6, 2),
-    V("gingy_death_uptime", "Toy death %", "Share of spawned toys that reach and die on an enemy - default 80% (estimated)", 0, 100, 80, 5)
+    V("gingy_hit_uptime", "Toy hit %", "Share of spawned toys that reach and hit an enemy - default 35% (live-calibrated: ~656/s above 1629 base)", 0, 100, 35, 5)
   ]);
 
   /* ====================== TRAITOR (ILLUSION) ====================== */
