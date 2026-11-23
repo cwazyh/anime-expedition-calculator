@@ -112,10 +112,11 @@
         hits + " enemy(s) walking in (estimated)"] };
     },
     // +2.5% damage & +1% range per marked enemy in range; marked take +5%.
-    // Steady state: every enemy in range carries the mark (it refreshes on
-    // distortion damage), so the stack count = enemies in range.
+    // A mark is only applied when an enemy SURVIVES the Distortion hit (50% of
+    // this unit's damage) and lasts 5s. Live sandbox observation showed 0-2
+    // marked enemies, not the full in-range count, so the count is a Variable.
     "Causality": function (T) {
-      var n = EN(T);
+      var n = Math.min(N(T, "femto_marked_count", 1), 17);
       return { dmg: 0.025 * n, mult: 1.05,
         notes: ["Causality: " + n + " marked enemies in range (+2.5% each, marked take +5%)"] };
     },
@@ -131,6 +132,7 @@
   });
   A.registerUnitVars("5th God Hand", [
     V("femto_distortion_hits", "Distortion hits", "Enemies walking into each Distortion - default 1 (estimated)", 0, 10, 1),
+    V("femto_marked_count", "Marked enemies", "Enemies carrying GriffithFemtoMark in range (live sandbox showed 0-2) - default 1", 0, 17, 1),
     V("femto_eclipse_uptime", "Eclipse uptime %", "Duty cycle of the 5s Eclipse burst - default 2% (~5s per 250s)", 0, 100, 2, 1)
   ]);
 
