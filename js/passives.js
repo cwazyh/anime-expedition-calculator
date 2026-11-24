@@ -153,6 +153,8 @@
     // Target count is derived from the mortality model (Shinigami template)
     // when the variable is set to auto (-1), else uses the manual estimate.
     "Demonic Presence": function (T, ctx) {
+      if (!ctx.bound || ctx.bound.indexOf("Hair Bells") === -1)
+        return { notes: ["Demonic Presence: OFF (bound Hair Bells not equipped)"] };
       var n = N(T, "kenpachi_aura_targets", -1);
       var auto = n < 0;
       if (auto) n = RCOUNT(T, ctx, 0.5, 10);
@@ -160,7 +162,7 @@
       var extra = 0.15 * n * u;
       return { extra: extra, notes: ["Demonic Presence: 15% dmg/s on " + n +
         " enemy(s) inside 50% of range at " + Math.round(u * 100) +
-        "% uptime (" + (auto ? "auto from enemies in range" : "manual") + ")"] };
+        "% uptime (" + (auto ? "auto from mortality in-range" : "manual") + ")"] };
     },
     // Self-stun cleanse + 100% follow-up: reactive, proc-based.
     "Savage Rebound": function (T) {
