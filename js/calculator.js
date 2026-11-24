@@ -327,6 +327,36 @@
     var RARITY = unit.rarity;
     var UNIT_NAME = unit.unit_name;
 
+  // Sacrificial Mark only counts enemies carrying $Bleed or $Marks. Detect
+  // whether this unit can actually apply one of those statuses; otherwise the
+  // passive contributes 0 instead of counting every enemy as a filler.
+  var unitMarksBleed = false;
+  (function () {
+    var se = unit.status_effects || {};
+    for (var k in se) {
+      if (!Object.prototype.hasOwnProperty.call(se, k)) continue;
+      var tags = (se[k] && se[k].tags) || [];
+      for (var ti = 0; ti < tags.length; ti++) {
+        var tg = String(tags[ti]).toLowerCase();
+        if (tg === "mark" || tg === "marks" || tg === "bleed") {
+          unitMarksBleed = true;
+          return;
+        }
+      }
+    }
+    var lists = [unit.passives, unit.abilities];
+    for (var li = 0; li < lists.length && !unitMarksBleed; li++) {
+      var arr = lists[li] || [];
+      for (var ai = 0; ai < arr.length; ai++) {
+        var desc = String((arr[ai] && (arr[ai].description || arr[ai].desc)) || "");
+        if (/\$?(Bleed|Marks)\b/i.test(desc)) {
+          unitMarksBleed = true;
+          return;
+        }
+      }
+    }
+  })();
+
     var names = Object.keys(equipments).sort();
     var BOUND = [], POOL = [];
     for (var i = 0; i < names.length; i++) {
@@ -357,7 +387,7 @@
 
     // Passives of equipped general equipment (bound passives are handled
     // by the unit-specific model below, exactly like the Python version).
-    function evalPassives(combo, mult, notes, withEquipment, range, preDps) {
+    function evalPassives(combo, mult, notes, withEquipment, range, preDps, canMark) {
       if (!withEquipment || !combo || !combo.length) return mult;
       for (var i = 0; i < combo.length; i++) {
         var n = combo[i];
@@ -378,6 +408,10 @@
             notes.push("ShinigamiSword +" + (gain * 100).toFixed(1) + "% (" +
                        count + " enemies, range " + range.toFixed(1) + ")");
           } else if (nm === "Sacrificial Mark") {
+            if (!canMark) {
+              notes.push("SacrificialMark: 0 (this unit applies no $Bleed/$Marks)");
+              return;
+            }
             var sr = range * T.sacrificial_mark_share;
             var sCount;
             if (T.enemy_hp != null && preDps > 0)
@@ -505,7 +539,7 @@
             notes.push("Hypnosis: OFF (0 hypnotized enemies)");
           }
         }
-        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment, rng, dmg / spa * crit_mult);
+        passive_mult = evalPassives(combo, passive_mult, notes, withEquipment, rng, dmg / spa * crit_mult, unitMarksBleed);
         passive_mult *= pm.mult;
       }
 

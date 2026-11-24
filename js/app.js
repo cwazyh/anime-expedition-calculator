@@ -738,15 +738,20 @@
   var HP_PROFILES = {
     none: { label: "None (no HP model)", hp: null },
     easiest_map: { label: "Easiest map", hp: { "Basic 1": 17, "Basic 2": 22, "Elite 1": 30, "Elite 2": 37, "Elite 3": 42, "Boss": 50 } },
-    average_map: { label: "Average map", hp: { "Basic 1": 476, "Basic 2": 540, "Elite 1": 720, "Elite 2": 875, "Elite 3": 1225, "Boss": 1650 } },
-    event_map: { label: "Event map", hp: { "Basic 1": 840, "Basic 2": 1920, "Elite 1": 1920, "Elite 2": 2400, "Elite 3": 3000, "Boss": 4313 } },
-    weekly_tournament: { label: "Weekly tournament", hp: { "Basic 1": 72653, "Basic 2": 95820, "Elite 1": 108000, "Elite 2": 148000, "Elite 3": 188898, "Boss": 152132 } },
     hardest_map: { label: "Hardest map", hp: { "Basic 1": 15897, "Basic 2": 28155, "Elite 1": 54505, "Elite 2": 95787, "Elite 3": 101322, "Boss": 365393 } }
   };
   var HP_MODS = { "Boss": 20, "Soldier": 20, "Sprinter": -20, "Tank": 20, "Zombify": 100 };
   var enemyHpProfile = "hardest_map";
-  var enemyType = "Basic 1";
-  var wave = 15;
+  var wave = 27;
+
+  // Real game archetype distribution used for the default mixed enemy HP.
+  // Source: in-game spawning mix captured during benchmarking (68% Basic,
+  // 22% Elite, 7% Boss; remainder Flying). No per-map hardcoding.
+  var ARCHETYPE_MIX = [
+    { types: ["Basic 1", "Basic 2"], weight: 0.68 },
+    { types: ["Elite 1", "Elite 2", "Elite 3"], weight: 0.22 },
+    { types: ["Boss"], weight: 0.07 }
+  ];
 
   // Per-wave HP grows quadratically in the live game. The two absolute curves
   // below are fitted to captured in-game HP at successive waves; the exact
@@ -767,7 +772,18 @@
     var hp1 = curve
       ? curve.a * w * w + curve.b * w + curve.c
       : base1 * ((GROWTH.a * w * w + GROWTH.b * w + GROWTH.c) / GROWTH_REF);
-    var typeRatio = (pr.hp[enemyType] || base1) / base1;
+    var typeRatio = 0;
+    var mixWeight = 0;
+    for (var mi = 0; mi < ARCHETYPE_MIX.length; mi++) {
+      var grp = ARCHETYPE_MIX[mi];
+      var sum = 0, cnt = 0;
+      for (var gi = 0; gi < grp.types.length; gi++) {
+        var v = pr.hp[grp.types[gi]];
+        if (v) { sum += v; cnt++; }
+      }
+      if (cnt) { typeRatio += grp.weight * (sum / cnt) / base1; mixWeight += grp.weight; }
+    }
+    typeRatio = mixWeight ? typeRatio / mixWeight : 1;
     var mods = pr.modifiers || [];
     var pct = 0;
     for (var i = 0; i < mods.length; i++) pct += (HP_MODS[mods[i]] || 0);
@@ -1082,22 +1098,12 @@
           (pk === enemyHpProfile ? " selected" : "") + ">" +
           esc(HP_PROFILES[pk].label) + "</option>";
       }
-      var typeOpts = "";
-      var enemyTypes = ["Basic 1", "Basic 2", "Elite 1", "Elite 2", "Elite 3", "Boss"];
-      for (var ti = 0; ti < enemyTypes.length; ti++) {
-        typeOpts += '<option value="' + enemyTypes[ti] + '"' +
-          (enemyTypes[ti] === enemyType ? " selected" : "") + ">" +
-          enemyTypes[ti] + "</option>";
-      }
       tail = '<div class="var-row"><span class="var-info">' +
         '<span class="var-label">Enemy HP profile</span>' +
         '<span class="var-sub">Enemy HP drives how long targets survive, which ' +
-        'sets stack-based passives (e.g. Shinigami Sword). Sandbox excluded.</span>' +
+        'sets stack-based passives (e.g. Shinigami Sword). Uses a realistic ' +
+        'mixed enemy distribution from in-game data. Sandbox excluded.</span>' +
         '</span><select class="var-input" id="hpProfile">' + hpOpts + '</select></div>' +
-        '<div class="var-row"><span class="var-info">' +
-        '<span class="var-label">Enemy type</span>' +
-        '<span class="var-sub">Target HP used by the mortality model above.</span>' +
-        '</span><select class="var-input" id="enemyType">' + typeOpts + '</select></div>' +
         '<div class="var-row"><span class="var-info">' +
         '<span class="var-label">Wave</span>' +
         '<span class="var-sub">Enemy HP grows with the wave. Validated curves ' +
@@ -1387,15 +1393,8 @@
         });
         rebuildLeech();
         return;
-      } else if (t && t.id === "enemyType") {
-        enemyType = t.value;
-        units.forEach(function (uu) {
-          if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
-        });
-        rebuildLeech();
-        return;
       } else if (t && t.id === "wave") {
-        wave = clampInt(t.value, 1, 30, 15);
+        wave = clampInt(t.value, 1, 30, 27);
         units.forEach(function (uu) {
           if (uu.calculated && !isFarm(uu)) recomputeUnit(uu);
         });
