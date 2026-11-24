@@ -1439,7 +1439,12 @@
         s.passives = {};                                       // every passive ON
         s.enemiesInRange = clampInt(s.enemiesInRange, 1, 10, 4);
         s.hypnotized = s.enemiesInRange;                       // share = 100%
-        for (var i = 0; i < defs.length; i++) s.vars[defs[i].key] = defs[i].max;
+        for (var i = 0; i < defs.length; i++) {
+          var d = defs[i];
+          // Auto variables (min === -1) must keep the mortality-derived
+          // formula; forcing their raw max would fake impossible proc rates.
+          s.vars[d.key] = d.min === -1 ? -1 : d.max;
+        }
       } else {
         s.passives = {};                                       // every passive ON
         s.hypnotized = 0;                                      // hypnosis buff OFF
