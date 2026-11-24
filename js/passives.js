@@ -178,7 +178,7 @@
       var kps = kenpachiKillsPerSec(T, ctx);
       var ppm = N(T, "kenpachi_stun_ppm", -1);
       if (ppm < 0) ppm = kps == null ? 1 : kps * 60;
-      var extra = 1.00 * ppm / 60;
+      var extra = 1.25 * ppm / 60;
       return { extra: extra, notes: ["Savage Rebound: " + ppm.toFixed(2) +
         " stun reflect(s)/min (" + (kps == null ? "no HP model -> default 1" :
         "auto from in-range kills " + kps.toFixed(3) + "/s") + ")"] };
@@ -207,7 +207,7 @@
   });
   A.registerUnitVars("8th Sword (Berserk)", [
     V("kenpachi_aura_targets", "Aura targets", "Enemies inside 50% of range taking Demonic Presence damage - -1 = auto from enemies in range (mortality)", -1, 10, -1),
-    V("kenpachi_aura_uptime", "Aura uptime %", "Share of time the primary sits inside 40% of range - default 60%", 0, 100, 60, 5),
+    V("kenpachi_aura_uptime", "Aura uptime %", "Share of time the primary sits inside 50% of range - default 60%", 0, 100, 60, 5),
     V("kenpachi_stun_ppm", "Stun reflects / min", "-1 = auto from in-range kill rate (mortality); set 0-60 for manual override", -1, 60, -1),
     V("kenpachi_execute_ppm", "Executes / min", "-1 = auto from in-range kill rate (mortality); set 0-60 for manual override", -1, 60, -1),
     V("kenpachi_transform_uptime", "Transformation uptime %", "-1 = auto from 15s per 25 kills (capped 30%); set 0-100 for manual override", -1, 100, -1, 5)
