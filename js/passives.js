@@ -148,6 +148,15 @@
   ]);
 
   /* ====================== 8TH SWORD (BERSERK) ====================== */
+  // Kill rate from the same spawn/mortality data as Shinigami Sword: an
+  // enemy dies inside range only when t_kill < t_cross, else kills = 0.
+  function kenpachiKillsPerSec(T, ctx) {
+    var hp = T.enemy_hp, dps = ctx && ctx.preDps;
+    if (!(hp > 0) || !(dps > 0) || !ctx || !(ctx.rng > 0)) return null;
+    var tKill = hp / dps, tCross = ctx.rng / 2.44;
+    if (tKill >= tCross) return 0;
+    return Math.min(2.0, 1 / tKill);
+  }
   A.registerPassives("8th Sword (Berserk)", {
     // Enemies within 50% of range take 15% of this unit's damage every 1s.
     // Target count is derived from the mortality model (Shinigami template)
@@ -165,33 +174,43 @@
         "% uptime (" + (auto ? "auto from mortality in-range" : "manual") + ")"] };
     },
     // Self-stun cleanse + 100% follow-up: reactive, proc-based.
-    "Savage Rebound": function (T) {
-      var ppm = N(T, "kenpachi_stun_ppm", 1);
+    "Savage Rebound": function (T, ctx) {
+      var kps = kenpachiKillsPerSec(T, ctx);
+      var ppm = N(T, "kenpachi_stun_ppm", -1);
+      if (ppm < 0) ppm = kps == null ? 1 : kps * 60;
       var extra = 1.00 * ppm / 60;
-      return { extra: extra, notes: ["Savage Rebound: " + ppm +
-        " stun reflect(s) per minute (estimated)"] };
+      return { extra: extra, notes: ["Savage Rebound: " + ppm.toFixed(2) +
+        " stun reflect(s)/min (" + (kps == null ? "no HP model -> default 1" :
+        "auto from in-range kills " + kps.toFixed(3) + "/s") + ")"] };
     },
     // Enemy below 10% HP -> 100% follow-up: execute-window proc.
-    "Dismemberer's Rush": function (T) {
-      var ppm = N(T, "kenpachi_execute_ppm", 1);
+    "Dismemberer's Rush": function (T, ctx) {
+      var kps = kenpachiKillsPerSec(T, ctx);
+      var ppm = N(T, "kenpachi_execute_ppm", -1);
+      if (ppm < 0) ppm = kps == null ? 1 : kps * 60;
       var extra = 1.00 * ppm / 60;
-      return { extra: extra, notes: ["Dismemberer's Rush: " + ppm +
-        " execute follow-up(s) per minute (estimated)"] };
+      return { extra: extra, notes: ["Dismemberer's Rush: " + ppm.toFixed(2) +
+        " execute follow-up(s)/min (" + (kps == null ? "no HP model -> default 1" :
+        "auto from in-range kills " + kps.toFixed(3) + "/s") + ")"] };
     },
-    // After 25 takedowns: 15s transformation, +20% dmg / -10% SPA.
-    "The Nameless Demon": function (T) {
-      var u = UP(T, "kenpachi_transform_uptime", 30);
+    // After 25 takedowns: 15s transformation, +20% dmg / -10% SPA. Uptime
+    // = 15s per 25 kills, capped at the observed 30% steady-state ceiling.
+    "The Nameless Demon": function (T, ctx) {
+      var kps = kenpachiKillsPerSec(T, ctx);
+      var u = UP(T, "kenpachi_transform_uptime", -1);
+      if (u < 0) u = kps == null ? 0.30 : Math.min(0.30, kps * 15 / 25);
       return { dmg: 0.20 * u, spa: -0.10 * u,
         notes: ["The Nameless Demon: " + Math.round(u * 100) +
-        "% transformation uptime (+20% dmg, -10% SPA)"] };
+        "% transformation uptime (+20% dmg, -10% SPA, " +
+        (kps == null ? "no HP model -> default 30%" : "auto from 15s/25 kills") + ")"] };
     }
   });
   A.registerUnitVars("8th Sword (Berserk)", [
     V("kenpachi_aura_targets", "Aura targets", "Enemies inside 50% of range taking Demonic Presence damage - -1 = auto from enemies in range (mortality)", -1, 10, -1),
     V("kenpachi_aura_uptime", "Aura uptime %", "Share of time the primary sits inside 40% of range - default 60%", 0, 100, 60, 5),
-    V("kenpachi_stun_ppm", "Stun reflects / min", "Savage Rebound procs per minute - default 1 (estimated)", 0, 60, 1),
-    V("kenpachi_execute_ppm", "Executes / min", "Dismemberer's Rush procs per minute - default 1 (estimated)", 0, 60, 1),
-    V("kenpachi_transform_uptime", "Transformation uptime %", "Share of time in KenpachiTransformation - default 30%", 0, 100, 30, 5)
+    V("kenpachi_stun_ppm", "Stun reflects / min", "-1 = auto from in-range kill rate (mortality); set 0-60 for manual override", -1, 60, -1),
+    V("kenpachi_execute_ppm", "Executes / min", "-1 = auto from in-range kill rate (mortality); set 0-60 for manual override", -1, 60, -1),
+    V("kenpachi_transform_uptime", "Transformation uptime %", "-1 = auto from 15s per 25 kills (capped 30%); set 0-100 for manual override", -1, 100, -1, 5)
   ]);
 
   /* ====================== ALCHEMY BROTHERS (TRUTH) ====================== */
